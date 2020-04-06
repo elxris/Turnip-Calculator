@@ -1,0 +1,44 @@
+{
+  "name": "turnip-calc",
+  "version": "1.0.0",
+  "main": "dist/src/index.html",
+  "author": "elxris",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "parcel build src/index.pug",
+    "start": "parcel serve src/index.pug"
+  },
+  "browserslist": "> 5%, not dead, not ie>6",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "babel-eslint": "^10.1.0",
+    "core-js": "^3.6.4",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
+    "parcel": "^1.12.4",
+    "pug": "^2.0.4"
+  },
+  "prettier": {},
+  "dependencies": {
+    "@material-ui/core": "^4.9.9",
+    "chart.js": "^2.9.3",
+    "cuint": "^0.2.2",
+    "lodash.zip": "^4.2.0",
+    "progress": "^2.0.3",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-hook-form": "^5.3.1",
+    "react-use": "^14.0.0"
+  }
+}
