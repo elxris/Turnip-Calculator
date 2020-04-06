@@ -27,8 +27,9 @@ const Footer = () => {
         <Link href="https://mikebryant.github.io/ac-nh-turnip-prices/index.html">
           mikebryant&apos;s
         </Link>{" "}
-        work. Finally, but not last, my brother&apos;s help with design.
-        He&apos;s game dev! Follow him on twitter:{" "}
+        work. <br />
+        Finally, but not last, my brother&apos;s help with design. He&apos;s
+        game dev! Follow him on twitter:{" "}
         <Link href="https://twitter.com/Consalv0">@Consalv0</Link>.
       </Typography>
     </Box>
