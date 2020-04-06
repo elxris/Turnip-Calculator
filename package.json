@@ -7,7 +7,9 @@
   "private": false,
   "scripts": {
     "build": "parcel build src/index.pug",
-    "start": "parcel serve src/index.pug"
+    "start": "parcel serve src/index.pug",
+    "predeploy": "rm -rf dist && parcel build src/index.pug --public-url /Turnip-Calculator",
+    "deploy": "gh-pages -d dist"
   },
   "browserslist": "> 5%, not dead, not ie>6",
   "devDependencies": {
@@ -25,6 +27,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^3.0.0",
+    "gh-pages": "^2.2.0",
     "parcel": "^1.12.4",
     "pug": "^2.0.4"
   },
