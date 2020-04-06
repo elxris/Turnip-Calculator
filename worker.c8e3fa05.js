@@ -13,4 +13,4 @@ const{UINT32:e,UINT64:t}=require("cuint"),{possiblePatterns:r,patternReducer:l}=
 },{"cuint":"P5jY","./optimizer":"GZgu"}],"l75l":[function(require,module,exports) {
 const{yieldCalculateByTime:e}=require("./calculator");let s,a,t;const c=()=>{a&&((t=a.next()).done||s||setTimeout(c,0),postMessage(t))};onmessage=(({data:[t,...o]})=>{switch(console.log("worker message received",t),t){case"start":s=!1,a=e(o,1e3),c();break;case"pause":s=!0;break;case"stop":s=!0,a=null;break;case"restart":s=!1,a||(a=e(o,1e3)),c()}});
 },{"./calculator":"qVOq"}]},{},["l75l"], null)
-//# sourceMappingURL=/worker.c8e3fa05.js.map
+//# sourceMappingURL=/Turnip-Calculator/worker.c8e3fa05.js.map
