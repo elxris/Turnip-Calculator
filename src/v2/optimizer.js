@@ -1,10 +1,9 @@
 const randfloat = (arr, min, max, basePrice, cb = (v) => v) => {
   arr.push(
     [min, max]
-      .map((v) => v * basePrice)
-      .map((v) => v + 0.99999)
-      .map((v) => Math.trunc(v))
+      .map((v) => Math.trunc(v * basePrice + 0.99999))
       .map(cb)
+      .map((v, i) => (i ? v + 1 : v - 1))
   );
 };
 

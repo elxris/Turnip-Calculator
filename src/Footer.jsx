@@ -24,7 +24,8 @@ const Footer = () => {
       <Box my={2}>
         <Typography variant="h5">Changelog</Typography>
         <Typography variant="body1">
-          1.1: Clear data button! Please use it responsibly!
+          1.1: Clear data button! Please use it responsibly! <br />
+          1.2a: Fixed ranges of patterns
         </Typography>
       </Box>
       <Box my={2}>
