@@ -3,7 +3,6 @@ import { useLocalStorage } from "react-use";
 import { CssBaseline, ThemeProvider, Container } from "@material-ui/core";
 import theme from "./theme";
 import Filter from "./Filter";
-import Calculator from "./Calculator";
 import Chart from "./Chart";
 import Title from "./Title";
 import Footer from "./Footer";
@@ -40,7 +39,6 @@ const App = () => {
         <Container maxWidth="md">
           <Title />
           <Filter filters={sanitizedInputFilters} onChange={onChange} />
-          {false && <Calculator filter={sanitizedFilters} />}
           <Chart filter={sanitizedFilters} />
           <Footer />
         </Container>

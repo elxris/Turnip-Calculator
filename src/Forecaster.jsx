@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { arrayOf, number } from "prop-types";
 
-const Calculator = ({ filter }) => {
+// Possible future feature WIP
+
+const Forecaster = ({ filter }) => {
   const [started, setStarted] = useState(false);
   const [results, setResults] = useState([0, 0, [], []]);
   const worker = useRef(null);
@@ -53,8 +55,8 @@ const Calculator = ({ filter }) => {
   );
 };
 
-Calculator.propTypes = {
+Forecaster.propTypes = {
   filter: arrayOf(number).isRequired,
 };
 
-export default Calculator;
+export default Forecaster;
