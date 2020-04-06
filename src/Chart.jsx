@@ -89,7 +89,7 @@ const ChartComponent = ({ filter }) => {
     });
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!chart.current) return;
     chart.current.data.datasets = generateData(filter);
     chart.current.update();

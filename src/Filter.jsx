@@ -1,6 +1,40 @@
 import React, { useCallback } from "react";
 import { arrayOf, string, func } from "prop-types";
-import { TextField, FormGroup, Box, InputAdornment } from "@material-ui/core";
+import {
+  TextField,
+  FormGroup,
+  InputAdornment,
+  Button,
+  Box,
+  makeStyles,
+} from "@material-ui/core";
+
+const useButtonStyles = makeStyles((theme) => ({
+  root: {
+    backgroundColor: theme.palette.warning.main,
+    "&:hover": {
+      backgroundColor: theme.palette.warning.dark,
+    },
+  },
+  label: {
+    textTransform: "capitalize",
+  },
+}));
+
+const ClearButton = (props) => {
+  const classes = useButtonStyles();
+  return (
+    <Button
+      classes={classes}
+      disableRipple
+      size="small"
+      variant="contained"
+      {...props}
+    >
+      Clear All Data!
+    </Button>
+  );
+};
 
 const names = [
   "Buy Price",
@@ -45,7 +79,12 @@ const Filter = ({ filters, onChange }) => {
   ));
 
   return (
-    <Box borderRadius={16} bgcolor="primary.light">
+    <Box
+      borderRadius={16}
+      bgcolor="primary.light"
+      display="flex"
+      flexDirection="column"
+    >
       <FormGroup>
         <Box
           m={2}
@@ -79,6 +118,13 @@ const Filter = ({ filters, onChange }) => {
           )}
         </Box>
       </FormGroup>
+      <Box alignSelf="flex-end" mt={-2}>
+        <ClearButton
+          onClick={() => {
+            onChange([]);
+          }}
+        />
+      </Box>
     </Box>
   );
 };
