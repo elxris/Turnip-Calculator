@@ -154,3 +154,6 @@ dist
 
 # Local History for Visual Studio Code
 .history/
+
+# npm versioned dependency tree
+package-lock.json
