@@ -9,6 +9,7 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import i18n from "./i18n";
+import bells from './images/bells.png';
 
 const useButtonStyles = makeStyles((theme) => ({
   root: {
@@ -72,7 +73,9 @@ const Filter = ({ filters, onChange }) => {
       inputProps={{ pattern: "[0-9]*" }}
       InputLabelProps={{ shrink: true }}
       InputProps={{
-        startAdornment: <InputAdornment position="start">$</InputAdornment>,
+        startAdornment: <InputAdornment position="start">
+          <img src={bells} alt="A picture of a bag of bells" />
+        </InputAdornment>,
       }}
       value={filters[index] || ""}
       onChange={handleChange(index)}
