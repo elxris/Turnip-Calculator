@@ -17,8 +17,7 @@ const Footer = () => {
           - The <b>Buy Price</b> value is on your own island. It doesn&apos;t
           matter if you buy it in other island!
           <br />- Prices Changes <b>twice a day</b>. Be sure to log it. (We save
-          your data in your device). <br />- No results? Try deleting &quot;
-          <i>Buy price</i>&quot;
+          your data in your device).
         </Typography>
       </Box>
       <Box my={2}>
