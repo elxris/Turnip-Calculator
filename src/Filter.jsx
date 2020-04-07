@@ -42,7 +42,7 @@ const names = [
   i18n.t("Buy Price"),
   ...i18n.t("Mon Tue Wed Thu Fri Sat")
     .split(" ")
-    .reduce((curr, day) => [...curr, ...[`${day} `+i18n.t('AM'), `${day} `+i18n.t('PM')]], []),
+    .reduce((curr, day) => [...curr, ...[`${day} ${i18n.t('AM')}`, `${day} ${i18n.t('PM')}`]], []),
 ];
 
 const Filter = ({ filters, onChange }) => {
