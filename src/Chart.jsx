@@ -33,7 +33,7 @@ const generateData = (filter) => {
     },
     {
       label: "Yours",
-      data: filter.slice(1).map((v) => (v === undefined ? null : v)),
+      data: Array.from({ length: 12 }, (v, i) => filter[i + 1] || null),
       fill: false,
       backgroundColor: "#EF8341",
       borderColor: "#EF8341",
