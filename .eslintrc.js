@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: ["plugin:react/recommended", "prettier"],
+  extends: ["plugin:react/recommended", "eslint:recommended", "prettier"],
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly",
@@ -18,4 +18,9 @@ module.exports = {
   parser: "babel-eslint",
   plugins: ["babel", "import", "jsx-a11y", "react", "react-hooks"],
   rules: {},
+  settings: {
+    react: {
+      version: "16.13",
+    },
+  },
 };
