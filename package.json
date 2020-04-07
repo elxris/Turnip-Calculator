@@ -39,6 +39,8 @@
     "@material-ui/core": "^4.9.9",
     "chart.js": "^2.9.3",
     "cuint": "^0.2.2",
+    "i18next": "^19.3.4",
+    "i18next-xhr-backend": "^3.2.2",
     "lodash.merge": "^4.6.2",
     "lodash.zip": "^4.2.0",
     "progress": "^2.0.3",
@@ -46,6 +48,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hook-form": "^5.3.1",
+    "react-i18next": "^11.3.4",
     "react-use": "^14.0.0"
   }
 }

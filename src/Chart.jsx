@@ -10,6 +10,7 @@ import {
 } from "./v2/optimizer";
 import { Box } from "@material-ui/core";
 import { useDebounce } from "react-use";
+import i18n from "./i18n";
 
 const generateData = (filter) => {
   let patterns = possiblePatterns(filter);
@@ -22,7 +23,7 @@ const generateData = (filter) => {
 
   return [
     {
-      label: "Buy Price",
+      label: i18n.t("Buy Price"),
       data: new Array(12).fill(filter[0] || null),
       fill: true,
       backgroundColor: "transparent",
@@ -32,14 +33,14 @@ const generateData = (filter) => {
       borderDash: [3, 9],
     },
     {
-      label: "Yours",
+      label: i18n.t("Daily Price"),
       data: Array.from({ length: 12 }, (v, i) => filter[i + 1] || null),
       fill: false,
       backgroundColor: "#EF8341",
       borderColor: "#EF8341",
     },
     {
-      label: "Average",
+      label: i18n.t("Average"),
       data: avgData[0] ? avgData[0].map(Math.trunc) : new Array(12).fill(null),
       backgroundColor: "#F0E16F",
       borderColor: "#F0E16F",
@@ -47,7 +48,7 @@ const generateData = (filter) => {
       fill: false,
     },
     {
-      label: "Maximum",
+      label: i18n.t("Maximum"),
       data: minMaxData[1] || new Array(12).fill(null),
       backgroundColor: "#A5D5A5",
       borderColor: "#A5D5A5",
@@ -56,7 +57,7 @@ const generateData = (filter) => {
       fill: 2,
     },
     {
-      label: "Minimum",
+      label: i18n.t("Minimum"),
       data: minMaxData[0] || new Array(12).fill(null),
       backgroundColor: "#88C9A1",
       borderColor: "#88C9A1",
@@ -77,9 +78,9 @@ const ChartComponent = ({ filter }) => {
       type: "line",
       data: {
         datasets: generateData(filter),
-        labels: "Mon Tue Wed Thu Fri Sat"
+        labels: i18n.t("Mon Tue Wed Thu Fri Sat")
           .split(" ")
-          .reduce((acc, day) => [...acc, `${day} AM`, `${day} PM`], []),
+          .reduce((acc, day) => [...acc, `${day} ${i18n.t('AM')}`, `${day} ${i18n.t('PM')}`], []),
       },
       options: {
         maintainAspectRatio: false,
