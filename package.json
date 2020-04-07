@@ -31,6 +31,7 @@
     "parcel": "^1.12.4",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-browserconfig": "^1.0.5",
+    "parcel-plugin-bundle-visualiser": "^1.2.0",
     "pug": "^2.0.4"
   },
   "prettier": {},
