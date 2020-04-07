@@ -8,6 +8,7 @@ import {
   Box,
   makeStyles,
 } from "@material-ui/core";
+import i18n from "./i18n";
 
 const useButtonStyles = makeStyles((theme) => ({
   root: {
@@ -31,16 +32,16 @@ const ClearButton = (props) => {
       variant="contained"
       {...props}
     >
-      Clear All Data!
+      {i18n.t("Clear All Data!")}
     </Button>
   );
 };
 
 const names = [
-  "Buy Price",
-  ..."Mon Tue Wed Thu Fri Sat"
+  i18n.t("Buy Price"),
+  ...i18n.t("Mon Tue Wed Thu Fri Sat")
     .split(" ")
-    .reduce((curr, day) => [...curr, ...[`${day} AM`, `${day} PM`]], []),
+    .reduce((curr, day) => [...curr, ...[`${day} `+i18n.t('AM'), `${day} `+i18n.t('PM')]], []),
 ];
 
 const Filter = ({ filters, onChange }) => {
