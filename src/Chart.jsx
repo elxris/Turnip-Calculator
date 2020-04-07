@@ -20,6 +20,16 @@ const generateData = (filter) => {
 
   return [
     {
+      label: "Buy Price",
+      data: new Array(12).fill(filter[0]),
+      fill: true,
+      backgroundColor: "transparent",
+      borderColor: "#7B6C53",
+      pointRadius: 0,
+      pointHoverRadius: 0,
+      borderDash: [3, 9],
+    },
+    {
       label: "Yours",
       data: filter.slice(1),
       fill: false,
@@ -37,16 +47,20 @@ const generateData = (filter) => {
     {
       label: "Maximum",
       data: minMaxData[1],
-      backgroundColor: "#7FD1A5",
-      borderColor: "#7FD1A5",
-      fill: 1,
+      backgroundColor: "#A5D5A5",
+      borderColor: "#A5D5A5",
+      pointRadius: 0,
+      pointHoverRadius: 0,
+      fill: 2,
     },
     {
       label: "Minimum",
       data: minMaxData[0],
       backgroundColor: "#88C9A1",
       borderColor: "#88C9A1",
-      fill: 1,
+      pointRadius: 0,
+      pointHoverRadius: 0,
+      fill: 2,
     },
   ];
 };
@@ -96,7 +110,7 @@ const ChartComponent = ({ filter }) => {
   }, [filter]);
 
   return (
-    <Box p={2} mt={2} borderRadius={16} bgcolor="bkgs.mainAlt">
+    <Box p={2} mt={2} borderRadius={16} bgcolor="bkgs.chart">
       <canvas ref={canvas} width={600} height={400} />
     </Box>
   );

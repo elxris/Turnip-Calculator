@@ -14,6 +14,7 @@ const theme = createMuiTheme({
     bkgs: {
       main: "#E9F5EB",
       mainAlt: "#F8F8F0",
+      chart: "#D8F1E1",
       banner: "#F0FFF5",
       content: "#88C9A1",
       contentAlt: "#7B6C53",
