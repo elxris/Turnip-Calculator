@@ -80,7 +80,7 @@ const ChartComponent = ({ filter }) => {
         datasets: generateData(filter),
         labels: i18n.t("Mon Tue Wed Thu Fri Sat")
           .split(" ")
-          .reduce((acc, day) => [...acc, `${day} `+i18n.t('AM'), `${day} `+i18n.t('PM')], []),
+          .reduce((acc, day) => [...acc, `${day} ${i18n.t('AM')}`, `${day} ${i18n.t('PM')}`], []),
       },
       options: {
         maintainAspectRatio: false,
