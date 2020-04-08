@@ -8,7 +8,7 @@ import translationEs from "../locales/es/translation.json";
 import translationDe from "../locales/de/translation.json";
 import translationFr from "../locales/fr/translation.json";
 import translationZh from "../locales/zh/translation.json";
-import translationZh-TW from "../locales/zh-TW/translation.json";
+import translationZhTW from "../locales/zh-TW/translation.json";
 
 i18n
   .use(XHR)
@@ -19,7 +19,15 @@ i18n
     debug: true,
     detection: {
       // order and from where user language should be detected
-      order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag', 'path', 'subdomain'],
+      order: [
+        "querystring",
+        "cookie",
+        "localStorage",
+        "navigator",
+        "htmlTag",
+        "path",
+        "subdomain",
+      ],
     },
 
     fallbackLng: "en",
@@ -27,28 +35,28 @@ i18n
     keySeparator: false, // we use content as keys
 
     interpolation: {
-      escapeValue: false
+      escapeValue: false,
     },
 
     resources: {
       en: {
-        translations: translationEn
+        translations: translationEn,
       },
       es: {
-        translations: translationEs
+        translations: translationEs,
       },
       de: {
-        translations: translationDe
+        translations: translationDe,
       },
       fr: {
-        translations: translationFr
+        translations: translationFr,
       },
       zh: {
-        translations: translationZh
+        translations: translationZh,
       },
-      zh-TW: {
-        translations: translationZh-TW
-      }
+      "zh-TW": {
+        translations: translationZhTW,
+      },
     },
 
     // have a common namespace used around the full app
