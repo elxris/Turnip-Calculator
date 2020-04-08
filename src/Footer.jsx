@@ -99,7 +99,7 @@ const Footer = () => {
           </Trans>
         </Typography>
         <Typography variant="body1" align="right">
-          v1.4b
+          v1.5
         </Typography>
       </Box>
     </Box>
