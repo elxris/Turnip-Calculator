@@ -51,6 +51,9 @@ i18n
       fr: {
         translations: translationFr,
       },
+      "zh": {
+        translations: translationZhCN,
+      },
       "zh-CN": {
         translations: translationZhCN,
       },
