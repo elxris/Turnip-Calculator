@@ -4,6 +4,14 @@ Calculate your turnip price patterns and gain the most from the stalk market!
 
 You can find the live calculator [here](https://elxris.github.io/Turnip-Calculator/).
 
+## Changelog
+
+1.1: Clear data button! Please use it responsibly!
+1.2a: Fixed ranges of patterns
+1.3: Animations fixed. New icons #2. New horizontal marker for buy price #5.
+1.4: Guaranteed Min #10. Localization Support #12. New Currency Icon #11.
+1.4b: A lot of new translations! #8 #15 #16 #18 #19 #20 #21 #22 #23 #24 #25 #26
+
 ## Localizations
 
 This app supports dynamic localization using [i18next](https://www.i18next.com/) and [react-i18next](https://react.i18next.com/), with [i18next-browser-languagedetector](https://github.com/i18next/i18next-browser-languageDetector) to automatically detect the user's native OS language preferences and switch the app's language accordingly.

@@ -6,7 +6,7 @@ import i18n from "./i18n";
 
 const Link = ({ href, gh, children }) => (
   <MaterialLink
-    href={href || `https://github.com/elxris/Turnip-Calculator/${gh}`}
+    href={href || `https://github.com/elxris/Turnip-Calculator/issues/${gh}`}
     target="_blank"
     rel="noopener"
   >
@@ -53,30 +53,21 @@ const Footer = () => {
         </Typography>
       </Box>
       <Box my={2}>
-        <Typography variant="h5">{i18n.t("Changelog")}</Typography>
-        <Typography variant="body1">
-          {i18n.t("changelog1.1")} <br />
-          {i18n.t("changelog1.2a")}
-          <br />
-          <Trans i18nKey="changelog1.3">
-            1.3: Animations fixed. New icon (<Link gh="pull/2">@mtaylor76</Link>
-            ). New horizontal marker for buy price (
-            <Link gh="issues/5">@pudquick</Link>
-            )!
-          </Trans>
-          <br />
-          <Trans i18nKey="changelog1.4">
-            1.4: Guaranteed Min. (
-            <Link href="pull/10">@capoferro &amp; @nanoNago</Link>
-            ). Localization Support (<Link gh="pull/15">@mtaylor76</Link>).
-            French Localization (<Link gh="pull/16">@Ekaekale</Link>). New
-            Currency Icon (<Link gh="pull/11">@alyphen</Link>). Bug Reporters (
-            <Link gh="issues/14">@FoxFireX</Link>).
-          </Trans>
-        </Typography>
-      </Box>
-      <Box my={2}>
         <Typography variant="h5">{i18n.t("About")}</Typography>
+        <Typography variant="body1">
+          <Trans i18nKey="contributors">
+            Thank you all contributors so far!{" "}
+          </Trans>{" "}
+          <Link gh="2">@mtaylor76</Link> <Link gh="5">@pudquick</Link>{" "}
+          <Link gh="10">@capoferro &amp; @nanoNago</Link>{" "}
+          <Link gh="15">@mtaylor76</Link> <Link gh="16">@Ekaekale</Link>{" "}
+          <Link gh="11">@alyphen</Link> <Link gh="14">@FoxFireX</Link>{" "}
+          <Link gh="19">@ninehole90</Link> <Link gh="21">@nekomoto</Link>
+          <Link gh="23">(1)</Link> <Link gh="26">@fabiomurru96</Link>{" "}
+          <Link gh="25">@saitho</Link> <Link gh="23">@DotnetChen</Link>{" "}
+          <Link gh="22">@marcolai</Link> <Link gh="18">@DevSplash</Link>
+          <Link gh="20">(1)</Link> <Link gh="16">@Ekaekale</Link>
+        </Typography>
         <Typography variant="body1">
           <Trans i18nKey="about1">
             This wouldn&apos;t be possible without{" "}
@@ -106,6 +97,9 @@ const Footer = () => {
             </Link>
             .
           </Trans>
+        </Typography>
+        <Typography variant="body1" align="right">
+          v1.4b
         </Typography>
       </Box>
     </Box>
