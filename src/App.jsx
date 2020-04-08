@@ -34,7 +34,6 @@ const App = () => {
 
   return (
     <>
-      <CssBaseline />
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Container maxWidth="md">

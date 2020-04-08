@@ -1,16 +1,27 @@
 import { createMuiTheme } from "@material-ui/core";
-import finkWoff1 from './fonts/finkheavy_regular-webfont.woff';
-import finkWoff2 from './fonts/finkheavy_regular-webfont.woff2';
+import finkWoff1 from './fonts/FinkHeavyRegular.woff';
+import finkWoff2 from './fonts/FinkHeavyRegular.woff2';
+import arialRoundWoff from './fonts/ArialRoundedBold.woff';
 
 const finkHeavy = {
-  fontFamily: 'finkheavyregular',
+  fontFamily: 'FinkHeavy',
   src: ` 
     url(${finkWoff2}) format('woff2'),
     url(${finkWoff1}) format('woff')
-  `,
+    `,
   fontWeight: 'normal',
   fontStyle: 'normal',
 };
+
+const arialRound = {
+  fontFamily: 'Arial Rounded MT Bold',
+  fontStyle: 'normal',
+  fontWeight: 'normal',
+  src: `
+    local('Arial Rounded MT Bold'),
+    url(${arialRoundWoff}) format('woff')
+    `
+  }
 
 const theme = createMuiTheme({
   palette: {
@@ -51,7 +62,7 @@ const theme = createMuiTheme({
         ...prev,
         [`h${v}`]: {
           fontFamily: [
-            "finkheavyregular",
+            "FinkHeavy",
             "-apple-system",
             "BlinkMacSystemFont",
             '"Segoe UI"',
@@ -64,7 +75,7 @@ const theme = createMuiTheme({
   overrides: {
     MuiCssBaseline: {
       '@global': {
-        '@font-face': [finkHeavy],
+        '@font-face': [finkHeavy, arialRound],
       },
     },
   },
