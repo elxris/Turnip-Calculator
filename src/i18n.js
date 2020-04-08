@@ -70,6 +70,10 @@ i18n
       },
     },
 
+    react: {
+      useSuspense: false
+    },
+
     // have a common namespace used around the full app
     ns: ["translations"],
     defaultNS: "translations",

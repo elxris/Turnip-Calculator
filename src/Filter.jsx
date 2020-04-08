@@ -8,7 +8,7 @@ import {
   Box,
   makeStyles,
 } from "@material-ui/core";
-import i18n from "./i18n";
+import { useTranslation } from "react-i18next";
 import bells from './images/bells.png';
 
 const useButtonStyles = makeStyles((theme) => ({
@@ -24,6 +24,7 @@ const useButtonStyles = makeStyles((theme) => ({
 }));
 
 const ClearButton = (props) => {
+  const { t } = useTranslation();
   const classes = useButtonStyles();
   return (
     <Button
@@ -33,19 +34,13 @@ const ClearButton = (props) => {
       variant="contained"
       {...props}
     >
-      {i18n.t("Clear All Data!")}
+      {t("Clear All Data!")}
     </Button>
   );
 };
 
-const names = [
-  i18n.t("Buy Price"),
-  ...i18n.t("Mon Tue Wed Thu Fri Sat")
-    .split(" ")
-    .reduce((curr, day) => [...curr, ...[`${day} ${i18n.t('AM')}`, `${day} ${i18n.t('PM')}`]], []),
-];
-
 const Filter = ({ filters, onChange }) => {
+  const { t } = useTranslation();
   const handleChange = useCallback(
     (index) => ({
       target: {
@@ -61,6 +56,13 @@ const Filter = ({ filters, onChange }) => {
     },
     [filters, onChange]
   );
+
+  const names = [
+    t("Buy Price"),
+    ...t("Mon Tue Wed Thu Fri Sat")
+      .split(" ")
+      .reduce((curr, day) => [...curr, ...[`${day} ${t('AM')}`, `${day} ${t('PM')}`]], []),
+  ];
 
   const fields = Array.from({ length: 13 }, (v, i) => i).map((index) => (
     <TextField

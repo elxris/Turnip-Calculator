@@ -1,8 +1,9 @@
 import React from "react";
 import { Box, Typography, Link as MaterialLink } from "@material-ui/core";
 import { Trans } from "react-i18next";
+import Localizer from "./Localizer";
 import { string, node } from "prop-types";
-import i18n from "./i18n";
+import { useTranslation } from "react-i18next";
 
 const Link = ({ href, gh, children }) => (
   <MaterialLink
@@ -16,7 +17,7 @@ const Link = ({ href, gh, children }) => (
 Link.propTypes = {
   href: string,
   gh: string,
-  children: node.required,
+  children: node,
 };
 Link.defaults = {
   href: undefined,
@@ -24,6 +25,7 @@ Link.defaults = {
 };
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <Box
       my={4}
@@ -34,7 +36,7 @@ const Footer = () => {
       borderRadius={16}
     >
       <Box my={2}>
-        <Typography variant="h5">{i18n.t("Usage")}</Typography>
+        <Typography variant="h5">{t("Usage")}</Typography>
         <Typography variant="body1">
           <Trans i18nKey="buyPriceInfo">
             - The <b>Buy Price</b> value is for your own island. It doesn&#39;t
@@ -53,7 +55,7 @@ const Footer = () => {
         </Typography>
       </Box>
       <Box my={2}>
-        <Typography variant="h5">{i18n.t("About")}</Typography>
+        <Typography variant="h5">{t("About")}</Typography>
         <Typography variant="body1">
           <Trans i18nKey="contributors">
             Thank you all contributors so far!
@@ -103,6 +105,9 @@ const Footer = () => {
         <Typography variant="body1" align="right">
           v1.5
         </Typography>
+      </Box>
+      <Box>
+        <Localizer />
       </Box>
     </Box>
   );
