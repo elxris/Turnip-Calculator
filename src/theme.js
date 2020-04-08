@@ -1,4 +1,16 @@
 import { createMuiTheme } from "@material-ui/core";
+import finkWoff1 from './fonts/finkheavy_regular-webfont.woff';
+import finkWoff2 from './fonts/finkheavy_regular-webfont.woff2';
+
+const finkHeavy = {
+  fontFamily: 'finkheavyregular',
+  src: ` 
+    url(${finkWoff2}) format('woff2'),
+    url(${finkWoff1}) format('woff')
+  `,
+  fontWeight: 'normal',
+  fontStyle: 'normal',
+};
 
 const theme = createMuiTheme({
   palette: {
@@ -24,12 +36,12 @@ const theme = createMuiTheme({
       dark: "#EF8341",
     },
     text: {
-      primary: "#6B5C43",
+      primary: "#6E661B",
     },
   },
   typography: {
     fontFamily: [
-      '"Libre Franklin"',
+      '"Arial Rounded MT Bold"',
       "-apple-system",
       "BlinkMacSystemFont",
       '"Segoe UI"',
@@ -39,7 +51,7 @@ const theme = createMuiTheme({
         ...prev,
         [`h${v}`]: {
           fontFamily: [
-            "Zilla Slab",
+            "finkheavyregular",
             "-apple-system",
             "BlinkMacSystemFont",
             '"Segoe UI"',
@@ -48,6 +60,13 @@ const theme = createMuiTheme({
       }),
       {}
     ),
+  },
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        '@font-face': [finkHeavy],
+      },
+    },
   },
 });
 
