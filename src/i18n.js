@@ -7,7 +7,7 @@ import translationEn from "../locales/en/translation.json";
 import translationEs from "../locales/es/translation.json";
 import translationDe from "../locales/de/translation.json";
 import translationFr from "../locales/fr/translation.json";
-import translationZhCN from "../locales/zh/translation.json";
+import translationZhCN from "../locales/zh-CN/translation.json";
 import translationZhTW from "../locales/zh-TW/translation.json";
 
 i18n
