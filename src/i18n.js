@@ -8,6 +8,7 @@ import translationEs from "../locales/es/translation.json";
 import translationDe from "../locales/de/translation.json";
 import translationFr from "../locales/fr/translation.json";
 import translationZh from "../locales/zh/translation.json";
+import translationZh-TW from "../locales/zh-TW/translation.json";
 
 i18n
   .use(XHR)
@@ -44,6 +45,9 @@ i18n
       },
       zh: {
         translations: translationZh
+      },
+      zh-TW: {
+        translations: translationZh-TW
       }
     },
 
