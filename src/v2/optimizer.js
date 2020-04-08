@@ -194,6 +194,14 @@ const averageReducer = (prev, current) => {
   });
 };
 
+// This reducer will get all-week minimum.
+const maxReducer = ([a], [b]) => [Math.max(a, b)];
+const minWeekReducer = (prev, current, i) => {
+  const [a] = current.reduce(maxReducer);
+  const [b] = i === 1 ? prev.reduce(maxReducer) : prev;
+  return [Math.min(a, b)];
+};
+
 const patternReducer = (patternsCategories, reducer = minMaxReducer) => {
   const allPatterns = patternsCategories.reduce(
     (acc, current) => [...acc, ...current],
@@ -201,7 +209,7 @@ const patternReducer = (patternsCategories, reducer = minMaxReducer) => {
   );
   if (allPatterns.length === 0) return [];
   if (allPatterns.length === 1)
-    return [...allPatterns, ...allPatterns].reduce(reducer);
+    return [allPatterns[0], allPatterns[0]].reduce(reducer);
   return allPatterns.reduce(reducer);
 };
 
@@ -210,4 +218,5 @@ module.exports = {
   patternReducer,
   minMaxReducer,
   averageReducer,
+  minWeekReducer,
 };

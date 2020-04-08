@@ -7,6 +7,7 @@ import {
   possiblePatterns,
   patternReducer,
   averageReducer,
+  minWeekReducer,
 } from "./v2/optimizer";
 import { Box } from "@material-ui/core";
 import { useDebounce } from "react-use";
@@ -20,6 +21,7 @@ const generateData = (filter) => {
   const minMaxData = zip(...minMaxPattern);
   const avgPattern = patternReducer(patterns, averageReducer);
   const avgData = zip(...avgPattern);
+  const [minWeekValue] = patternReducer(patterns, minWeekReducer);
 
   return [
     {
@@ -30,7 +32,17 @@ const generateData = (filter) => {
       borderColor: "#7B6C53",
       pointRadius: 0,
       pointHoverRadius: 0,
-      borderDash: [3, 9],
+      borderDash: [5, 15],
+    },
+    {
+      label: i18n.t("Guaranteed Min"),
+      data: new Array(12).fill(minWeekValue || null),
+      fill: true,
+      backgroundColor: "transparent",
+      borderColor: "#007D75",
+      pointRadius: 0,
+      pointHoverRadius: 0,
+      borderDash: [3, 6],
     },
     {
       label: i18n.t("Daily Price"),
@@ -54,7 +66,7 @@ const generateData = (filter) => {
       borderColor: "#A5D5A5",
       pointRadius: 0,
       pointHoverRadius: 0,
-      fill: 2,
+      fill: 3,
     },
     {
       label: i18n.t("Minimum"),
@@ -63,7 +75,7 @@ const generateData = (filter) => {
       borderColor: "#88C9A1",
       pointRadius: 0,
       pointHoverRadius: 0,
-      fill: 2,
+      fill: 3,
     },
   ];
 };
@@ -78,9 +90,17 @@ const ChartComponent = ({ filter }) => {
       type: "line",
       data: {
         datasets: generateData(filter),
-        labels: i18n.t("Mon Tue Wed Thu Fri Sat")
+        labels: i18n
+          .t("Mon Tue Wed Thu Fri Sat")
           .split(" ")
-          .reduce((acc, day) => [...acc, `${day} ${i18n.t('AM')}`, `${day} ${i18n.t('PM')}`], []),
+          .reduce(
+            (acc, day) => [
+              ...acc,
+              `${day} ${i18n.t("AM")}`,
+              `${day} ${i18n.t("PM")}`,
+            ],
+            []
+          ),
       },
       options: {
         maintainAspectRatio: false,
@@ -101,6 +121,11 @@ const ChartComponent = ({ filter }) => {
               },
             },
           ],
+        },
+        elements: {
+          line: {
+            cubicInterpolationMode: "monotone",
+          },
         },
       },
     });
