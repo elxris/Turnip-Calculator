@@ -60,13 +60,14 @@ const Footer = () => {
           </Trans>{" "}
           <Link gh="2">@mtaylor76</Link> <Link gh="5">@pudquick</Link>{" "}
           <Link gh="10">@capoferro &amp; @nanoNago</Link>{" "}
-          <Link gh="15">@mtaylor76</Link> <Link gh="16">@Ekaekale</Link>{" "}
+          <Link gh="15">@mtaylor76</Link>
+          <Link gh="24">(x)</Link> <Link gh="16">@Ekaekale</Link>{" "}
           <Link gh="11">@alyphen</Link> <Link gh="14">@FoxFireX</Link>{" "}
           <Link gh="19">@ninehole90</Link> <Link gh="21">@nekomoto</Link>
-          <Link gh="23">(1)</Link> <Link gh="26">@fabiomurru96</Link>{" "}
+          <Link gh="23">(x)</Link> <Link gh="26">@fabiomurru96</Link>{" "}
           <Link gh="25">@saitho</Link> <Link gh="23">@DotnetChen</Link>{" "}
           <Link gh="22">@marcolai</Link> <Link gh="18">@DevSplash</Link>
-          <Link gh="20">(1)</Link> <Link gh="16">@Ekaekale</Link>
+          <Link gh="20">(x)</Link> <Link gh="16">@Ekaekale</Link>
         </Typography>
         <Typography variant="body1">
           <Trans i18nKey="about1">
