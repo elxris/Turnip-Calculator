@@ -56,7 +56,7 @@ const Footer = () => {
         <Typography variant="h5">{i18n.t("About")}</Typography>
         <Typography variant="body1">
           <Trans i18nKey="contributors">
-            Thank you all contributors so far!{" "}
+            Thank you all contributors so far!
           </Trans>{" "}
           <Link gh="2">@mtaylor76</Link> <Link gh="5">@pudquick</Link>{" "}
           <Link gh="10">@capoferro &amp; @nanoNago</Link>{" "}
