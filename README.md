@@ -11,7 +11,7 @@ You can find the live calculator [here](https://elxris.github.io/Turnip-Calculat
 1.3: Animations fixed. New icons [#2](/../../issues/3). New horizontal marker for buy price [#5](/../../issues/5).  
 1.4: Guaranteed Min [#10](/../../issues/10). Localization Support #12. New Currency Icon [#11](/../../issues/11).  
 1.4b: A lot of new translations! [#8](/../../issues/8) [#15](/../../issues/15) [#16](/../../issues/16) [#18](/../../issues/18) [#19](/../../issues/19) [#20](/../../issues/20) [#21](/../../issues/21) [#22](/../../issues/22) [#23](/../../issues/28) [#24](/../../issues/24) [#25](/../../issues/25) [#26](/../../issues/26)
-1.5: Styling update! Thank you! @mtaylor76 [24](/../../issues/24)
+1.5: Styling update! Thank you! @mtaylor76 [#24](/../../issues/24)
 
 ## Localizations
 
