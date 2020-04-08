@@ -34,8 +34,8 @@ const App = () => {
 
   return (
     <>
-      <CssBaseline />
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <Container maxWidth="md">
           <Title />
           <Filter filters={sanitizedInputFilters} onChange={onChange} />

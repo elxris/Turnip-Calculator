@@ -86,6 +86,7 @@ const ChartComponent = ({ filter }) => {
 
   useLayoutEffect(() => {
     const ctx = canvas.current.getContext("2d");
+    Chart.defaults.global.defaultFontFamily = "Arial Rounded MT Bold";
     chart.current = new Chart(ctx, {
       type: "line",
       data: {

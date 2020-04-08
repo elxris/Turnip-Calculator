@@ -32,7 +32,7 @@ If no key is specified in the localization files, the app will simply display wh
 
 To localise the app to a new language, the following simple steps need to be done:
 
-- Create a new folder under `/locales` for your language using the standard two-letter [language tag](https://gist.github.com/traysr/2001377) for your language (e.g. `es` for Spanish, `zh` for Chinese). Dialect codes are supported (e.g. `en-GB` for British English and `pt-BR` for Brazilian Portuguese).
+- Create a new folder under `/locales` for your language using the standard two-letter [language tag](https://gist.github.com/traysr/2001377) for your language (e.g. `es` for Spanish, `zh` for Chinese). Dialect codes are supported (e.g. `en-GB` for British English and `pt-BR` for Brazilian Portuguese), but **be sure to avoid hyphens (-) in variable names.** As a reminder, hyphens can't be used in JavaScript variable names. When in doubt, stay consistent with existing code.
 - In the newly created folder, copy and paste the `translation.json` file from one of the other languages.
 - Edit the `translation.json` file to translate each untranslated JSON value to the appropriate translated equivalent in your language.
 - In `/src/i18n.js`, create an `import` statement for your language, importing the `translation.json` file you just created. Follow the pattern used by the existing statements.
