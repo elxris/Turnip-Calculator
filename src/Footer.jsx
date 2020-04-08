@@ -68,8 +68,8 @@ const Footer = () => {
           <Trans i18nKey="changelog1.4">
             1.4: Guaranteed Min. (
             <Link href="pull/10">@capoferro &amp; @nanoNago</Link>
-            ). Localisation Support (<Link gh="pull/15">@mtaylor76</Link>).
-            French Localisation (<Link gh="pull/16">@Ekaekale</Link>). New
+            ). Localization Support (<Link gh="pull/15">@mtaylor76</Link>).
+            French Localization (<Link gh="pull/16">@Ekaekale</Link>). New
             Currency Icon (<Link gh="pull/11">@alyphen</Link>). Bug Reporters (
             <Link gh="issues/14">@FoxFireX</Link>).
           </Trans>
