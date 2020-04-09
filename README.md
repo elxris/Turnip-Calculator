@@ -41,6 +41,6 @@ To localise the app to a new language, the following simple steps need to be don
 - In `/src/i18n.js`, create an `import` statement for your language, importing the `translation.json` file you just created. Follow the pattern used by the existing statements.
 - In the same file (`/src/i18n.js`), add your language to the list of languages inside the `resources` object within the `i18n.init()` method, following the pattern of other declared languages, and using the same two-letter language code you used for the folder name in the first step.
 - Lastly, to add your language to the manual language switcher on the page, make sure to edit the `Localizer` component at `/src/Localizer.jsx`. Add a tuple for your language to the `languages` array, with the first value being your two-letter language code and the second value being the name of your language, in your language.
-  - For example, to add Japanese to the list, you'd add `["ja", "日本人"],`
+  - For example, to add Japanese to the list, you'd add `["ja", "日本語"],`
 
 The localization is now ready to deploy and will appear to users who use your language for their browser.
