@@ -21,7 +21,7 @@
   "about2": "我從<2>mikebryant</2>的作品得到了靈感。",
   "about3": "最後但並非不重要的一點，感謝我的兄弟幫忙設計，他是一名遊戲開發者！在Twitter上關注他：<2>@Consalv0</2>。",
   "about4": "發現一個BUG？在<2>這裡</2>回報。",
-  "cancel": "Cancel",
-  "clearDataTitle": "Are you sure you want to clear all data?",
-  "clearDataWarning": "This cannot be undone!"
+  "cancel": "取消",
+  "clearDataTitle": "你確定要清除全部資料嗎？",
+  "clearDataWarning": "此操作無法撤銷！"
 }
