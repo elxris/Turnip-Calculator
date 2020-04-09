@@ -13,7 +13,7 @@ const languages = [
   ["zh-TW", "繁体中文（台湾）"],
   ["zh-HK", "繁体中文（香港）"],
   ["ko", "한국어"],
-  ["jp", "日本語"],
+  ["ja", "日本語"],
 ];
 
 const useStyles = makeStyles((theme) => ({
