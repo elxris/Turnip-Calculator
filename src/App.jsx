@@ -1,43 +1,15 @@
-import React, { useEffect, useMemo } from "react";
-import { useLocalStorage } from "react-use";
+import React from "react";
 import { CssBaseline, ThemeProvider, Container } from "@material-ui/core";
 import theme from "./theme";
+import { useFilters, useTitle } from "./utils";
 import Filter from "./Filter";
 import Chart from "./Chart";
 import Title from "./Title";
 import Footer from "./Footer";
-import { useTranslation } from "react-i18next";
 
 const App = () => {
-  const [filters, onChange] = useLocalStorage("filters", []);
-  const { t } = useTranslation();
-
-  useEffect(() => {
-    // allows title to be localised
-    document.title = t("Turnip Calculator");
-  }, [t]);
-
-  const sanitizedInputFilters = useMemo(
-    () =>
-      Array.from({ length: 13 }).map((v, i) =>
-        String(Number(filters[i]) || "")
-      ),
-    [filters]
-  );
-
-  const sanitizedFilters = useMemo(
-    () => filters.map((v) => Number(v) || undefined),
-    [filters]
-  );
-
-  useEffect(() => {
-    if (!Array.isArray(filters)) {
-      onChange([]);
-    }
-  }, [filters]);
-
-  // Avoid errors
-  if (!Array.isArray(filters)) return null;
+  useTitle();
+  const { inputFilters, filters, saveFilters } = useFilters();
 
   return (
     <>
@@ -45,8 +17,8 @@ const App = () => {
         <CssBaseline />
         <Container maxWidth="md">
           <Title />
-          <Filter filters={sanitizedInputFilters} onChange={onChange} />
-          <Chart filter={sanitizedFilters} />
+          <Filter filters={inputFilters} onChange={saveFilters} />
+          <Chart filter={filters} />
           <Footer />
         </Container>
       </ThemeProvider>

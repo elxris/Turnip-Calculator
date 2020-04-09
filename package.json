@@ -8,7 +8,7 @@
   "scripts": {
     "build": "parcel build src/index.pug",
     "start": "parcel serve src/index.pug",
-    "predeploy": "rm -rf dist && parcel build src/index.pug --public-url /Turnip-Calculator",
+    "predeploy": "rm -rf dist && parcel build src/index.pug --public-url /",
     "deploy": "gh-pages -d dist"
   },
   "browserslist": "> 5%, not dead, not ie>6",
@@ -48,7 +48,8 @@
     "react-dom": "^16.13.1",
     "react-hook-form": "^5.3.1",
     "react-i18next": "^11.3.4",
-    "react-use": "^14.0.0"
+    "react-use": "^14.0.0",
+    "utils": "^0.3.1"
   },
   "prettier": {}
 }

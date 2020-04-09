@@ -3,15 +3,15 @@ import { arrayOf, number } from "prop-types";
 import Chart from "chart.js";
 import zip from "lodash.zip";
 import merge from "lodash.merge";
+import { Box } from "@material-ui/core";
+import { useDebounce } from "react-use";
+import { useTranslation } from "react-i18next";
 import {
   possiblePatterns,
   patternReducer,
   averageReducer,
   minWeekReducer,
-} from "./v2/optimizer";
-import { Box } from "@material-ui/core";
-import { useDebounce } from "react-use";
-import { useTranslation } from "react-i18next";
+} from "./utils/patterns";
 
 Chart.defaults.global.defaultFontFamily = "Arial Rounded MT Bold";
 
