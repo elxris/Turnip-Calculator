@@ -9,7 +9,7 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import i18n from "./i18n";
-import bells from './images/bells.png';
+import bells from './images/bells.svg';
 
 const useButtonStyles = makeStyles((theme) => ({
   root: {
