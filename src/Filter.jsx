@@ -9,7 +9,7 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
-import bells from './images/bells.png';
+import bells from "./images/bells.svg";
 
 const useButtonStyles = makeStyles((theme) => ({
   root: {
@@ -61,7 +61,10 @@ const Filter = ({ filters, onChange }) => {
     t("Buy Price"),
     ...t("Mon Tue Wed Thu Fri Sat")
       .split(" ")
-      .reduce((curr, day) => [...curr, ...[`${day} ${t('AM')}`, `${day} ${t('PM')}`]], []),
+      .reduce(
+        (curr, day) => [...curr, ...[`${day} ${t("AM")}`, `${day} ${t("PM")}`]],
+        []
+      ),
   ];
 
   const fields = Array.from({ length: 13 }, (v, i) => i).map((index) => (
@@ -75,9 +78,11 @@ const Filter = ({ filters, onChange }) => {
       inputProps={{ pattern: "[0-9]*" }}
       InputLabelProps={{ shrink: true }}
       InputProps={{
-        startAdornment: <InputAdornment position="start">
-          <img src={bells} alt="A picture of a bag of bells" />
-        </InputAdornment>,
+        startAdornment: (
+          <InputAdornment position="start">
+            <img src={bells} alt="A picture of a bag of bells" />
+          </InputAdornment>
+        ),
       }}
       value={filters[index] || ""}
       onChange={handleChange(index)}
