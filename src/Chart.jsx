@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useRef, useCallback, useEffect } from "react";
 import { arrayOf, number } from "prop-types";
 import Chart from "chart.js";
 import zip from "lodash.zip";
@@ -11,9 +11,11 @@ import {
 } from "./v2/optimizer";
 import { Box } from "@material-ui/core";
 import { useDebounce } from "react-use";
-import i18n from "./i18n";
+import { useTranslation } from "react-i18next";
 
-const generateData = (filter) => {
+Chart.defaults.global.defaultFontFamily = "Arial Rounded MT Bold";
+
+const createGenerteData = (t) => (filter) => {
   let patterns = possiblePatterns(filter);
   const patternCount = patterns.reduce((acc, cur) => acc + cur.length, 0);
   if (patternCount === 0) patterns = possiblePatterns([0, ...filter.slice(1)]);
@@ -25,7 +27,7 @@ const generateData = (filter) => {
 
   return [
     {
-      label: i18n.t("Buy Price"),
+      label: t("Buy Price"),
       data: new Array(12).fill(filter[0] || null),
       fill: true,
       backgroundColor: "transparent",
@@ -35,7 +37,7 @@ const generateData = (filter) => {
       borderDash: [5, 15],
     },
     {
-      label: i18n.t("Guaranteed Min"),
+      label: t("Guaranteed Min"),
       data: new Array(12).fill(minWeekValue || null),
       fill: true,
       backgroundColor: "transparent",
@@ -45,14 +47,14 @@ const generateData = (filter) => {
       borderDash: [3, 6],
     },
     {
-      label: i18n.t("Daily Price"),
+      label: t("Daily Price"),
       data: Array.from({ length: 12 }, (v, i) => filter[i + 1] || null),
       fill: false,
       backgroundColor: "#EF8341",
       borderColor: "#EF8341",
     },
     {
-      label: i18n.t("Average"),
+      label: t("Average"),
       data: avgData[0] ? avgData[0].map(Math.trunc) : new Array(12).fill(null),
       backgroundColor: "#F0E16F",
       borderColor: "#F0E16F",
@@ -60,7 +62,7 @@ const generateData = (filter) => {
       fill: false,
     },
     {
-      label: i18n.t("Maximum"),
+      label: t("Maximum"),
       data: minMaxData[1] || new Array(12).fill(null),
       backgroundColor: "#A5D5A5",
       borderColor: "#A5D5A5",
@@ -69,7 +71,7 @@ const generateData = (filter) => {
       fill: 3,
     },
     {
-      label: i18n.t("Minimum"),
+      label: t("Minimum"),
       data: minMaxData[0] || new Array(12).fill(null),
       backgroundColor: "#88C9A1",
       borderColor: "#88C9A1",
@@ -80,67 +82,82 @@ const generateData = (filter) => {
   ];
 };
 
+const createGetLabels = (t) => () => {
+  return t("Mon Tue Wed Thu Fri Sat")
+    .split(" ")
+    .reduce(
+      (acc, day) => [...acc, `${day} ${t("AM")}`, `${day} ${t("PM")}`],
+      []
+    );
+};
+
+const chartOptions = {
+  maintainAspectRatio: false,
+  showLines: true,
+  tooltips: {
+    intersect: false,
+    mode: "index",
+  },
+  scales: {
+    yAxes: [
+      {
+        gridLines: {
+          display: false,
+        },
+        ticks: {
+          suggestedMin: 0,
+          suggestedMax: 300,
+        },
+      },
+    ],
+  },
+  elements: {
+    line: {
+      cubicInterpolationMode: "monotone",
+    },
+  },
+};
+
 const ChartComponent = ({ filter }) => {
   const canvas = useRef();
   const chart = useRef();
+  const { t } = useTranslation();
+  const generateData = useCallback(createGenerteData(t), [t]);
+  const getLabels = useCallback(createGetLabels(t), [t]);
 
-  useLayoutEffect(() => {
+  // onMount effect
+  useEffect(() => {
     const ctx = canvas.current.getContext("2d");
-    Chart.defaults.global.defaultFontFamily = "Arial Rounded MT Bold";
     chart.current = new Chart(ctx, {
       type: "line",
       data: {
         datasets: generateData(filter),
-        labels: i18n
-          .t("Mon Tue Wed Thu Fri Sat")
-          .split(" ")
-          .reduce(
-            (acc, day) => [
-              ...acc,
-              `${day} ${i18n.t("AM")}`,
-              `${day} ${i18n.t("PM")}`,
-            ],
-            []
-          ),
+        labels: getLabels(),
       },
-      options: {
-        maintainAspectRatio: false,
-        showLines: true,
-        tooltips: {
-          intersect: false,
-          mode: "index",
-        },
-        scales: {
-          yAxes: [
-            {
-              gridLines: {
-                display: false,
-              },
-              ticks: {
-                suggestedMin: 0,
-                suggestedMax: 300,
-              },
-            },
-          ],
-        },
-        elements: {
-          line: {
-            cubicInterpolationMode: "monotone",
-          },
-        },
-      },
+      options: chartOptions,
     });
   }, []);
 
+  // Language labels chart effect
+  useEffect(() => {
+    if (!chart.current) return;
+    // this is necessary, or else labels won't change language until reload
+    const newLabels = getLabels();
+    merge(chart.current.data.labels, newLabels);
+    chart.current.update();
+  }, [getLabels]);
+
+  // Filters / Data effect
   useDebounce(
     () => {
       if (!chart.current) return;
-      const newData = generateData(filter);
+      // regerates chart in the new
+      const newData = generateData(filter, t);
       merge(chart.current.data.datasets, newData);
       chart.current.update();
     },
     500,
-    [filter]
+    [filter, generateData]
   );
 
   return (

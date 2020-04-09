@@ -1,19 +1,18 @@
 import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
-import XHR from "i18next-xhr-backend";
 
 import translationEn from "../locales/en/translation.json";
 import translationEs from "../locales/es/translation.json";
 import translationDe from "../locales/de/translation.json";
 import translationFr from "../locales/fr/translation.json";
 import translationIt from "../locales/it/translation.json";
+import translationKr from "../locales/kr/translation.json";
 import translationZhCN from "../locales/zh-CN/translation.json";
 import translationZhTW from "../locales/zh-TW/translation.json";
 import translationZhHK from "../locales/zh-HK/translation.json";
 
 i18n
-  .use(XHR)
   .use(initReactI18next)
   .use(LanguageDetector)
   .init({
@@ -56,7 +55,10 @@ i18n
       it: {
         translations: translationIt,
       },
-      "zh": {
+      kr: {
+        translations: translationKr,
+      },
+      zh: {
         translations: translationZhCN,
       },
       "zh-CN": {
@@ -68,6 +70,10 @@ i18n
       "zh-HK": {
         translations: translationZhHK,
       },
+    },
+
+    react: {
+      useSuspense: false,
     },
 
     // have a common namespace used around the full app
