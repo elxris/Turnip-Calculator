@@ -13,7 +13,7 @@ import {
   DialogContentText,
   DialogTitle,
 } from "@material-ui/core";
-import i18n from "./i18n";
+import { useTranslation } from "react-i18next";
 import bells from "./images/bells.svg";
 
 const useButtonStyles = makeStyles((theme) => ({
@@ -29,6 +29,7 @@ const useButtonStyles = makeStyles((theme) => ({
 }));
 
 const ClearButton = (props) => {
+  const { t } = useTranslation();
   const classes = useButtonStyles();
   return (
     <Button
@@ -38,12 +39,14 @@ const ClearButton = (props) => {
       variant="contained"
       {...props}
     >
-      {i18n.t("Clear All Data!")}
+      {t("Clear All Data!")}
     </Button>
   );
 };
 
 const ClearDataDialog = ({ open, dismiss, confirm }) => {
+  const { t } = useTranslation();
+
   return (
     <Dialog
       open={open}
@@ -52,19 +55,19 @@ const ClearDataDialog = ({ open, dismiss, confirm }) => {
       aria-describedby="alert-dialog-description"
     >
       <DialogTitle id="alert-dialog-title">
-        {i18n.t("clearDataTitle")}
+        {t("clearDataTitle")}
       </DialogTitle>
       <DialogContent>
         <DialogContentText id="alert-dialog-description">
-          {i18n.t("clearDataWarning")}
+          {t("clearDataWarning")}
         </DialogContentText>
       </DialogContent>
       <DialogActions>
         <Button onClick={dismiss} color="default">
-          {i18n.t("cancel")}
+          {t("cancel")}
         </Button>
         <Button onClick={confirm} color="default" autoFocus>
-          {i18n.t("Clear All Data!")}
+          {t("Clear All Data!")}
         </Button>
       </DialogActions>
     </Dialog>
@@ -87,6 +90,7 @@ const names = [
 
 const Filter = ({ filters, onChange }) => {
   const [open, setOpen] = useState(false);
+  const { t } = useTranslation();
 
   const handleChange = useCallback(
     (index) => ({
@@ -103,6 +107,16 @@ const Filter = ({ filters, onChange }) => {
     },
     [filters, onChange]
   );
+
+  const names = [
+    t("Buy Price"),
+    ...t("Mon Tue Wed Thu Fri Sat")
+      .split(" ")
+      .reduce(
+        (curr, day) => [...curr, ...[`${day} ${t("AM")}`, `${day} ${t("PM")}`]],
+        []
+      ),
+  ];
 
   const fields = Array.from({ length: 13 }, (v, i) => i).map((index) => (
     <TextField

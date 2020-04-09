@@ -6,9 +6,16 @@ import Filter from "./Filter";
 import Chart from "./Chart";
 import Title from "./Title";
 import Footer from "./Footer";
+import { useTranslation } from "react-i18next";
 
 const App = () => {
   const [filters, onChange] = useLocalStorage("filters", []);
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    // allows title to be localised
+    document.title = t("Turnip Calculator");
+  }, [t]);
 
   const sanitizedInputFilters = useMemo(
     () =>
