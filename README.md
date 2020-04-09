@@ -11,8 +11,8 @@ You can find the live calculator [here](https://elxris.github.io/Turnip-Calculat
 1.3: Animations fixed. New icons [#2](/../../issues/3). New horizontal marker for buy price [#5](/../../issues/5).  
 1.4: Guaranteed Min [#10](/../../issues/10). Localization Support #12. New Currency Icon [#11](/../../issues/11).  
 1.4b: A lot of new translations! [#8](/../../issues/8) [#15](/../../issues/15) [#16](/../../issues/16) [#18](/../../issues/18) [#19](/../../issues/19) [#20](/../../issues/20) [#21](/../../issues/21) [#22](/../../issues/22) [#23](/../../issues/28) [#24](/../../issues/24) [#25](/../../issues/25) [#26](/../../issues/26) [#27](/../../issues/27)  
-1.5: Styling update! Thank you! @mtaylor76 [#24](/../../issues/24)
-1.6: Translation switcher! I can't thank you enough @mtaylor76! [#33](/../../issues/33) New vector for bells currency! [#34](/../../issues/34) New Translations and Translation Updates! [#28](/../../issues/28) [#30](/../../issues/30) [#31](/../../issues/31)
+1.5: Styling update! Thank you! @mtaylor76 [#24](/../../issues/24)  
+1.6: Translation switcher! I can't thank you enough @mtaylor76! [#33](/../../issues/33) New vector for bells currency! [#34](/../../issues/34) New Translations and Translation Updates! [#28](/../../issues/28) [#30](/../../issues/30) [#31](/../../issues/31)  
 1.7: We have domain! Confirmation of erase data button! [#35](/../../issues/35) New Translations and Translation Updates! [#37](/../../issues/7) [#36](/../../issues/36) [#38](/../../issues/38) [#39](/../../issues/39) [#40](/../../issues/40) [#41](/../../issues/41)
 
 ## Localizations
