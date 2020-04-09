@@ -5,7 +5,7 @@ import { useLocalStorage } from "react-use";
 
 const languages = [
   ["en", "English"],
-  ["de", "Deutsche"],
+  ["de", "Deutsch"],
   ["es", "Español"],
   ["fr", "Français"],
   ["it", "Italiano"],
