@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { arrayOf, string, func } from "prop-types";
+import { arrayOf, string, func, bool } from "prop-types";
 import {
   TextField,
   FormGroup,
@@ -44,19 +44,27 @@ const ClearButton = (props) => {
   );
 };
 
+const useDialogStyles = makeStyles((theme) => ({
+  paper: {
+    backgroundColor: theme.palette.bkgs.main,
+    borderRadius: theme.shape.borderRadius * 4,
+  },
+}));
+
 const ClearDataDialog = ({ open, dismiss, confirm }) => {
   const { t } = useTranslation();
+  const buttonClasses = useButtonStyles();
+  const dialogClasses = useDialogStyles();
 
   return (
     <Dialog
       open={open}
       onClose={dismiss}
+      classes={dialogClasses}
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
     >
-      <DialogTitle id="alert-dialog-title">
-        {t("clearDataTitle")}
-      </DialogTitle>
+      <DialogTitle id="alert-dialog-title">{t("clearDataTitle")}</DialogTitle>
       <DialogContent>
         <DialogContentText id="alert-dialog-description">
           {t("clearDataWarning")}
@@ -66,7 +74,13 @@ const ClearDataDialog = ({ open, dismiss, confirm }) => {
         <Button onClick={dismiss} color="default">
           {t("cancel")}
         </Button>
-        <Button onClick={confirm} color="default" autoFocus>
+        <Button
+          classes={buttonClasses}
+          onClick={confirm}
+          color="default"
+          variant="contained"
+          autoFocus
+        >
           {t("Clear All Data!")}
         </Button>
       </DialogActions>
@@ -74,19 +88,11 @@ const ClearDataDialog = ({ open, dismiss, confirm }) => {
   );
 };
 
-const names = [
-  i18n.t("Buy Price"),
-  ...i18n
-    .t("Mon Tue Wed Thu Fri Sat")
-    .split(" ")
-    .reduce(
-      (curr, day) => [
-        ...curr,
-        ...[`${day} ${i18n.t("AM")}`, `${day} ${i18n.t("PM")}`],
-      ],
-      []
-    ),
-];
+ClearDataDialog.propTypes = {
+  open: bool.isRequired,
+  dismiss: func.isRequired,
+  confirm: func.isRequired,
+};
 
 const Filter = ({ filters, onChange }) => {
   const [open, setOpen] = useState(false);
@@ -126,7 +132,7 @@ const Filter = ({ filters, onChange }) => {
       color="secondary"
       label={names[index]}
       fullWidth
-      inputProps={{ pattern: "[0-9]*" }}
+      inputProps={{ pattern: "[0-9]*", tabIndex: 0 }}
       InputLabelProps={{ shrink: true }}
       InputProps={{
         startAdornment: (
