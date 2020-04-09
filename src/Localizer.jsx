@@ -8,6 +8,7 @@ const languages = [
   ["de", "Deutsch"],
   ["es", "Español"],
   ["fr", "Français"],
+  ["nl", "Nederlands"],
   ["it", "Italiano"],
   ["zh-CN", "简体中文"],
   ["zh-TW", "繁體中文（台灣）"],
