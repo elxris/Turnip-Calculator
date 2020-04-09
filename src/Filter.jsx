@@ -125,7 +125,9 @@ const Filter = ({ filters, onChange }) => {
       <Box alignSelf="flex-end" mt={-2}>
         <ClearButton
           onClick={() => {
-            onChange([]);
+            if (window.confirm(i18n.t("clearDataWarning"))) {
+              onChange([]);
+            }
           }}
         />
       </Box>
