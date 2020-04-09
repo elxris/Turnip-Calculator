@@ -15,6 +15,7 @@ const languages = [
   ["zh-HK", "繁體中文（香港）"],
   ["ko", "한국어"],
   ["ja", "日本語"],
+  ["pt-BR", "Português"],
 ];
 
 const useStyles = makeStyles((theme) => ({
