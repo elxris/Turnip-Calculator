@@ -78,6 +78,9 @@ i18n
       "pt-BR": {
         translations: translationPtBR
       },
+      "pt": {
+        translations: translationPtBR
+      },
     },
 
     react: {
