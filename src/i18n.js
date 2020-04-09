@@ -11,6 +11,7 @@ import translationKr from "../locales/kr/translation.json";
 import translationZhCN from "../locales/zh-CN/translation.json";
 import translationZhTW from "../locales/zh-TW/translation.json";
 import translationZhHK from "../locales/zh-HK/translation.json";
+import translationJa from "../locales/ja/translation.json";
 
 i18n
   .use(initReactI18next)
@@ -69,6 +70,9 @@ i18n
       },
       "zh-HK": {
         translations: translationZhHK,
+      },
+      ja: {
+        translations: translationJa,
       },
     },
 
