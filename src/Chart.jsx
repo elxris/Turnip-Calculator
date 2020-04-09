@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useRef, useCallback, useEffect } from "react";
 import { arrayOf, number } from "prop-types";
 import Chart from "chart.js";
 import zip from "lodash.zip";
@@ -13,7 +13,9 @@ import { Box } from "@material-ui/core";
 import { useDebounce } from "react-use";
 import { useTranslation } from "react-i18next";
 
-const generateData = (filter, t) => {
+Chart.defaults.global.defaultFontFamily = "Arial Rounded MT Bold";
+
+const createGenerteData = (t) => (filter) => {
   let patterns = possiblePatterns(filter);
   const patternCount = patterns.reduce((acc, cur) => acc + cur.length, 0);
   if (patternCount === 0) patterns = possiblePatterns([0, ...filter.slice(1)]);
@@ -80,77 +82,83 @@ const generateData = (filter, t) => {
   ];
 };
 
+const createGetLabels = (t) => () => {
+  return t("Mon Tue Wed Thu Fri Sat")
+    .split(" ")
+    .reduce(
+      (acc, day) => [...acc, `${day} ${t("AM")}`, `${day} ${t("PM")}`],
+      []
+    );
+};
+
+const chartOptions = {
+  maintainAspectRatio: false,
+  showLines: true,
+  tooltips: {
+    intersect: false,
+    mode: "index",
+  },
+  scales: {
+    yAxes: [
+      {
+        gridLines: {
+          display: false,
+        },
+        ticks: {
+          suggestedMin: 0,
+          suggestedMax: 300,
+        },
+      },
+    ],
+  },
+  elements: {
+    line: {
+      cubicInterpolationMode: "monotone",
+    },
+  },
+};
+
 const ChartComponent = ({ filter }) => {
   const canvas = useRef();
   const chart = useRef();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
+  const generateData = useCallback(createGenerteData(t), [t]);
+  const getLabels = useCallback(createGetLabels(t), [t]);
 
-  useLayoutEffect(() => {
+  // onMount effect
+  useEffect(() => {
     const ctx = canvas.current.getContext("2d");
-    Chart.defaults.global.defaultFontFamily = "Arial Rounded MT Bold";
     chart.current = new Chart(ctx, {
       type: "line",
       data: {
-        datasets: generateData(filter, t),
+        datasets: generateData(filter),
         labels: getLabels(),
       },
-      options: {
-        maintainAspectRatio: false,
-        showLines: true,
-        tooltips: {
-          intersect: false,
-          mode: "index",
-        },
-        scales: {
-          yAxes: [
-            {
-              gridLines: {
-                display: false,
-              },
-              ticks: {
-                suggestedMin: 0,
-                suggestedMax: 300,
-              },
-            },
-          ],
-        },
-        elements: {
-          line: {
-            cubicInterpolationMode: "monotone",
-          },
-        },
-      },
+      options: chartOptions,
     });
   }, []);
 
-  useDebounce(updateChart, 500, [filter]);
-
-  // required to update the chart each time language is changed
-  i18n.on('languageChanged', updateChart);
-
-  function updateChart() {
+  // Language labels chart effect
+  useEffect(() => {
     if (!chart.current) return;
-    // regerates chart in the new 
-    const newData = generateData(filter, t);
-    merge(chart.current.data.datasets, newData);
     // this is necessary, or else labels won't change language until reload
     const newLabels = getLabels();
     merge(chart.current.data.labels, newLabels);
     chart.current.update();
-  }
+  }, [getLabels]);
 
-  function getLabels() {
-    return t("Mon Tue Wed Thu Fri Sat")
-    .split(" ")
-    .reduce(
-      (acc, day) => [
-        ...acc,
-        `${day} ${t("AM")}`,
-        `${day} ${t("PM")}`,
-      ],
-      []
-    );
-  }
+  // Filters / Data effect
+  useDebounce(
+    () => {
+      if (!chart.current) return;
+      // regerates chart in the new
+      const newData = generateData(filter, t);
+      merge(chart.current.data.datasets, newData);
+      chart.current.update();
+    },
+    500,
+    [filter, generateData]
+  );
 
   return (
     <Box p={2} mt={2} borderRadius={16} bgcolor="bkgs.chart">

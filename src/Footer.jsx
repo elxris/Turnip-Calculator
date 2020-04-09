@@ -102,13 +102,11 @@ const Footer = () => {
             .
           </Trans>
         </Typography>
-        <Typography variant="body1" align="right">
-          v1.5
-        </Typography>
       </Box>
-      <Box>
-        <Localizer />
-      </Box>
+      <Localizer />
+      <Typography variant="body1" align="right">
+        v1.5
+      </Typography>
     </Box>
   );
 };

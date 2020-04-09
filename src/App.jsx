@@ -10,11 +10,12 @@ import { useTranslation } from "react-i18next";
 
 const App = () => {
   const [filters, onChange] = useLocalStorage("filters", []);
-
   const { t } = useTranslation();
 
-  // allows title to be localised
-  document.title = t("Turnip Calculator");
+  useEffect(() => {
+    // allows title to be localised
+    document.title = t("Turnip Calculator");
+  }, [t]);
 
   const sanitizedInputFilters = useMemo(
     () =>
