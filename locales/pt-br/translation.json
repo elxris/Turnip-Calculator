@@ -1,0 +1,28 @@
+  
+{
+  "Turnip Calculator": "Calculadora de Turnips",
+  "ACNH Turnip Calculator": "ACNH: Calculadora de Turnips",
+  "Buy Price": "Preço de Compra",
+  "Daily Price": "Preço Diário",
+  "Guaranteed Min": "Mínimo Garantido",
+  "Average": "Média",
+  "Maximum": "Máximo",
+  "Minimum": "Mínimo",
+  "Mon Tue Wed Thu Fri Sat": "Seg Ter Qua Qui Sex Sab",
+  "AM": "AM",
+  "PM": "PM",
+  "Clear All Data!": "Limpar todos os dados!",
+  "Usage": "Uso",
+  "buyPriceInfo": "- O valor do <1>Preço de Compra</1> é o da sua própria ilha. Não importa, se você comprou turnips em outra ilha!",
+  "priceChangeInfo": "- Os preços mudam <1>duas vezes ao dia.</1> lembre de registra-los. (Nós salvamos os dados no seu dispositivo).",
+  "guaranteedMinInfo": "- O valor <1>Mínimo Garantido</1> significa que pelo menos você verá este preço em algum momento durante a semana.",
+  "contributors": "Obrigado a todos os colaboradores até agora!",
+  "About": "Sobre",
+  "about1": "Isto não seria possível sem o esforço do <2>@_Ninji's</2>.",
+  "about2": "Eu me inspirei no trabalho do <2>mikebryant's</2>.",
+  "about3": "Por último, mas não menos importante, obrigado pela ajuda do meu irmão no design. Ele é um desenvolvedor de jogos! Siga-o no twitter: <2>@Consalv0</2>.",
+  "about4": "Encontrou um bug? Reporte <2>aqui</2>.",
+  "cancel": "Cancelar",
+  "clearDataTitle": "Você tem certeza que quer limpar todos os dados?",
+  "clearDataWarning": "Isto não pode ser desfeito!"
+}
