@@ -1,11 +1,14 @@
 import { useEffect, useMemo } from "react";
 import { useLocalStorage } from "react-use";
 
+const toHash = (filters) => filters.join(" ").trimEnd().split(" ").join(",");
+
+const fromHash = (hash) => hash.slice(1).split(",");
+
 const useFilters = () => {
-  const [savedFilters, saveFilters] = useLocalStorage("filters", []);
+  const [filters, saveFilters] = useLocalStorage("filters", []);
 
-  let filters = savedFilters;
-
+  // Array of strings
   const inputFilters = useMemo(
     () =>
       Array.from({ length: 13 }).map((v, i) =>
@@ -14,8 +17,10 @@ const useFilters = () => {
     [filters]
   );
 
+  // Array of numbers
   const sanitizedFilters = useMemo(
-    () => filters.map((v) => Number(v) || undefined),
+    () =>
+      Array.from({ length: 13 }).map((v, i) => Number(filters[i]) || undefined),
     [filters]
   );
 
@@ -25,7 +30,12 @@ const useFilters = () => {
     }
   }, [filters]);
 
-  return { inputFilters, filters: sanitizedFilters, saveFilters };
+  return {
+    filters: sanitizedFilters,
+    inputFilters,
+    saveFilters,
+  };
 };
 
 export default useFilters;
+export { toHash, fromHash };
