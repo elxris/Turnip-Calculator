@@ -20,5 +20,8 @@
   "about1": "Cela n'aurait pas pu être possible sans l'aide de <2>@_Ninji</2>",
   "about2": "Je me suis inspiré du travail de <2>mikebryant</2>",
   "about3": "Enfin, et surtout , merci à l'aide de mon frère pour le design. Il est développeur de jeux ! Suis-le sur Twitter : <2>@Consalv0</2>.",
-  "about4": "Tu as trouvé un bug ? Fais-le moi savoir <2>ici</2>."
+  "about4": "Tu as trouvé un bug ? Fais-le moi savoir <2>ici</2>.",
+  "cancel": "Cancel",
+  "clearDataTitle": "Are you sure you want to clear all data?",
+  "clearDataWarning": "This cannot be undone!"
 }

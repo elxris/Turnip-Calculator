@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { arrayOf, string, func } from "prop-types";
 import {
   TextField,
@@ -7,6 +7,11 @@ import {
   Button,
   Box,
   makeStyles,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
 } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import bells from "./images/bells.svg";
@@ -39,8 +44,54 @@ const ClearButton = (props) => {
   );
 };
 
-const Filter = ({ filters, onChange }) => {
+const ClearDataDialog = ({ open, dismiss, confirm }) => {
   const { t } = useTranslation();
+
+  return (
+    <Dialog
+      open={open}
+      onClose={dismiss}
+      aria-labelledby="alert-dialog-title"
+      aria-describedby="alert-dialog-description"
+    >
+      <DialogTitle id="alert-dialog-title">
+        {t("clearDataTitle")}
+      </DialogTitle>
+      <DialogContent>
+        <DialogContentText id="alert-dialog-description">
+          {t("clearDataWarning")}
+        </DialogContentText>
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={dismiss} color="default">
+          {t("cancel")}
+        </Button>
+        <Button onClick={confirm} color="default" autoFocus>
+          {t("Clear All Data!")}
+        </Button>
+      </DialogActions>
+    </Dialog>
+  );
+};
+
+const names = [
+  i18n.t("Buy Price"),
+  ...i18n
+    .t("Mon Tue Wed Thu Fri Sat")
+    .split(" ")
+    .reduce(
+      (curr, day) => [
+        ...curr,
+        ...[`${day} ${i18n.t("AM")}`, `${day} ${i18n.t("PM")}`],
+      ],
+      []
+    ),
+];
+
+const Filter = ({ filters, onChange }) => {
+  const [open, setOpen] = useState(false);
+  const { t } = useTranslation();
+
   const handleChange = useCallback(
     (index) => ({
       target: {
@@ -96,6 +147,14 @@ const Filter = ({ filters, onChange }) => {
       display="flex"
       flexDirection="column"
     >
+      <ClearDataDialog
+        open={open}
+        dismiss={() => setOpen(false)}
+        confirm={() => {
+          setOpen(false);
+          onChange([]);
+        }}
+      />
       <FormGroup>
         <Box
           m={2}
@@ -130,11 +189,7 @@ const Filter = ({ filters, onChange }) => {
         </Box>
       </FormGroup>
       <Box alignSelf="flex-end" mt={-2}>
-        <ClearButton
-          onClick={() => {
-            onChange([]);
-          }}
-        />
+        <ClearButton onClick={() => setOpen(true)} />
       </Box>
     </Box>
   );
