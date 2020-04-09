@@ -34,12 +34,13 @@ If no key is specified in the localization files, the app will simply display wh
 
 To localise the app to a new language, the following simple steps need to be done:
 
-- Create a new folder under `/locales` for your language using the standard two-letter [language tag](https://gist.github.com/traysr/2001377) for your language (e.g. `es` for Spanish, `zh` for Chinese). Dialect codes are supported (e.g. `en-GB` for British English and `pt-BR` for Brazilian Portuguese), but **be sure to avoid hyphens (-) in variable names.** As a reminder, hyphens can't be used in JavaScript variable names. When in doubt, stay consistent with existing code.
+- Create a new folder under `/locales` for your language using the standard two-letter [IETF language code](https://gist.github.com/traysr/2001377) for your language (e.g. `es` for Spanish, `zh` for Chinese). Keep in mind, the **language** code often differs from the more commonly known **country code**. For example, the *country code* for Korea is `kr`, but the *language code* for Korean is `ko`. 
+  - Dialect codes are supported (e.g. `en-GB` for British English and `pt-BR` for Brazilian Portuguese), but **be sure to avoid hyphens (-) in variable names.** As a reminder, hyphens can't be used in JavaScript variable names. When in doubt, stay consistent with existing code.
 - In the newly created folder, copy and paste the `translation.json` file from one of the other languages.
 - Edit the `translation.json` file to translate each untranslated JSON value to the appropriate translated equivalent in your language.
 - In `/src/i18n.js`, create an `import` statement for your language, importing the `translation.json` file you just created. Follow the pattern used by the existing statements.
-- In the same file (`/src/i18n.js`), add your language to the list of languages inside the `resources` object within the `i18n.init()` method, following the pattern of other declared languages, and using the same two-letter language tag you used for the folder name in the first step.
+- In the same file (`/src/i18n.js`), add your language to the list of languages inside the `resources` object within the `i18n.init()` method, following the pattern of other declared languages, and using the same two-letter language code you used for the folder name in the first step.
 - Lastly, to add your language to the manual language switcher on the page, make sure to edit the `Localizer` component at `/src/Localizer.jsx`. Add a tuple for your language to the `languages` array, with the first value being your two-letter language code and the second value being the name of your language, in your language.
-  - For example, to add Japanese to the list, you'd add `["ja", "日本人"],`
+  - For example, to add Japanese to the list, you'd add `["ja", "日本語"],`
 
 The localization is now ready to deploy and will appear to users who use your language for their browser.
