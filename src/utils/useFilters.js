@@ -1,10 +1,6 @@
 import { useEffect, useMemo } from "react";
 import { useLocalStorage } from "react-use";
 
-const toHash = (filters) => filters.join(" ").trimEnd().split(" ").join(",");
-
-const fromHash = (hash) => hash.slice(1).split(",");
-
 const useFilters = () => {
   const [filters, saveFilters] = useLocalStorage("filters", []);
 
@@ -38,4 +34,3 @@ const useFilters = () => {
 };
 
 export default useFilters;
-export { toHash, fromHash };
