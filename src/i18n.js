@@ -7,7 +7,7 @@ import translationEs from "../locales/es/translation.json";
 import translationDe from "../locales/de/translation.json";
 import translationFr from "../locales/fr/translation.json";
 import translationIt from "../locales/it/translation.json";
-import translationKr from "../locales/kr/translation.json";
+import translationKo from "../locales/ko/translation.json";
 import translationZhCN from "../locales/zh-CN/translation.json";
 import translationZhTW from "../locales/zh-TW/translation.json";
 import translationZhHK from "../locales/zh-HK/translation.json";
@@ -55,8 +55,8 @@ i18n
       it: {
         translations: translationIt,
       },
-      kr: {
-        translations: translationKr,
+      ko: {
+        translations: translationKo,
       },
       zh: {
         translations: translationZhCN,
