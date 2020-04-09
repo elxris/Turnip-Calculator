@@ -20,5 +20,8 @@
   "about1": "<2>@_Ninji</2>さんの努力のおかげでできたものです。",
   "about2": "<2>mikebryant</2>さんが作成したツールを参考にしました。",
   "about3": "デザインには兄から助けてもらいました。ゲーム開発者です!よければツイッターでフォローしてください: <2>@Consalv0</2>",
-  "about4": "不具合やバグの報告は<2>こちらから</2>。"
+  "about4": "不具合やバグの報告は<2>こちらから</2>。",
+  "cancel": "Cancel",
+  "clearDataTitle": "Are you sure you want to clear all data?",
+  "clearDataWarning": "This cannot be undone!"
 }
