@@ -21,5 +21,7 @@
   "about2": "Inspiriert wurde ich dabei von <2>mikebryant's</2> Arbeit.",
   "about3": "Zu guter Letzt, danke an meinen Bruder für die Hilfe beim Design. Er ist Spieleentwickler! Folgt ihm auf Twitter: <2>@Consalv0</2>.",
   "about4": "Fehler gefunden? Melde ihn <2>hier</2> (bitte auf Englisch).",
-  "clearDataWarning": "Are you sure you want to clear all data? (This cannot be undone!)"
+  "cancel": "Cancel",
+  "clearDataTitle": "Are you sure you want to clear all data?",
+  "clearDataWarning": "This cannot be undone!"
 }

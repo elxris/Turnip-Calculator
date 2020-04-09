@@ -21,5 +21,7 @@
   "about2": "我从<2>mikebryant</2>的工作得到了灵感。",
   "about3": "最后但并非不重要的一点，感谢我的兄弟帮忙设计，他是一名游戏开发者！在Twitter上关注他：<2>@Consalv0</2>。",
   "about4": "发现一个BUG？在<2>这里</2>反馈。",
-  "clearDataWarning": "Are you sure you want to clear all data? (This cannot be undone!)"
+  "cancel": "Cancel",
+  "clearDataTitle": "Are you sure you want to clear all data?",
+  "clearDataWarning": "This cannot be undone!"
 }

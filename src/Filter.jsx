@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { arrayOf, string, func } from "prop-types";
 import {
   TextField,
@@ -7,9 +7,14 @@ import {
   Button,
   Box,
   makeStyles,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
 } from "@material-ui/core";
 import i18n from "./i18n";
-import bells from './images/bells.svg';
+import bells from "./images/bells.svg";
 
 const useButtonStyles = makeStyles((theme) => ({
   root: {
@@ -38,14 +43,51 @@ const ClearButton = (props) => {
   );
 };
 
+const ClearDataDialog = ({ open, dismiss, confirm }) => {
+  return (
+    <Dialog
+      open={open}
+      onClose={dismiss}
+      aria-labelledby="alert-dialog-title"
+      aria-describedby="alert-dialog-description"
+    >
+      <DialogTitle id="alert-dialog-title">
+        {i18n.t("clearDataTitle")}
+      </DialogTitle>
+      <DialogContent>
+        <DialogContentText id="alert-dialog-description">
+          {i18n.t("clearDataWarning")}
+        </DialogContentText>
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={dismiss} color="default">
+          {i18n.t("cancel")}
+        </Button>
+        <Button onClick={confirm} color="default" autoFocus>
+          {i18n.t("Clear All Data!")}
+        </Button>
+      </DialogActions>
+    </Dialog>
+  );
+};
+
 const names = [
   i18n.t("Buy Price"),
-  ...i18n.t("Mon Tue Wed Thu Fri Sat")
+  ...i18n
+    .t("Mon Tue Wed Thu Fri Sat")
     .split(" ")
-    .reduce((curr, day) => [...curr, ...[`${day} ${i18n.t('AM')}`, `${day} ${i18n.t('PM')}`]], []),
+    .reduce(
+      (curr, day) => [
+        ...curr,
+        ...[`${day} ${i18n.t("AM")}`, `${day} ${i18n.t("PM")}`],
+      ],
+      []
+    ),
 ];
 
 const Filter = ({ filters, onChange }) => {
+  const [open, setOpen] = useState(false);
+
   const handleChange = useCallback(
     (index) => ({
       target: {
@@ -73,9 +115,11 @@ const Filter = ({ filters, onChange }) => {
       inputProps={{ pattern: "[0-9]*" }}
       InputLabelProps={{ shrink: true }}
       InputProps={{
-        startAdornment: <InputAdornment position="start">
-          <img src={bells} alt="A picture of a bag of bells" />
-        </InputAdornment>,
+        startAdornment: (
+          <InputAdornment position="start">
+            <img src={bells} alt="A picture of a bag of bells" />
+          </InputAdornment>
+        ),
       }}
       value={filters[index] || ""}
       onChange={handleChange(index)}
@@ -89,6 +133,14 @@ const Filter = ({ filters, onChange }) => {
       display="flex"
       flexDirection="column"
     >
+      <ClearDataDialog
+        open={open}
+        dismiss={() => setOpen(false)}
+        confirm={() => {
+          setOpen(false);
+          onChange([]);
+        }}
+      />
       <FormGroup>
         <Box
           m={2}
@@ -123,13 +175,7 @@ const Filter = ({ filters, onChange }) => {
         </Box>
       </FormGroup>
       <Box alignSelf="flex-end" mt={-2}>
-        <ClearButton
-          onClick={() => {
-            if (window.confirm(i18n.t("clearDataWarning"))) {
-              onChange([]);
-            }
-          }}
-        />
+        <ClearButton onClick={() => setOpen(true)} />
       </Box>
     </Box>
   );
