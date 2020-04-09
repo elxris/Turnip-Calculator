@@ -1,56 +1,148 @@
-const randfloat = (arr, min, max, basePrice, cb = (v) => v) => {
+// Ninji's code: https://gist.github.com/Treeki/85be14d297c80c8b3c0a76375743325b
+
+const randfloat = (arr, min, max, [minBasePrice, maxBasePrice], cb) => {
+  arr.push([min * minBasePrice, max * maxBasePrice, cb]);
+};
+
+const randFloatRelative = (
+  arr,
+  [minStart, maxStart],
+  [minDelta, maxDelta],
+  i,
+  filter,
+  basePrice,
+  cb
+) => {
+  const previousPredition = i ? arr.slice(-1)[0] || basePrice : basePrice;
+  const [minVerification, maxVerification] = previousPredition;
+  const [minPreviousPrice, maxPreviousPrice] = [
+    filter ? filter - 1 : minVerification,
+    filter ? filter + 1 : maxVerification,
+  ];
+  // min = 100 * 0.9 === 90, i = 0
+  // min = [0.9 * 100] + -0.05 * [0.9 * 100] / 0.9 ,- i = 1 === 85
+  // min = [0.85 * 100] + -0.05 * [0.85 * 100] / 0.85 ,- i = 2 === 80
+  const minPrediction = i
+    ? minPreviousPrice +
+      (minDelta * minPreviousPrice) / (minStart + minDelta * (i - 1))
+    : minPreviousPrice * minStart;
+  const minPossible = i
+    ? minVerification +
+      (minDelta * minVerification) / (minStart + minDelta * (i - 1))
+    : minVerification * minStart;
+  const maxPredition = i
+    ? maxPreviousPrice +
+      (maxDelta * maxPreviousPrice) / (maxStart + maxDelta * (i - 1))
+    : maxPreviousPrice * maxStart;
+  const maxPossible = i
+    ? maxVerification +
+      (maxDelta * maxVerification) / (maxStart + maxDelta * (i - 1))
+    : maxVerification * maxStart;
+  const minValue = Math.max(minPrediction, minPossible);
+  const maxValue = Math.min(maxPredition, maxPossible);
   arr.push(
-    [min, max]
-      .map((v) => Math.trunc(v * basePrice + 0.99999))
-      .map(cb)
-      .map((v, i) => (i ? v + 1 : v - 1))
+    minValue > maxValue
+      ? [minPossible, maxPossible, cb]
+      : [minValue, maxValue, cb]
   );
 };
 
-const pattern0 = (basePrice) => {
+const roundPrediction = (arr) => {
+  return arr.map(([min, max, cb = (v) => v]) =>
+    [min, max]
+      .map((v) => Math.trunc(v + 0.99999))
+      .map(cb)
+      .map((v, i) => (i === 0 ? v - 1 : v + 1))
+  );
+};
+
+// PATTERN 0: high, decreasing, high, decreasing, high
+const pattern0 = (basePrice, filters) => {
   const probabilities = [];
   const current = [];
 
+  // decPhaseLen1 = randbool() ? 3 : 2;
   for (let decPhaseLen1 = 2; decPhaseLen1 <= 3; decPhaseLen1++) {
+    // decPhaseLen2 = 5 - decPhaseLen1;
     const decPhaseLen2 = 5 - decPhaseLen1;
+    // hiPhaseLen1 = randint(0, 6);
     for (let hiPhaseLen1 = 0; hiPhaseLen1 <= 6; hiPhaseLen1++) {
+      // hiPhaseLen2and3 = 7 - hiPhaseLen1;
       const hiPhaseLen2and3 = 7 - hiPhaseLen1;
+      // hiPhaseLen3 = randint(0, hiPhaseLen2and3 - 1);
       for (let hiPhaseLen3 = 0; hiPhaseLen3 < hiPhaseLen2and3; hiPhaseLen3++) {
-        // high phase 1
+        // // high phase 1
+        // work = 2;
+        // for (int i = 0; i < hiPhaseLen1; i++)
+        // {
+        //   sellPrices[work++] = intceil(randfloat(0.9, 1.4) * basePrice);
+        // }
+        let work = 2;
         for (let i = 0; i < hiPhaseLen1; i++) {
           randfloat(current, 0.9, 1.4, basePrice);
+          work += 1;
         }
-        // decreasing phase 1
+        // // decreasing phase 1
+        // rate = randfloat(0.8, 0.6);
+        // for (int i = 0; i < decPhaseLen1; i++)
+        // {
+        //   sellPrices[work++] = intceil(rate * basePrice);
+        //   rate -= 0.04;
+        //   rate -= randfloat(0, 0.06);
+        // }
         for (let i = 0; i < decPhaseLen1; i++) {
-          randfloat(
+          randFloatRelative(
             current,
-            0.6 - 0.04 * i - 0.06 * i,
-            0.8 - 0.04 * i,
+            [0.6, 0.8],
+            [-0.1, -0.04],
+            i,
+            filters[work - 3],
             basePrice
           );
+          work += 1;
         }
-        // high phase 2
+        // // high phase 2
+        // for (int i = 0; i < (hiPhaseLen2and3 - hiPhaseLen3); i++)
+        // {
+        //   sellPrices[work++] = intceil(randfloat(0.9, 1.4) * basePrice);
+        // }
         for (let i = 0; i < hiPhaseLen2and3 - hiPhaseLen3; i++) {
           randfloat(current, 0.9, 1.4, basePrice);
+          work += 1;
         }
 
-        // decreasing phase 2
+        // // decreasing phase 2
+        // rate = randfloat(0.8, 0.6);
+        // for (int i = 0; i < decPhaseLen2; i++)
+        // {
+        //   sellPrices[work++] = intceil(rate * basePrice);
+        //   rate -= 0.04;
+        //   rate -= randfloat(0, 0.06);
+        // }
         for (let i = 0; i < decPhaseLen2; i++) {
-          randfloat(
+          randFloatRelative(
             current,
-            0.6 - 0.04 * i - 0.06 * i,
-            0.8 - 0.04 * i,
+            [0.6, 0.8],
+            [-0.1, -0.04],
+            i,
+            filters[work - 3],
             basePrice
           );
+          work += 1;
         }
 
-        // high phase 3
+        // // high phase 3
+        // for (int i = 0; i < hiPhaseLen3; i++)
+        // {
+        //   sellPrices[work++] = intceil(randfloat(0.9, 1.4) * basePrice);
+        // }
         for (let i = 0; i < hiPhaseLen3; i++) {
           randfloat(current, 0.9, 1.4, basePrice);
+          work += 1;
         }
 
         // commit probability
-        probabilities.push([...current]);
+        probabilities.push(roundPrediction(current));
         current.length = 0;
       }
     }
@@ -59,98 +151,159 @@ const pattern0 = (basePrice) => {
   return probabilities;
 };
 
-const pattern1 = (basePrice) => {
+// // PATTERN 1: decreasing middle, high spike, random low
+const pattern1 = (basePrice, filters) => {
   const probabilities = [];
   const current = [];
 
+  // peakStart = randint(3, 9);
+  // rate = randfloat(0.9, 0.85);
   for (let peakStart = 3; peakStart <= 9; peakStart++) {
+    // for (work = 2; work < peakStart; work++)
+    // {
+    //   sellPrices[work] = intceil(rate * basePrice);
+    //   rate -= 0.03;
+    //   rate -= randfloat(0, 0.02);
+    // }
     let work = 2;
     for (; work < peakStart; work++) {
-      randfloat(
+      const i = work - 2;
+      randFloatRelative(
         current,
-        0.85 - 0.03 * (work - 2) - 0.02 * (work - 2),
-        0.9 - 0.03 * (work - 2),
+        [0.85, 0.9],
+        [-0.05, -0.03],
+        i,
+        filters[work - 3],
         basePrice
       );
     }
 
+    // sellPrices[work++] = intceil(randfloat(0.9, 1.4) * basePrice);
+    // sellPrices[work++] = intceil(randfloat(1.4, 2.0) * basePrice);
+    // sellPrices[work++] = intceil(randfloat(2.0, 6.0) * basePrice);
+    // sellPrices[work++] = intceil(randfloat(1.4, 2.0) * basePrice);
+    // sellPrices[work++] = intceil(randfloat(0.9, 1.4) * basePrice);
     randfloat(current, 0.9, 1.4, basePrice);
     randfloat(current, 1.4, 2.0, basePrice);
     randfloat(current, 2.0, 6.0, basePrice);
     randfloat(current, 1.4, 2.0, basePrice);
     randfloat(current, 0.9, 1.4, basePrice);
-
     work += 5;
+
+    // for (; work < 14; work++)
+    // {
+    //   sellPrices[work] = intceil(randfloat(0.4, 0.9) * basePrice);
+    // }
     for (; work < 14; work++) {
       randfloat(current, 0.4, 0.9, basePrice);
     }
 
     // commit probability
-    probabilities.push([...current]);
+    probabilities.push(roundPrediction(current));
     current.length = 0;
   }
 
   return probabilities;
 };
 
-const pattern2 = (basePrice) => {
+// PATTERN 2: consistently decreasing
+const pattern2 = (basePrice, filters) => {
   const current = [];
 
+  // rate = 0.9;
+  // rate -= randfloat(0, 0.05);
+  // for (work = 2; work < 14; work++)
+  // {
+  //   sellPrices[work] = intceil(rate * basePrice);
+  //   rate -= 0.03;
+  //   rate -= randfloat(0, 0.02);
+  // }
   let work = 2;
   for (; work < 14; work++) {
-    randfloat(
+    const i = work - 2;
+    randFloatRelative(
       current,
-      0.9 - 0.05 - 0.03 * (work - 2) - 0.02 * (work - 2),
-      0.9 - 0.03 * (work - 2),
+      [0.85, 0.9],
+      [-0.05, -0.03],
+      i,
+      filters[work - 3],
       basePrice
     );
   }
 
-  return [current];
+  return [roundPrediction(current)];
 };
 
-const pattern3 = (basePrice) => {
+// PATTERN 3: decreasing, spike, decreasing
+const pattern3 = (basePrice, filters) => {
   const probabilities = [];
   const current = [];
 
-  for (let peakStart = 0; peakStart <= 9; peakStart++) {
+  // peakStart = randint(2, 9);
+  for (let peakStart = 2; peakStart <= 9; peakStart++) {
+    // // decreasing phase before the peak
+    // rate = randfloat(0.9, 0.4);
+    // for (work = 2; work < peakStart; work++)
+    // {
+    //   sellPrices[work] = intceil(rate * basePrice);
+    //   rate -= 0.03;
+    //   rate -= randfloat(0, 0.02);
+    // }
     let work = 2;
     for (; work < peakStart; work++) {
-      randfloat(
+      const i = work - 2;
+      randFloatRelative(
         current,
-        0.4 - 0.03 * (work - 2) - 0.02 * (work - 2),
-        0.9 - 0.03 * (work - 2),
+        [0.4, 0.9],
+        [-0.05, -0.03],
+        i,
+        filters[work - 3],
         basePrice
       );
     }
+
+    // sellPrices[work++] = intceil(randfloat(0.9, 1.4) * (float)basePrice);
+    // sellPrices[work++] = intceil(randfloat(0.9, 1.4) * basePrice);
+    // rate = randfloat(1.4, 2.0);
+    // sellPrices[work++] = intceil(randfloat(1.4, rate) * basePrice) - 1;
+    // sellPrices[work++] = intceil(rate * basePrice);
+    // sellPrices[work++] = intceil(randfloat(1.4, rate) * basePrice) - 1;
     randfloat(current, 0.9, 1.4, basePrice);
     randfloat(current, 0.9, 1.4, basePrice);
     randfloat(current, 1.4, 2.0, basePrice, (v) => v - 1);
     randfloat(current, 1.4, 2.0, basePrice);
     randfloat(current, 1.4, 2.0, basePrice, (v) => v - 1);
-
     work += 5;
-    for (let i = work; work < 14; work++) {
-      randfloat(
+
+    // // decreasing phase after the peak
+    // if (work < 14)
+    // {
+    //   rate = randfloat(0.9, 0.4);
+    //   for (; work < 14; work++)
+    //   {
+    //     sellPrices[work] = intceil(rate * basePrice);
+    //     rate -= 0.03;
+    //     rate -= randfloat(0, 0.02);
+    //   }
+    // }
+    let i = 0;
+    for (; work < 14; work++) {
+      randFloatRelative(
         current,
-        0.4 - 0.03 * (work - i) - 0.02 * (work - i),
-        0.9 - 0.03 * (work - i),
+        [0.4, 0.9],
+        [-0.05, -0.03],
+        i,
+        filters[work - 3],
         basePrice
       );
+      i++;
     }
 
-    probabilities.push([...current]);
+    probabilities.push(roundPrediction(current));
     current.length = 0;
   }
 
   return probabilities;
-};
-
-const explodeBasePrices = (fn) => {
-  return Array.from({ length: 21 }, (v, i) => i + 90).reduce(
-    (prev, basePrice) => [...prev, ...fn(basePrice)],
-    []
-  );
 };
 
 const filterByPattern = (filters) => (pattern) =>
@@ -163,13 +316,13 @@ const possiblePatterns = (filters) => {
   const fns = [pattern0, pattern1, pattern2, pattern3];
   const result = [];
 
+  const basePrice = filters[0];
   patterns.forEach((fn) => {
     let posibilities;
-    const basePrice = filters[0];
     if (!basePrice || basePrice < 90 || basePrice > 110) {
-      posibilities = explodeBasePrices(fns[fn]);
+      posibilities = fns[fn]([90, 110], filters.slice(1));
     } else {
-      posibilities = fns[fn](filters[0]);
+      posibilities = fns[fn]([basePrice, basePrice], filters.slice(1));
     }
     const filtered = posibilities.filter(filterByPattern(filters));
     result.push(filtered);
