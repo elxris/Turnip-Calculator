@@ -10,7 +10,7 @@
   "Mon Tue Wed Thu Fri Sat": "月 火 水 木 金 土",
   "AM": "AM",
   "PM": "PM",
-  "Clear All Data!": "初期化",
+  "Clear All Data!": "データを削除",
   "Usage": "説明",
   "buyPriceInfo": "- <1>購入価格</1>は自分の島のカブ価です。 他人の島でカブを買っても、その島の値段は関係ないのでご注意を!",
   "priceChangeInfo": "- カブ価は<1>一日に2回変動</1>しますのでメモっておいてください。 (当サイトに入力されたデータはユーザーのデバイスにのみ保存されます)",
@@ -21,7 +21,7 @@
   "about2": "<2>mikebryant</2>さんが作成したツールを参考にしました。",
   "about3": "デザインには兄から助けてもらいました。ゲーム開発者です!よければツイッターでフォローしてください: <2>@Consalv0</2>",
   "about4": "不具合やバグの報告は<2>こちらから</2>。",
-  "cancel": "Cancel",
-  "clearDataTitle": "Are you sure you want to clear all data?",
-  "clearDataWarning": "This cannot be undone!"
+  "cancel": "キャンセル",
+  "clearDataTitle": "本当に削除してもよろしいですか？",
+  "clearDataWarning": "この操作を元に戻すことはできません。"
 }
