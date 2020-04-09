@@ -34,7 +34,7 @@ If no key is specified in the localization files, the app will simply display wh
 
 To localise the app to a new language, the following simple steps need to be done:
 
-- Create a new folder under `/locales` for your language using the standard two-letter [IETF language code](https://gist.github.com/traysr/2001377) for your language (e.g. `es` for Spanish, `zh` for Chinese). Keep in mind, the **language** code can sometimes differ from the **country code**. For example, the *country code* for Korea is `kr`, but the *language code* for Korean is `ko`. 
+- Create a new folder under `/locales` for your language using the standard two-letter [IETF language code](https://gist.github.com/traysr/2001377) for your language (e.g. `es` for Spanish, `zh` for Chinese). Keep in mind, the **language** code often differs from the more commonly known **country code**. For example, the *country code* for Korea is `kr`, but the *language code* for Korean is `ko`. 
   - Dialect codes are supported (e.g. `en-GB` for British English and `pt-BR` for Brazilian Portuguese), but **be sure to avoid hyphens (-) in variable names.** As a reminder, hyphens can't be used in JavaScript variable names. When in doubt, stay consistent with existing code.
 - In the newly created folder, copy and paste the `translation.json` file from one of the other languages.
 - Edit the `translation.json` file to translate each untranslated JSON value to the appropriate translated equivalent in your language.
