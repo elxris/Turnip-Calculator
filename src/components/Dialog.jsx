@@ -1,7 +1,6 @@
 import React from "react";
 import { func, bool } from "prop-types";
 import {
-  Button,
   makeStyles,
   Dialog,
   DialogActions,
@@ -10,7 +9,7 @@ import {
   DialogTitle,
 } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
-import { useButtonStyles } from "./";
+import { Button, ClearButton } from "./Button";
 
 const useDialogStyles = makeStyles((theme) => ({
   paper: {
@@ -21,7 +20,6 @@ const useDialogStyles = makeStyles((theme) => ({
 
 const ClearDataDialog = ({ open, dismiss, confirm }) => {
   const { t } = useTranslation();
-  const buttonClasses = useButtonStyles();
   const dialogClasses = useDialogStyles();
 
   return (
@@ -39,18 +37,10 @@ const ClearDataDialog = ({ open, dismiss, confirm }) => {
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={dismiss} color="default">
+        <Button onClick={dismiss} variant="text">
           {t("cancel")}
         </Button>
-        <Button
-          classes={buttonClasses}
-          onClick={confirm}
-          color="default"
-          variant="contained"
-          autoFocus
-        >
-          {t("Clear All Data!")}
-        </Button>
+        <ClearButton onClick={confirm} />
       </DialogActions>
     </Dialog>
   );

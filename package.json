@@ -37,6 +37,7 @@
   "dependencies": {
     "@material-ui/core": "^4.9.9",
     "chart.js": "^2.9.3",
+    "classnames": "^2.2.6",
     "cuint": "^0.2.2",
     "i18next": "^19.3.4",
     "i18next-browser-languagedetector": "^4.0.2",
