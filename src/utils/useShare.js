@@ -13,8 +13,7 @@ const fromHash = (hash) => {
 
 const hasHash = (hash) => Boolean(hash.slice(1));
 
-const useShare = () => {
-  const { filters } = useFilters();
+const useShare = (filters) => {
   const [hash, saveHash] = useHash();
   const [open, setOpen] = useState(true);
 

@@ -1,27 +1,27 @@
 import { createMuiTheme } from "@material-ui/core";
-import finkWoff1 from './fonts/FinkHeavyRegular.woff';
-import finkWoff2 from './fonts/FinkHeavyRegular.woff2';
-import arialRoundWoff from './fonts/ArialRoundedBold.woff';
+import finkWoff1 from "../fonts/FinkHeavyRegular.woff";
+import finkWoff2 from "../fonts/FinkHeavyRegular.woff2";
+import arialRoundWoff from "../fonts/ArialRoundedBold.woff";
 
 const finkHeavy = {
-  fontFamily: 'FinkHeavy',
+  fontFamily: "FinkHeavy",
   src: ` 
     url(${finkWoff2}) format('woff2'),
     url(${finkWoff1}) format('woff')
     `,
-  fontWeight: 'normal',
-  fontStyle: 'normal',
+  fontWeight: "normal",
+  fontStyle: "normal",
 };
 
 const arialRound = {
-  fontFamily: 'Arial Rounded MT Bold',
-  fontStyle: 'normal',
-  fontWeight: 'normal',
+  fontFamily: "Arial Rounded MT Bold",
+  fontStyle: "normal",
+  fontWeight: "normal",
   src: `
     local('Arial Rounded MT Bold'),
     url(${arialRoundWoff}) format('woff')
-    `
-  }
+    `,
+};
 
 const theme = createMuiTheme({
   palette: {
@@ -74,8 +74,8 @@ const theme = createMuiTheme({
   },
   overrides: {
     MuiCssBaseline: {
-      '@global': {
-        '@font-face': [finkHeavy, arialRound],
+      "@global": {
+        "@font-face": [finkHeavy, arialRound],
       },
     },
   },

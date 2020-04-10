@@ -11,7 +11,7 @@ import {
   patternReducer,
   averageReducer,
   minWeekReducer,
-} from "./utils/patterns";
+} from "../utils";
 
 Chart.defaults.global.defaultFontFamily = "Arial Rounded MT Bold";
 

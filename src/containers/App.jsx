@@ -1,11 +1,7 @@
 import React from "react";
 import { CssBaseline, ThemeProvider, Container } from "@material-ui/core";
-import theme from "./theme";
-import { useFilters, useTitle } from "./utils";
-import Filter from "./Filter";
-import Chart from "./Chart";
-import Title from "./Title";
-import Footer from "./Footer";
+import { useFilters, useTitle, theme } from "../utils";
+import { Title, Filter, Chart, Footer, Share } from "./";
 
 const App = () => {
   useTitle();
@@ -15,6 +11,7 @@ const App = () => {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <Share filters={filters} />
         <Container maxWidth="md">
           <Title />
           <Filter filters={inputFilters} onChange={saveFilters} />

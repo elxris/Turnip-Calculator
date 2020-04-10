@@ -9,7 +9,7 @@ const Forecaster = ({ filter }) => {
   const worker = useRef(null);
 
   useEffect(() => {
-    worker.current = new Worker("./v2/worker.js");
+    worker.current = new Worker("../experimental/worker.js");
     worker.current.onmessage = ({ data: { done, value } }) => {
       if (done === undefined) return;
       if (done) {
