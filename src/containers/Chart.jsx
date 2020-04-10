@@ -136,6 +136,7 @@ const ChartComponent = ({ filter }) => {
       },
       options: chartOptions,
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Language labels chart effect

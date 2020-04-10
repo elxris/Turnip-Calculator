@@ -213,7 +213,7 @@ const patternReducer = (patternsCategories, reducer = minMaxReducer) => {
   return allPatterns.reduce(reducer);
 };
 
-module.exports = {
+export {
   possiblePatterns,
   patternReducer,
   minMaxReducer,
