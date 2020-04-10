@@ -2,11 +2,12 @@ import React, { useCallback, useState } from "react";
 import { arrayOf, string, func } from "prop-types";
 import { TextField, FormGroup, InputAdornment, Box } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
-import { ClearButton, ClearDataDialog } from "../components";
+import { ClearButton, ClearDataDialog, Button } from "../components";
+import {} from "../utils";
 import bells from "../images/bells.svg";
 
-const Filter = ({ filters, onChange }) => {
-  const [open, setOpen] = useState(false);
+const Filter = ({ filters, onChange, openShareDialog }) => {
+  const [clearDataDialogOpen, setClearDataDialogOpen] = useState(false);
   const { t } = useTranslation();
 
   const handleChange = useCallback(
@@ -58,63 +59,69 @@ const Filter = ({ filters, onChange }) => {
   ));
 
   return (
-    <Box
-      borderRadius={16}
-      bgcolor="primary.light"
-      display="flex"
-      flexDirection="column"
-    >
+    <>
       <ClearDataDialog
-        open={open}
-        dismiss={() => setOpen(false)}
+        open={clearDataDialogOpen}
+        dismiss={() => setClearDataDialogOpen(false)}
         confirm={() => {
-          setOpen(false);
+          setClearDataDialogOpen(false);
           onChange([]);
         }}
       />
-      <FormGroup>
-        <Box
-          m={2}
-          p={2}
-          mb={-1}
-          borderRadius={16}
-          bgcolor="bkgs.mainAlt"
-          display="flex"
-        >
-          {fields[0]}
+      <Box
+        borderRadius={16}
+        bgcolor="primary.light"
+        display="flex"
+        flexDirection="column"
+      >
+        <FormGroup>
+          <Box
+            m={2}
+            p={2}
+            mb={-1}
+            borderRadius={16}
+            bgcolor="bkgs.mainAlt"
+            display="flex"
+          >
+            {fields[0]}
+          </Box>
+          <Box m={2} ml={1} mr={1} display="flex" flexWrap="wrap">
+            {fields.slice(1).reduce(
+              (prev, curr, index) =>
+                index % 2
+                  ? [
+                      ...prev.slice(0, -1),
+                      <Box
+                        key={index}
+                        p={1}
+                        width={{ xs: 0.5, sm: 1 / 3, md: 1 / 6 }}
+                      >
+                        <Box p={2} bgcolor="bkgs.mainAlt" borderRadius={16}>
+                          <Box m={1}>{prev.slice(-1)}</Box>
+                          <Box m={1}>{curr}</Box>
+                        </Box>
+                      </Box>,
+                    ]
+                  : [...prev, curr],
+              []
+            )}
+          </Box>
+        </FormGroup>
+        <Box alignSelf="flex-end" mt={-2} display="flex">
+          <Box mx={1}>
+            <Button onClick={openShareDialog}>{t("Share!")}</Button>
+          </Box>
+          <ClearButton onClick={() => setClearDataDialogOpen(true)} />
         </Box>
-        <Box m={2} ml={1} mr={1} display="flex" flexWrap="wrap">
-          {fields.slice(1).reduce(
-            (prev, curr, index) =>
-              index % 2
-                ? [
-                    ...prev.slice(0, -1),
-                    <Box
-                      key={index}
-                      p={1}
-                      width={{ xs: 0.5, sm: 1 / 3, md: 1 / 6 }}
-                    >
-                      <Box p={2} bgcolor="bkgs.mainAlt" borderRadius={16}>
-                        <Box m={1}>{prev.slice(-1)}</Box>
-                        <Box m={1}>{curr}</Box>
-                      </Box>
-                    </Box>,
-                  ]
-                : [...prev, curr],
-            []
-          )}
-        </Box>
-      </FormGroup>
-      <Box alignSelf="flex-end" mt={-2}>
-        <ClearButton onClick={() => setOpen(true)} />
       </Box>
-    </Box>
+    </>
   );
 };
 
 Filter.propTypes = {
   filters: arrayOf(string).isRequired,
   onChange: func.isRequired,
+  openShareDialog: func.isRequired,
 };
 
 export default Filter;

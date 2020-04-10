@@ -1,20 +1,42 @@
 import React from "react";
 import { CssBaseline, ThemeProvider, Container } from "@material-ui/core";
-import { useFilters, useTitle, theme } from "../utils";
-import { Title, Filter, Chart, Footer, Share } from "./";
+import { useTranslation } from "react-i18next";
+import { useFilters, useTitle, theme, useShare } from "../utils";
+import { Title, Filter, Chart, Footer } from "./";
+import { Button, ShareDialog } from "../components";
 
 const App = () => {
   useTitle();
+  const { t } = useTranslation();
   const { inputFilters, filters, saveFilters } = useFilters();
+  const {
+    onCloseShareModal,
+    showShareDialog,
+    openShareDialog,
+    shareFilters,
+  } = useShare(filters);
 
   return (
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Share filters={filters} />
+        <ShareDialog
+          open={showShareDialog}
+          chart={<Chart filter={shareFilters} />}
+          description="Share this page link!"
+          actions={
+            <>
+              <Button onClick={onCloseShareModal}>{t("Close")}</Button>
+            </>
+          }
+        />
         <Container maxWidth="md">
           <Title />
-          <Filter filters={inputFilters} onChange={saveFilters} />
+          <Filter
+            filters={inputFilters}
+            onChange={saveFilters}
+            openShareDialog={openShareDialog}
+          />
           <Chart filter={filters} />
           <Footer />
         </Container>

@@ -1,6 +1,5 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useLayoutEffect } from "react";
 import { useHash } from "react-use";
-import useFilters from "./useFilters";
 
 const toHash = (filters) => filters.join(" ").trimEnd().split(" ").join(",");
 
@@ -11,26 +10,35 @@ const fromHash = (hash) => {
   );
 };
 
-const hasHash = (hash) => Boolean(hash.slice(1));
+const hasHash = (hash) => Boolean(hash);
 
 const useShare = (filters) => {
-  const [hash, saveHash] = useHash();
+  const [hash, setHash] = useHash();
   const [open, setOpen] = useState(true);
 
   const shareFilters = fromHash(hash);
-  const showShareModal = hasHash(hash) && open;
+  const showShareDialog = hasHash(hash) && open;
   const onCloseShareModal = useCallback(() => {
     setOpen(false);
+    setHash("");
   }, []);
-  const onShare = useCallback(() => {
-    saveHash(toHash(filters));
-  }, [filters]);
+  const openShareDialog = useCallback(() => {
+    console.log("Open");
+    setHash(toHash(filters) || "000");
+    setOpen(true);
+  }, [filters, setHash]);
+
+  useLayoutEffect(() => {
+    if (hash) {
+      setOpen(true);
+    }
+  }, [hash]);
 
   return {
     shareFilters,
-    showShareModal,
+    showShareDialog,
     onCloseShareModal,
-    onShare,
+    openShareDialog,
   };
 };
 
