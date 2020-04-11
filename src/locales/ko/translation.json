@@ -23,5 +23,8 @@
   "about4": "버그 발견 시 <2>여기에</2> 보고해 주세요.",
   "cancel": "Cancel",
   "clearDataTitle": "Are you sure you want to clear all data?",
-  "clearDataWarning": "This cannot be undone!"
+  "clearDataWarning": "This cannot be undone!",
+  "shareDialog": "Share this page link!",
+  "shareButton": "Share!",
+  "closeBUtton": "Close"
 }

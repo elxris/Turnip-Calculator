@@ -23,5 +23,8 @@
   "about4": "Trovato un bug? Segnalalo <2>qui</2>.",
   "cancel": "Cancel",
   "clearDataTitle": "Are you sure you want to clear all data?",
-  "clearDataWarning": "This cannot be undone!"
+  "clearDataWarning": "This cannot be undone!",
+  "shareDialog": "Share this page link!",
+  "shareButton": "Share!",
+  "closeBUtton": "Close"
 }

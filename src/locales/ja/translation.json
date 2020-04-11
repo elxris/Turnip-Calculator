@@ -23,5 +23,8 @@
   "about4": "不具合やバグの報告は<2>こちらから</2>。",
   "cancel": "キャンセル",
   "clearDataTitle": "本当に削除してもよろしいですか？",
-  "clearDataWarning": "この操作を元に戻すことはできません。"
+  "clearDataWarning": "この操作を元に戻すことはできません。",
+  "shareDialog": "Share this page link!",
+  "shareButton": "Share!",
+  "closeBUtton": "Close"
 }

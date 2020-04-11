@@ -23,5 +23,8 @@
   "about4": "Tu as trouvé un bug ? Fais-le moi savoir <2>ici</2>.",
   "cancel": "Annuler",
   "clearDataTitle": "Es-tu sûr de vouloir effacer toutes les données ?",
-  "clearDataWarning": "Cela ne peut être annulé !"
+  "clearDataWarning": "Cela ne peut être annulé !",
+  "shareDialog": "Share this page link!",
+  "shareButton": "Share!",
+  "closeBUtton": "Close"
 }

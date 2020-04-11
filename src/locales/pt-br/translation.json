@@ -1,4 +1,3 @@
-  
 {
   "Turnip Calculator": "Calculadora de Turnips",
   "ACNH Turnip Calculator": "ACNH: Calculadora de Turnips",
@@ -24,5 +23,8 @@
   "about4": "Encontrou um bug? Reporte <2>aqui</2>.",
   "cancel": "Cancelar",
   "clearDataTitle": "Você tem certeza que quer limpar todos os dados?",
-  "clearDataWarning": "Isto não pode ser desfeito!"
+  "clearDataWarning": "Isto não pode ser desfeito!",
+  "shareDialog": "Share this page link!",
+  "shareButton": "Share!",
+  "closeBUtton": "Close"
 }

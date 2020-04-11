@@ -23,10 +23,10 @@ const App = () => {
         <ShareDialog
           open={showShareDialog}
           chart={<Chart filter={shareFilters} />}
-          description={t("Share this page link!")}
+          description={t("shareDialog")}
           actions={
             <>
-              <Button onClick={onCloseShareModal}>{t("Close")}</Button>
+              <Button onClick={onCloseShareModal}>{t("closeButton")}</Button>
             </>
           }
         />

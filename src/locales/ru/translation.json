@@ -23,5 +23,8 @@
   "about4": "Нашли ошибку? Репорты можно найти <2>здесь</2>.",
   "cancel": "Отмена",
   "clearDataTitle": "Вы уверенны что хотите удалить все данные?",
-  "clearDataWarning": "Удаленные данные вернуть нельзя!"
+  "clearDataWarning": "Удаленные данные вернуть нельзя!",
+  "shareDialog": "Share this page link!",
+  "shareButton": "Share!",
+  "closeBUtton": "Close"
 }

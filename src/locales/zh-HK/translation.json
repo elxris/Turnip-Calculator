@@ -23,5 +23,8 @@
   "about4": "如果你發現到任何BUG，可以喺<2>呢度</2>反映。",
   "cancel": "攞消",
   "clearDataTitle": "你確定要清除全部數據咩？",
-  "clearDataWarning": "此操作無法撤銷！"
+  "clearDataWarning": "此操作無法撤銷！",
+  "shareDialog": "Share this page link!",
+  "shareButton": "Share!",
+  "closeBUtton": "Close"
 }
