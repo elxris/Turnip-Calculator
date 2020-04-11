@@ -16,6 +16,7 @@ const languages = [
   ["ko", "한국어"],
   ["ja", "日本語"],
   ["pt-BR", "Português"],
+  ["ru", "Русский"]
 ];
 
 const useStyles = makeStyles((theme) => ({
