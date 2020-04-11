@@ -7,9 +7,10 @@
   "scripts": {
     "start": "BROWSER=none react-scripts start",
     "build": "react-scripts build",
-    "predeploy": "rm -rf dist && yarn build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "rm -rf build && yarn build",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": ".",
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/plugin-proposal-class-properties": "^7.8.3",

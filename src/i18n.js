@@ -89,9 +89,6 @@ i18n
       ru: {
         translations: translationRu,
       },
-      ru: {
-        translations: translationRu,
-      },
     },
 
     react: {

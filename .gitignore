@@ -157,3 +157,6 @@ dist
 
 # npm versioned dependency tree
 package-lock.json
+
+# CRA build output directory
+build
