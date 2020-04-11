@@ -36,6 +36,7 @@ const Localizer = () => {
   // First mount effect
   useEffect(() => {
     i18n.changeLanguage(defaultLang);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return useMemo(
@@ -62,6 +63,7 @@ const Localizer = () => {
         </Breadcrumbs>
       </Box>
     ),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
 };

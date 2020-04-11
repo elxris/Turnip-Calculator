@@ -48,7 +48,7 @@ const Filter = ({ filters, onChange }) => {
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
-            <img src={bells} alt="A picture of a bag of bells" />
+            <img src={bells} alt="Bag of bells" />
           </InputAdornment>
         ),
       }}

@@ -1,17 +1,15 @@
 {
   "name": "turnip-calc",
-  "version": "1.0.0",
-  "main": "dist/src/index.html",
+  "version": "1.8.0",
   "author": "elxris",
   "license": "MIT",
-  "private": false,
+  "private": true,
   "scripts": {
-    "build": "parcel build src/index.pug",
-    "start": "parcel serve src/index.pug",
-    "predeploy": "rm -rf dist && parcel build src/index.pug --public-url /Turnip-Calculator",
+    "start": "BROWSER=none react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "rm -rf dist && yarn build",
     "deploy": "gh-pages -d dist"
   },
-  "browserslist": "> 5%, not dead, not ie>6",
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
@@ -27,15 +25,13 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^3.0.0",
-    "gh-pages": "^2.2.0",
-    "parcel": "^1.12.4",
-    "parcel-bundler": "^1.12.4",
-    "parcel-plugin-browserconfig": "^1.0.5",
-    "parcel-plugin-bundle-visualiser": "^1.2.0",
-    "pug": "^2.0.4"
+    "gh-pages": "^2.2.0"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.9",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
     "chart.js": "^2.9.3",
     "cuint": "^0.2.2",
     "i18next": "^19.3.4",
@@ -46,10 +42,22 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-hook-form": "^5.3.1",
     "react-i18next": "^11.3.4",
+    "react-scripts": "3.4.1",
     "react-use": "^14.0.0",
     "utils": "^0.3.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "prettier": {}
 }

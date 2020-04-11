@@ -1,6 +1,5 @@
 import { useState, useCallback } from "react";
 import { useHash } from "react-use";
-import useFilters from "./useFilters";
 
 const toHash = (filters) => filters.join(" ").trimEnd().split(" ").join(",");
 
@@ -24,7 +23,7 @@ const useShare = (filters) => {
   }, []);
   const onShare = useCallback(() => {
     saveHash(toHash(filters));
-  }, [filters]);
+  }, [filters, saveHash]);
 
   return {
     shareFilters,

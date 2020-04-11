@@ -2,19 +2,19 @@ import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 
-import translationEn from "../locales/en/translation.json";
-import translationEs from "../locales/es/translation.json";
-import translationDe from "../locales/de/translation.json";
-import translationFr from "../locales/fr/translation.json";
-import translationNl from "../locales/nl/translation.json";
-import translationIt from "../locales/it/translation.json";
-import translationKo from "../locales/ko/translation.json";
-import translationZhCN from "../locales/zh-CN/translation.json";
-import translationZhTW from "../locales/zh-TW/translation.json";
-import translationZhHK from "../locales/zh-HK/translation.json";
-import translationJa from "../locales/ja/translation.json";
-import translationPtBR from "../locales/pt-br/translation.json";
-import translationRu from "../locales/ru/translation.json";
+import translationEn from "./locales/en/translation.json";
+import translationEs from "./locales/es/translation.json";
+import translationDe from "./locales/de/translation.json";
+import translationFr from "./locales/fr/translation.json";
+import translationNl from "./locales/nl/translation.json";
+import translationIt from "./locales/it/translation.json";
+import translationKo from "./locales/ko/translation.json";
+import translationZhCN from "./locales/zh-CN/translation.json";
+import translationZhTW from "./locales/zh-TW/translation.json";
+import translationZhHK from "./locales/zh-HK/translation.json";
+import translationJa from "./locales/ja/translation.json";
+import translationPtBR from "./locales/pt-br/translation.json";
+import translationRu from "./locales/ru/translation.json";
 
 i18n
   .use(initReactI18next)
@@ -81,13 +81,16 @@ i18n
         translations: translationJa,
       },
       "pt-BR": {
-        translations: translationPtBR
+        translations: translationPtBR,
       },
-      "pt": {
-        translations: translationPtBR
+      pt: {
+        translations: translationPtBR,
       },
       ru: {
-        translations: translationRu
+        translations: translationRu,
+      },
+      ru: {
+        translations: translationRu,
       },
     },
 

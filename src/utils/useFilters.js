@@ -24,7 +24,7 @@ const useFilters = () => {
     if (!Array.isArray(filters)) {
       saveFilters([]);
     }
-  }, [filters]);
+  }, [filters, saveFilters]);
 
   return {
     filters: sanitizedFilters,
