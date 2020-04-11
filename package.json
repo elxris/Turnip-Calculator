@@ -3,6 +3,7 @@
   "version": "1.8.0",
   "author": "elxris",
   "license": "MIT",
+  "homepage": ".",
   "private": true,
   "scripts": {
     "start": "BROWSER=none react-scripts start",
@@ -10,43 +11,43 @@
     "predeploy": "rm -rf build && yarn build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": ".",
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/preset-env": "^7.9.5",
-    "@babel/preset-react": "^7.9.4",
-    "babel-eslint": "^10.1.0",
-    "core-js": "^3.6.4",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.1.0",
-    "eslint-config-prettier": "^6.10.1",
-    "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-react-hooks": "^3.0.0",
-    "gh-pages": "^2.2.0"
+    "@babel/core": "7.9.0",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
+    "@babel/preset-env": "7.9.5",
+    "@babel/preset-react": "7.9.4",
+    "babel-eslint": "10.1.0",
+    "core-js": "3.6.5",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb": "18.1.0",
+    "eslint-config-prettier": "6.10.1",
+    "eslint-plugin-babel": "5.3.0",
+    "eslint-plugin-import": "2.20.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.19.0",
+    "eslint-plugin-react-hooks": "3.0.0",
+    "gh-pages": "2.2.0"
   },
   "dependencies": {
-    "@material-ui/core": "^4.9.9",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "chart.js": "^2.9.3",
-    "cuint": "^0.2.2",
-    "i18next": "^19.3.4",
-    "i18next-browser-languagedetector": "^4.0.2",
-    "lodash.merge": "^4.6.2",
-    "lodash.zip": "^4.2.0",
-    "progress": "^2.0.3",
-    "prop-types": "^15.7.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-i18next": "^11.3.4",
+    "@material-ui/core": "4.9.10",
+    "@testing-library/jest-dom": "5.5.0",
+    "@testing-library/react": "10.0.2",
+    "@testing-library/user-event": "10.0.1",
+    "chart.js": "2.9.3",
+    "classnames": "2.2.6",
+    "cuint": "0.2.2",
+    "i18next": "19.4.1",
+    "i18next-browser-languagedetector": "4.0.2",
+    "lodash.merge": "4.6.2",
+    "lodash.zip": "4.2.0",
+    "progress": "2.0.3",
+    "prop-types": "15.7.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-i18next": "11.3.4",
     "react-scripts": "3.4.1",
-    "react-use": "^14.0.0",
-    "utils": "^0.3.1"
+    "react-use": "14.1.1",
+    "utils": "0.3.1"
   },
   "browserslist": {
     "production": [
@@ -60,5 +61,6 @@
       "last 1 safari version"
     ]
   },
-  "prettier": {}
+  "prettier": {},
+  "resolutions": {}
 }
