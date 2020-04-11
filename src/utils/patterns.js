@@ -13,46 +13,48 @@ const randFloatRelative = (
   basePrice,
   cb
 ) => {
-  const previousPredition = i ? arr.slice(-1)[0] || basePrice : basePrice;
-  const [minVerification, maxVerification] = previousPredition;
-  const [minPreviousPrice, maxPreviousPrice] = [
-    filter ? filter - 1 : minVerification,
-    filter ? filter + 1 : maxVerification,
+  if (i === 0) {
+    return randfloat(arr, minStart, maxStart, basePrice, cb);
+  }
+  const previousPrediction = arr.slice(-1)[0];
+  const verification = [
+    basePrice[0] * (minStart + minDelta * i),
+    basePrice[1] * (maxStart + maxDelta * i),
   ];
-  // min = 100 * 0.9 === 90, i = 0
-  // min = [0.9 * 100] + -0.05 * [0.9 * 100] / 0.9 ,- i = 1 === 85
-  // min = [0.85 * 100] + -0.05 * [0.85 * 100] / 0.85 ,- i = 2 === 80
-  const minPrediction = i
-    ? minPreviousPrice +
-      (minDelta * minPreviousPrice) / (minStart + minDelta * (i - 1))
-    : minPreviousPrice * minStart;
-  const minPossible = i
-    ? minVerification +
-      (minDelta * minVerification) / (minStart + minDelta * (i - 1))
-    : minVerification * minStart;
-  const maxPredition = i
-    ? maxPreviousPrice +
-      (maxDelta * maxPreviousPrice) / (maxStart + maxDelta * (i - 1))
-    : maxPreviousPrice * maxStart;
-  const maxPossible = i
-    ? maxVerification +
-      (maxDelta * maxVerification) / (maxStart + maxDelta * (i - 1))
-    : maxVerification * maxStart;
-  const minValue = Math.max(minPrediction, minPossible);
-  const maxValue = Math.min(maxPredition, maxPossible);
-  arr.push(
-    minValue > maxValue
-      ? [minPossible, maxPossible, cb]
-      : [minValue, maxValue, cb]
-  );
+  const [minVerification, maxVerification] = verification;
+  const [minPreviousPrice, maxPreviousPrice] = [
+    filter ? filter - 1 : previousPrediction[0],
+    filter ? filter + 1 : previousPrediction[1],
+  ];
+
+  // rate = ??;
+  // sellPrices[prev] = prevRate * basePrice = prevPrice
+  // prevRate = prevPrice / basePrice
+  // rate = prevRate + stepRate =>  prevPrice / basePrice + stepRate
+  // sellPrices[curr] = rate * basePrice
+
+  const minPrediction = (basePrice) =>
+    (minPreviousPrice / basePrice + minDelta) * basePrice;
+  const maxPrediction = (basePrice) =>
+    (maxPreviousPrice / basePrice + maxDelta) * basePrice;
+
+  const min1 = minPrediction(basePrice[0]);
+  const min2 = minPrediction(basePrice[1]);
+  const max1 = maxPrediction(basePrice[0]);
+  const max2 = maxPrediction(basePrice[1]);
+
+  const minValue = Math.max(minVerification, filter || Math.min(min1, min2));
+  const maxValue = Math.min(maxVerification, filter || Math.max(max1, max2));
+
+  arr.push([minValue, maxValue, cb]);
 };
 
 const roundPrediction = (arr) => {
   return arr.map(([min, max, cb = (v) => v]) =>
     [min, max]
-      .map((v) => Math.trunc(v + 0.99999))
+      .map((v) => Math.ceil(v))
       .map(cb)
-      .map((v, i) => (i === 0 ? v - 1 : v + 1))
+      .map((v, i) => (i === 0 ? v - 2 : v + 2))
   );
 };
 
@@ -96,7 +98,7 @@ const pattern0 = (basePrice, filters) => {
             [0.6, 0.8],
             [-0.1, -0.04],
             i,
-            filters[work - 3],
+            filters[work - 2],
             basePrice
           );
           work += 1;
@@ -125,7 +127,7 @@ const pattern0 = (basePrice, filters) => {
             [0.6, 0.8],
             [-0.1, -0.04],
             i,
-            filters[work - 3],
+            filters[work - 2],
             basePrice
           );
           work += 1;
@@ -173,7 +175,7 @@ const pattern1 = (basePrice, filters) => {
         [0.85, 0.9],
         [-0.05, -0.03],
         i,
-        filters[work - 3],
+        filters[work - 2],
         basePrice
       );
     }
@@ -226,7 +228,7 @@ const pattern2 = (basePrice, filters) => {
       [0.85, 0.9],
       [-0.05, -0.03],
       i,
-      filters[work - 3],
+      filters[work - 2],
       basePrice
     );
   }
@@ -257,7 +259,7 @@ const pattern3 = (basePrice, filters) => {
         [0.4, 0.9],
         [-0.05, -0.03],
         i,
-        filters[work - 3],
+        filters[work - 2],
         basePrice
       );
     }
@@ -293,7 +295,7 @@ const pattern3 = (basePrice, filters) => {
         [0.4, 0.9],
         [-0.05, -0.03],
         i,
-        filters[work - 3],
+        filters[work - 2],
         basePrice
       );
       i++;
