@@ -21,12 +21,12 @@
   "about2": "Me inspiró el trabajo de <2>mikebryant's</2>.",
   "about3": "Por último, pero no menos importante, gracias por la ayuda de mi hermano con el diseño. Él es un desarrollador de juegos! Síguelo en twitter: <2>@Consalv0</2>.",
   "about4": "¿Algún error? Repórtalo <2>aquí</2>.",
-  "cancel": "Cancel",
-  "clearDataTitle": "Are you sure you want to clear all data?",
-  "clearDataWarning": "This cannot be undone!",
-  "shareDialog": "Share this page link!",
-  "shareClipboard": "Or copy this link:",
-  "copyButton": "Copy!",
-  "shareButton": "Share!",
-  "closeButton": "Close"
+  "cancel": "Cancelar",
+  "clearDataTitle": "Estás seguro de quere borrar todos los datos?",
+  "clearDataWarning": "Esto no se puede deshacer!",
+  "shareDialog": "Comparte el link de esta página!",
+  "shareClipboard": "O copia este link:",
+  "copyButton": "Copiar!",
+  "shareButton": "Compartir!",
+  "closeButton": "Cerrar"
 }
