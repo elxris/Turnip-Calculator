@@ -146,7 +146,11 @@ const ShareDialog = ({ open, filters, onClose, ...props }) => {
       description={description}
       {...props}
     >
-      {open && <Chart filters={filters} />}
+      {open && (
+        <Box mx={[-2.5, 0]}>
+          <Chart filters={filters} />
+        </Box>
+      )}
     </CustomDialog>
   );
 };
