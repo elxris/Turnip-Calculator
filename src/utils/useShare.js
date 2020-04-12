@@ -4,7 +4,7 @@ import { useHash } from "react-use";
 const toHash = (filters) => filters.join(" ").trimEnd().split(" ").join(",");
 
 const fromHash = (hash = "") => {
-  const hashFilters = hash.slice(1).split("-");
+  const hashFilters = hash.slice(1).split(",");
   return Array.from({ length: 13 }).map(
     (v, i) => Number(hashFilters[i]) || undefined
   );
