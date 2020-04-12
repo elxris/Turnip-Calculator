@@ -13,7 +13,7 @@ import {
   minWeekReducer,
 } from "../utils";
 
-Chart.defaults.global.defaultFontFamily = "Arial Rounded MT Bold";
+Chart.defaults.defaultFontFamily = "Arial Rounded MT Bold";
 
 const createGenerteData = (t) => (filter) => {
   let patterns = possiblePatterns(filter);
@@ -99,17 +99,15 @@ const chartOptions = {
     mode: "index",
   },
   scales: {
-    yAxes: [
-      {
-        gridLines: {
-          display: false,
-        },
-        ticks: {
-          suggestedMin: 0,
-          suggestedMax: 300,
-        },
+    y: {
+      gridLines: {
+        display: false,
       },
-    ],
+      ticks: {
+        suggestedMin: 0,
+        suggestedMax: 300,
+      },
+    },
   },
   elements: {
     line: {
@@ -161,9 +159,39 @@ const ChartComponent = ({ filters }) => {
     [filters, generateData]
   );
 
+  // Fix for mobile tooltip
+  const tooltipTimeout = useRef();
+  const onTouchEnd = useCallback(() => {
+    clearTimeout(tooltipTimeout.current);
+    tooltipTimeout.current = setTimeout(() => {
+      if (!chart.current) return;
+      chart.current.options.tooltips.enabled = false;
+      chart.current.update();
+    }, 3000);
+  }, []);
+  const onTouchStart = useCallback(() => {
+    if (!chart.current) return;
+    chart.current.options.tooltips.enabled = true;
+    chart.current.update();
+  }, []);
+  // Clear timeout if unmount
+  useEffect(() => {
+    return () => {
+      clearTimeout(tooltipTimeout.current);
+    };
+  }, []);
+
   return (
     <Box p={[0.5, 1, 2]} mt={2} borderRadius={16} bgcolor="bkgs.chart">
-      <canvas ref={canvas} width={600} height={400} />
+      <canvas
+        style={{ userSelect: "none", WebkitUserSelect: "none" }}
+        unselectable={"on"}
+        ref={canvas}
+        width={600}
+        height={400}
+        onTouchEnd={onTouchEnd}
+        onTouchStart={onTouchStart}
+      />
     </Box>
   );
 };
