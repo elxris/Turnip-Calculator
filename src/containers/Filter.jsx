@@ -108,10 +108,9 @@ const Filter = ({ filters, onChange, openShareDialog }) => {
           </Box>
         </FormGroup>
         <Box alignSelf="flex-end" mt={-2} display="flex">
-          {/* Hide it for now. Still need changes */}
-          {/* <Box mx={1}>
+          <Box mx={1}>
             <Button onClick={openShareDialog}>{t("shareButton")}</Button>
-          </Box> */}
+          </Box>
           <ClearButton onClick={() => setClearDataDialogOpen(true)} />
         </Box>
       </Box>

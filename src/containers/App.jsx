@@ -1,13 +1,11 @@
 import React from "react";
 import { CssBaseline, ThemeProvider, Container } from "@material-ui/core";
-import { useTranslation } from "react-i18next";
 import { useFilters, useTitle, theme, useShare } from "../utils";
-import { Title, Filter, Chart, Footer } from "./";
-import { Button, ShareDialog } from "../components";
+import { Title, Filter, Footer } from "../containers";
+import { ShareDialog, Chart } from "../components";
 
 const App = () => {
   useTitle();
-  const { t } = useTranslation();
   const { inputFilters, filters, saveFilters } = useFilters();
   const {
     onCloseShareModal,
@@ -20,16 +18,6 @@ const App = () => {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <ShareDialog
-          open={showShareDialog}
-          chart={<Chart filter={shareFilters} />}
-          description={t("shareDialog")}
-          actions={
-            <>
-              <Button onClick={onCloseShareModal}>{t("closeButton")}</Button>
-            </>
-          }
-        />
         <Container maxWidth="md">
           <Title />
           <Filter
@@ -37,9 +25,14 @@ const App = () => {
             onChange={saveFilters}
             openShareDialog={openShareDialog}
           />
-          <Chart filter={filters} />
+          <Chart filters={filters} />
           <Footer />
         </Container>
+        <ShareDialog
+          open={showShareDialog}
+          filters={shareFilters}
+          onClose={onCloseShareModal}
+        />
       </ThemeProvider>
     </>
   );

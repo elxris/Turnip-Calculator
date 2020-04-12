@@ -1,5 +1,5 @@
-import React from "react";
-import { func, bool } from "prop-types";
+import React, { useRef } from "react";
+import { func, bool, arrayOf, number } from "prop-types";
 import {
   makeStyles,
   Dialog,
@@ -7,11 +7,14 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
+  TextField,
+  Typography,
   Box,
 } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
-import { Button, ClearButton } from "./Button";
+import { Button, ClearButton, Chart } from "../components";
 import { any } from "prop-types";
+import { useCallback } from "react";
 
 const useDialogStyles = makeStyles((theme) => ({
   paper: {
@@ -42,6 +45,7 @@ const CustomDialog = ({
       classes={dialogClasses}
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
+      transitionDuration={0}
       {...props}
     >
       {title && <DialogTitle id="alert-dialog-title">{title}</DialogTitle>}
@@ -101,21 +105,56 @@ ClearDataDialog.propTypes = {
   confirm: func.isRequired,
 };
 
-const ShareDialog = ({ chart, ...props }) => {
+const ShareDialog = ({ open, filters, onClose, ...props }) => {
+  const { t } = useTranslation();
+  const inputRef = useRef();
+  const location = window.location.toString();
+  const handleCopy = useCallback(() => {
+    if (inputRef.current) {
+      inputRef.current.select();
+      inputRef.current.setSelectionRange(0, location.length, "backward");
+      document.execCommand("copy");
+    }
+  }, [location]);
+
+  const actions = (
+    <>
+      <Typography>{t("shareClipboard")}</Typography>
+      <Box mx={{ xs: "0", sm: "1" }} width="50%">
+        <TextField
+          id="url"
+          type="text"
+          fullWidth
+          inputRef={inputRef}
+          onTouchEnd={handleCopy}
+          onClick={handleCopy}
+          onFocus={handleCopy}
+          value={location}
+        />
+      </Box>
+      <Button onClick={handleCopy}>{t("copyButton")}</Button>
+      <Button onClick={onClose}>{t("closeButton")}</Button>
+    </>
+  );
+  const description = t("shareDialog");
   return (
-    <CustomDialog maxWidth="md" fullWidth {...props}>
-      {props.open && <Box>{chart}</Box>}
+    <CustomDialog
+      open={open}
+      maxWidth="md"
+      fullWidth
+      actions={actions}
+      description={description}
+      {...props}
+    >
+      {open && <Chart filters={filters} />}
     </CustomDialog>
   );
 };
 
 ShareDialog.propTypes = {
   open: bool.isRequired,
-  chart: any,
-};
-
-ShareDialog.defaults = {
-  chart: null,
+  filters: arrayOf(number).isRequired,
+  onClose: func.isRequired,
 };
 
 export { CustomDialog as Dialog, ClearDataDialog, ShareDialog };

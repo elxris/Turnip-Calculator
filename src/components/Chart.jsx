@@ -118,7 +118,7 @@ const chartOptions = {
   },
 };
 
-const ChartComponent = ({ filter }) => {
+const ChartComponent = ({ filters }) => {
   const canvas = useRef();
   const chart = useRef();
   const { t } = useTranslation();
@@ -131,7 +131,7 @@ const ChartComponent = ({ filter }) => {
     chart.current = new Chart(ctx, {
       type: "line",
       data: {
-        datasets: generateData(filter),
+        datasets: generateData(filters),
         labels: getLabels(),
       },
       options: chartOptions,
@@ -153,12 +153,12 @@ const ChartComponent = ({ filter }) => {
     () => {
       if (!chart.current) return;
       // regerates chart in the new
-      const newData = generateData(filter, t);
+      const newData = generateData(filters, t);
       merge(chart.current.data.datasets, newData);
       chart.current.update();
     },
     500,
-    [filter, generateData]
+    [filters, generateData]
   );
 
   return (
@@ -169,7 +169,7 @@ const ChartComponent = ({ filter }) => {
 };
 
 ChartComponent.propTypes = {
-  filter: arrayOf(number).isRequired,
+  filters: arrayOf(number).isRequired,
 };
 
 export default ChartComponent;

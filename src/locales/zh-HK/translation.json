@@ -25,6 +25,8 @@
   "clearDataTitle": "你確定要清除全部數據咩？",
   "clearDataWarning": "此操作無法撤銷！",
   "shareDialog": "Share this page link!",
+  "shareClipboard": "Or copy this link:",
+  "copyButton": "Copy!",
   "shareButton": "Share!",
   "closeButton": "Close"
 }

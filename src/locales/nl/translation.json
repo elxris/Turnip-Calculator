@@ -25,6 +25,8 @@
   "clearDataTitle": "Weet je zeker dat je alle data wilt verwijderen?",
   "clearDataWarning": "Dit kun je niet terugdraaien!",
   "shareDialog": "Share this page link!",
+  "shareClipboard": "Or copy this link:",
+  "copyButton": "Copy!",
   "shareButton": "Share!",
   "closeButton": "Close"
 }

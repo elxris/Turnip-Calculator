@@ -25,6 +25,8 @@
   "clearDataTitle": "Você tem certeza que quer limpar todos os dados?",
   "clearDataWarning": "Isto não pode ser desfeito!",
   "shareDialog": "Share this page link!",
+  "shareClipboard": "Or copy this link:",
+  "copyButton": "Copy!",
   "shareButton": "Share!",
   "closeButton": "Close"
 }

@@ -25,6 +25,8 @@
   "clearDataTitle": "Es-tu sûr de vouloir effacer toutes les données ?",
   "clearDataWarning": "Cela ne peut être annulé !",
   "shareDialog": "Share this page link!",
+  "shareClipboard": "Or copy this link:",
+  "copyButton": "Copy!",
   "shareButton": "Share!",
   "closeButton": "Close"
 }

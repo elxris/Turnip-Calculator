@@ -25,6 +25,8 @@
   "clearDataTitle": "本当に削除してもよろしいですか？",
   "clearDataWarning": "この操作を元に戻すことはできません。",
   "shareDialog": "Share this page link!",
+  "shareClipboard": "Or copy this link:",
+  "copyButton": "Copy!",
   "shareButton": "Share!",
   "closeButton": "Close"
 }

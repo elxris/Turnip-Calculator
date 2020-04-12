@@ -25,6 +25,8 @@
   "clearDataTitle": "Вы уверенны что хотите удалить все данные?",
   "clearDataWarning": "Удаленные данные вернуть нельзя!",
   "shareDialog": "Share this page link!",
+  "shareClipboard": "Or copy this link:",
+  "copyButton": "Copy!",
   "shareButton": "Share!",
   "closeButton": "Close"
 }
