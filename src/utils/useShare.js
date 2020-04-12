@@ -12,20 +12,29 @@ const fromHash = (hash = "") => {
 
 const hasHash = (hash) => Boolean(hash);
 
+const setHash = (hash) => {
+  if (window.history.replaceState) {
+    window.history.replaceState(null, null, `#${hash}`);
+  } else {
+    window.location.hash = `#${hash}`;
+  }
+};
+
 const useShare = (filters) => {
-  const [hash, setHash] = useHash();
-  const [open, setOpen] = useState(true);
+  const [$hash] = useHash();
+  const [open, setOpen] = useState(1);
+  const hash = $hash || window.location.hash;
 
   const shareFilters = fromHash(hash);
   const showShareDialog = hasHash(hash) && open;
   const onCloseShareModal = useCallback(() => {
     setOpen(false);
     setHash("");
-  }, [setHash]);
+  }, []);
   const openShareDialog = useCallback(() => {
     setHash(toHash(filters) || "000");
     setOpen(true);
-  }, [filters, setHash]);
+  }, [filters]);
 
   useLayoutEffect(() => {
     if (hash) {
