@@ -4,19 +4,19 @@ import { useTranslation } from "react-i18next";
 import { useLocalStorage } from "react-use";
 
 const languages = [
-  ["en", "English"],
   ["de", "Deutsch"],
+  ["en", "English"],
   ["es", "Español"],
   ["fr", "Français"],
-  ["nl", "Nederlands"],
   ["it", "Italiano"],
-  ["zh-CN", "简体中文"],
-  ["zh-TW", "繁體中文（台灣）"],
-  ["zh-HK", "繁體中文（香港）"],
-  ["ko", "한국어"],
   ["ja", "日本語"],
+  ["ko", "한국어"],
+  ["nl", "Nederlands"],
   ["pt-BR", "Português"],
-  ["ru", "Русский"]
+  ["ru", "Русский"],
+  ["zh-CN", "简体中文"],
+  ["zh-HK", "繁體中文（香港）"],
+  ["zh-TW", "繁體中文（台灣）"],
 ];
 
 const useStyles = makeStyles((theme) => ({
