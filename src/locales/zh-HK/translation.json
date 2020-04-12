@@ -24,9 +24,9 @@
   "cancel": "攞消",
   "clearDataTitle": "你確定要清除全部數據咩？",
   "clearDataWarning": "此操作無法撤銷！",
-  "shareDialog": "Share this page link!",
-  "shareClipboard": "Or copy this link:",
-  "copyButton": "Copy!",
-  "shareButton": "Share!",
-  "closeButton": "Close"
+  "shareDialog": "分享你嘅價格",
+  "shareClipboard": "復制鏈接：",
+  "copyButton": "復制",
+  "shareButton": "分享",
+  "closeButton": "關閉"
 }
