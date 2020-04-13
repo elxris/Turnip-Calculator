@@ -1,6 +1,7 @@
 {
   "name": "Turnip Calculator",
   "short_name": "Turnip Calculator",
+  "start_url": ".",
   "icons": [
     {
       "src": "/favicon/android-chrome-192x192.png",
