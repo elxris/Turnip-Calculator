@@ -2,18 +2,19 @@ import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 
-import translationEn from "../locales/en/translation.json";
-import translationEs from "../locales/es/translation.json";
-import translationDe from "../locales/de/translation.json";
-import translationFr from "../locales/fr/translation.json";
-import translationNl from "../locales/nl/translation.json";
-import translationIt from "../locales/it/translation.json";
-import translationKo from "../locales/ko/translation.json";
-import translationZhCN from "../locales/zh-CN/translation.json";
-import translationZhTW from "../locales/zh-TW/translation.json";
-import translationZhHK from "../locales/zh-HK/translation.json";
-import translationJa from "../locales/ja/translation.json";
-import translationPtBR from "../locales/pt-br/translation.json";
+import translationDe from "./locales/de/translation.json";
+import translationEn from "./locales/en/translation.json";
+import translationEs from "./locales/es/translation.json";
+import translationFr from "./locales/fr/translation.json";
+import translationIt from "./locales/it/translation.json";
+import translationJa from "./locales/ja/translation.json";
+import translationKo from "./locales/ko/translation.json";
+import translationNl from "./locales/nl/translation.json";
+import translationPtBR from "./locales/pt-br/translation.json";
+import translationRu from "./locales/ru/translation.json";
+import translationZhCN from "./locales/zh-CN/translation.json";
+import translationZhHK from "./locales/zh-HK/translation.json";
+import translationZhTW from "./locales/zh-TW/translation.json";
 
 i18n
   .use(initReactI18next)
@@ -43,48 +44,21 @@ i18n
     },
 
     resources: {
-      en: {
-        translations: translationEn,
-      },
-      es: {
-        translations: translationEs,
-      },
-      de: {
-        translations: translationDe,
-      },
-      fr: {
-        translations: translationFr,
-      },
-      it: {
-        translations: translationIt,
-      },
-      nl: {
-        translations: translationNl,
-      },
-      ko: {
-        translations: translationKo,
-      },
-      zh: {
-        translations: translationZhCN,
-      },
-      "zh-CN": {
-        translations: translationZhCN,
-      },
-      "zh-TW": {
-        translations: translationZhTW,
-      },
-      "zh-HK": {
-        translations: translationZhHK,
-      },
-      ja: {
-        translations: translationJa,
-      },
-      "pt-BR": {
-        translations: translationPtBR
-      },
-      "pt": {
-        translations: translationPtBR
-      },
+      de: { translations: translationDe },
+      en: { translations: translationEn },
+      es: { translations: translationEs },
+      fr: { translations: translationFr },
+      it: { translations: translationIt },
+      ja: { translations: translationJa },
+      ko: { translations: translationKo },
+      nl: { translations: translationNl },
+      pt: { translations: translationPtBR },
+      "pt-BR": { translations: translationPtBR },
+      ru: { translations: translationRu },
+      zh: { translations: translationZhCN },
+      "zh-CN": { translations: translationZhCN },
+      "zh-HK": { translations: translationZhHK },
+      "zh-TW": { translations: translationZhTW },
     },
 
     react: {

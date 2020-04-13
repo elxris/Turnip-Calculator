@@ -1,37 +1,52 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useLayoutEffect } from "react";
 import { useHash } from "react-use";
-import useFilters from "./useFilters";
 
 const toHash = (filters) => filters.join(" ").trimEnd().split(" ").join(",");
 
-const fromHash = (hash) => {
+const fromHash = (hash = "") => {
   const hashFilters = hash.slice(1).split(",");
   return Array.from({ length: 13 }).map(
     (v, i) => Number(hashFilters[i]) || undefined
   );
 };
 
-const hasHash = (hash) => Boolean(hash.slice(1));
+const hasHash = (hash) => Boolean(hash);
 
-const useShare = () => {
-  const { filters } = useFilters();
-  const [hash, saveHash] = useHash();
-  const [open, setOpen] = useState(true);
+const setHash = (hash) => {
+  if (window.history.replaceState) {
+    window.history.replaceState(null, null, `#${hash}`);
+  } else {
+    window.location.hash = `#${hash}`;
+  }
+};
+
+const useShare = (filters) => {
+  const [$hash] = useHash();
+  const [open, setOpen] = useState(1);
+  const hash = $hash || window.location.hash;
 
   const shareFilters = fromHash(hash);
-  const showShareModal = hasHash(hash) && open;
+  const showShareDialog = hasHash(hash) && open;
   const onCloseShareModal = useCallback(() => {
     setOpen(false);
+    setHash("");
   }, []);
-  const onShare = useCallback(() => {
-    saveHash(toHash(filters));
+  const openShareDialog = useCallback(() => {
+    setHash(toHash(filters) || "000");
+    setOpen(true);
   }, [filters]);
+
+  useLayoutEffect(() => {
+    if (hash) {
+      setOpen(true);
+    }
+  }, [hash]);
 
   return {
     shareFilters,
-    showShareModal,
+    showShareDialog,
     onCloseShareModal,
-    onShare,
+    openShareDialog,
   };
 };
 
