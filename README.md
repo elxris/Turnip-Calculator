@@ -18,6 +18,12 @@ You can find the live calculator [here](https://elxris.github.io/Turnip-Calculat
 
 ## Localizations
 
+### For translators
+
+Please go to [i18n.ac-turnip.com](https://i18n.ac-turnip.com/projects/turnip-calculator/application/) to start translating.
+
+### For developers
+
 This app supports dynamic localization using [i18next](https://www.i18next.com/) and [react-i18next](https://react.i18next.com/), with [i18next-browser-languagedetector](https://github.com/i18next/i18next-browser-languageDetector) to automatically detect the user's native OS language preferences and switch the app's language accordingly.
 
 ### Adding new text to localizations
