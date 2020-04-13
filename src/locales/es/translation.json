@@ -12,7 +12,7 @@
     "PM": "PM",
     "Clear All Data!": "Borrar Datos",
     "Usage": "Manual",
-    "buyPriceInfo": "- El valor de <1>Precio de Compra</1> es el de tu isla. No importa si compras los nabos en otra isla.",
+    "buyPriceInfo": "- El valor del <1>Precio de Compra</1> es el de tu propia isla. No importa si compras los nabos en otra isla.",
     "priceChangeInfo": "- Los precios cambian <1>dos veces al día</1>. Asegúrese de registrarlos. Salvamos sus datos en su dispositivo.",
     "guaranteedMinInfo": "- El <1>Mínimo Garantizado</1> es el valor de compra garantizado que alcanzará algún precio en la semana.",
     "contributors": "Gracias a todos los contribuidores hasta ahora!",
