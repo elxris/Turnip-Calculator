@@ -24,9 +24,9 @@
     "cancel": "Cancelar",
     "clearDataTitle": "¿Estás seguro de querer borrar todos los datos?",
     "clearDataWarning": "¡No podrás recuperar tus datos!",
-    "shareDialog": "Comparte el link de esta página!",
-    "shareClipboard": "O copia este link:",
-    "copyButton": "Copiar!",
+    "shareDialog": "¡Comparte el enlace de esta página!",
+    "shareClipboard": "O copia este enlace:",
+    "copyButton": "¡Copiar!",
     "shareButton": "¡Compartir!",
     "closeButton": "Cerrar"
 }
