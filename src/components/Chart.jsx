@@ -182,13 +182,18 @@ const ChartComponent = ({ filters }) => {
   }, []);
 
   return (
-    <Box p={[0.5, 1, 2]} mt={2} borderRadius={16} bgcolor="bkgs.chart">
+    <Box
+      p={[0.5, 1, 2]}
+      mt={2}
+      borderRadius={16}
+      bgcolor="bkgs.chart"
+      width={1}
+      height={400}
+    >
       <canvas
         style={{ userSelect: "none", WebkitUserSelect: "none" }}
         unselectable={"on"}
         ref={canvas}
-        width={600}
-        height={400}
         onTouchEnd={onTouchEnd}
         onTouchStart={onTouchStart}
       />
