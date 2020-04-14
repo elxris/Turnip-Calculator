@@ -2,6 +2,7 @@ import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 
+import translationCa from "./locales/ca/translation.json";
 import translationDe from "./locales/de/translation.json";
 import translationEn from "./locales/en/translation.json";
 import translationEs from "./locales/es/translation.json";
@@ -44,6 +45,7 @@ i18n
     },
 
     resources: {
+      ca: { translations: translationCa },
       de: { translations: translationDe },
       en: { translations: translationEn },
       es: { translations: translationEs },

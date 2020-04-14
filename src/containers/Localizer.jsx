@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useLocalStorage } from "react-use";
 
 const languages = [
+  ["ca", "Català"],
   ["de", "Deutsch"],
   ["en", "English"],
   ["es", "Español"],
