@@ -1,7 +1,7 @@
 import { useState, useCallback, useLayoutEffect } from "react";
 import { useHash } from "react-use";
 
-const toHash = (filters) => filters.join(" ").trimEnd().split(" ").join(",");
+const toHash = (filters) => filters.join(" ").replace(/(\s*$)/g,"").split(" ").join(",");
 
 const fromHash = (hash = "") => {
   const hashFilters = hash.slice(1).split(",");
