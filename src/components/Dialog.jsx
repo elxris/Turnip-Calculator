@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { func, bool, arrayOf, number } from "prop-types";
+import { func, bool, arrayOf, number, any } from "prop-types";
 import {
   makeStyles,
   Dialog,
@@ -12,9 +12,9 @@ import {
   Box,
 } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
-import { Button, ClearButton, Chart } from "../components";
-import { any } from "prop-types";
 import { useCallback } from "react";
+import { toHash } from "../utils/useShare";
+import { Button, ClearButton, Chart } from "../components";
 
 const useDialogStyles = makeStyles((theme) => ({
   paper: {
@@ -150,11 +150,7 @@ const ShareDialog = ({ open, filters, onClose, ...props }) => {
         <Box mx={[-2.5, 0]}>
           <Box borderRadius={16} maxWidth="100%" clone>
             <img
-              src={`https://ac-turnip.com/p-${filters
-                .join(" ")
-                .trimEnd()
-                .split(" ")
-                .join("-")}.png`}
+              src={`https://ac-turnip.com/p-${toHash(filters)}.png`}
               alt=""
             />
           </Box>
