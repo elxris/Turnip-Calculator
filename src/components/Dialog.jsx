@@ -136,7 +136,7 @@ const ShareDialog = ({ open, filters, onClose, ...props }) => {
       <Button onClick={onClose}>{t("closeButton")}</Button>
     </>
   );
-  const description = t("shareDialog");
+  const description = t("shareDialogV2");
   return (
     <CustomDialog
       open={open}
@@ -148,6 +148,16 @@ const ShareDialog = ({ open, filters, onClose, ...props }) => {
     >
       {open && (
         <Box mx={[-2.5, 0]}>
+          <Box borderRadius={16} maxWidth="100%" clone>
+            <img
+              src={`https://ac-turnip.com/p-${filters
+                .join(" ")
+                .trimEnd()
+                .split(" ")
+                .join("-")}.png`}
+              alt=""
+            />
+          </Box>
           <Chart filters={filters} />
         </Box>
       )}
