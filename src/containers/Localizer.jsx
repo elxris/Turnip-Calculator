@@ -13,6 +13,7 @@ const languages = [
   ["ja", "日本語"],
   ["ko", "한국어"],
   ["nl", "Nederlands"],
+  ["pl", "Polski"],
   ["pt-BR", "Português"],
   ["ru", "Русский"],
   ["zh-CN", "简体中文"],
