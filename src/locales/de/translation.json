@@ -14,8 +14,8 @@
     "Usage": "Anleitung",
     "buyPriceInfo": "- Der <1>Kaufpreis</1>-Wert ist für deine eigene Insel. Es ist egal, ob du die Rüben auf anderen Inseln kaufst.",
     "priceChangeInfo": "- Die Preise wechseln <1>zweimal am Tag.</1> Schreib sie dir auf. Wir speichern die Daten, die du hier eingibst.",
-    "guaranteedMinInfo": "- Das <1>Garantierte Minimum</1> bedeutet, dass du mindestens diesen Preis im Laufe der Woche bekommen wirst.",
-    "contributors": "Danke allen bisherigen Mitwirkenden!",
+    "guaranteedMinInfo": "- Das <1>Garantierte Minimum</1> beschreibt den Preis, den du im Laufe der Woche mindestens bekommen wirst.",
+    "contributors": "Danke an alle bisherigen Mitwirkenden!",
     "About": "Über diesen Rechner",
     "about1": "Dieser Rechner wäre ohne die Arbeit von <2>@_Ninji</2> nicht möglich gewesen.",
     "about2": "Inspiriert wurde ich dabei durch die Arbeit von <2>mikebryant</2>.",
@@ -29,5 +29,5 @@
     "copyButton": "Kopieren!",
     "shareButton": "Teilen!",
     "closeButton": "Schließen",
-    "shareDialogV2": "Teile diese Bild!"
+    "shareDialogV2": "Teile dieses Bild!"
 }
