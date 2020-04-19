@@ -28,5 +28,6 @@
     "shareClipboard": "O copia este enlace:",
     "copyButton": "¡Copiar!",
     "shareButton": "¡Compartir!",
-    "closeButton": "Cerrar"
+    "closeButton": "Cerrar",
+    "shareDialogV2": "¡Comparte esta imagen!"
 }
