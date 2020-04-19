@@ -46,7 +46,7 @@ const randFloatRelative = (
   const minValue = Math.max(minVerification, filter || Math.min(min1, min2));
   const maxValue = Math.min(maxVerification, filter || Math.max(max1, max2));
 
-  arr.push([minValue, maxValue, cb]);
+  arr.push([Math.min(minValue, maxValue), Math.max(minValue, maxValue), cb]);
 };
 
 const roundPrediction = (arr) => {
@@ -313,10 +313,39 @@ const filterByPattern = (filters) => (pattern) =>
     filters[i + 1] ? min <= filters[i + 1] && max >= filters[i + 1] : true
   );
 
+// The lower score, the better.
+const calculateScore = (filters, pattern) => {
+  return pattern.reduce(
+    (prev, [min, max], i) =>
+      prev +
+      (filters[i + 1]
+        ? filters[i + 1] < min
+          ? min - filters[i + 1]
+          : filters[i + 1] > max
+          ? filters[i + 1] - max
+          : 0
+        : 0),
+    0
+  );
+};
+const heuristicFilter = (filters, patterns) => {
+  const scores = new Map();
+  patterns.forEach((pattern) => {
+    scores.set(pattern, calculateScore(filters, pattern));
+  });
+  patterns.sort(
+    (patternA, patternB) => scores.get(patternA) - scores.get(patternB)
+  );
+  const firstScore = scores.get(patterns[0]);
+  return patterns.filter((pattern) => scores.get(pattern) < firstScore * 1.2);
+};
+
 const possiblePatterns = (filters) => {
   const patterns = Array.from({ length: 4 }, (v, i) => i);
   const fns = [pattern0, pattern1, pattern2, pattern3];
+  let resultCount = 0;
   const result = [];
+  const all = [];
 
   const basePrice = filters[0];
   patterns.forEach((fn) => {
@@ -326,11 +355,13 @@ const possiblePatterns = (filters) => {
     } else {
       posibilities = fns[fn]([basePrice, basePrice], filters.slice(1));
     }
+    all.push(...posibilities);
     const filtered = posibilities.filter(filterByPattern(filters));
     result.push(filtered);
+    resultCount += filtered.length;
   });
 
-  return result;
+  return resultCount ? result : [heuristicFilter(filters, all)];
 };
 
 // Take all patternsOptions and make them single [min, max] values.
