@@ -45,14 +45,16 @@ const useShare = (filters) => {
   }, [filters, history]);
 
   useLayoutEffect(() => {
-    if (hash) {
+    if (f || hash) {
       history.replace({
         search: QueryString.stringify({ f: toHash(shareFilters) }),
         hash: null,
       });
       setOpen(true);
     }
-  }, [hash, history, shareFilters]);
+    // onMount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [history]);
 
   return {
     shareFilters,
