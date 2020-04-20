@@ -24,9 +24,10 @@
     "cancel": "キャンセル",
     "clearDataTitle": "本当に削除してもよろしいですか？",
     "clearDataWarning": "この操作を元に戻すことはできません！",
-    "shareDialog": "このページのリンクをシェアしてください。",
+    "shareDialog": "このページのリンクをシェアしてください！",
     "shareClipboard": "もしくはこちらのリンクをコピーしてください：",
-    "copyButton": "コピー",
-    "shareButton": "シェア",
-    "closeButton": "閉じる"
+    "copyButton": "コピー！",
+    "shareButton": "シェア！",
+    "closeButton": "閉じる",
+    "shareDialogV2": "写真を共有する！"
 }
