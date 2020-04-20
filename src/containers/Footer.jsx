@@ -115,7 +115,7 @@ const Footer = () => {
         </Box>
         <Localizer />
         <Typography variant="body1" align="right">
-          v1.9.0
+          v1.9.0a
         </Typography>
       </Box>
     );

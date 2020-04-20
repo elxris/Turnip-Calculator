@@ -1,15 +1,16 @@
 import { useState, useCallback, useLayoutEffect } from "react";
-import { useHash } from "react-use";
+import { useLocation, useHistory } from "react-router-dom";
+import QueryString from "qs";
 
 const toHash = (filters) =>
   filters
     .join(" ")
     .replace(/(\s*$)/g, "")
     .split(" ")
-    .join("-");
+    .join("-") || "000";
 
 const fromHash = (hash = "") => {
-  const hashFilters = hash.slice(1).split("-");
+  const hashFilters = hash.replace("#", "").split("-");
   return Array.from({ length: 13 }).map(
     (v, i) => Number(hashFilters[i]) || undefined
   );
@@ -17,35 +18,41 @@ const fromHash = (hash = "") => {
 
 const hasHash = (hash) => Boolean(hash);
 
-const setHash = (hash) => {
-  if (window.history.replaceState) {
-    window.history.replaceState(null, null, `#${hash}`);
-  } else {
-    window.location.hash = `#${hash}`;
-  }
-};
-
 const useShare = (filters) => {
-  const [$hash] = useHash();
-  const [open, setOpen] = useState(1);
-  const hash = $hash || window.location.hash;
+  const [open, setOpen] = useState(true);
+  const { search, hash } = useLocation();
+  const history = useHistory();
+  const { f } = QueryString.parse(search, { ignoreQueryPrefix: true });
 
-  const shareFilters = fromHash(hash);
-  const showShareDialog = hasHash(hash) && open;
+  const shareFilters = fromHash(f || hash);
+  const showShareDialog = hasHash(f || hash) && open;
   const onCloseShareModal = useCallback(() => {
     setOpen(false);
-    setHash("");
-  }, []);
+    history.replace({
+      search: null,
+      hash: null,
+    });
+  }, [history]);
   const openShareDialog = useCallback(() => {
-    setHash(toHash(filters) || "000");
+    history.replace({
+      search: QueryString.stringify(
+        { f: toHash(filters) },
+        { addQueryPrefix: true }
+      ),
+      hash: null,
+    });
     setOpen(true);
-  }, [filters]);
+  }, [filters, history]);
 
   useLayoutEffect(() => {
     if (hash) {
+      history.replace({
+        search: QueryString.stringify({ f: toHash(shareFilters) }),
+        hash: null,
+      });
       setOpen(true);
     }
-  }, [hash]);
+  }, [hash, history, shareFilters]);
 
   return {
     shareFilters,

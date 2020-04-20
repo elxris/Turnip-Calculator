@@ -42,9 +42,11 @@
     "lodash.zip": "4.2.0",
     "progress": "2.0.3",
     "prop-types": "15.7.2",
+    "qs": "^6.9.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-i18next": "11.3.4",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "react-use": "14.1.1",
     "utils": "0.3.1"

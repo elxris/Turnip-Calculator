@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { func, bool, arrayOf, number, any } from "prop-types";
 import {
   makeStyles,
@@ -10,6 +10,7 @@ import {
   TextField,
   Typography,
   Box,
+  LinearProgress,
 } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { useCallback } from "react";
@@ -107,6 +108,7 @@ ClearDataDialog.propTypes = {
 
 const ShareDialog = ({ open, filters, onClose, ...props }) => {
   const { t } = useTranslation();
+  const [loading, setLoadingState] = useState(true);
   const inputRef = useRef();
   const location = window.location.toString();
   const handleCopy = useCallback(() => {
@@ -116,6 +118,12 @@ const ShareDialog = ({ open, filters, onClose, ...props }) => {
       document.execCommand("copy");
     }
   }, [location]);
+
+  useEffect(() => {
+    if (open) {
+      setLoadingState(true);
+    }
+  }, [open]);
 
   const actions = (
     <>
@@ -148,8 +156,17 @@ const ShareDialog = ({ open, filters, onClose, ...props }) => {
     >
       {open && (
         <Box mx={[-2.5, 0]}>
-          <Box borderRadius={16} maxWidth="100%" clone>
+          <Box
+            borderRadius={16}
+            bgcolor="bkgs.chart"
+            overflow="hidden"
+            maxWidth="100%"
+            width="600px"
+            height="315px"
+          >
+            {loading && <LinearProgress />}
             <img
+              onLoad={() => setLoadingState(false)}
               src={`https://ac-turnip.com/p-${toHash(filters)}.png`}
               alt=""
             />

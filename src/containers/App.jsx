@@ -15,28 +15,26 @@ const App = () => {
   } = useShare(filters);
 
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Container maxWidth="md">
-          <Title />
-          <Box mx={[-1.5, 0]}>
-            <Filter
-              filters={inputFilters}
-              onChange={saveFilters}
-              openShareDialog={openShareDialog}
-            />
-            <Chart filters={filters} />
-            <Footer />
-          </Box>
-        </Container>
-        <ShareDialog
-          open={showShareDialog}
-          filters={shareFilters}
-          onClose={onCloseShareModal}
-        />
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Container maxWidth="md">
+        <Title />
+        <Box mx={[-1.5, 0]}>
+          <Filter
+            filters={inputFilters}
+            onChange={saveFilters}
+            openShareDialog={openShareDialog}
+          />
+          <Chart filters={filters} />
+          <Footer />
+        </Box>
+      </Container>
+      <ShareDialog
+        open={showShareDialog}
+        filters={shareFilters}
+        onClose={onCloseShareModal}
+      />
+    </ThemeProvider>
   );
 };
 
