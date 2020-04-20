@@ -35,6 +35,7 @@ const useShare = (filters) => {
   }, [history]);
   const openShareDialog = useCallback(() => {
     history.replace({
+      pathname: "share",
       search: QueryString.stringify(
         { f: toHash(filters) },
         { addQueryPrefix: true }
@@ -47,6 +48,7 @@ const useShare = (filters) => {
   useLayoutEffect(() => {
     if (f || hash) {
       history.replace({
+        pathname: "share",
         search: QueryString.stringify({ f: toHash(shareFilters) }),
         hash: null,
       });
