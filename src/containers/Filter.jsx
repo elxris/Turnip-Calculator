@@ -5,10 +5,19 @@ import { useTranslation } from "react-i18next";
 import { ClearButton, ClearDataDialog, Button } from "../components";
 import {} from "../utils";
 import bells from "../images/bells.svg";
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  'form-con': {
+      borderBottomLeftRadius: theme.shape.borderRadius * 4,
+      borderBottomRightRadius: theme.shape.borderRadius * 4
+  }
+}));
 
 const Filter = ({ filters, onChange, openShareDialog }) => {
   const [clearDataDialogOpen, setClearDataDialogOpen] = useState(false);
   const { t } = useTranslation();
+  const classes = useStyles();
 
   const handleChange = useCallback(
     (index) => ({
@@ -69,7 +78,7 @@ const Filter = ({ filters, onChange, openShareDialog }) => {
         }}
       />
       <Box
-        borderRadius={16}
+        className={classes['form-con']}
         bgcolor="primary.light"
         display="flex"
         flexDirection="column"

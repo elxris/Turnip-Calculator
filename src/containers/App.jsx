@@ -2,7 +2,7 @@ import React from "react";
 import { CssBaseline, ThemeProvider, Container, Box } from "@material-ui/core";
 import { useFilters, useTitle, theme, useShare } from "../utils";
 import { Title, Filter, Footer } from "../containers";
-import { ShareDialog, Chart } from "../components";
+import { ShareDialog, Chart, SimpleTabs } from "../components";
 
 const App = () => {
   useTitle();
@@ -19,13 +19,15 @@ const App = () => {
       <CssBaseline />
       <Container maxWidth="md">
         <Title />
+        <SimpleTabs mx={[-1.5, 0]}>
+            <Filter
+              filters={inputFilters}
+              onChange={saveFilters}
+              openShareDialog={openShareDialog}
+            />
+            <Chart filters={filters} />
+        </SimpleTabs>
         <Box mx={[-1.5, 0]}>
-          <Filter
-            filters={inputFilters}
-            onChange={saveFilters}
-            openShareDialog={openShareDialog}
-          />
-          <Chart filters={filters} />
           <Footer />
         </Box>
       </Container>

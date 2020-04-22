@@ -12,6 +12,17 @@ import {
   averageReducer,
   minWeekReducer,
 } from "../utils";
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  'chart-con': {
+      borderBottomLeftRadius: theme.shape.borderRadius * 4,
+      borderBottomRightRadius: theme.shape.borderRadius * 4,
+      borderWidth: 2,
+      borderColor: theme.palette.primary.main,
+      borderStyle: 'solid'
+  }
+}));
 
 Chart.defaults.defaultFontFamily = "Arial Rounded MT Bold";
 
@@ -116,12 +127,13 @@ const chartOptions = {
   },
 };
 
-const ChartComponent = ({ filters }) => {
+const ChartComponent = ({ filters, mt }) => {
   const canvas = useRef();
   const chart = useRef();
   const { t } = useTranslation();
   const generateData = useCallback(createGenerteData(t), [t]);
   const getLabels = useCallback(createGetLabels(t), [t]);
+  const classes = useStyles();
 
   // onMount effect
   useEffect(() => {
@@ -184,8 +196,8 @@ const ChartComponent = ({ filters }) => {
   return (
     <Box
       p={[0.5, 1, 2]}
-      mt={2}
-      borderRadius={16}
+      mt={mt}
+      className={classes['chart-con']}
       bgcolor="bkgs.chart"
       width={1}
       height={400}
@@ -203,6 +215,7 @@ const ChartComponent = ({ filters }) => {
 
 ChartComponent.propTypes = {
   filters: arrayOf(number).isRequired,
+  mt: number
 };
 
 export default ChartComponent;
