@@ -10,7 +10,8 @@ const toHash = (filters) =>
     .join("-") || "000";
 
 const fromHash = (hash = "") => {
-  const hashFilters = hash.replace("#", "").replace(",", "-").split("-");
+  const hashFilters = hash.replace("#", "").replace(/,/g, "-").split("-");
+  console.log(hashFilters);
   return Array.from({ length: 13 }).map(
     (v, i) => Number(hashFilters[i]) || undefined
   );
