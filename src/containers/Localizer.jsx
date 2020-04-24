@@ -16,6 +16,7 @@ const languages = [
   ["pl", "Polski"],
   ["pt-BR", "Português"],
   ["ru", "Русский"],
+  ["sv", "Svenska"],
   ["zh-CN", "简体中文"],
   ["zh-HK", "繁體中文（香港）"],
   ["zh-TW", "繁體中文（台灣）"],

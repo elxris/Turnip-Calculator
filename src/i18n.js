@@ -14,6 +14,7 @@ import translationNl from "./locales/nl/translation.json";
 import translationPl from "./locales/pl/translation.json";
 import translationPtBR from "./locales/pt-br/translation.json";
 import translationRu from "./locales/ru/translation.json";
+import translationSv from "./locales/sv/translation.json";
 import translationZhCN from "./locales/zh-CN/translation.json";
 import translationZhHK from "./locales/zh-HK/translation.json";
 import translationZhTW from "./locales/zh-TW/translation.json";
@@ -59,6 +60,7 @@ i18n
       pt: { translations: translationPtBR },
       "pt-BR": { translations: translationPtBR },
       ru: { translations: translationRu },
+      sv: { translations: translationSv },
       zh: { translations: translationZhCN },
       "zh-CN": { translations: translationZhCN },
       "zh-HK": { translations: translationZhHK },
