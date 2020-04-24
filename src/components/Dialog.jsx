@@ -160,12 +160,12 @@ const ShareDialog = ({ open, filters, onClose, ...props }) => {
             borderRadius={16}
             bgcolor="bkgs.chart"
             overflow="hidden"
-            maxWidth="100%"
-            width="600px"
-            height="315px"
+            maxWidth="600px"
+            maxHeight="315px"
           >
             {loading && <LinearProgress />}
             <img
+              style={{ width: "100%" }}
               onLoad={() => setLoadingState(false)}
               src={`https://ac-turnip.com/p-${toHash(filters)}.png`}
               alt=""
