@@ -18,6 +18,10 @@ You can find the live calculator [here](https://elxris.github.io/Turnip-Calculat
 1.9: New heuristic filter! Share improvements!  
 1.9.1: New colors to show probabilities!
 
+## API
+
+Looking for an API? [See this](https://github.com/elxris/Turnip-Calculator/issues/72#issuecomment-617483396)
+
 ## Localizations
 
 ### For translators
