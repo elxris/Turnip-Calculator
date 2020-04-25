@@ -308,11 +308,6 @@ const pattern3 = (basePrice, filters) => {
   return probabilities;
 };
 
-const filterByPattern = (filters) => (pattern) =>
-  pattern.every(([min, max], i) =>
-    filters[i + 1] ? min <= filters[i + 1] && max >= filters[i + 1] : true
-  );
-
 // The lower score, the better.
 const calculateScore = (filters, pattern) => {
   return pattern.reduce(
@@ -337,31 +332,51 @@ const heuristicFilter = (filters, patterns) => {
     (patternA, patternB) => scores.get(patternA) - scores.get(patternB)
   );
   const firstScore = scores.get(patterns[0]);
-  return patterns.filter((pattern) => scores.get(pattern) < firstScore * 1.2);
+  return patterns.filter(
+    (pattern) => scores.get(pattern) <= firstScore * 1.1 + 12
+  );
 };
 
 const possiblePatterns = (filters) => {
-  const patterns = Array.from({ length: 4 }, (v, i) => i);
-  const fns = [pattern0, pattern1, pattern2, pattern3];
-  let resultCount = 0;
-  const result = [];
+  const patternFunctions = [pattern0, pattern1, pattern2, pattern3];
+  const probabilities = [140, 105, 55, 100]; // out of 400
   const all = [];
 
   const basePrice = filters[0];
-  patterns.forEach((fn) => {
+  patternFunctions.forEach((patternFunction, patternNumber) => {
     let posibilities;
     if (!basePrice || basePrice < 90 || basePrice > 110) {
-      posibilities = fns[fn]([90, 110], filters.slice(1));
+      posibilities = patternFunction([90, 110], filters.slice(1));
     } else {
-      posibilities = fns[fn]([basePrice, basePrice], filters.slice(1));
+      posibilities = patternFunction([basePrice, basePrice], filters.slice(1));
     }
-    all.push(...posibilities);
-    const filtered = posibilities.filter(filterByPattern(filters));
-    result.push(filtered);
-    resultCount += filtered.length;
+    all.push(
+      ...posibilities.map((pattern) => {
+        pattern.pattern = patternNumber;
+        return pattern;
+      })
+    );
   });
 
-  return resultCount ? result : [heuristicFilter(filters, all)];
+  const results = heuristicFilter(filters, all);
+  const countPerPattern = results.reduce(
+    (acc, pattern) => {
+      acc[pattern.pattern]++;
+      return acc;
+    },
+    [0, 0, 0, 0]
+  );
+  const allPatternsProb = countPerPattern.reduce(
+    (acc, count, i) => (count ? acc + probabilities[i] : acc),
+    0
+  );
+  return results.map((pattern) => {
+    pattern.probability =
+      probabilities[pattern.pattern] /
+      allPatternsProb /
+      countPerPattern[pattern.pattern];
+    return pattern;
+  });
 };
 
 // Take all patternsOptions and make them single [min, max] values.
@@ -373,10 +388,22 @@ const minMaxReducer = (prev, current) => {
 };
 
 const averageReducer = (prev, current) => {
+  const probability = prev.probability;
+  const cProbability = current.probability;
   return prev.map(([avg, count, flag], i) => {
     const [min, max] = current[i];
-    if (!flag) return [(avg + count + min + max) / 4, 4, true];
-    return [(avg * count + min + max) / (count + 2), count + 2, true];
+    if (!flag)
+      return [
+        ((avg + count) * probability * 0.5 + (min + max) * cProbability * 0.5) /
+          (probability + cProbability),
+        probability + cProbability,
+        true,
+      ];
+    return [
+      (avg * count + (min + max) * cProbability * 0.5) / (count + cProbability),
+      count + cProbability,
+      true,
+    ];
   });
 };
 
@@ -388,15 +415,30 @@ const minWeekReducer = (prev, current, i) => {
   return [Math.min(a, b)];
 };
 
-const patternReducer = (patternsCategories, reducer = minMaxReducer) => {
-  const allPatterns = patternsCategories.reduce(
-    (acc, current) => [...acc, ...current],
+const patternReducer = (allPatterns, reducer) => {
+  if (allPatterns.length === 1) {
+    return [allPatterns[0], allPatterns[0]].reduce(reducer);
+  }
+  return allPatterns.reduce(reducer);
+};
+
+const calculate = (filter) => {
+  let patterns = possiblePatterns(filter);
+  const minMaxPattern = patternReducer(patterns, minMaxReducer);
+  const avgPattern = patternReducer(patterns, averageReducer).reduce(
+    (acc, [avg]) => [...acc, Math.trunc(avg)],
     []
   );
-  if (allPatterns.length === 0) return [];
-  if (allPatterns.length === 1)
-    return [allPatterns[0], allPatterns[0]].reduce(reducer);
-  return allPatterns.reduce(reducer);
+  const [minWeekValue] = patternReducer(patterns, minWeekReducer);
+
+  const result = {
+    patterns,
+    minMaxPattern,
+    avgPattern,
+    minWeekValue,
+  };
+
+  return result;
 };
 
 export {
@@ -405,4 +447,5 @@ export {
   minMaxReducer,
   averageReducer,
   minWeekReducer,
+  calculate,
 };

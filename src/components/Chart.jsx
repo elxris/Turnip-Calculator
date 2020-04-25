@@ -6,24 +6,16 @@ import merge from "lodash.merge";
 import { Box } from "@material-ui/core";
 import { useDebounce } from "react-use";
 import { useTranslation } from "react-i18next";
-import {
-  possiblePatterns,
-  patternReducer,
-  averageReducer,
-  minWeekReducer,
-} from "../utils";
+import { calculate } from "../utils";
 
 Chart.defaults.defaultFontFamily = "Arial Rounded MT Bold";
 
 const createGenerteData = (t) => (filter) => {
-  let patterns = possiblePatterns(filter);
-  const patternCount = patterns.reduce((acc, cur) => acc + cur.length, 0);
-  if (patternCount === 0) patterns = possiblePatterns([0, ...filter.slice(1)]);
-  const minMaxPattern = patternReducer(patterns);
+  let { patterns, avgPattern, minMaxPattern, minWeekValue } = calculate(filter);
+
+  console.log(JSON.stringify({ patterns }));
+
   const minMaxData = zip(...minMaxPattern);
-  const avgPattern = patternReducer(patterns, averageReducer);
-  const avgData = zip(...avgPattern);
-  const [minWeekValue] = patternReducer(patterns, minWeekReducer);
 
   return [
     {
@@ -55,10 +47,11 @@ const createGenerteData = (t) => (filter) => {
     },
     {
       label: t("Average"),
-      data: avgData[0] ? avgData[0].map(Math.trunc) : new Array(12).fill(null),
+      data: avgPattern || new Array(12).fill(null),
       backgroundColor: "#F0E16F",
       borderColor: "#F0E16F",
       pointRadius: 0,
+      pointHoverRadius: 0,
       fill: false,
     },
     {
@@ -68,7 +61,7 @@ const createGenerteData = (t) => (filter) => {
       borderColor: "#A5D5A5",
       pointRadius: 0,
       pointHoverRadius: 0,
-      fill: 3,
+      fill: false,
     },
     {
       label: t("Minimum"),
@@ -77,8 +70,36 @@ const createGenerteData = (t) => (filter) => {
       borderColor: "#88C9A1",
       pointRadius: 0,
       pointHoverRadius: 0,
-      fill: 3,
+      fill: false,
     },
+    ...patterns.reduce((acc, pattern) => {
+      const minMaxData = zip(...pattern);
+      return [
+        ...acc,
+        {
+          label: "submax",
+          data: minMaxData[1] || new Array(12).fill(null),
+          backgroundColor: `RGBA(165, 213, 165, ${
+            pattern.probability * Math.log2(patterns.length + 1)
+          })`,
+          borderColor: `transparent`,
+          pointRadius: 0,
+          pointHoverRadius: 0,
+          fill: 3,
+        },
+        {
+          label: "submin",
+          data: minMaxData[0] || new Array(12).fill(null),
+          backgroundColor: `RGBA(136, 201, 161, ${
+            pattern.probability * Math.log2(patterns.length + 1)
+          })`,
+          borderColor: `transparent`,
+          pointRadius: 0,
+          pointHoverRadius: 0,
+          fill: 3,
+        },
+      ];
+    }, []),
   ];
 };
 
@@ -97,21 +118,25 @@ const chartOptions = {
   tooltips: {
     intersect: false,
     mode: "index",
+    filter: ({ datasetIndex }) => datasetIndex < 6,
   },
   scales: {
     y: {
       gridLines: {
         display: false,
       },
-      ticks: {
-        suggestedMin: 0,
-        suggestedMax: 300,
-      },
+      suggestedMin: 0,
+      suggestedMax: 400,
     },
   },
   elements: {
     line: {
       cubicInterpolationMode: "monotone",
+    },
+  },
+  legend: {
+    labels: {
+      filter: ({ text = "" }) => !text.includes("sub"),
     },
   },
 };
@@ -153,6 +178,7 @@ const ChartComponent = ({ filters }) => {
       // regerates chart in the new
       const newData = generateData(filters, t);
       merge(chart.current.data.datasets, newData);
+      chart.current.data.datasets.length = newData.length;
       chart.current.update();
     },
     500,
