@@ -1,0 +1,15 @@
+{
+  "name": "patterns",
+  "collaborators": [
+    "Christian Ceciliano <cristiancehi@gmail.com>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "patterns_bg.wasm",
+    "patterns.js",
+    "patterns.d.ts"
+  ],
+  "module": "patterns.js",
+  "types": "patterns.d.ts",
+  "sideEffects": false
+}
