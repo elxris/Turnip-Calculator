@@ -1,13 +1,13 @@
 {
   "name": "turnip-calc",
-  "version": "1.8.0",
+  "version": "2.0.0",
   "author": "elxris",
   "license": "MIT",
   "homepage": ".",
   "private": true,
   "scripts": {
-    "start": "BROWSER=none react-scripts start",
-    "build": "react-scripts build",
+    "start": "BROWSER=none react-app-rewired start",
+    "build": "yarn version --prerelease --preid build && react-app-rewired build",
     "predeploy": "rm -rf build && yarn build",
     "deploy": "gh-pages -d build"
   },
@@ -40,6 +40,7 @@
     "i18next-browser-languagedetector": "4.0.2",
     "lodash.merge": "4.6.2",
     "lodash.zip": "4.2.0",
+    "patterns": "file:./wasm/pkg",
     "progress": "2.0.3",
     "prop-types": "15.7.2",
     "qs": "^6.9.3",
