@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@master
     - uses: actions/setup-node@v1.4.2
+    - uses: actions/checkout@master
     - name: Deploying
     - run: yarn
     - run: yarn deploy
