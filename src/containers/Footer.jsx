@@ -4,6 +4,7 @@ import { Trans } from "react-i18next";
 import Localizer from "./Localizer";
 import { string, node } from "prop-types";
 import { useTranslation } from "react-i18next";
+import { version } from "../../package.json";
 
 const Link = ({ href, gh, children }) => (
   <MaterialLink
@@ -115,7 +116,7 @@ const Footer = () => {
         </Box>
         <Localizer />
         <Typography variant="body1" align="right">
-          v1.9.1
+          {`v${version || "2.x"}`}
         </Typography>
       </Box>
     );

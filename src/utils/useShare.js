@@ -11,7 +11,6 @@ const toHash = (filters) =>
 
 const fromHash = (hash = "") => {
   const hashFilters = hash.replace("#", "").replace(/,/g, "-").split("-");
-  console.log(hashFilters);
   return Array.from({ length: 13 }).map(
     (v, i) => Number(hashFilters[i]) || undefined
   );

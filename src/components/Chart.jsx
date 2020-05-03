@@ -10,10 +10,10 @@ import { calculate } from "../utils";
 
 Chart.defaults.defaultFontFamily = "Arial Rounded MT Bold";
 
-const createGenerteData = (t) => (filter) => {
-  let { patterns, avgPattern, minMaxPattern, minWeekValue } = calculate(filter);
-
-  console.log(JSON.stringify({ patterns }));
+const createGenerteData = (t) => async (filter) => {
+  let { patterns, avgPattern, minMaxPattern, minWeekValue } = await calculate(
+    filter
+  );
 
   const minMaxData = zip(...minMaxPattern);
 
@@ -150,15 +150,17 @@ const ChartComponent = ({ filters }) => {
 
   // onMount effect
   useEffect(() => {
-    const ctx = canvas.current.getContext("2d");
-    chart.current = new Chart(ctx, {
-      type: "line",
-      data: {
-        datasets: generateData(filters),
-        labels: getLabels(),
-      },
-      options: chartOptions,
-    });
+    (async () => {
+      const ctx = canvas.current.getContext("2d");
+      chart.current = new Chart(ctx, {
+        type: "line",
+        data: {
+          datasets: await generateData(filters),
+          labels: getLabels(),
+        },
+        options: chartOptions,
+      });
+    })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -173,10 +175,10 @@ const ChartComponent = ({ filters }) => {
 
   // Filters / Data effect
   useDebounce(
-    () => {
+    async () => {
       if (!chart.current) return;
       // regerates chart in the new
-      const newData = generateData(filters, t);
+      const newData = await generateData(filters, t);
       merge(chart.current.data.datasets, newData);
       chart.current.data.datasets.length = newData.length;
       chart.current.update();
