@@ -19,9 +19,9 @@ jobs:
         run: wasm-pack build
         working-directory: ./wasm
       - name: Install
-        run: |
-          yarn
-          yarn build
+        run: yarn
+      - name: Build
+        run: yarn build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
