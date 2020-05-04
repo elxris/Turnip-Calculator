@@ -7,8 +7,8 @@
   "private": true,
   "scripts": {
     "start": "BROWSER=none react-app-rewired start",
-    "prebuild": "rm -rf build",
-    "build": "yarn version --prerelease --preid build && react-app-rewired build"
+    "prebuild": "yarn version --prerelease --preid build",
+    "build": "react-app-rewired build"
   },
   "devDependencies": {
     "@babel/core": "7.9.0",
