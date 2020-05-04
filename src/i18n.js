@@ -6,7 +6,9 @@ import translationCa from "./locales/ca/translation.json";
 import translationDe from "./locales/de/translation.json";
 import translationEn from "./locales/en/translation.json";
 import translationEs from "./locales/es/translation.json";
+import translationFi from "./locales/fi/translation.json";
 import translationFr from "./locales/fr/translation.json";
+import translationId from "./locales/id/translation.json";
 import translationIt from "./locales/it/translation.json";
 import translationJa from "./locales/ja/translation.json";
 import translationKo from "./locales/ko/translation.json";
@@ -51,7 +53,9 @@ i18n
       de: { translations: translationDe },
       en: { translations: translationEn },
       es: { translations: translationEs },
+      fi: { translations: translationFi },
       fr: { translations: translationFr },
+      id: { translations: translationId },
       it: { translations: translationIt },
       ja: { translations: translationJa },
       ko: { translations: translationKo },
