@@ -15,17 +15,22 @@ jobs:
     steps:
     - uses: actions/setup-node@v1.4.2
     - uses: actions/checkout@master
-    - name: Installing
-      run: yarn
-    - name: Deploying
-      run: yarn deploy
-    - uses: ad-m/github-push-action@v0.5.0
+    - name: Install
+      run: |
+        yarn
+        yarn build
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages-test  # default: gh-pages
+        publish_dir: ./build
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git commit -m "Version bump" -a
     - name: Push changes
-      uses: ad-m/github-push-action@master
+      uses: ad-m/github-push-action@0.5.0
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
