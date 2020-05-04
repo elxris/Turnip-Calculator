@@ -12,11 +12,12 @@ static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 #[wasm_bindgen]
 pub fn calculate(filters: String) -> String {
     utils::set_panic_hook();
-    let mut parsed_filters: Vec<i32> = Vec::new();
+    let mut parsed_filters: Vec<Option<i32>> = Vec::new();
     for filter in filters.split("-") {
-        match filter.parse() {
-            Ok(number) => parsed_filters.push(number),
-            Err(_) => break,
+        if let Ok(number) = filter.parse() {
+            parsed_filters.push(Some(number));
+        } else {
+            parsed_filters.push(None);
         }
     }
     parse(&patterns::calculate(&parsed_filters))

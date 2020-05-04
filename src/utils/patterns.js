@@ -35,7 +35,7 @@ const possiblePatterns = async (filters) => {
   try {
     wasmPatterns = JSON.parse((await wasm).calculate(filters.join("-")));
   } catch (error) {
-    console.log(error);
+    console.warn(error);
     wasmPatterns = mockPatterns;
   }
 
