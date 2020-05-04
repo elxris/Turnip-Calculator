@@ -15,6 +15,10 @@ jobs:
     steps:
     - uses: actions/setup-node@v1.4.2
     - uses: actions/checkout@master
+    - name: Set Git Configs
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
     - name: Install
       run: |
         yarn
@@ -27,8 +31,6 @@ jobs:
         publish_dir: ./build
     - name: Commit files
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
         git commit -m "Version bump" -a
     - name: Push changes
       uses: ad-m/github-push-action@v0.5.0
