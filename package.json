@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "start": "BROWSER=none react-app-rewired start",
-    "prebuild": "yarn version --prerelease --preid build",
+    "prebuild": "yarn version --no-git-tag-version --no-commit-hooks --prerelease --preid build",
     "build": "react-app-rewired build"
   },
   "devDependencies": {

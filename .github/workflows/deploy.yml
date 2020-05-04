@@ -5,36 +5,34 @@ name: Deploy
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/setup-node@v1.4.2
-    - uses: actions/checkout@master
-    - uses: jetli/wasm-pack-action@v0.3.0
-    - name: Set Git Configs
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-    - name: Compile WASM
-      run: |
-        wasm-pack build
-        git commit -m "WASM Binaries" -a
-      working-directory: ./wasm
-    - name: Install
-      run: |
-        yarn
-        yarn build
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
-    - name: Push changes
-      uses: ad-m/github-push-action@v0.5.0
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v1.4.2
+      - uses: actions/checkout@master
+      - uses: jetli/wasm-pack-action@v0.3.0
+      - name: Compile WASM
+        run: wasm-pack build
+        working-directory: ./wasm
+      - name: Install
+        run: |
+          yarn
+          yarn build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "Automatic Deploy" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.5.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
