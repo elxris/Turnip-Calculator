@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 **Version of the tool**
-It is at the bottom right corner. We only accept issues from >1.9.1
+It is at the bottom right corner. We only accept issues from >2.0.1
 
 **Describe the bug**
 A clear and concise description of what the bug is.
