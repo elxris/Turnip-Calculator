@@ -29,9 +29,6 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_branch: gh-pages-test  # default: gh-pages
         publish_dir: ./build
-    - name: Commit files
-      run: |
-        git commit -m "Version bump" -a
     - name: Push changes
       uses: ad-m/github-push-action@v0.5.0
       with:
