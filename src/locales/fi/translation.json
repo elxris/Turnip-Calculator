@@ -1,1 +1,27 @@
-{}
+{
+    "buyPriceInfo": "- <1>Ostohinta</1> on oman saaresi arvo. Jos ostit nauriit eri saarelta, se ei vaikuta.",
+    "PM": "p.m.",
+    "AM": "a.m.",
+    "shareButton": "Jaa!",
+    "copyButton": "Kopioi!",
+    "shareClipboard": "Tai kopioi tämä linkki:",
+    "shareDialogV2": "Jaa tämä kuva!",
+    "shareDialog": "Jaa tämä linkki!",
+    "clearDataWarning": "Tätä ei voi peruuttaa!",
+    "clearDataTitle": "Oletko varma, että haluat poistaa kaiken tiedon?",
+    "cancel": "Peruuta",
+    "about4": "Löysitkö bugin? Raportoi se <2>täällä</2>.",
+    "About": "Tietoja",
+    "closeButton": "Sulje",
+    "Usage": "Käyttö",
+    "Clear All Data!": "Tyhjennä kaikki tiedot",
+    "Mon Tue Wed Thu Fri Sat": "Ma Ti Ke To Pe La",
+    "Minimum": "Minimi",
+    "Maximum": "Maksimi",
+    "Average": "Keskiarvo",
+    "Guaranteed Min": "Taattu minimi",
+    "Daily Price": "Päivittäinen hinta",
+    "Buy Price": "Ostohinta",
+    "ACNH Turnip Calculator": "ACNH: Naurislaskuri",
+    "Turnip Calculator": "Naurislaskuri"
+}
