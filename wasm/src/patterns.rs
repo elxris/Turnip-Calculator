@@ -85,28 +85,45 @@ fn rand_float_relative(
   let max1 = max_prediction(base_price.min as f32);
   let max2 = max_prediction(base_price.max as f32);
 
-  let min_value = match filter {
-    Some(&Some(i)) => i as f32,
-    _ => verification.min.max(min1.min(min2)),
-  };
-  let max_value = match filter {
-    Some(&Some(i)) => i as f32,
-    _ => verification.max.min(max1.max(max2)),
-  };
+  let min_value = verification.min.max(min1.min(min2));
+  let max_value = verification.max.min(max1.max(max2));
 
-  if min_value <= max_value {
-    arr.push(MinMaxPoint {
-      min: min_value,
-      max: max_value,
-      plus_value,
-    })
-  } else {
-    arr.push(MinMaxPoint {
-      min: verification.min,
-      max: verification.max,
-      plus_value,
-    })
-  }
+  match filter {
+    Some(&Some(i)) => {
+      if i as f32 >= min_value && i as f32 <= max_value {
+        // If the filter is in range, means that our prediction is healthy
+        arr.push(MinMaxPoint {
+          min: i as f32,
+          max: i as f32,
+          plus_value,
+        })
+      } else {
+        // If is not in range, maybe is not the right pattern.
+        arr.push(MinMaxPoint {
+          min: min_value,
+          max: max_value,
+          plus_value,
+        })
+      }
+    }
+    _ => {
+      if min_value <= max_value {
+        // This means our prediction is healthy
+        arr.push(MinMaxPoint {
+          min: min_value,
+          max: max_value,
+          plus_value,
+        })
+      } else {
+        // If our prediction is not healty, use wide prediction
+        arr.push(MinMaxPoint {
+          min: verification.min,
+          max: verification.max,
+          plus_value,
+        })
+      }
+    }
+  };
 }
 
 // PATTERN 0: high, decreasing, high, decreasing, high
