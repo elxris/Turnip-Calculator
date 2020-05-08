@@ -1,1 +1,17 @@
-{}
+{
+    "priceChangeInfo": "- Prețurile se schimbă<1>de 2 ori pe zi.</1> Asigură-te ca le-ai introdus pe toate. Salvăm datele pe dispozitivul tău.",
+    "buyPriceInfo": "- Valoarea <1>prețului de cumpărare</1> este cel de pe insula ta. Nu conteaza dacă ai cumpărat napii de pe altă insulă.",
+    "Usage": "Utilizare",
+    "Clear All Data!": "Golește Datele",
+    "PM": "PM",
+    "AM": "AM",
+    "Mon Tue Wed Thu Fri Sat": "Lun Mar Mie Joi Vin Sâm",
+    "Minimum": "Minim",
+    "Maximum": "Maxim",
+    "Average": "Media",
+    "Guaranteed Min": "Minim Garantat",
+    "Daily Price": "Preţ Zilnic",
+    "Buy Price": "Preţ Cumpărare",
+    "ACNH Turnip Calculator": "ACNH: Calculator Napi",
+    "Turnip Calculator": "Calculator napi"
+}
