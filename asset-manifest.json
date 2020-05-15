@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.js": "./static/js/main.a9dbe589.chunk.js",
-    "main.js.map": "./static/js/main.a9dbe589.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.bac7f938.js",
-    "runtime-main.js.map": "./static/js/runtime-main.bac7f938.js.map",
-    "static/js/2.3a67b9c8.chunk.js": "./static/js/2.3a67b9c8.chunk.js",
-    "static/js/2.3a67b9c8.chunk.js.map": "./static/js/2.3a67b9c8.chunk.js.map",
-    "static/js/3.6cd9fb22.chunk.js": "./static/js/3.6cd9fb22.chunk.js",
-    "94475bac962ef625d701.module.wasm": "./94475bac962ef625d701.module.wasm",
-    "static/js/3.6cd9fb22.chunk.js.map": "./static/js/3.6cd9fb22.chunk.js.map",
+    "main.js": "./static/js/main.c0ca24f7.chunk.js",
+    "main.js.map": "./static/js/main.c0ca24f7.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.32d05417.js",
+    "runtime-main.js.map": "./static/js/runtime-main.32d05417.js.map",
+    "static/js/2.8c2ff29c.chunk.js": "./static/js/2.8c2ff29c.chunk.js",
+    "static/js/2.8c2ff29c.chunk.js.map": "./static/js/2.8c2ff29c.chunk.js.map",
+    "static/js/3.a1312084.chunk.js": "./static/js/3.a1312084.chunk.js",
+    "2eb2f75358bbe3edf0cb.module.wasm": "./2eb2f75358bbe3edf0cb.module.wasm",
+    "static/js/3.a1312084.chunk.js.map": "./static/js/3.a1312084.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.e680b4fb6ab27dd2a3550e032975bda8.js": "./precache-manifest.e680b4fb6ab27dd2a3550e032975bda8.js",
+    "precache-manifest.aae5a0c06d65065182a1c81b924194be.js": "./precache-manifest.aae5a0c06d65065182a1c81b924194be.js",
     "service-worker.js": "./service-worker.js",
-    "static/js/2.3a67b9c8.chunk.js.LICENSE.txt": "./static/js/2.3a67b9c8.chunk.js.LICENSE.txt",
+    "static/js/2.8c2ff29c.chunk.js.LICENSE.txt": "./static/js/2.8c2ff29c.chunk.js.LICENSE.txt",
     "static/media/ArialRoundedBold.woff": "./static/media/ArialRoundedBold.98a0555d.woff",
     "static/media/FinkHeavyRegular.woff": "./static/media/FinkHeavyRegular.d2740563.woff",
     "static/media/FinkHeavyRegular.woff2": "./static/media/FinkHeavyRegular.e8a8b570.woff2",
     "static/media/bells.svg": "./static/media/bells.d5f521c1.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.bac7f938.js",
-    "static/js/2.3a67b9c8.chunk.js",
-    "static/js/main.a9dbe589.chunk.js"
+    "static/js/runtime-main.32d05417.js",
+    "static/js/2.8c2ff29c.chunk.js",
+    "static/js/main.c0ca24f7.chunk.js"
   ]
 }
