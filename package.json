@@ -6,9 +6,10 @@
   "homepage": ".",
   "private": true,
   "scripts": {
-    "start": "BROWSER=none react-app-rewired start",
+    "build": "react-app-rewired build",
+    "postinstall": "node scripts/i18n.js",
     "prebuild": "yarn version --no-git-tag-version --no-commit-hooks --prerelease --preid build",
-    "build": "react-app-rewired build"
+    "start": "BROWSER=none react-app-rewired start"
   },
   "devDependencies": {
     "@babel/core": "7.9.0",
@@ -17,6 +18,7 @@
     "@babel/preset-react": "7.9.4",
     "babel-eslint": "10.1.0",
     "core-js": "3.6.5",
+    "countries-list": "^2.5.4",
     "eslint": "6.8.0",
     "eslint-config-airbnb": "18.1.0",
     "eslint-config-prettier": "6.10.1",

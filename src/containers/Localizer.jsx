@@ -2,28 +2,7 @@ import React, { useMemo, useEffect } from "react";
 import { Box, Breadcrumbs, Link, makeStyles } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { useLocalStorage } from "react-use";
-
-const languages = [
-  ["ca", "Català"],
-  ["da", "Dansk"],
-  ["de", "Deutsch"],
-  ["en", "English"],
-  ["es", "Español"],
-  ["fi", "Suomi"],
-  ["fr", "Français"],
-  ["id", "Bahasa Indonesia"],
-  ["it", "Italiano"],
-  ["ja", "日本語"],
-  ["ko", "한국어"],
-  ["nl", "Nederlands"],
-  ["pl", "Polski"],
-  ["pt-BR", "Português"],
-  ["ru", "Русский"],
-  ["sv", "Svenska"],
-  ["zh-CN", "简体中文"],
-  ["zh-HK", "繁體中文（香港）"],
-  ["zh-TW", "繁體中文（台灣）"],
-];
+import { list } from "../locales";
 
 const useStyles = makeStyles((theme) => ({
   ol: {
@@ -50,11 +29,11 @@ const Localizer = () => {
       <Box mx={["0%", "10%", "25%"]}>
         <Breadcrumbs
           classes={classes}
-          maxItems={languages.length}
+          maxItems={list.length}
           component="div"
           aria-label="languages"
         >
-          {languages.map(([tag, name]) => (
+          {list.map(([tag, name]) => (
             <Link
               key={tag}
               href="#"

@@ -160,3 +160,6 @@ package-lock.json
 
 # CRA build output directory
 build
+
+# Locales file
+src/locales/index.js
