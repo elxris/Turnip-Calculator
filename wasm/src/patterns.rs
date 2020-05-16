@@ -344,25 +344,9 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
     // sellPrices[work++] = intceil(randfloat(1.4, rate) * basePrice) - 1;
     rand_float(&mut current, 0.9, 1.4, &base_price, 0);
     rand_float(&mut current, 0.9, 1.4, &base_price, 0);
-    if let Some(&Some(prev_price)) = filters.get(work as usize + 1) {
-      // rate = ??;
-      // sellPrices[prev] = prevRate * basePrice = prevPrice;
-      // rate = prevrate = prevPrice / basePrice;
-      let rate = MinMax::new(
-        prev_price as f32 / base_price.min as f32,
-        prev_price as f32 / base_price.max as f32,
-      );
-      let rate_min = rate.min.min(rate.max);
-      let rate_max = rate.min.max(rate.max);
-
-      rand_float(&mut current, 1.4, rate_max, &base_price, -1);
-      rand_float(&mut current, rate_min, rate_max, &base_price, 0);
-      rand_float(&mut current, 1.4, rate_max.max(1.4), &base_price, -1);
-    } else {
-      rand_float(&mut current, 1.4, 2.0, &base_price, -1);
-      rand_float(&mut current, 1.4, 2.0, &base_price, 0);
-      rand_float(&mut current, 1.4, 2.0, &base_price, -1);
-    }
+    rand_float(&mut current, 1.4, 2.0, &base_price, 0);
+    rand_float(&mut current, 1.4, 2.0, &base_price, 0);
+    rand_float(&mut current, 1.4, 2.0, &base_price, 0);
     work += 5;
 
     // decreasing phase after the peak

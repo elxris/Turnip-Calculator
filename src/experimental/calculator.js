@@ -228,7 +228,8 @@ function* calculate(seed, pattern) {
       rate = randfloat($c, 1.4, 2.0);
       yield (sellPrices[work++] =
         intceil(randfloat($c, 1.4, rate) * basePrice) - 1);
-      yield (sellPrices[work++] = intceil(rate * basePrice));
+      yield (sellPrices[work++] =
+        intceil(randfloat($c, 1.4, rate) * basePrice) - 1);
       yield (sellPrices[work++] =
         intceil(randfloat($c, 1.4, rate) * basePrice) - 1);
 
