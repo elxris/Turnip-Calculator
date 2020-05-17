@@ -1,14 +1,32 @@
 import React, { useCallback, useState } from "react";
 import { arrayOf, string, func } from "prop-types";
-import { TextField, FormGroup, InputAdornment, Box } from "@material-ui/core";
+import {
+  TextField,
+  FormGroup,
+  InputAdornment,
+  Box,
+  makeStyles,
+} from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { ClearButton, ClearDataDialog, Button } from "../components";
 import {} from "../utils";
 import bells from "../images/bells.svg";
 
+const useTextFieldStyles = makeStyles(() => ({
+  InputLabel: {
+    position: "relative",
+  },
+  Input: {
+    "label + &": {
+      marginTop: 0,
+    },
+  },
+}));
+
 const Filter = ({ filters, onChange, openShareDialog }) => {
   const [clearDataDialogOpen, setClearDataDialogOpen] = useState(false);
   const { t } = useTranslation();
+  const TextFieldClasses = useTextFieldStyles();
 
   const handleChange = useCallback(
     (index) => ({
@@ -45,13 +63,19 @@ const Filter = ({ filters, onChange, openShareDialog }) => {
       label={names[index]}
       fullWidth
       inputProps={{ pattern: "[0-9]*", tabIndex: 0 }}
-      InputLabelProps={{ shrink: true }}
+      InputLabelProps={{
+        shrink: true,
+        classes: { root: TextFieldClasses.InputLabel },
+      }}
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
             <img src={bells} alt="Bag of bells" />
           </InputAdornment>
         ),
+        classes: {
+          root: TextFieldClasses.Input,
+        },
       }}
       value={filters[index] || ""}
       onChange={handleChange(index)}
@@ -85,18 +109,33 @@ const Filter = ({ filters, onChange, openShareDialog }) => {
           >
             {fields[0]}
           </Box>
-          <Box m={2} ml={1} mr={1} display="flex" flexWrap="wrap">
+          <Box
+            m={2}
+            ml={1}
+            mr={1}
+            display="flex"
+            flexWrap="wrap"
+            alignItems="stretch"
+          >
             {fields.slice(1).reduce(
               (prev, curr, index) =>
                 index % 2
                   ? [
                       ...prev.slice(0, -1),
                       <Box
+                        display="flex"
                         key={index}
                         p={1}
                         width={{ xs: 0.5, sm: 1 / 3, md: 1 / 6 }}
                       >
-                        <Box p={2} bgcolor="bkgs.mainAlt" borderRadius={16}>
+                        <Box
+                          p={2}
+                          bgcolor="bkgs.mainAlt"
+                          borderRadius={16}
+                          display="flex"
+                          flexDirection="column"
+                          justifyContent="space-between"
+                        >
                           <Box m={1}>{prev.slice(-1)}</Box>
                           <Box m={1}>{curr}</Box>
                         </Box>
