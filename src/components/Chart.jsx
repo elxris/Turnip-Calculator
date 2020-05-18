@@ -53,7 +53,7 @@ const createGenerteData = (t) => async (filter) => {
       fill: "+1",
     },
     {
-      label: t("Probable"),
+      label: t("Most Likely"),
       data: quantiles[2] || new Array(12).fill(null),
       backgroundColor: "#88b0c9",
       borderColor: "#88b0c9",
