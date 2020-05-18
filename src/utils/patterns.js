@@ -1,5 +1,6 @@
+import mockPatterns from "./mockPatterns.json";
+import { range, quantile } from "d3-array";
 const wasm = import("patterns");
-const mockPatterns = "./mockPatterns.json";
 
 // The lower score, the better.
 const calculateScore = (filters, pattern) => {
@@ -73,32 +74,33 @@ const minMaxReducer = (prev, current) => {
   });
 };
 
-const averageReducer = (prev, current) => {
-  const probability = prev.probability;
-  const cProbability = current.probability;
-  return prev.map(([avg, count, flag], i) => {
-    const [min, max] = current[i];
-    if (!flag)
-      return [
-        ((avg + count) * probability * 0.5 + (min + max) * cProbability * 0.5) /
-          (probability + cProbability),
-        probability + cProbability,
-        true,
-      ];
-    return [
-      (avg * count + (min + max) * cProbability * 0.5) / (count + cProbability),
-      count + cProbability,
-      true,
-    ];
-  });
+// This reducer will get all-week minimum.
+const minPricePointsReducer = ([a], [b]) => [Math.max(a, b)];
+const minWeekReducer = (prev, current, i) => {
+  const [a] = current.reduce(minPricePointsReducer);
+  const [b] = i === 1 ? prev.reduce(minPricePointsReducer) : prev;
+  return [Math.min(a, b)];
 };
 
-// This reducer will get all-week minimum.
-const maxReducer = ([a], [b]) => [Math.max(a, b)];
-const minWeekReducer = (prev, current, i) => {
-  const [a] = current.reduce(maxReducer);
-  const [b] = i === 1 ? prev.reduce(maxReducer) : prev;
-  return [Math.min(a, b)];
+// This will generate samples of uniform distribution used for quantiles.
+const samplesReducer = (prev, current, i) => {
+  let arr = prev;
+  if (i === 1) {
+    arr = Array.from({ length: 12 }, (v, i) => i);
+    return arr.map((index) => {
+      const [a, b] = prev[index];
+      const [c, d] = current[index];
+      const stepA = 0.1 * (1 / prev.probability);
+      const stepB = 0.1 * (1 / current.probability);
+      return range(a, b, stepA).concat(range(c, d, stepB));
+    });
+  } else {
+    return prev.map((value, index) => {
+      const [a, b] = current[index];
+      const step = 0.1 * (1 / current.probability);
+      return value.concat(range(a, b, step));
+    });
+  }
 };
 
 const patternReducer = (allPatterns, reducer) => {
@@ -108,30 +110,27 @@ const patternReducer = (allPatterns, reducer) => {
   return allPatterns.reduce(reducer);
 };
 
+const calculateQuantiles = (patterns) => {
+  const samples = patternReducer(patterns, samplesReducer);
+  return [0.25, 0.5, 0.75].map((q) => {
+    return samples.map((daySamples, i) => Math.ceil(quantile(daySamples, q)));
+  });
+};
+
 const calculate = async (filter) => {
   let patterns = await possiblePatterns(filter);
   const minMaxPattern = patternReducer(patterns, minMaxReducer);
-  const avgPattern = patternReducer(patterns, averageReducer).reduce(
-    (acc, [avg]) => [...acc, Math.trunc(avg)],
-    []
-  );
   const [minWeekValue] = patternReducer(patterns, minWeekReducer);
+  const quantiles = calculateQuantiles(patterns);
 
   const result = {
-    patterns,
     minMaxPattern,
-    avgPattern,
     minWeekValue,
+    patterns,
+    quantiles,
   };
 
   return result;
 };
 
-export {
-  possiblePatterns,
-  patternReducer,
-  minMaxReducer,
-  averageReducer,
-  minWeekReducer,
-  calculate,
-};
+export { calculate };

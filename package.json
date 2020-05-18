@@ -1,6 +1,6 @@
 {
   "name": "turnip-calc",
-  "version": "2.0.1-build.25",
+  "version": "2.0.2-build.0",
   "author": "elxris",
   "license": "MIT",
   "homepage": ".",
@@ -38,6 +38,7 @@
     "chart.js": "^3.0.0-alpha",
     "classnames": "2.2.6",
     "cuint": "0.2.2",
+    "d3-array": "^2.4.0",
     "i18next": "19.4.1",
     "i18next-browser-languagedetector": "4.0.2",
     "lodash.merge": "4.6.2",
