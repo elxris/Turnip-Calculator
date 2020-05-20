@@ -65,11 +65,7 @@ fn rand_float_relative(
     min: base_price.min as f32 * (start.min + delta.min * i as f32),
     max: base_price.max as f32 * (start.max + delta.max * i as f32),
   };
-  let previous_prediction = arr.last().unwrap();
-  let previous_price: MinMax<f32> = match filter {
-    Some(&Some(i)) => MinMax::new((i - 1) as f32, i as f32),
-    _ => MinMax::new(previous_prediction.min, previous_prediction.max),
-  };
+  let previous_price = arr.last().unwrap();
 
   // rate = ??;
   // sellPrices[prev] = prevRate * basePrice = prevPrice
@@ -93,7 +89,9 @@ fn rand_float_relative(
       if i as f32 >= min_value && i as f32 <= max_value {
         // If the filter is in range, means that our prediction is healthy
         arr.push(MinMaxPoint {
-          min: i as f32,
+          // sellPrice[curr] = intceil(price);
+          // sellPrice[curr] = price + 0.99999;
+          min: i as f32 - 0.99999,
           max: i as f32,
           plus_value,
         })
@@ -408,6 +406,7 @@ pub fn calculate(filters: &Vec<Option<i32>>) -> Vec<(Vec<MinMax<i32>>, i32)> {
   };
 
   let patterns = [pattern_0, pattern_1, pattern_2, pattern_3];
+  // let patterns = [pattern_1];
 
   for pattern_fn in patterns.iter() {
     results.append(&mut pattern_fn(
