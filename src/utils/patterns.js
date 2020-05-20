@@ -92,13 +92,13 @@ const samplesReducer = (prev, current, i) => {
       const [c, d] = current[index];
       const stepA = 0.1 * (1 / prev.probability);
       const stepB = 0.1 * (1 / current.probability);
-      return range(a, b, stepA).concat(range(c, d, stepB));
+      return range(a, b + 1, stepA).concat(range(c, d + 1, stepB));
     });
   } else {
     return prev.map((value, index) => {
       const [a, b] = current[index];
       const step = 0.1 * (1 / current.probability);
-      return value.concat(range(a, b, step));
+      return value.concat(range(a, b + 1, step));
     });
   }
 };
@@ -113,7 +113,7 @@ const patternReducer = (allPatterns, reducer) => {
 const calculateQuantiles = (patterns) => {
   const samples = patternReducer(patterns, samplesReducer);
   return [0.25, 0.5, 0.75].map((q) => {
-    return samples.map((daySamples, i) => Math.ceil(quantile(daySamples, q)));
+    return samples.map((daySamples, i) => Math.floor(quantile(daySamples, q)));
   });
 };
 
