@@ -4,21 +4,22 @@ import Chart from "chart.js";
 import zip from "lodash.zip";
 import merge from "lodash.merge";
 import { Box } from "@material-ui/core";
-import { useDebounce } from "react-use";
 import { useTranslation } from "react-i18next";
-import { calculate } from "../utils";
 
 Chart.defaults.defaultFontFamily = "Arial Rounded MT Bold";
 
-const createGenerteData = (t) => async (filter) => {
-  let { minMaxPattern, minWeekValue, quantiles } = await calculate(filter);
-
+const createGenerteData = (t) => ({
+  filters,
+  minMaxPattern,
+  minWeekValue,
+  quantiles,
+}) => {
   const minMaxData = zip(...minMaxPattern);
 
   return [
     {
       label: t("Buy Price"),
-      data: new Array(12).fill(filter[0] || null),
+      data: new Array(12).fill(filters[0] || null),
       fill: true,
       backgroundColor: "transparent",
       borderColor: "#7B6C53",
@@ -38,7 +39,7 @@ const createGenerteData = (t) => async (filter) => {
     },
     {
       label: t("Daily Price"),
-      data: Array.from({ length: 12 }, (v, i) => filter[i + 1] || null),
+      data: Array.from({ length: 12 }, (v, i) => filters[i + 1] || null),
       fill: false,
       backgroundColor: "#EF8341",
       borderColor: "#EF8341",
@@ -133,28 +134,18 @@ const chartOptions = {
   },
 };
 
-const ChartComponent = ({ filters }) => {
+const ChartComponent = ({
+  filters,
+  minMaxPattern,
+  minWeekValue,
+  patterns,
+  quantiles,
+}) => {
   const canvas = useRef();
   const chart = useRef();
   const { t } = useTranslation();
   const generateData = useCallback(createGenerteData(t), [t]);
   const getLabels = useCallback(createGetLabels(t), [t]);
-
-  // onMount effect
-  useEffect(() => {
-    (async () => {
-      const ctx = canvas.current.getContext("2d");
-      chart.current = new Chart(ctx, {
-        type: "line",
-        data: {
-          datasets: await generateData(filters),
-          labels: getLabels(),
-        },
-        options: chartOptions,
-      });
-    })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   // Language labels chart effect
   useEffect(() => {
@@ -166,18 +157,42 @@ const ChartComponent = ({ filters }) => {
   }, [getLabels]);
 
   // Filters / Data effect
-  useDebounce(
-    async () => {
-      if (!chart.current) return;
-      // regerates chart in the new
-      const newData = await generateData(filters, t);
-      merge(chart.current.data.datasets, newData);
-      chart.current.data.datasets.length = newData.length;
-      chart.current.update();
-    },
-    500,
-    [filters, generateData]
-  );
+  useEffect(() => {
+    if (!patterns) return;
+
+    const datasets = generateData({
+      filters,
+      minMaxPattern,
+      minWeekValue,
+      patterns,
+      quantiles,
+    });
+    if (!chart.current) {
+      const ctx = canvas.current.getContext("2d");
+      chart.current = new Chart(ctx, {
+        type: "line",
+        data: {
+          datasets,
+          labels: getLabels(),
+        },
+        options: chartOptions,
+      });
+      return;
+    }
+    // regerates chart in the new
+
+    merge(chart.current.data.datasets, datasets);
+    chart.current.data.datasets.length = datasets.length;
+    chart.current.update();
+  }, [
+    filters,
+    generateData,
+    getLabels,
+    minMaxPattern,
+    minWeekValue,
+    patterns,
+    quantiles,
+  ]);
 
   // Fix for mobile tooltip
   const tooltipTimeout = useRef();
@@ -223,6 +238,10 @@ const ChartComponent = ({ filters }) => {
 
 ChartComponent.propTypes = {
   filters: arrayOf(number).isRequired,
+  minMaxPattern: arrayOf(arrayOf(number)),
+  minWeekValue: number,
+  patterns: arrayOf(arrayOf(arrayOf(number))),
+  quantiles: arrayOf(arrayOf(number)),
 };
 
 export default ChartComponent;

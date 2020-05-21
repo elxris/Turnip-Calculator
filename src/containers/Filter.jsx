@@ -9,7 +9,6 @@ import {
 } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { ClearButton, ClearDataDialog, Button } from "../components";
-import {} from "../utils";
 import bells from "../images/bells.svg";
 
 const useTextFieldStyles = makeStyles(() => ({

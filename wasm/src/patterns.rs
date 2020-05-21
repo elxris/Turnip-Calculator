@@ -281,6 +281,7 @@ fn pattern_1(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
   probabilties
 }
 
+// PATTERN 2: consistently decreasing
 fn pattern_2(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<MinMax<i32>>, i32)> {
   let mut probabilties: Vec<(Vec<MinMax<i32>>, i32)> = Vec::new();
   let mut current: Vec<MinMaxPoint> = Vec::new();

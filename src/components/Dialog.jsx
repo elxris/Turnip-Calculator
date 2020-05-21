@@ -15,7 +15,8 @@ import {
 import { useTranslation } from "react-i18next";
 import { useCallback } from "react";
 import { toHash } from "../utils/useShare";
-import { Button, ClearButton, Chart } from "../components";
+import { Button, ClearButton, Chart, Table } from "../components";
+import { useCalculation } from "../utils";
 
 const useDialogStyles = makeStyles((theme) => ({
   paper: {
@@ -119,6 +120,11 @@ const ShareDialog = ({ open, filters, onClose, ...props }) => {
     }
   }, [location]);
 
+  let result = useCalculation({
+    filters: open ? filters : null,
+    immediate: true,
+  });
+
   useEffect(() => {
     if (open) {
       setLoadingState(true);
@@ -171,7 +177,8 @@ const ShareDialog = ({ open, filters, onClose, ...props }) => {
               alt=""
             />
           </Box>
-          <Chart filters={filters} />
+          <Chart {...result} />
+          <Table {...result} expanded />
         </Box>
       )}
     </CustomDialog>

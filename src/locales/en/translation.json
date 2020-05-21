@@ -29,5 +29,9 @@
   "shareClipboard": "Or copy this link:",
   "copyButton": "Copy!",
   "shareButton": "Share!",
-  "closeButton": "Close"
+  "closeButton": "Close",
+  "Chance": "Chance",
+  "Pattern": "Pattern",
+  "patternNames": "Fluctuating_High Spike_Decreasing_Small Spike",
+  "All Patterns": "All Patterns"
 }

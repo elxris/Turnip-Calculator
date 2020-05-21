@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 const Localizer = () => {
   const { i18n } = useTranslation();
   const classes = useStyles();
-  const [defaultLang, setDefaultLang] = useLocalStorage();
+  const [defaultLang, setDefaultLang] = useLocalStorage("i18n");
 
   // First mount effect
   useEffect(() => {

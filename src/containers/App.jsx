@@ -1,8 +1,15 @@
 import React from "react";
 import { CssBaseline, ThemeProvider, Container, Box } from "@material-ui/core";
-import { useFilters, useTitle, theme, useShare } from "../utils";
+import { ThemeProvider as StyledComponentsThemeProvider } from "styled-components";
+import {
+  useFilters,
+  useTitle,
+  theme,
+  useShare,
+  useCalculation,
+} from "../utils";
 import { Title, Filter, Footer } from "../containers";
-import { ShareDialog, Chart } from "../components";
+import { ShareDialog, Chart, Table } from "../components";
 
 const App = () => {
   useTitle();
@@ -14,26 +21,31 @@ const App = () => {
     shareFilters,
   } = useShare(filters);
 
+  const result = useCalculation({ filters });
+
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Container maxWidth="md">
-        <Title />
-        <Box mx={[-1.5, 0]}>
-          <Filter
-            filters={inputFilters}
-            onChange={saveFilters}
-            openShareDialog={openShareDialog}
-          />
-          <Chart filters={filters} />
-          <Footer />
-        </Box>
-      </Container>
-      <ShareDialog
-        open={showShareDialog}
-        filters={shareFilters}
-        onClose={onCloseShareModal}
-      />
+      <StyledComponentsThemeProvider theme={theme}>
+        <CssBaseline />
+        <Container maxWidth="md">
+          <Title />
+          <Box mx={[-1.5, 0]}>
+            <Filter
+              filters={inputFilters}
+              onChange={saveFilters}
+              openShareDialog={openShareDialog}
+            />
+            <Chart {...result} />
+            <Table {...result} />
+            <Footer />
+          </Box>
+        </Container>
+        <ShareDialog
+          open={showShareDialog}
+          filters={shareFilters}
+          onClose={onCloseShareModal}
+        />
+      </StyledComponentsThemeProvider>
     </ThemeProvider>
   );
 };
