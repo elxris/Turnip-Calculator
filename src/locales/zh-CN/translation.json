@@ -29,5 +29,10 @@
     "copyButton": "复制",
     "shareButton": "分享",
     "closeButton": "关闭",
-    "shareDialogV2": "分享图片！"
+    "shareDialogV2": "分享图片！",
+    "All Patterns": "全部图案模式",
+    "patternNames": "波动型_三期型_持续下跌型_四期型",
+    "Most Likely": "可能的价格区间",
+    "Pattern": "图案模式",
+    "Chance": "几率"
 }
