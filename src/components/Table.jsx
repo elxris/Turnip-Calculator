@@ -121,12 +121,11 @@ const aggregate = (patterns) =>
 
 const AggregatedPatterns = ({ patterns, name, expanded }) => {
   const [open, toggleOpen] = useToggle(Boolean(expanded));
-
   if (!patterns.length) return null;
   if (patterns.length === 1) {
     return <PatternRow pattern={patterns[0]} name={name} />;
   }
-  if (patterns.length > 2) {
+  if (patterns.length > 1) {
     const aggregatedPattern = aggregate(patterns);
     return (
       <>
@@ -166,7 +165,7 @@ const DataRows = ({
       <PatternRow pattern={minMaxPattern} name={t("All Patterns")} />
       {patternNames.map((name, index) => (
         <AggregatedPatterns
-          key={name}
+          key={uuidv4()}
           name={name}
           patterns={patterns.filter(({ pattern }) => pattern === index)}
           expanded={expanded}
