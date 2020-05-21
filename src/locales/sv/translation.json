@@ -17,7 +17,7 @@
     "contributors": "Tack till alla som bidrar till projektet!",
     "guaranteedMinInfo": "- Värdet för <1>Garanterad Minimum</1> innebär att det priset kommer uppnås någon gång under veckans förlopp.",
     "priceChangeInfo": "- Priserna ändras <1>två gånger dagligen.</1> Se till att de loggas här. Datan du anger sparas på enheten du använder.",
-    "buyPriceInfo": "- Värdet för <1>Inköpspris</1> gäller endast för din egna ö. Det spelar ingen roll om du köpt kålrötterna på en annan ö.",
+    "buyPriceInfo": "- Värdet <1>Inköpspris</1> avser priset på din egna ö. Det spelar ingen roll om du köpte kålrötter på en annan ö.",
     "Usage": "Användning",
     "Clear All Data!": "Rensa All Data",
     "PM": "EM",
@@ -29,5 +29,10 @@
     "Daily Price": "Dagligt Pris",
     "Buy Price": "Inköpspris",
     "ACNH Turnip Calculator": "ACNH: Kålrotskalkylator",
-    "Turnip Calculator": "Kålrotskalkylator"
+    "Turnip Calculator": "Kålrotskalkylator",
+    "All Patterns": "Alla Mönster",
+    "patternNames": "Fluktuerande_Hög Topp_Minskande_Låg Topp",
+    "Pattern": "Mönster",
+    "Chance": "Chans",
+    "Most Likely": "Troligen"
 }
