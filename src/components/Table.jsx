@@ -74,7 +74,7 @@ const PatternRow = ({ pattern, name, onClick, open }) => {
       </TableCell>
       {pattern.map((_, index) => {
         const [min, max] = pattern[index];
-        const filter = filters[index];
+        const filter = filters[index + 1];
         const color = ["red", "orange", "green"][
           quantiles.reduce(
             (prev, values, quantileIndex) =>
