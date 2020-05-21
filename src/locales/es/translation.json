@@ -22,7 +22,7 @@
     "about3": "Por último, pero no menos importante, gracias a mi hermano por crear el diseño de la página. ¡Es desarrollador de videojuegos! Aquí está su Twitter: <2>@Consalv0</2>.",
     "about4": "¿Has encontrado algún error? Puedes reportarlo <2>aquí</2>.",
     "cancel": "Cancelar",
-    "clearDataTitle": "¿Quieres borrar todos los datos?",
+    "clearDataTitle": "¿Estás seguro que quieres borrar todos los datos?",
     "clearDataWarning": "¡No podrás recuperarlos!",
     "shareDialog": "¡Comparte esta página!",
     "shareClipboard": "También puedes copiar este enlace:",
@@ -31,7 +31,7 @@
     "closeButton": "Cerrar",
     "shareDialogV2": "¡Puedes compartir esta imagen!",
     "Most Likely": "Más probable",
-    "All Patterns": "Todos",
+    "All Patterns": "Todos los patrones",
     "patternNames": "Oscilante_Pico Alto_Decreciente_Pico Pequeño",
     "Pattern": "Patrón",
     "Chance": "Posibilidad"
