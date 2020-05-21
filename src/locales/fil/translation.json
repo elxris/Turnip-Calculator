@@ -1,1 +1,18 @@
-{}
+{
+    "closeButton": "Isara",
+    "ACNH Turnip Calculator": "ACNH: Kalkulator ng mga Turnip",
+    "Turnip Calculator": "Kalkulator ng mga Turnip",
+    "priceChangeInfo": "- Nagbabago ang mga presyo <1>dalawang beses</1> sa isang araw. Ang data mo ay nai-sasave sa iyong device.",
+    "buyPriceInfo": "- Ang halaga ng <1>Presyo ng Pagbili</1> ay ang presyo sa iyong sariling isla. Hindi mahalaga kung bumili ka ng mga turnip sa ibang isla.",
+    "Usage": "Paggamit",
+    "Clear All Data!": "Alisin Lahat ng Data",
+    "PM": "Hapon",
+    "AM": "Umaga",
+    "Mon Tue Wed Thu Fri Sat": "Lunes Martes Miyerkules Huwebes Biyernes Sabado",
+    "Minimum": "Pinakamaliit",
+    "Maximum": "Pinakamalaki",
+    "Most Likely": "Maaari",
+    "Guaranteed Min": "Garantisadong Pinakamababa",
+    "Daily Price": "Presyo Ngayong Araw",
+    "Buy Price": "Presyo ng pagbili"
+}
