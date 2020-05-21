@@ -30,5 +30,9 @@
     "shareButton": "¡Compartir!",
     "closeButton": "Cerrar",
     "shareDialogV2": "¡Puedes compartir esta imagen!",
-    "Most Likely": "Más probable"
+    "Most Likely": "Más probable",
+    "All Patterns": "Todos",
+    "patternNames": "Oscilante_Pico Alto_Decreciente_Pico Pequeño",
+    "Pattern": "Patrón",
+    "Chance": "Posibilidad"
 }
