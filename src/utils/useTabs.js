@@ -1,0 +1,69 @@
+import { useState, useEffect } from "react";
+import { useLocalStorage } from "react-use";
+
+const useTabs = () => {
+  const [value, setValue] = useState(0);
+  const [tabs, saveTabs] = useLocalStorage("tablist", [
+    {
+      id: 0,
+      key: 'filters-0',
+    },
+  ]);
+
+  useEffect(() => {
+    if (!Array.isArray(tabs)) {
+      saveTabs([]);
+    }
+  }, [tabs, saveTabs]);
+
+  const addTab = () => {
+    let id = 0
+    for (id = 0; id < tabs.length; id++) {
+      if (tabs[id].id !== id) {
+        break;
+      }
+    }
+    saveTabs([...tabs.slice(0, id), {
+      id,
+      key: `filters-${id}`,
+    }, ...tabs.slice(id)]);
+  };
+
+  const deleteTab = (event) => {
+    // Prevent MaterialUI from switching tabs
+    event.stopPropagation();
+
+    // Prevent deleting the last tab
+    if (tabs.length === 1) {
+      return;
+    }
+
+    const tabId = parseInt(event.target.id, 10);
+    let tabIdIndex = 0;
+
+    const tabList = tabs.filter((tab, index) => {
+      if (tab.id === tabId) {
+        tabIdIndex = index;
+        localStorage.removeItem(tab.key);
+      }
+      return tab.id !== tabId;
+    });
+
+    if (tabIdIndex !== 0) {
+      setValue(tabIdIndex - 1)
+    }
+
+    saveTabs(tabList);
+  };
+
+  return {
+    value,
+    setValue,
+    tabs,
+    saveTabs,
+    addTab,
+    deleteTab,
+  };
+};
+
+export default useTabs;
