@@ -1,18 +1,20 @@
 import { useState, useEffect } from "react";
 import { useLocalStorage } from "react-use";
 
+const DEFAULT_TAB_LIST = [
+  {
+    id: 0,
+    key: "filters-0",
+  },
+];
+
 const useTabs = () => {
   const [value, setValue] = useState(0);
-  const [tabs, saveTabs] = useLocalStorage("tablist", [
-    {
-      id: 0,
-      key: 'filters-0',
-    },
-  ]);
+  const [tabs, saveTabs] = useLocalStorage("tablist", DEFAULT_TAB_LIST);
 
   useEffect(() => {
     if (!Array.isArray(tabs)) {
-      saveTabs([]);
+      saveTabs(DEFAULT_TAB_LIST);
     }
   }, [tabs, saveTabs]);
 
@@ -56,6 +58,14 @@ const useTabs = () => {
     saveTabs(tabList);
   };
 
+  const handleTabChange = (_event, newValue) => {
+    if (newValue === tabs.length) {
+      addTab();
+    } else {
+      setValue(newValue);
+    }
+  };
+
   return {
     value,
     setValue,
@@ -63,6 +73,7 @@ const useTabs = () => {
     saveTabs,
     addTab,
     deleteTab,
+    handleTabChange,
   };
 };
 

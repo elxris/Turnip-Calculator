@@ -1,51 +1,24 @@
 import React from "react";
-import { any, number } from "prop-types";
-import { useFilters, useShare, useCalculation } from "../utils";
-import { Filter } from "../containers";
-import { ShareDialog, Chart, Table } from "../components";
+import PropTypes from "prop-types";
 
-const TabPanel = ({ value, index, filterKey, ...other }) => {
-  const { inputFilters, filters, saveFilters } = useFilters(filterKey);
-  const {
-    onCloseShareModal,
-    showShareDialog,
-    openShareDialog,
-    shareFilters,
-  } = useShare(filters);
-
-  const result = useCalculation({ filters });
-
+// Manual implementation of https://material-ui.com/api/tab-panel/
+// TabPanel not yet available in @material-ui/core
+const TabPanel = ({ value, index, children }) => {
   return (
     <div
       role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
-      {...other}
     >
-      {value === index && (
-        <>
-          <Filter
-            filters={inputFilters}
-            onChange={saveFilters}
-            openShareDialog={openShareDialog}
-          />
-          <Chart {...result} />
-          <Table {...result} />
-          <ShareDialog
-            open={showShareDialog}
-            filters={shareFilters}
-            onClose={onCloseShareModal}
-          />
-        </>
-      )}
+      {value === index && children}
     </div>
   );
 };
 
 TabPanel.propTypes = {
-  value: number.isRequired,
-  index: number.isRequired,
-  filterKey: any.isRequired,
+  value: PropTypes.number.isRequired,
+  index: PropTypes.number.isRequired,
+  children: PropTypes.node,
 };
 
 export default TabPanel;
