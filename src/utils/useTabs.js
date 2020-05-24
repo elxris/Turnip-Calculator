@@ -25,6 +25,7 @@ const useTabs = () => {
         break;
       }
     }
+    setValue(id);
     saveTabs([...tabs.slice(0, id), {
       id,
       key: `filters-${id}`,
