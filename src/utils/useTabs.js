@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useLocalStorage } from "react-use";
 
 const DEFAULT_TAB_LIST = [
@@ -18,7 +18,7 @@ const useTabs = () => {
     }
   }, [tabs, saveTabs]);
 
-  const addTab = () => {
+  const addTab = useCallback(() => {
     let id = 0
     for (id = 0; id < tabs.length; id++) {
       if (tabs[id].id !== id) {
@@ -29,9 +29,9 @@ const useTabs = () => {
       id,
       key: `filters-${id}`,
     }, ...tabs.slice(id)]);
-  };
+  }, [tabs, saveTabs]);
 
-  const deleteTab = (event) => {
+  const deleteTab = useCallback((event) => {
     // Prevent MaterialUI from switching tabs
     event.stopPropagation();
 
@@ -40,37 +40,35 @@ const useTabs = () => {
       return;
     }
 
+    let deletedTabIndex = 0;
     const tabId = parseInt(event.target.id, 10);
-    let tabIdIndex = 0;
 
     const tabList = tabs.filter((tab, index) => {
       if (tab.id === tabId) {
-        tabIdIndex = index;
+        deletedTabIndex = index;
         localStorage.removeItem(tab.key);
       }
       return tab.id !== tabId;
     });
 
-    if (tabIdIndex !== 0) {
-      setValue(tabIdIndex - 1)
+    if (deletedTabIndex !== 0) {
+      setValue(deletedTabIndex - 1)
     }
 
     saveTabs(tabList);
-  };
+  }, [tabs, saveTabs]);
 
-  const handleTabChange = (_event, newValue) => {
+  const handleTabChange = useCallback((_event, newValue) => {
     if (newValue === tabs.length) {
       addTab();
     } else {
       setValue(newValue);
     }
-  };
+  }, [tabs, addTab]);
 
   return {
     value,
-    setValue,
     tabs,
-    saveTabs,
     addTab,
     deleteTab,
     handleTabChange,
