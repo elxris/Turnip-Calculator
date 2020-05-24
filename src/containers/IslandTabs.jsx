@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 import { makeStyles } from "@material-ui/styles";
 import { Tab, Tabs } from "@material-ui/core";
 import { Add, Close } from "@material-ui/icons";
@@ -47,6 +48,7 @@ const useTabStyles = makeStyles(({ breakpoints, spacing }) => ({
 }));
 
 const IslandTabs = ({ tabs, onAdd, onDelete, onChange, value }) => {
+  const { t } = useTranslation()
   const tabClasses = useTabStyles();
   const tabsClasses = useTabsStyles();
 
@@ -55,7 +57,7 @@ const IslandTabs = ({ tabs, onAdd, onDelete, onChange, value }) => {
       {tabs.map((tab, index) => (
         <Tab
           key={tab.key}
-          label={`Island ${tab.id + 1}`}
+          label={`${t("Island")} ${tab.id + 1}`}
           disableRipple
           icon={value === index && <Close id={tab.id} onClick={onDelete} fontSize="small" />}
           classes={{
@@ -64,7 +66,7 @@ const IslandTabs = ({ tabs, onAdd, onDelete, onChange, value }) => {
           }}
         />
       ))}
-      <Tab label="Add island" classes={tabClasses} icon={<Add onClick={onAdd} />} />
+      <Tab label={t("Add Island")} classes={tabClasses} icon={<Add onClick={onAdd} />} />
     </Tabs>
   );
 };
