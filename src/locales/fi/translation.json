@@ -14,7 +14,7 @@
     "About": "Tietoja",
     "closeButton": "Sulje",
     "Usage": "Käyttö",
-    "Clear All Data!": "Tyhjennä kaikki tiedot",
+    "Clear All Data!": "Tyhjennä",
     "Mon Tue Wed Thu Fri Sat": "Ma Ti Ke To Pe La",
     "Minimum": "Minimi",
     "Maximum": "Maksimi",
@@ -29,5 +29,10 @@
     "about3": "Viimeisenä, mutta ei vähäisempänä, kiitos veljelleni avusta designing kanssa. Hän on pelikehittäjä! Seuratkaa häntä twitterissä: <2>@Consalv0</2>.",
     "about2": "Sain inspiraationi <2>mikebryant:n</2> työstä.",
     "about1": "Tämä ei olisi mahdollista ilman <2>@_Ninji:n</2> panosta.",
-    "priceChangeInfo": "- Hinnat muuttuvat <1>kahdesti päivässä.</1> Muista kirjata ne ylös. Kaikki tieto tallennetaan laitteellesi."
+    "priceChangeInfo": "- Hinnat muuttuvat <1>kahdesti päivässä.</1> Muista kirjata ne ylös. Kaikki tieto tallennetaan laitteellesi.",
+    "patternNames": "Vaihteleva korkea piikki Laskeva matala piikki",
+    "All Patterns": "Kaikki mallit",
+    "Pattern": "Malli",
+    "Chance": "Todennäköisyys",
+    "Most Likely": "Todennäköisesti"
 }
