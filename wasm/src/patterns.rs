@@ -353,10 +353,15 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
       );
       let rate_min = rate.min.min(rate.max);
       let rate_max = rate.min.max(rate.max);
-
-      rand_float(&mut current, 1.4, rate_max, &base_price, -1);
-      rand_float(&mut current, rate_min, rate_max, &base_price, 0);
-      rand_float(&mut current, 1.4, rate_max.max(1.4), &base_price, -1);
+      if rate_min < 1.4 || rate_max > 2.0 {
+        rand_float(&mut current, 1.4, 2.0, &base_price, -1);
+        rand_float(&mut current, 1.4, 2.0, &base_price, 0);
+        rand_float(&mut current, 1.4, 2.0, &base_price, -1);
+      } else {
+        rand_float(&mut current, 1.4, rate_max, &base_price, -1);
+        rand_float(&mut current, rate_min, rate_max, &base_price, 0);
+        rand_float(&mut current, 1.4, rate_max.max(1.4), &base_price, -1);
+      }
     } else {
       rand_float(&mut current, 1.4, 2.0, &base_price, -1);
       rand_float(&mut current, 1.4, 2.0, &base_price, 0);
