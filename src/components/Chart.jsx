@@ -244,11 +244,6 @@ const ChartComponent = ({
   );
 };
 
-export const StatefulChart = ({ state, ...props }) => {
-  console.log("stateful chart", state);
-  return <ChartComponent {...props} />;
-};
-
 ChartComponent.propTypes = {
   filters: arrayOf(number).isRequired,
   minMaxPattern: arrayOf(arrayOf(number)),
