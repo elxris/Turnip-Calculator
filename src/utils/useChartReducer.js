@@ -1,27 +1,29 @@
 import { useReducer } from "react";
 
-export const CHART_STATES = {
-  DEFAULT: "DEFAULT",
-  REWIND: "REWIND",
-};
-
 const initialState = {
-  chartState: CHART_STATES.DEFAULT,
+  rewindEnabled: false,
   indexInHistory: null, // will be integer representing index in user input array
+  rewindFilters: [].fill(null),
 };
 
-const reducer = (state = initialState, action) => ({
-  ...state,
-  ...action.payload,
-});
+const reducer = (state = initialState, action) => {
+  const { rewindEnabled, filters, indexInHistory } = action.payload;
+  if (rewindEnabled) {
+    return {
+      ...state,
+      rewindEnabled: true,
+      rewindFilters: filters.map((filter, idx) => {
+        if (typeof indexInHistory === "number" && idx > indexInHistory) {
+          return null;
+        }
+        return filter;
+      }),
+    };
+  }
 
-const useChartReducer = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  return {
-    state,
-    dispatch,
-    chartStates: CHART_STATES,
-  };
+  return initialState;
 };
+
+const useChartReducer = () => [...useReducer(reducer, initialState)];
 
 export default useChartReducer;
