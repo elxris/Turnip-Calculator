@@ -15,13 +15,6 @@ const createGenerteData = (t) => ({
   quantiles,
 }) => {
   const minMaxData = zip(...minMaxPattern);
-  console.log({
-    filters,
-    minMaxPattern,
-    minWeekValue,
-    quantiles,
-  });
-  console.log({ minMaxData });
 
   return [
     {
@@ -187,7 +180,6 @@ const ChartComponent = ({
       return;
     }
     // regerates chart in the new
-    console.log({ datasets });
 
     merge(chart.current.data.datasets, datasets);
     chart.current.data.datasets.length = datasets.length;
