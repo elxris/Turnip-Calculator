@@ -52,26 +52,28 @@ const App = () => {
               onChange={saveFilters}
               openShareDialog={openShareDialog}
             />
-            <Dropdown
-              label="Rewind the projection to:"
-              labelId="rewind-label"
-              selectId="rewind-select"
-              menuItems={weekDaysCombined.map((wd, idx) => ({
-                text: wd,
-                value: idx + 1, // The days/times start at index 1 in the "filters" array
-              }))}
-              onChange={(e) => {
-                const { value } = e.target;
-                dispatch({
-                  payload: {
-                    rewindEnabled: typeof value === "number",
-                    indexInHistory: value,
-                    filters,
-                  },
-                });
-              }}
-            />
             <Chart {...result} />
+            <Box p={[0.5, 1, 2]} mt={2} display="flex" alignItems="center">
+              <Dropdown
+                label="Rewind the chart's prediction to:"
+                labelId="rewind-label"
+                selectId="rewind-select"
+                menuItems={weekDaysCombined.map((wd, idx) => ({
+                  text: wd,
+                  value: idx + 1, // The days/times start at index 1 in the "filters" array
+                }))}
+                onChange={(e) => {
+                  const { value } = e.target;
+                  dispatch({
+                    payload: {
+                      rewindEnabled: typeof value === "number",
+                      indexInHistory: value,
+                      filters,
+                    },
+                  });
+                }}
+              />
+            </Box>
             <Table {...result} />
             <Footer />
           </Box>
