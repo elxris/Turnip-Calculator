@@ -29,5 +29,10 @@
     "copyButton": "Kopiëren!",
     "shareButton": "Delen!",
     "closeButton": "Sluiten",
-    "shareDialogV2": "Deel deze afbeelding!"
+    "shareDialogV2": "Deel deze afbeelding!",
+    "All Patterns": "Alle patronen",
+    "patternNames": "Schommelend_Hoge piek_Dalend_Kleine piek",
+    "Pattern": "Patroon",
+    "Chance": "Kans",
+    "Most Likely": "Waarschijnlijkst"
 }
