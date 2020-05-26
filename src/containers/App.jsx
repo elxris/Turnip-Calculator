@@ -11,7 +11,7 @@ import {
   useWeekDays,
 } from "../utils";
 import { Title, Filter, Footer } from "../containers";
-import { ShareDialog, Table, Dropdown, StatefulChart } from "../components";
+import { ShareDialog, Table, Dropdown, Chart } from "../components";
 
 const App = () => {
   useTitle();
@@ -53,24 +53,25 @@ const App = () => {
               openShareDialog={openShareDialog}
             />
             <Dropdown
-              label="Select time for rewind"
+              label="Rewind the projection to:"
               labelId="rewind-label"
               selectId="rewind-select"
               menuItems={weekDaysCombined.map((wd, idx) => ({
                 text: wd,
-                value: idx,
+                value: idx + 1, // The days/times start at index 1 in the "filters" array
               }))}
               onChange={(e) => {
+                const { value } = e.target;
                 dispatch({
                   payload: {
-                    rewindEnabled: true,
-                    indexInHistory: e.target.value,
+                    rewindEnabled: typeof value === "number",
+                    indexInHistory: value,
                     filters,
                   },
                 });
               }}
             />
-            <StatefulChart {...result} state={state} />
+            <Chart {...result} state={state} />
             <Table {...result} />
             <Footer />
           </Box>
