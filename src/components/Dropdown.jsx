@@ -1,14 +1,21 @@
 import React from "react";
-import { Select, MenuItem } from "@material-ui/core";
+import { Select, MenuItem, InputLabel } from "@material-ui/core";
 
-const Dropdown = ({ menuItems }) => {
-  console.log("Heres Dropdown");
+const Dropdown = ({ menuItems, onChange, label, labelId, selectId }) => {
   return (
-    <Select>
-      {menuItems.map((item, idx) => (
-        <MenuItem key={idx}>{item.text}</MenuItem>
-      ))}
-    </Select>
+    <>
+      <InputLabel id={labelId}>{label}</InputLabel>
+      <Select labelId={labelId} id={selectId} onChange={onChange}>
+        <MenuItem value="">
+          <em>None</em>
+        </MenuItem>
+        {menuItems.map((item) => (
+          <MenuItem value={item.value} key={item.value}>
+            {item.text}
+          </MenuItem>
+        ))}
+      </Select>
+    </>
   );
 };
 
