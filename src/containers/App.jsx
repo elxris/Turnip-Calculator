@@ -6,7 +6,6 @@ import {
   useTitle,
   theme,
   useShare,
-  useCalculation,
   useChartReducer,
   useWeekDays,
 } from "../utils";
@@ -23,21 +22,7 @@ const App = () => {
     shareFilters,
   } = useShare(filters);
 
-  const [state, dispatch] = useChartReducer();
-  const { rewindEnabled, rewindFilters } = state;
-
-  // Get prediction/minMax values based on rewindFilters
-  // if rewindEnabled is true
-  let result = useCalculation({
-    filters: rewindEnabled ? rewindFilters : filters,
-  });
-  if (rewindEnabled) {
-    // Draw "Daily Price" based on the user's actual input.
-    // This allows the user to see their actual turnip prices graphed
-    // compared to past projections as they evolved.
-    result.filters = filters;
-  }
-
+  const [, dispatch, result] = useChartReducer(filters);
   const { weekDaysCombined } = useWeekDays();
 
   return (
@@ -52,14 +37,13 @@ const App = () => {
               onChange={saveFilters}
               openShareDialog={openShareDialog}
             />
-            <Chart {...result} />
             <Box p={[0.5, 1, 2]} mt={2} display="flex" alignItems="center">
               <Dropdown
                 label="Rewind the chart's prediction to:"
                 labelId="rewind-label"
                 selectId="rewind-select"
-                menuItems={weekDaysCombined.map((wd, idx) => ({
-                  text: wd,
+                menuItems={weekDaysCombined.map((weekday, idx) => ({
+                  text: weekday,
                   value: idx + 1, // The days/times start at index 1 in the "filters" array
                 }))}
                 onChange={(e) => {
@@ -74,6 +58,7 @@ const App = () => {
                 }}
               />
             </Box>
+            <Chart {...result} />
             <Table {...result} />
             <Footer />
           </Box>
