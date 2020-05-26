@@ -9,7 +9,7 @@
     "build": "react-app-rewired build",
     "postinstall": "node scripts/i18n.js",
     "prebuild": "yarn version --no-git-tag-version --no-commit-hooks --prerelease --preid build",
-    "start": "BROWSER=none react-app-rewired start"
+    "start": "react-app-rewired start"
   },
   "devDependencies": {
     "@babel/core": "7.9.6",
