@@ -1,5 +1,6 @@
 import React from "react";
 import { Select, MenuItem, InputLabel } from "@material-ui/core";
+import { string, arrayOf, shape, number, func } from "prop-types";
 
 const Dropdown = ({ menuItems, onChange, label, labelId, selectId }) => {
   return (
@@ -17,6 +18,26 @@ const Dropdown = ({ menuItems, onChange, label, labelId, selectId }) => {
       </Select>
     </>
   );
+};
+
+Dropdown.propTypes = {
+  menuItems: arrayOf(
+    shape({
+      text: string,
+      value: number,
+    })
+  ).isRequired,
+  onChange: func,
+  label: string,
+  labelId: string,
+  selectId: string,
+};
+
+Dropdown.defaults = {
+  onChange: () => {},
+  label: "",
+  labelId: "",
+  selectId: "",
 };
 
 export default Dropdown;
