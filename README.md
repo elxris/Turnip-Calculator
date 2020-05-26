@@ -8,6 +8,17 @@ You can find the live calculator [here](https://elxris.github.io/Turnip-Calculat
 
 Looking for an API? [See this](https://github.com/elxris/Turnip-Calculator/issues/72#issuecomment-617483396)
 
+## Local Development
+
+To run this application locally, run the following commands:
+
+```
+git clone git@github.com:elxris/Turnip-Calculator.git
+cd Turnip-Calculator
+npm i
+npm start
+```
+
 ## Localizations
 
 ### For translators
