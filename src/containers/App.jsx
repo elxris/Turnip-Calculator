@@ -22,7 +22,7 @@ const App = () => {
     shareFilters,
   } = useShare(filters);
 
-  const [, dispatch, result] = useTimeTravel(filters);
+  const [dispatch, result] = useTimeTravel(filters);
   const { weekDaysCombined } = useWeekDays();
 
   return (

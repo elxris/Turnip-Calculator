@@ -25,20 +25,24 @@ const reducer = (state = initialState, action) => {
 };
 
 const useChartReducer = (filters) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [{ rewindEnabled, rewindFilters }, dispatch] = useReducer(
+    reducer,
+    initialState
+  );
+
   // Get prediction/minMax values based on rewindFilters
   // if rewindEnabled is true
-  const calcInput = state.rewindEnabled ? state.rewindFilters : filters;
+  const calcInput = rewindEnabled ? rewindFilters : filters;
   const result = useCalculation({ filters: calcInput });
 
-  if (state.rewindEnabled) {
+  if (rewindEnabled) {
     // Draw "Daily Price" based on the user's actual input.
     // This allows the user to see their actual turnip prices graphed
     // compared to past projections as they evolved.
     result.filters = filters;
   }
 
-  return [state, dispatch, result];
+  return [dispatch, result];
 };
 
 export default useChartReducer;
