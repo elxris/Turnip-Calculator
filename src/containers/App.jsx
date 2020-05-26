@@ -71,7 +71,7 @@ const App = () => {
                 });
               }}
             />
-            <Chart {...result} state={state} />
+            <Chart {...result} />
             <Table {...result} />
             <Footer />
           </Box>
