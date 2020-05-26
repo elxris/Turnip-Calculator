@@ -6,7 +6,7 @@ import {
   useTitle,
   theme,
   useShare,
-  useChartReducer,
+  useTimeTravel,
   useWeekDays,
 } from "../utils";
 import { Title, Filter, Footer } from "../containers";
@@ -22,7 +22,7 @@ const App = () => {
     shareFilters,
   } = useShare(filters);
 
-  const [, dispatch, result] = useChartReducer(filters);
+  const [, dispatch, result] = useTimeTravel(filters);
   const { weekDaysCombined } = useWeekDays();
 
   return (
