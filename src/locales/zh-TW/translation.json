@@ -30,5 +30,9 @@
     "shareButton": "分享",
     "closeButton": "關閉",
     "shareDialogV2": "分享圖片！",
-    "Most Likely": "最可能價格"
+    "Most Likely": "最可能價格",
+    "patternNames": "波動型_三期型_下跌型_四期型",
+    "All Patterns": "所有規律",
+    "Pattern": "規律",
+    "Chance": "機率"
 }
