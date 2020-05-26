@@ -2,8 +2,7 @@ import { useReducer } from "react";
 
 const initialState = {
   rewindEnabled: false,
-  indexInHistory: null, // will be integer representing index in user input array
-  rewindFilters: [].fill(null),
+  rewindFilters: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -11,9 +10,9 @@ const reducer = (state = initialState, action) => {
   if (rewindEnabled) {
     return {
       ...state,
-      rewindEnabled: true,
+      rewindEnabled,
       rewindFilters: filters.map((filter, idx) => {
-        if (typeof indexInHistory === "number" && idx > indexInHistory) {
+        if (idx > indexInHistory) {
           return null;
         }
         return filter;
