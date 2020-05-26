@@ -8,6 +8,7 @@ import {
   useShare,
   useCalculation,
   useChartReducer,
+  useWeekDays,
 } from "../utils";
 import { Title, Filter, Footer } from "../containers";
 import { ShareDialog, Table, Dropdown, StatefulChart } from "../components";
@@ -22,7 +23,7 @@ const App = () => {
     shareFilters,
   } = useShare(filters);
 
-  const [state] = useChartReducer();
+  const [state, dispatch] = useChartReducer();
   const { rewindEnabled, rewindFilters } = state;
 
   // Get prediction/minMax values based on rewindFilters
@@ -37,6 +38,8 @@ const App = () => {
     result.filters = filters;
   }
 
+  const { weekDaysCombined } = useWeekDays();
+
   return (
     <ThemeProvider theme={theme}>
       <StyledComponentsThemeProvider theme={theme}>
@@ -49,7 +52,24 @@ const App = () => {
               onChange={saveFilters}
               openShareDialog={openShareDialog}
             />
-            <Dropdown menuItems={[{ text: "Test" }]} />
+            <Dropdown
+              label="Select time for rewind"
+              labelId="rewind-label"
+              selectId="rewind-select"
+              menuItems={weekDaysCombined.map((wd, idx) => ({
+                text: wd,
+                value: idx,
+              }))}
+              onChange={(e) => {
+                dispatch({
+                  payload: {
+                    rewindEnabled: true,
+                    indexInHistory: e.target.value,
+                    filters,
+                  },
+                });
+              }}
+            />
             <StatefulChart {...result} state={state} />
             <Table {...result} />
             <Footer />
