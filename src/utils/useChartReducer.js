@@ -1,34 +1,27 @@
-import { createContext, useReducer } from "react";
-
-const ChartContext = createContext();
+import { useReducer } from "react";
 
 export const CHART_STATES = {
   DEFAULT: "DEFAULT",
   REWIND: "REWIND",
 };
 
-export const CHART_ACTIONS = {
-  UPDATE_STATE: "UPDATE_STATE",
-};
-
 const initialState = {
   chartState: CHART_STATES.DEFAULT,
+  indexInHistory: null, // will be integer representing index in user input array
 };
 
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case CHART_ACTIONS.UPDATE_STATE:
-      return {
-        ...state,
-        chartState: action.payload.chartState,
-      };
-    default:
-      return state;
-  }
-};
+const reducer = (state = initialState, action) => ({
+  ...state,
+  ...action.payload,
+});
 
 const useChartReducer = () => {
-  return [...useReducer(reducer, initialState), ChartContext];
+  const [state, dispatch] = useReducer(reducer, initialState);
+  return {
+    state,
+    dispatch,
+    chartStates: CHART_STATES,
+  };
 };
 
 export default useChartReducer;
