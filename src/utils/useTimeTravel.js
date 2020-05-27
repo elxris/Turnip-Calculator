@@ -21,7 +21,7 @@ const reducer = (state = initialState, action) => {
     };
   }
 
-  return initialState;
+  return { ...initialState };
 };
 
 const useTimeTravel = (filters) => {
