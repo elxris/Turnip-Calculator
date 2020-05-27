@@ -7,7 +7,15 @@ import {
   FormHelperText,
   makeStyles,
 } from "@material-ui/core";
-import { string, arrayOf, shape, number, func, bool } from "prop-types";
+import {
+  string,
+  arrayOf,
+  shape,
+  number,
+  func,
+  bool,
+  oneOfType,
+} from "prop-types";
 import { useTranslation } from "react-i18next";
 import { useWeekDays } from "../utils/";
 
@@ -26,10 +34,11 @@ const Dropdown = ({
   selectId,
   helperText,
   disabled,
+  value,
 }) => (
   <FormControl className={useDropdownStyles().formControl} disabled={disabled}>
     <InputLabel id={labelId}>{label}</InputLabel>
-    <Select labelId={labelId} id={selectId} onChange={onChange}>
+    <Select value={value} labelId={labelId} id={selectId} onChange={onChange}>
       <MenuItem value="">
         <em>Clear Selection</em>
       </MenuItem>
@@ -59,6 +68,7 @@ Dropdown.propTypes = {
   selectId: string,
   helperText: string,
   disabled: bool,
+  value: oneOfType([number, string]),
 };
 
 Dropdown.defaults = {
@@ -68,14 +78,17 @@ Dropdown.defaults = {
   selectId: "",
   helperText: "",
   disabled: false,
+  value: "",
 };
 
 export const TimeTravelDropdown = ({ filters, dispatch }) => {
+  const [value, setValue] = React.useState("");
   const { weekDaysCombined } = useWeekDays();
   const { t } = useTranslation();
 
   return (
     <Dropdown
+      value={value}
       label={t("Rewind to a day and time")}
       labelId="rewind-label"
       selectId="rewind-select"
@@ -97,6 +110,7 @@ export const TimeTravelDropdown = ({ filters, dispatch }) => {
       })}
       onChange={(e) => {
         const { value } = e.target;
+        setValue(value);
         dispatch({
           payload: {
             rewindEnabled: typeof value === "number",
