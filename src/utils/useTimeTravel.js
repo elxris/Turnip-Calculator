@@ -22,7 +22,7 @@ const reducer = (state = initialState, action) => {
     };
   }
 
-  return state;
+  return initialState;
 };
 
 const useTimeTravel = (filters) => {
