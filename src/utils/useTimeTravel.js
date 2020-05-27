@@ -24,7 +24,7 @@ const reducer = (state = initialState, action) => {
   return initialState;
 };
 
-const useChartReducer = (filters) => {
+const useTimeTravel = (filters) => {
   const [{ rewindEnabled, rewindFilters }, dispatch] = useReducer(
     reducer,
     initialState
@@ -45,4 +45,4 @@ const useChartReducer = (filters) => {
   return [dispatch, result];
 };
 
-export default useChartReducer;
+export default useTimeTravel;
