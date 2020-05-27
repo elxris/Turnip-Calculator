@@ -16,6 +16,10 @@ const App = () => {
   } = useShare(filters);
 
   const [dispatch, result] = useTimeTravel(filters);
+  const resetTimeTravel = (array) => {
+    saveFilters(array);
+    dispatch({ payload: { rewindEnabled: false } });
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -26,7 +30,7 @@ const App = () => {
           <Box mx={[-1.5, 0]}>
             <Filter
               filters={inputFilters}
-              onChange={saveFilters}
+              onChange={resetTimeTravel}
               openShareDialog={openShareDialog}
             />
             <Box p={[0.5, 1, 2]} mt={2}>
