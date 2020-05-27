@@ -8,6 +8,7 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import { string, arrayOf, shape, number, func, bool } from "prop-types";
+import { useTranslation } from "react-i18next";
 import { useWeekDays } from "../utils/";
 
 const useDropdownStyles = makeStyles({
@@ -71,13 +72,16 @@ Dropdown.defaults = {
 
 export const TimeTravelDropdown = ({ filters, dispatch }) => {
   const { weekDaysCombined } = useWeekDays();
+  const { t } = useTranslation();
 
   return (
     <Dropdown
-      label="Rewind to a day and time"
+      label={t("Rewind to a day and time")}
       labelId="rewind-label"
       selectId="rewind-select"
-      helperText="Use this dropdown to see how the chart evolved as you filled out the prices above."
+      helperText={t(
+        "Use this dropdown to see how the chart evolved as you filled out the prices above."
+      )}
       menuItems={weekDaysCombined.map((weekday, idx) => {
         const indexInFilters = idx + 1;
 
