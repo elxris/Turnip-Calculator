@@ -14,6 +14,7 @@ const reducer = (state = initialState, action) => {
       rewindEnabled,
       rewindFilters: filters.map((filter, idx) => {
         if (idx > indexInHistory) {
+          // Ignore values beyond the selected point in history
           return null;
         }
         return filter;
