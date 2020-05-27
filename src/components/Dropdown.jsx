@@ -32,11 +32,14 @@ const Dropdown = ({
       <MenuItem value="">
         <em>Clear Selection</em>
       </MenuItem>
-      {menuItems.map((item) => (
-        <MenuItem value={item.value} key={item.value}>
-          {item.text}
-        </MenuItem>
-      ))}
+      {menuItems.map((item) => {
+        if (!item) return null;
+        return (
+          <MenuItem value={item.value} key={item.value}>
+            {item.text}
+          </MenuItem>
+        );
+      })}
     </Select>
     {helperText && <FormHelperText>{helperText}</FormHelperText>}
   </FormControl>
@@ -68,16 +71,26 @@ Dropdown.defaults = {
 
 export const TimeTravelDropdown = ({ filters, dispatch }) => {
   const { weekDaysCombined } = useWeekDays();
+
   return (
     <Dropdown
       label="Choose a day and time"
       labelId="rewind-label"
       selectId="rewind-select"
       helperText="Use this dropdown to see how the chart evolved as you filled out the prices above."
-      menuItems={weekDaysCombined.map((weekday, idx) => ({
-        text: weekday,
-        value: idx + 1, // The days/times start at index 1 in the "filters" array
-      }))}
+      menuItems={weekDaysCombined.map((weekday, idx) => {
+        const indexInFilters = idx + 1;
+
+        if (!filters[indexInFilters]) {
+          // Ignore values left blank by the user
+          return null;
+        }
+
+        return {
+          text: weekday,
+          value: indexInFilters,
+        };
+      })}
       onChange={(e) => {
         const { value } = e.target;
         dispatch({
