@@ -74,7 +74,7 @@ export const TimeTravelDropdown = ({ filters, dispatch }) => {
 
   return (
     <Dropdown
-      label="Choose a day and time"
+      label="Rewind to a day and time"
       labelId="rewind-label"
       selectId="rewind-select"
       helperText="Use this dropdown to see how the chart evolved as you filled out the prices above."
