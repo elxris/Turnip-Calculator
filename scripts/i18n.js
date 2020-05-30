@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { countries, languagesAll } = require("countries-list");
+const iso6393 = require("iso-639-3");
 
 const files = fs
   .readdirSync("./src/locales", {})
@@ -9,13 +10,17 @@ const langs = [];
 
 files.forEach((str) => {
   const [lang, country] = str.split("-");
-  const { native: nativeLang = "" } =
-    languagesAll[String(lang).toLowerCase()] || {};
+  const { native: nativeLang = "", name: nameLang = "" } =
+    languagesAll[String(lang).toLowerCase()] ||
+    iso6393.find(({ iso6393: code }) => code === lang) ||
+    {};
   const { native: nativeCountry = "" } =
     countries[String(country).toUpperCase()] || {};
   return langs.push([
     str,
-    nativeCountry ? `${nativeLang} (${nativeCountry})` : nativeLang,
+    nativeCountry
+      ? `${nativeLang || nameLang} (${nativeCountry})`
+      : nativeLang || nameLang,
   ]);
 });
 
