@@ -33,5 +33,7 @@
   "Chance": "Chance",
   "Pattern": "Pattern",
   "patternNames": "Fluctuating_High Spike_Decreasing_Small Spike",
-  "All Patterns": "All Patterns"
+  "All Patterns": "All Patterns",
+  "Rewind to a day and time": "Rewind to a day and time",
+  "Use this dropdown to see how the chart evolved as you filled out the prices above.": "Use this dropdown to see how the chart evolved as you filled out the prices above."
 }

@@ -1,15 +1,9 @@
 import React from "react";
 import { CssBaseline, ThemeProvider, Container, Box } from "@material-ui/core";
 import { ThemeProvider as StyledComponentsThemeProvider } from "styled-components";
-import {
-  useFilters,
-  useTitle,
-  theme,
-  useShare,
-  useCalculation,
-} from "../utils";
+import { useFilters, useTitle, theme, useShare, useTimeTravel } from "../utils";
 import { Title, Filter, Footer } from "../containers";
-import { ShareDialog, Chart, Table } from "../components";
+import { ShareDialog, Table, TimeTravelDropdown, Chart } from "../components";
 
 const App = () => {
   useTitle();
@@ -21,7 +15,11 @@ const App = () => {
     shareFilters,
   } = useShare(filters);
 
-  const result = useCalculation({ filters });
+  const [dispatch, result] = useTimeTravel(filters);
+  const resetTimeTravel = (array) => {
+    saveFilters(array);
+    dispatch({ payload: { rewindEnabled: false } });
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -32,9 +30,12 @@ const App = () => {
           <Box mx={[-1.5, 0]}>
             <Filter
               filters={inputFilters}
-              onChange={saveFilters}
+              onChange={resetTimeTravel}
               openShareDialog={openShareDialog}
             />
+            <Box p={[0.5, 1, 2]} mt={2}>
+              <TimeTravelDropdown filters={filters} dispatch={dispatch} />
+            </Box>
             <Chart {...result} />
             <Table {...result} />
             <Footer />
