@@ -110,18 +110,22 @@ const patternReducer = (allPatterns, reducer) => {
   return allPatterns.reduce(reducer);
 };
 
-const calculateQuantiles = (patterns) => {
+const calculateQuantiles = (patterns, quantileRange = 75) => {
   const samples = patternReducer(patterns, samplesReducer);
-  return [0.25, 0.5, 0.75].map((q) => {
+  return [
+    (100 - quantileRange) * 0.005,
+    0.5,
+    1 - (100 - quantileRange) * 0.005,
+  ].map((q) => {
     return samples.map((daySamples, i) => Math.floor(quantile(daySamples, q)));
   });
 };
 
-const calculate = async (filter) => {
-  let patterns = await possiblePatterns(filter);
+const calculate = async ({ filters, quantileRange }) => {
+  let patterns = await possiblePatterns(filters);
   const minMaxPattern = patternReducer(patterns, minMaxReducer);
   const [minWeekValue] = patternReducer(patterns, minWeekReducer);
-  const quantiles = calculateQuantiles(patterns);
+  const quantiles = calculateQuantiles(patterns, quantileRange);
 
   const result = {
     minMaxPattern,

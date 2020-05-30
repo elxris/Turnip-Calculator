@@ -5,6 +5,7 @@ import Localizer from "./Localizer";
 import { string, node } from "prop-types";
 import { useTranslation } from "react-i18next";
 import { version } from "../../package.json";
+import { QuantileRange } from "../components";
 
 const Link = ({ href, gh, children }) => (
   <MaterialLink
@@ -53,6 +54,11 @@ const Footer = () => {
             <Trans i18nKey="guaranteedMinInfo">
               - The <b>Week min</b> value is a guaranteed minimum price you will
               get this week. Wait at least for this price.
+            </Trans>
+            <br />
+            <Trans i18nKey="mostLikelyInfo">
+              - The <b>Most Likely</b> value range is where <QuantileRange /> of
+              the turnip prices will fall.
             </Trans>
           </Typography>
         </Box>

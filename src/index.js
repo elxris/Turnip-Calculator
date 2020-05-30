@@ -1,16 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+import Providers from "./containers/Providers";
 import App from "./containers/App";
 import * as serviceWorker from "./serviceWorker";
-import "./i18n";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
+  <Providers>
+    <App />
+  </Providers>,
   document.getElementById("root")
 );
 

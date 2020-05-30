@@ -81,7 +81,7 @@ const createGenerteData = (t) => ({
   ];
 };
 
-const createGetLabels = (t) => () => {
+const createGetLabels = (t) => {
   return t("Mon Tue Wed Thu Fri Sat")
     .split(" ")
     .reduce(
@@ -144,8 +144,10 @@ const ChartComponent = ({
   const canvas = useRef();
   const chart = useRef();
   const { t } = useTranslation();
-  const generateData = useCallback(createGenerteData(t), [t]);
-  const getLabels = useCallback(createGetLabels(t), [t]);
+  const generateData = useCallback((...args) => createGenerteData(t)(...args), [
+    t,
+  ]);
+  const getLabels = useCallback(() => createGetLabels(t), [t]);
 
   // Language labels chart effect
   useEffect(() => {

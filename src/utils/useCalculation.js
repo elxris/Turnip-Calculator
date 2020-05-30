@@ -1,14 +1,16 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useContext } from "react";
 import { calculate } from "./patterns";
 import { useDebounce } from "react-use";
+import { QuantileContext } from "../components";
 
 const useCalculation = ({ filters, immediate = false }) => {
   const [state, setState] = useState(null);
+  const [quantileRange] = useContext(QuantileContext);
 
   useDebounce(
     () => {
       if (filters) {
-        calculate(filters)
+        calculate({ filters, quantileRange })
           .then(setState)
           .catch(() => setState(null));
       } else {
@@ -16,7 +18,7 @@ const useCalculation = ({ filters, immediate = false }) => {
       }
     },
     immediate ? 0 : 500,
-    [filters]
+    [filters, quantileRange]
   );
 
   const { minMaxPattern, minWeekValue, patterns, quantiles } = state || {};
