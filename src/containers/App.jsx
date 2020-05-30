@@ -4,12 +4,13 @@ import { ThemeProvider as StyledComponentsThemeProvider } from "styled-component
 import {
   useFilters,
   useTitle,
-  theme,
+  useTheme,
   useShare,
   useCalculation,
 } from "../utils";
 import { Title, Filter, Footer } from "../containers";
 import { ShareDialog, Chart, Table } from "../components";
+import { useTranslation } from "react-i18next";
 
 const App = () => {
   useTitle();
@@ -20,6 +21,8 @@ const App = () => {
     openShareDialog,
     shareFilters,
   } = useShare(filters);
+  const { i18n } = useTranslation();
+  const theme = useTheme({ language: i18n.language });
 
   const result = useCalculation({ filters });
 
