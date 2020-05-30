@@ -2,26 +2,19 @@ import React from "react";
 import { CssBaseline, ThemeProvider, Container, Box } from "@material-ui/core";
 import { ThemeProvider as StyledComponentsThemeProvider } from "styled-components";
 import {
-  useFilters,
   useTitle,
+  useTabs,
   theme,
-  useShare,
-  useCalculation,
 } from "../utils";
-import { Title, Filter, Footer } from "../containers";
-import { ShareDialog, Chart, Table } from "../components";
+import { Title, Footer, IslandTabs, Calculator } from "../containers";
 
 const App = () => {
   useTitle();
-  const { inputFilters, filters, saveFilters } = useFilters();
-  const {
-    onCloseShareModal,
-    showShareDialog,
-    openShareDialog,
-    shareFilters,
-  } = useShare(filters);
+  const {tabs, addTab, deleteTab, value, handleTabChange} = useTabs();
 
-  const result = useCalculation({ filters });
+  const panelMarkup = tabs.map((tab, index) => (
+    <Calculator filterKey={tab.key} key={tab.key} value={value} index={index} />
+  ));
 
   return (
     <ThemeProvider theme={theme}>
@@ -30,21 +23,17 @@ const App = () => {
         <Container maxWidth="md">
           <Title />
           <Box mx={[-1.5, 0]}>
-            <Filter
-              filters={inputFilters}
-              onChange={saveFilters}
-              openShareDialog={openShareDialog}
-            />
-            <Chart {...result} />
-            <Table {...result} />
-            <Footer />
-          </Box>
+          <IslandTabs
+            tabs={tabs}
+            value={value}
+            onAdd={addTab}
+            onDelete={deleteTab}
+            onChange={handleTabChange}
+          />
+          {panelMarkup}
+          <Footer />
+        </Box>
         </Container>
-        <ShareDialog
-          open={showShareDialog}
-          filters={shareFilters}
-          onClose={onCloseShareModal}
-        />
       </StyledComponentsThemeProvider>
     </ThemeProvider>
   );

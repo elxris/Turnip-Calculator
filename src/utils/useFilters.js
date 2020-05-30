@@ -1,8 +1,8 @@
 import { useEffect, useMemo } from "react";
 import { useLocalStorage } from "react-use";
 
-const useFilters = () => {
-  const [filters, saveFilters] = useLocalStorage("filters", []);
+const useFilters = (key) => {
+  const [filters, saveFilters] = useLocalStorage(key, []);
 
   // Array of strings
   const inputFilters = useMemo(
