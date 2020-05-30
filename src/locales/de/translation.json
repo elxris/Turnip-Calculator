@@ -29,5 +29,10 @@
     "copyButton": "Kopieren!",
     "shareButton": "Teilen!",
     "closeButton": "Schließen",
-    "shareDialogV2": "Teile dieses Bild!"
+    "shareDialogV2": "Teile dieses Bild!",
+    "All Patterns": "Alle Muster",
+    "patternNames": "Schwanked_Stark Ansteigend_Absteigend_Leicht Ansteigend",
+    "Pattern": "Muster",
+    "Chance": "Chance",
+    "Most Likely": "Höchstwahrscheinlich"
 }
