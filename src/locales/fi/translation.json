@@ -34,5 +34,6 @@
     "All Patterns": "Kaikki mallit",
     "Pattern": "Malli",
     "Chance": "Todennäköisyys",
-    "Most Likely": "Todennäköisesti"
+    "Most Likely": "Todennäköisesti",
+    "mostLikelyInfo": "- <1>Todennäköisesti</1> hinta-alue on mihin <3></3> hinnoista osuu."
 }
