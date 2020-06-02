@@ -751,85 +751,6 @@
       },
       {
         "w": 1589673600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1590278400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1590883200,
-        "a": 27,
-        "d": 8,
-        "c": 1
-      }
-    ],
-    "author": {
-      "login": "intersectRaven",
-      "id": 229447,
-      "node_id": "MDQ6VXNlcjIyOTQ0Nw==",
-      "avatar_url": "https://avatars2.githubusercontent.com/u/229447?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/intersectRaven",
-      "html_url": "https://github.com/intersectRaven",
-      "followers_url": "https://api.github.com/users/intersectRaven/followers",
-      "following_url": "https://api.github.com/users/intersectRaven/following{/other_user}",
-      "gists_url": "https://api.github.com/users/intersectRaven/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/intersectRaven/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/intersectRaven/subscriptions",
-      "organizations_url": "https://api.github.com/users/intersectRaven/orgs",
-      "repos_url": "https://api.github.com/users/intersectRaven/repos",
-      "events_url": "https://api.github.com/users/intersectRaven/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/intersectRaven/received_events",
-      "type": "User",
-      "site_admin": false
-    }
-  },
-  {
-    "total": 1,
-    "weeks": [
-      {
-        "w": 1586044800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1586649600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1587254400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1587859200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1588464000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589068800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589673600,
         "a": 2,
         "d": 2,
         "c": 1
@@ -2760,6 +2681,85 @@
       "repos_url": "https://api.github.com/users/jayehernandez/repos",
       "events_url": "https://api.github.com/users/jayehernandez/events{/privacy}",
       "received_events_url": "https://api.github.com/users/jayehernandez/received_events",
+      "type": "User",
+      "site_admin": false
+    }
+  },
+  {
+    "total": 2,
+    "weeks": [
+      {
+        "w": 1586044800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1586649600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587254400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587859200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1588464000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589068800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589673600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590278400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590883200,
+        "a": 37,
+        "d": 17,
+        "c": 2
+      }
+    ],
+    "author": {
+      "login": "intersectRaven",
+      "id": 229447,
+      "node_id": "MDQ6VXNlcjIyOTQ0Nw==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/229447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/intersectRaven",
+      "html_url": "https://github.com/intersectRaven",
+      "followers_url": "https://api.github.com/users/intersectRaven/followers",
+      "following_url": "https://api.github.com/users/intersectRaven/following{/other_user}",
+      "gists_url": "https://api.github.com/users/intersectRaven/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/intersectRaven/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/intersectRaven/subscriptions",
+      "organizations_url": "https://api.github.com/users/intersectRaven/orgs",
+      "repos_url": "https://api.github.com/users/intersectRaven/repos",
+      "events_url": "https://api.github.com/users/intersectRaven/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/intersectRaven/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -4977,7 +4977,7 @@
     }
   },
   {
-    "total": 59,
+    "total": 60,
     "weeks": [
       {
         "w": 1586044800,
@@ -5029,9 +5029,9 @@
       },
       {
         "w": 1590883200,
-        "a": 5815,
-        "d": 5657,
-        "c": 4
+        "a": 5899,
+        "d": 5741,
+        "c": 5
       }
     ],
     "author": {
