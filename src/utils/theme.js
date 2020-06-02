@@ -82,6 +82,22 @@ const useTheme = ({ language }) =>
       MuiCssBaseline: {
         "@global": {
           "@font-face": [finkHeavy, arialRound],
+          body: {
+            paddingTop: "env(safe-area-inset-top)",
+            paddingLeft: "env(safe-area-inset-left)",
+            paddingRight: "env(safe-area-inset-right)",
+            "-webkit-text-size-adjust": "100%",
+          },
+          "body::before": {
+            content: "''",
+            position: "fixed",
+            width: "100%",
+            top: "0",
+            zIndex: "10",
+            height: "env(safe-area-inset-top)",
+            backgroundColor: "rgb(123, 108, 83)",
+            borderBottom: "1px solid #E9F5EB",
+          },
         },
       },
     },
