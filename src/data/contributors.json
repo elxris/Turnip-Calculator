@@ -1201,85 +1201,6 @@
       },
       {
         "w": 1587254400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1587859200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1588464000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589068800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589673600,
-        "a": 2,
-        "d": 1,
-        "c": 1
-      },
-      {
-        "w": 1590278400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1590883200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      }
-    ],
-    "author": {
-      "login": "borjiso",
-      "id": 505113,
-      "node_id": "MDQ6VXNlcjUwNTExMw==",
-      "avatar_url": "https://avatars2.githubusercontent.com/u/505113?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/borjiso",
-      "html_url": "https://github.com/borjiso",
-      "followers_url": "https://api.github.com/users/borjiso/followers",
-      "following_url": "https://api.github.com/users/borjiso/following{/other_user}",
-      "gists_url": "https://api.github.com/users/borjiso/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/borjiso/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/borjiso/subscriptions",
-      "organizations_url": "https://api.github.com/users/borjiso/orgs",
-      "repos_url": "https://api.github.com/users/borjiso/repos",
-      "events_url": "https://api.github.com/users/borjiso/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/borjiso/received_events",
-      "type": "User",
-      "site_admin": false
-    }
-  },
-  {
-    "total": 1,
-    "weeks": [
-      {
-        "w": 1586044800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1586649600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1587254400,
         "a": 1,
         "d": 1,
         "c": 1
@@ -2839,6 +2760,85 @@
       "repos_url": "https://api.github.com/users/jayehernandez/repos",
       "events_url": "https://api.github.com/users/jayehernandez/events{/privacy}",
       "received_events_url": "https://api.github.com/users/jayehernandez/received_events",
+      "type": "User",
+      "site_admin": false
+    }
+  },
+  {
+    "total": 2,
+    "weeks": [
+      {
+        "w": 1586044800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1586649600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587254400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587859200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1588464000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589068800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589673600,
+        "a": 2,
+        "d": 1,
+        "c": 1
+      },
+      {
+        "w": 1590278400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590883200,
+        "a": 2,
+        "d": 1,
+        "c": 1
+      }
+    ],
+    "author": {
+      "login": "borjiso",
+      "id": 505113,
+      "node_id": "MDQ6VXNlcjUwNTExMw==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/505113?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/borjiso",
+      "html_url": "https://github.com/borjiso",
+      "followers_url": "https://api.github.com/users/borjiso/followers",
+      "following_url": "https://api.github.com/users/borjiso/following{/other_user}",
+      "gists_url": "https://api.github.com/users/borjiso/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/borjiso/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/borjiso/subscriptions",
+      "organizations_url": "https://api.github.com/users/borjiso/orgs",
+      "repos_url": "https://api.github.com/users/borjiso/repos",
+      "events_url": "https://api.github.com/users/borjiso/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/borjiso/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -4977,7 +4977,7 @@
     }
   },
   {
-    "total": 58,
+    "total": 59,
     "weeks": [
       {
         "w": 1586044800,
@@ -5029,9 +5029,9 @@
       },
       {
         "w": 1590883200,
-        "a": 5652,
-        "d": 5652,
-        "c": 3
+        "a": 5815,
+        "d": 5657,
+        "c": 4
       }
     ],
     "author": {
