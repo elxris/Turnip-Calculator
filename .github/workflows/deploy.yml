@@ -22,7 +22,7 @@ jobs:
           route: GET /repos/elxris/Turnip-Calculator/stats/contributors
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: "echo contributors: ${{ steps.get_contributors.outputs.data }}"
+      - run: "echo contributors: ${{ steps.get_contributors.outputs }}"
       - name: Compile WASM
         run: wasm-pack build
         working-directory: ./wasm
