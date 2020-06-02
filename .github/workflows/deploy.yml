@@ -23,9 +23,9 @@ jobs:
         with:
           route: GET /repos/:repository/stats/contributors
           repository: ${{ github.repository }}
-        ## env:
-          ## GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: "echo contributors: ${{ toJSON(steps.get_contributors.outputs.data) }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: "echo contributors: ${{ steps.get_contributors.outputs }}"
       - name: Compile WASM
         run: wasm-pack build
         working-directory: ./wasm
