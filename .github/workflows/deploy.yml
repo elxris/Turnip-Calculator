@@ -38,7 +38,9 @@ jobs:
           repository: ${{ github.repository }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: "echo ${{ steps.get_contributors.outputs.data }} > src/data/contributors.json"
+      - name: Save Contributors to a file
+        shell: bash
+        run: "echo \"${{ steps.get_contributors.outputs.data }}\" > src/data/contributors.json"
       - name: Build
         run: yarn build
       - name: Deploy
