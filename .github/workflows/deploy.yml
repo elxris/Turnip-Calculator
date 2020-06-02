@@ -17,20 +17,20 @@ jobs:
       - uses: actions/setup-node@v1.4.2
       - uses: actions/checkout@master
       - uses: jetli/wasm-pack-action@v0.3.0
-      - name: GitHub API Request for Contributors
-        uses: octokit/request-action@v2.0.2
-        id: get_contributors
-        with:
-          route: GET /repos/:repository/commits
-          repository: ${{ github.repository }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: "echo contributors: ${{ steps.get_contributors.outputs.data }}"
       - name: Compile WASM
         run: wasm-pack build
         working-directory: ./wasm
       - name: Install
         run: yarn
+      - name: GitHub API Request for Contributors
+        uses: octokit/request-action@v2.0.2
+        id: get_contributors
+        with:
+          route: GET /repos/:repository/stats/commit_activity
+          repository: ${{ github.repository }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: "echo contributors: ${{ steps.get_contributors.outputs.data }}"
       - name: Build
         run: yarn build
       - name: Deploy
