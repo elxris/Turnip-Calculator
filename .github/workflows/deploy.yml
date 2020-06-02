@@ -6,8 +6,8 @@ name: Deploy
 on:
   push:
     branches: [master]
-    paths:
-          - 'src/*'
+    # paths:
+      # - 'src/*'
 
 jobs:
   build:
