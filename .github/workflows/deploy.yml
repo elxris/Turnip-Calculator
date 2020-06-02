@@ -21,7 +21,8 @@ jobs:
         uses: octokit/request-action@v2.0.2
         id: get_contributors
         with:
-          route: GET /repos/elxris/Turnip-Calculator/stats/contributors
+          route: GET /repos/:repository/stats/contributors
+          repository: ${{ github.repository }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: "echo contributors: ${{ toJSON(steps.get_contributors.outputs.data) }}"
