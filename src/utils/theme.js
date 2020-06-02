@@ -82,6 +82,9 @@ const useTheme = ({ language }) =>
       MuiCssBaseline: {
         "@global": {
           "@font-face": [finkHeavy, arialRound],
+          body: {
+            wordBreak: ["ko"].includes(language) ? "keep-all" : "initial",
+          },
         },
       },
     },
