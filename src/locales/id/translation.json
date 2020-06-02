@@ -8,10 +8,10 @@
     "clearDataWarning": "Ini tidak dapat dibatalkan!",
     "clearDataTitle": "Anda yakin ingin menghapus semua data?",
     "cancel": "Batal",
-    "about4": "Nemuin masalah? Laporkan <2>di sini</2>.",
-    "about3": "Terkahir, terima kasih saudaraku atas bantuan desainnya. Dia game dev! Follow dia di twitter : <2>@Consalv0</2>.",
+    "about4": "Menemukan masalah? Laporkan <2>di sini</2>.",
+    "about3": "Terakhir, terima kasih saudaraku atas bantuan desainnya. Dia game dev! Follow dia di twitter : <2>@Consalv0</2>.",
     "about2": "Saya mendapatkan inspirasi dari <2>mikebryant's</2>.",
-    "about1": "Ini tidal akan terjadi tanpa bantuan <2>@_Ninji's</2>.",
+    "about1": "Ini tidak akan terjadi tanpa bantuan <2>@_Ninji's</2>.",
     "About": "Tentang",
     "contributors": "Terima kasih untuk kontribusinya!",
     "guaranteedMinInfo": "- <1>Jaminan Min</1> adalah harga minimal yang Anda lihat di beberapa titik dalam seminggu.",
@@ -29,5 +29,11 @@
     "Daily Price": "Harga Harian",
     "Buy Price": "Harga Beli",
     "ACNH Turnip Calculator": "ACNH: Kalkulator Lobak",
-    "Turnip Calculator": "Kalkulator Lobak"
+    "Turnip Calculator": "Kalkulator Lobak",
+    "patternNames": "Fluktuatif_Lonjakan Tinggi_Menurun_Lonjakan Kecil",
+    "mostLikelyInfo": "- <1>Paling Mungkin</1> adalah jangkauan harga apabila <3></3> dari harga lobak akan jatuh.",
+    "Most Likely": "Paling Mungkin",
+    "All Patterns": "Semua Pola",
+    "Pattern": "Pola",
+    "Chance": "Kans"
 }
