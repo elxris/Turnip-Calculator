@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, Fragment } from "react";
 import { Box, Typography, Link as MaterialLink } from "@material-ui/core";
 import { Trans } from "react-i18next";
 import Localizer from "./Localizer";
@@ -6,24 +6,19 @@ import { string, node } from "prop-types";
 import { useTranslation } from "react-i18next";
 import { version } from "../../package.json";
 import { QuantileRange } from "../components";
+import contributors from "../data/contributors.json";
 
-const Link = ({ href, gh, children }) => (
-  <MaterialLink
-    href={href || `https://github.com/elxris/Turnip-Calculator/issues/${gh}`}
-    target="_blank"
-    rel="noopener"
-  >
+const Link = ({ href, children }) => (
+  <MaterialLink href={href} target="_blank" rel="noopener">
     {children}
   </MaterialLink>
 );
 Link.propTypes = {
   href: string,
-  gh: string,
   children: node,
 };
 Link.defaults = {
   href: undefined,
-  gh: undefined,
 };
 
 const Footer = () => {
@@ -68,26 +63,17 @@ const Footer = () => {
             <Trans i18nKey="contributors">
               Thank you all contributors so far!
             </Trans>{" "}
-            <Link gh="2">@mtaylor76</Link>
-            <Link gh="15">(x)</Link>
-            <Link gh="24">(x)</Link>
-            <Link gh="33">(x)</Link>
-            <Link gh="39">(x)</Link> <Link gh="18">@DevSplash</Link>
-            <Link gh="20">(x)</Link>
-            <Link gh="28">(x)</Link>
-            <Link gh="41">(x)</Link> <Link gh="22">@marcolai</Link>
-            <Link gh="38">(x)</Link>
-            <Link gh="40">(x)</Link> <Link gh="21">@nekomoto</Link>
-            <Link gh="23">(x)</Link> <Link gh="26">@fabiomurru96</Link>
-            <Link gh="31">(x)</Link> <Link gh="34">@dstaley</Link>
-            <Link gh="35">(x)</Link> <Link gh="36">@ndoll</Link>
-            <Link gh="37">(x)</Link> <Link gh="5">@pudquick</Link>{" "}
-            <Link gh="10">@capoferro &amp; @nanoNago</Link>{" "}
-            <Link gh="16">@Ekaekale</Link> <Link gh="11">@alyphen</Link>{" "}
-            <Link gh="14">@FoxFireX</Link> <Link gh="19">@ninehole90</Link>{" "}
-            <Link gh="25">@saitho</Link> <Link gh="23">@DotnetChen</Link>{" "}
-            <Link gh="27">@Noelierx</Link> <Link gh="29">@JarodDif</Link>{" "}
-            <Link gh="30">@CalebProvost</Link>{" "}
+            {contributors
+              .filter(
+                ({ author }) =>
+                  !["actions-user", "weblate"].includes(author.login)
+              )
+              .sort((a, b) => b.total - a.total)
+              .map(({ author }) => (
+                <Fragment key={author.id}>
+                  <Link href={author.html_url}>{`@${author.login}`}</Link>{" "}
+                </Fragment>
+              ))}
           </Typography>
           <Typography variant="body1">
             <Trans i18nKey="about1">
