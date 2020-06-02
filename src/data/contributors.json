@@ -557,6 +557,85 @@
     "weeks": [
       {
         "w": 1586044800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1586649600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587254400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587859200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1588464000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589068800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589673600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590278400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590883200,
+        "a": 10,
+        "d": 4,
+        "c": 1
+      }
+    ],
+    "author": {
+      "login": "prabowo02",
+      "id": 18303489,
+      "node_id": "MDQ6VXNlcjE4MzAzNDg5",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/18303489?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/prabowo02",
+      "html_url": "https://github.com/prabowo02",
+      "followers_url": "https://api.github.com/users/prabowo02/followers",
+      "following_url": "https://api.github.com/users/prabowo02/following{/other_user}",
+      "gists_url": "https://api.github.com/users/prabowo02/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/prabowo02/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/prabowo02/subscriptions",
+      "organizations_url": "https://api.github.com/users/prabowo02/orgs",
+      "repos_url": "https://api.github.com/users/prabowo02/repos",
+      "events_url": "https://api.github.com/users/prabowo02/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/prabowo02/received_events",
+      "type": "User",
+      "site_admin": false
+    }
+  },
+  {
+    "total": 1,
+    "weeks": [
+      {
+        "w": 1586044800,
         "a": 33,
         "d": 1,
         "c": 1
@@ -627,6 +706,85 @@
       "repos_url": "https://api.github.com/users/ninehole90/repos",
       "events_url": "https://api.github.com/users/ninehole90/events{/privacy}",
       "received_events_url": "https://api.github.com/users/ninehole90/received_events",
+      "type": "User",
+      "site_admin": false
+    }
+  },
+  {
+    "total": 1,
+    "weeks": [
+      {
+        "w": 1586044800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1586649600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587254400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587859200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1588464000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589068800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589673600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590278400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590883200,
+        "a": 27,
+        "d": 8,
+        "c": 1
+      }
+    ],
+    "author": {
+      "login": "intersectRaven",
+      "id": 229447,
+      "node_id": "MDQ6VXNlcjIyOTQ0Nw==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/229447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/intersectRaven",
+      "html_url": "https://github.com/intersectRaven",
+      "followers_url": "https://api.github.com/users/intersectRaven/followers",
+      "following_url": "https://api.github.com/users/intersectRaven/following{/other_user}",
+      "gists_url": "https://api.github.com/users/intersectRaven/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/intersectRaven/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/intersectRaven/subscriptions",
+      "organizations_url": "https://api.github.com/users/intersectRaven/orgs",
+      "repos_url": "https://api.github.com/users/intersectRaven/repos",
+      "events_url": "https://api.github.com/users/intersectRaven/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/intersectRaven/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -4819,7 +4977,7 @@
     }
   },
   {
-    "total": 57,
+    "total": 58,
     "weeks": [
       {
         "w": 1586044800,
@@ -4871,9 +5029,9 @@
       },
       {
         "w": 1590883200,
-        "a": 676,
-        "d": 4977,
-        "c": 2
+        "a": 5652,
+        "d": 5652,
+        "c": 3
       }
     ],
     "author": {
