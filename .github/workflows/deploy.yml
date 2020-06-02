@@ -25,7 +25,7 @@ jobs:
           repository: ${{ github.repository }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: "echo contributors: ${{ steps.get_contributors.outputs }}"
+      - run: "echo contributors: ${{ toJSON(steps.get_contributors.outputs) }}"
       - name: Compile WASM
         run: wasm-pack build
         working-directory: ./wasm
