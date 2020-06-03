@@ -2149,85 +2149,6 @@
       },
       {
         "w": 1587254400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1587859200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1588464000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589068800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589673600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1590278400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1590883200,
-        "a": 1,
-        "d": 0,
-        "c": 1
-      }
-    ],
-    "author": {
-      "login": "AlanS181824",
-      "id": 1048653,
-      "node_id": "MDQ6VXNlcjEwNDg2NTM=",
-      "avatar_url": "https://avatars3.githubusercontent.com/u/1048653?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/AlanS181824",
-      "html_url": "https://github.com/AlanS181824",
-      "followers_url": "https://api.github.com/users/AlanS181824/followers",
-      "following_url": "https://api.github.com/users/AlanS181824/following{/other_user}",
-      "gists_url": "https://api.github.com/users/AlanS181824/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/AlanS181824/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/AlanS181824/subscriptions",
-      "organizations_url": "https://api.github.com/users/AlanS181824/orgs",
-      "repos_url": "https://api.github.com/users/AlanS181824/repos",
-      "events_url": "https://api.github.com/users/AlanS181824/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/AlanS181824/received_events",
-      "type": "User",
-      "site_admin": false
-    }
-  },
-  {
-    "total": 1,
-    "weeks": [
-      {
-        "w": 1586044800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1586649600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1587254400,
         "a": 2,
         "d": 1,
         "c": 1
@@ -3550,6 +3471,85 @@
       "repos_url": "https://api.github.com/users/ApocArkhesir/repos",
       "events_url": "https://api.github.com/users/ApocArkhesir/events{/privacy}",
       "received_events_url": "https://api.github.com/users/ApocArkhesir/received_events",
+      "type": "User",
+      "site_admin": false
+    }
+  },
+  {
+    "total": 2,
+    "weeks": [
+      {
+        "w": 1586044800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1586649600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587254400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587859200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1588464000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589068800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589673600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590278400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590883200,
+        "a": 20,
+        "d": 1,
+        "c": 2
+      }
+    ],
+    "author": {
+      "login": "AlanS181824",
+      "id": 1048653,
+      "node_id": "MDQ6VXNlcjEwNDg2NTM=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1048653?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/AlanS181824",
+      "html_url": "https://github.com/AlanS181824",
+      "followers_url": "https://api.github.com/users/AlanS181824/followers",
+      "following_url": "https://api.github.com/users/AlanS181824/following{/other_user}",
+      "gists_url": "https://api.github.com/users/AlanS181824/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/AlanS181824/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/AlanS181824/subscriptions",
+      "organizations_url": "https://api.github.com/users/AlanS181824/orgs",
+      "repos_url": "https://api.github.com/users/AlanS181824/repos",
+      "events_url": "https://api.github.com/users/AlanS181824/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/AlanS181824/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -5056,7 +5056,7 @@
     }
   },
   {
-    "total": 61,
+    "total": 62,
     "weeks": [
       {
         "w": 1586044800,
@@ -5108,9 +5108,9 @@
       },
       {
         "w": 1590883200,
-        "a": 5983,
-        "d": 5825,
-        "c": 6
+        "a": 6067,
+        "d": 5830,
+        "c": 7
       }
     ],
     "author": {
