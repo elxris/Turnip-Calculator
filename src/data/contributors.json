@@ -1596,6 +1596,85 @@
       },
       {
         "w": 1587254400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587859200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1588464000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589068800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589673600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590278400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590883200,
+        "a": 3,
+        "d": 0,
+        "c": 1
+      }
+    ],
+    "author": {
+      "login": "PJMS",
+      "id": 1370225,
+      "node_id": "MDQ6VXNlcjEzNzAyMjU=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1370225?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/PJMS",
+      "html_url": "https://github.com/PJMS",
+      "followers_url": "https://api.github.com/users/PJMS/followers",
+      "following_url": "https://api.github.com/users/PJMS/following{/other_user}",
+      "gists_url": "https://api.github.com/users/PJMS/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/PJMS/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/PJMS/subscriptions",
+      "organizations_url": "https://api.github.com/users/PJMS/orgs",
+      "repos_url": "https://api.github.com/users/PJMS/repos",
+      "events_url": "https://api.github.com/users/PJMS/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/PJMS/received_events",
+      "type": "User",
+      "site_admin": false
+    }
+  },
+  {
+    "total": 1,
+    "weeks": [
+      {
+        "w": 1586044800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1586649600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587254400,
         "a": 1,
         "d": 1,
         "c": 1
@@ -4345,6 +4424,85 @@
     }
   },
   {
+    "total": 3,
+    "weeks": [
+      {
+        "w": 1586044800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1586649600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587254400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587859200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1588464000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589068800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589673600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590278400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590883200,
+        "a": 40,
+        "d": 2,
+        "c": 3
+      }
+    ],
+    "author": {
+      "login": "AlanS181824",
+      "id": 1048653,
+      "node_id": "MDQ6VXNlcjEwNDg2NTM=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1048653?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/AlanS181824",
+      "html_url": "https://github.com/AlanS181824",
+      "followers_url": "https://api.github.com/users/AlanS181824/followers",
+      "following_url": "https://api.github.com/users/AlanS181824/following{/other_user}",
+      "gists_url": "https://api.github.com/users/AlanS181824/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/AlanS181824/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/AlanS181824/subscriptions",
+      "organizations_url": "https://api.github.com/users/AlanS181824/orgs",
+      "repos_url": "https://api.github.com/users/AlanS181824/repos",
+      "events_url": "https://api.github.com/users/AlanS181824/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/AlanS181824/received_events",
+      "type": "User",
+      "site_admin": false
+    }
+  },
+  {
     "total": 4,
     "weeks": [
       {
@@ -4977,7 +5135,7 @@
     }
   },
   {
-    "total": 60,
+    "total": 64,
     "weeks": [
       {
         "w": 1586044800,
@@ -5029,9 +5187,9 @@
       },
       {
         "w": 1590883200,
-        "a": 5899,
-        "d": 5741,
-        "c": 5
+        "a": 6235,
+        "d": 5998,
+        "c": 9
       }
     ],
     "author": {
