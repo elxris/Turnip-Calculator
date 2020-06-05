@@ -34,5 +34,6 @@
     "All Patterns": "Tutte le tendenze",
     "patternNames": "Fluttuante_Grande Picco_Decrescente_Piccolo picco",
     "Pattern": "Tendenza",
-    "Chance": "Probabilità"
+    "Chance": "Probabilità",
+    "mostLikelyInfo": "- L'intervallo <1>Più Probabile</1> è la zona dove si troverà il <3></3> dei prezzi delle rape."
 }
