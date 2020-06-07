@@ -10,7 +10,7 @@ on:
     #   - 'src/*'
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -41,6 +41,8 @@ jobs:
       - name: Save Contributors to a file
         shell: bash
         run: echo -e ${{ toJSON(steps.get_contributors.outputs.data) }} > src/data/contributors.json
+      - name: Test
+        run: yarn test
       - name: Build
         run: yarn build
       - name: Deploy

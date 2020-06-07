@@ -8,7 +8,7 @@ i18n
   .use(LanguageDetector)
   .init({
     // we init with resources
-    debug: true,
+    debug: process.env.NODE_ENV === "development",
     detection: {
       // order and from where user language should be detected
       order: [
