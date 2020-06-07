@@ -20,10 +20,10 @@ pub fn calculate(filters: String) -> String {
             parsed_filters.push(None);
         }
     }
-    parse(&patterns::calculate(&parsed_filters))
+    generate_json(&patterns::calculate(&parsed_filters))
 }
 
-fn parse(patterns: &Vec<(Vec<patterns::MinMax<i32>>, i32)>) -> String {
+fn generate_json(patterns: &Vec<(Vec<patterns::MinMax<i32>>, i32)>) -> String {
     let mut result: Vec<String> = Vec::new();
 
     for (pattern, pattern_number) in patterns {

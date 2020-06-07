@@ -29,9 +29,20 @@ struct MinMaxPoint {
 impl MinMaxPoint {
   fn to_min_max(&self) -> MinMax<i32> {
     MinMax {
-      min: (self.min + 0.99999 as f32) as i32 + self.plus_value,
-      max: (self.max + 0.99999 as f32) as i32 + self.plus_value,
+      min: (self.min + 0.99999) as i32 + self.plus_value,
+      max: (self.max + 0.99999) as i32 + self.plus_value,
     }
+  }
+}
+
+// Maxmimum rate values need special treatment (issue #134)
+// Function partially extracted from: https://github.com/chengluyu/turnip-price
+fn max_float(a: f32, b: f32) -> f32 {
+  let val: u32 = 0x3F800000 | (std::u32::MAX >> 9);
+  let pval: *const u32 = &val;
+  unsafe {
+    let fval: f32 = *(pval as *const f32);
+    a + ((fval - 1.0f32) * (b - a))
   }
 }
 
@@ -42,9 +53,10 @@ fn rand_float(
   base_price: &MinMax<i32>,
   plus_value: i32,
 ) {
+  let _max = max_float(min, max);
   current.push(MinMaxPoint {
     min: min * base_price.min as f32,
-    max: max * base_price.max as f32,
+    max: _max * base_price.max as f32,
     plus_value,
   });
 }
@@ -402,17 +414,16 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
 }
 
 pub fn calculate(filters: &Vec<Option<i32>>) -> Vec<(Vec<MinMax<i32>>, i32)> {
-  let min_price: i32 = filters.get(0).unwrap().unwrap_or(90);
-  let max_price: i32 = filters.get(0).unwrap().unwrap_or(110);
+  let min_price: i32 = filters[0].unwrap_or(90);
+  let max_price: i32 = filters[0].unwrap_or(110);
   let mut results: Vec<(Vec<MinMax<i32>>, i32)> = Vec::new();
 
   let base_price = MinMax {
-    min: min_price.min(max_price).max(90),
-    max: min_price.max(max_price).min(110),
+    min: min_price.min(max_price),
+    max: min_price.max(max_price),
   };
 
   let patterns = [pattern_0, pattern_1, pattern_2, pattern_3];
-  // let patterns = [pattern_1];
 
   for pattern_fn in patterns.iter() {
     results.append(&mut pattern_fn(
