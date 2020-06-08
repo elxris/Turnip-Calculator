@@ -34,5 +34,6 @@
     "All Patterns": "Tous les motifs",
     "patternNames": "Fluctuation_Grand Pic_Diminution_Petit Pic",
     "Pattern": "Motif",
-    "Chance": "Probabilités"
+    "Chance": "Probabilités",
+    "mostLikelyInfo": "- L'intervalle de valeurs <1>le plus probable</1> est celui où <3></3> des prix des navets seront compris."
 }
