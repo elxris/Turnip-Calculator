@@ -34,5 +34,6 @@
     "patternNames": "波动型_三期型_持续下跌型_四期型",
     "Most Likely": "可能的价格区间",
     "Pattern": "图案模式",
-    "Chance": "几率"
+    "Chance": "几率",
+    "mostLikelyInfo": "- <1>最可能</1>的区间是指<3></3>的大头菜价格会下降。"
 }
