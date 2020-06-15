@@ -2928,97 +2928,6 @@
       },
       {
         "w": 1587254400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1587859200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1588464000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589068800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589673600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1590278400,
-        "a": 6,
-        "d": 2,
-        "c": 1
-      },
-      {
-        "w": 1590883200,
-        "a": 2,
-        "d": 1,
-        "c": 1
-      },
-      {
-        "w": 1591488000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1592092800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      }
-    ],
-    "author": {
-      "login": "silpheel",
-      "id": 17692515,
-      "node_id": "MDQ6VXNlcjE3NjkyNTE1",
-      "avatar_url": "https://avatars3.githubusercontent.com/u/17692515?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/silpheel",
-      "html_url": "https://github.com/silpheel",
-      "followers_url": "https://api.github.com/users/silpheel/followers",
-      "following_url": "https://api.github.com/users/silpheel/following{/other_user}",
-      "gists_url": "https://api.github.com/users/silpheel/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/silpheel/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/silpheel/subscriptions",
-      "organizations_url": "https://api.github.com/users/silpheel/orgs",
-      "repos_url": "https://api.github.com/users/silpheel/repos",
-      "events_url": "https://api.github.com/users/silpheel/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/silpheel/received_events",
-      "type": "User",
-      "site_admin": false
-    }
-  },
-  {
-    "total": 2,
-    "weeks": [
-      {
-        "w": 1586044800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1586649600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1587254400,
         "a": 3,
         "d": 2,
         "c": 2
@@ -4272,6 +4181,97 @@
       "repos_url": "https://api.github.com/users/ApocArkhesir/repos",
       "events_url": "https://api.github.com/users/ApocArkhesir/events{/privacy}",
       "received_events_url": "https://api.github.com/users/ApocArkhesir/received_events",
+      "type": "User",
+      "site_admin": false
+    }
+  },
+  {
+    "total": 3,
+    "weeks": [
+      {
+        "w": 1586044800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1586649600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587254400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587859200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1588464000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589068800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589673600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590278400,
+        "a": 6,
+        "d": 2,
+        "c": 1
+      },
+      {
+        "w": 1590883200,
+        "a": 2,
+        "d": 1,
+        "c": 1
+      },
+      {
+        "w": 1591488000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1592092800,
+        "a": 1,
+        "d": 1,
+        "c": 1
+      }
+    ],
+    "author": {
+      "login": "silpheel",
+      "id": 17692515,
+      "node_id": "MDQ6VXNlcjE3NjkyNTE1",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/17692515?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/silpheel",
+      "html_url": "https://github.com/silpheel",
+      "followers_url": "https://api.github.com/users/silpheel/followers",
+      "following_url": "https://api.github.com/users/silpheel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/silpheel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/silpheel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/silpheel/subscriptions",
+      "organizations_url": "https://api.github.com/users/silpheel/orgs",
+      "repos_url": "https://api.github.com/users/silpheel/repos",
+      "events_url": "https://api.github.com/users/silpheel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/silpheel/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -6097,7 +6097,7 @@
     }
   },
   {
-    "total": 71,
+    "total": 72,
     "weeks": [
       {
         "w": 1586044800,
@@ -6161,9 +6161,9 @@
       },
       {
         "w": 1592092800,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 504,
+        "d": 5,
+        "c": 1
       }
     ],
     "author": {
