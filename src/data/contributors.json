@@ -3286,6 +3286,115 @@
       },
       {
         "w": 1587254400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587859200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1588464000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589068800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589673600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590278400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590883200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1591488000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1592092800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1592697600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1593302400,
+        "a": 2,
+        "d": 2,
+        "c": 1
+      },
+      {
+        "w": 1593907200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      }
+    ],
+    "author": {
+      "login": "AlexDanault",
+      "id": 4428772,
+      "node_id": "MDQ6VXNlcjQ0Mjg3NzI=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4428772?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/AlexDanault",
+      "html_url": "https://github.com/AlexDanault",
+      "followers_url": "https://api.github.com/users/AlexDanault/followers",
+      "following_url": "https://api.github.com/users/AlexDanault/following{/other_user}",
+      "gists_url": "https://api.github.com/users/AlexDanault/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/AlexDanault/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/AlexDanault/subscriptions",
+      "organizations_url": "https://api.github.com/users/AlexDanault/orgs",
+      "repos_url": "https://api.github.com/users/AlexDanault/repos",
+      "events_url": "https://api.github.com/users/AlexDanault/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/AlexDanault/received_events",
+      "type": "User",
+      "site_admin": false
+    }
+  },
+  {
+    "total": 1,
+    "weeks": [
+      {
+        "w": 1586044800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1586649600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587254400,
         "a": 2,
         "d": 1,
         "c": 1
@@ -5236,115 +5345,6 @@
     "weeks": [
       {
         "w": 1586044800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1586649600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1587254400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1587859200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1588464000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589068800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589673600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1590278400,
-        "a": 6,
-        "d": 2,
-        "c": 1
-      },
-      {
-        "w": 1590883200,
-        "a": 2,
-        "d": 1,
-        "c": 1
-      },
-      {
-        "w": 1591488000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1592092800,
-        "a": 1,
-        "d": 1,
-        "c": 1
-      },
-      {
-        "w": 1592697600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1593302400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1593907200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      }
-    ],
-    "author": {
-      "login": "silpheel",
-      "id": 17692515,
-      "node_id": "MDQ6VXNlcjE3NjkyNTE1",
-      "avatar_url": "https://avatars3.githubusercontent.com/u/17692515?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/silpheel",
-      "html_url": "https://github.com/silpheel",
-      "followers_url": "https://api.github.com/users/silpheel/followers",
-      "following_url": "https://api.github.com/users/silpheel/following{/other_user}",
-      "gists_url": "https://api.github.com/users/silpheel/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/silpheel/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/silpheel/subscriptions",
-      "organizations_url": "https://api.github.com/users/silpheel/orgs",
-      "repos_url": "https://api.github.com/users/silpheel/repos",
-      "events_url": "https://api.github.com/users/silpheel/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/silpheel/received_events",
-      "type": "User",
-      "site_admin": false
-    }
-  },
-  {
-    "total": 3,
-    "weeks": [
-      {
-        "w": 1586044800,
         "a": 23,
         "d": 23,
         "c": 3
@@ -6665,6 +6665,115 @@
       },
       {
         "w": 1587254400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587859200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1588464000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589068800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589673600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590278400,
+        "a": 6,
+        "d": 2,
+        "c": 1
+      },
+      {
+        "w": 1590883200,
+        "a": 2,
+        "d": 1,
+        "c": 1
+      },
+      {
+        "w": 1591488000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1592092800,
+        "a": 1,
+        "d": 1,
+        "c": 1
+      },
+      {
+        "w": 1592697600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1593302400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1593907200,
+        "a": 2,
+        "d": 1,
+        "c": 1
+      }
+    ],
+    "author": {
+      "login": "silpheel",
+      "id": 17692515,
+      "node_id": "MDQ6VXNlcjE3NjkyNTE1",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/17692515?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/silpheel",
+      "html_url": "https://github.com/silpheel",
+      "followers_url": "https://api.github.com/users/silpheel/followers",
+      "following_url": "https://api.github.com/users/silpheel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/silpheel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/silpheel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/silpheel/subscriptions",
+      "organizations_url": "https://api.github.com/users/silpheel/orgs",
+      "repos_url": "https://api.github.com/users/silpheel/repos",
+      "events_url": "https://api.github.com/users/silpheel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/silpheel/received_events",
+      "type": "User",
+      "site_admin": false
+    }
+  },
+  {
+    "total": 4,
+    "weeks": [
+      {
+        "w": 1586044800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1586649600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587254400,
         "a": 16,
         "d": 16,
         "c": 3
@@ -7521,7 +7630,7 @@
     }
   },
   {
-    "total": 75,
+    "total": 76,
     "weeks": [
       {
         "w": 1586044800,
@@ -7603,9 +7712,9 @@
       },
       {
         "w": 1593907200,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 531,
+        "d": 2,
+        "c": 1
       }
     ],
     "author": {
@@ -7630,7 +7739,7 @@
     }
   },
   {
-    "total": 162,
+    "total": 163,
     "weeks": [
       {
         "w": 1586044800,
@@ -7712,9 +7821,9 @@
       },
       {
         "w": 1593907200,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 20,
+        "d": 6,
+        "c": 1
       }
     ],
     "author": {
