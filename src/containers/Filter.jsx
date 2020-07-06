@@ -22,6 +22,10 @@ const useTextFieldStyles = makeStyles(() => ({
   },
 }));
 
+const now = new Date();
+const day = now.getDay();
+const hour = now.getHours();
+
 const Filter = ({ filters, onChange, openShareDialog }) => {
   const [clearDataDialogOpen, setClearDataDialogOpen] = useState(false);
   const { t } = useTranslation();
@@ -77,6 +81,8 @@ const Filter = ({ filters, onChange, openShareDialog }) => {
         },
       }}
       value={filters[index] || ""}
+      placeholder={(index + 1 === day * 2 + (hour >= 12 ? 1 : 0)) ||
+                   (day === 0 && index === 0) ? "Now" : ""}
       onChange={handleChange(index)}
     />
   ));
