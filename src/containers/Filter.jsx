@@ -7,6 +7,7 @@ import {
   Box,
   makeStyles,
 } from "@material-ui/core";
+import { useInterval } from "react-use";
 import { useTranslation } from "react-i18next";
 import { ClearButton, ClearDataDialog, Button } from "../components";
 import bells from "../images/bells.svg";
@@ -22,14 +23,27 @@ const useTextFieldStyles = makeStyles(() => ({
   },
 }));
 
-const now = new Date();
-const day = now.getDay();
-const hour = now.getHours();
+const calculateCurrentPriceIndex = () => {
+  const now = new Date();
+  const day = now.getDay();
+  const hour = now.getHours();
+
+  return ((day + 6) % 7) * 2 + +(hour >= 12) + 1;
+};
 
 const Filter = ({ filters, onChange, openShareDialog }) => {
   const [clearDataDialogOpen, setClearDataDialogOpen] = useState(false);
   const { t } = useTranslation();
   const TextFieldClasses = useTextFieldStyles();
+  const [currentPriceIndex, setCurrentPriceIndex] = useState(
+    calculateCurrentPriceIndex
+  );
+
+  useInterval(() => {
+    // It will not re-render the component if didn't change.
+    const newPriceIndex = calculateCurrentPriceIndex();
+    setCurrentPriceIndex(newPriceIndex);
+  }, 1000);
 
   const handleChange = useCallback(
     (index) => ({
@@ -81,8 +95,7 @@ const Filter = ({ filters, onChange, openShareDialog }) => {
         },
       }}
       value={filters[index] || ""}
-      placeholder={(index + 1 === day * 2 + (hour >= 12 ? 1 : 0)) ||
-                   (day === 0 && index === 0) ? "Now" : ""}
+      placeholder={currentPriceIndex === index ? t("Now") : ""}
       onChange={handleChange(index)}
     />
   ));
