@@ -2983,115 +2983,6 @@
       },
       {
         "w": 1589673600,
-        "a": 6,
-        "d": 1,
-        "c": 1
-      },
-      {
-        "w": 1590278400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1590883200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1591488000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1592092800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1592697600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1593302400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1593907200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      }
-    ],
-    "author": {
-      "login": "IceLitty",
-      "id": 6522057,
-      "node_id": "MDQ6VXNlcjY1MjIwNTc=",
-      "avatar_url": "https://avatars0.githubusercontent.com/u/6522057?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/IceLitty",
-      "html_url": "https://github.com/IceLitty",
-      "followers_url": "https://api.github.com/users/IceLitty/followers",
-      "following_url": "https://api.github.com/users/IceLitty/following{/other_user}",
-      "gists_url": "https://api.github.com/users/IceLitty/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/IceLitty/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/IceLitty/subscriptions",
-      "organizations_url": "https://api.github.com/users/IceLitty/orgs",
-      "repos_url": "https://api.github.com/users/IceLitty/repos",
-      "events_url": "https://api.github.com/users/IceLitty/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/IceLitty/received_events",
-      "type": "User",
-      "site_admin": false
-    }
-  },
-  {
-    "total": 1,
-    "weeks": [
-      {
-        "w": 1586044800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1586649600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1587254400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1587859200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1588464000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589068800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589673600,
         "a": 7,
         "d": 2,
         "c": 1
@@ -4900,6 +4791,115 @@
       "repos_url": "https://api.github.com/users/LeviSnoot/repos",
       "events_url": "https://api.github.com/users/LeviSnoot/events{/privacy}",
       "received_events_url": "https://api.github.com/users/LeviSnoot/received_events",
+      "type": "User",
+      "site_admin": false
+    }
+  },
+  {
+    "total": 2,
+    "weeks": [
+      {
+        "w": 1586044800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1586649600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587254400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587859200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1588464000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589068800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589673600,
+        "a": 6,
+        "d": 1,
+        "c": 1
+      },
+      {
+        "w": 1590278400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590883200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1591488000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1592092800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1592697600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1593302400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1593907200,
+        "a": 2,
+        "d": 1,
+        "c": 1
+      }
+    ],
+    "author": {
+      "login": "IceLitty",
+      "id": 6522057,
+      "node_id": "MDQ6VXNlcjY1MjIwNTc=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6522057?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/IceLitty",
+      "html_url": "https://github.com/IceLitty",
+      "followers_url": "https://api.github.com/users/IceLitty/followers",
+      "following_url": "https://api.github.com/users/IceLitty/following{/other_user}",
+      "gists_url": "https://api.github.com/users/IceLitty/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/IceLitty/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/IceLitty/subscriptions",
+      "organizations_url": "https://api.github.com/users/IceLitty/orgs",
+      "repos_url": "https://api.github.com/users/IceLitty/repos",
+      "events_url": "https://api.github.com/users/IceLitty/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/IceLitty/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -7630,7 +7630,7 @@
     }
   },
   {
-    "total": 76,
+    "total": 77,
     "weeks": [
       {
         "w": 1586044800,
@@ -7712,9 +7712,9 @@
       },
       {
         "w": 1593907200,
-        "a": 531,
-        "d": 2,
-        "c": 1
+        "a": 758,
+        "d": 120,
+        "c": 2
       }
     ],
     "author": {
