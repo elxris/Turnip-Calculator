@@ -36,7 +36,7 @@ const possiblePatterns = async (filters) => {
   try {
     wasmPatterns = JSON.parse((await wasm).calculate(filters.join("-")));
   } catch (error) {
-    console.warn(error);
+    console.warn("Error while loading wasm (", error, "), using fallback.");
     wasmPatterns = mockPatterns;
   }
 

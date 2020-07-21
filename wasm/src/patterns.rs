@@ -161,7 +161,7 @@ fn pattern_0(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
         let mut work = 2;
         for _i in 0..hi_phase_len1 {
           rand_float(&mut current, 0.9, 1.4, &base_price, 0);
-          work = work + 1
+          work += 1;
         }
 
         // decreasing phase 1
@@ -419,8 +419,8 @@ pub fn calculate(filters: &Vec<Option<i32>>) -> Vec<(Vec<MinMax<i32>>, i32)> {
   let mut results: Vec<(Vec<MinMax<i32>>, i32)> = Vec::new();
 
   let base_price = MinMax {
-    min: min_price.min(max_price),
-    max: min_price.max(max_price),
+    min: min_price,
+    max: max_price,
   };
 
   let patterns = [pattern_0, pattern_1, pattern_2, pattern_3];
