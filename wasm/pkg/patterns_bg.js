@@ -108,13 +108,16 @@ function getStringFromWasm0(ptr, len) {
 */
 export function calculate(filters) {
     try {
+        const retptr = wasm.__wbindgen_export_0.value - 16;
+        wasm.__wbindgen_export_0.value = retptr;
         var ptr0 = passStringToWasm0(filters, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
         var len0 = WASM_VECTOR_LEN;
-        wasm.calculate(8, ptr0, len0);
-        var r0 = getInt32Memory0()[8 / 4 + 0];
-        var r1 = getInt32Memory0()[8 / 4 + 1];
+        wasm.calculate(retptr, ptr0, len0);
+        var r0 = getInt32Memory0()[retptr / 4 + 0];
+        var r1 = getInt32Memory0()[retptr / 4 + 1];
         return getStringFromWasm0(r0, r1);
     } finally {
+        wasm.__wbindgen_export_0.value += 16;
         wasm.__wbindgen_free(r0, r1);
     }
 }
