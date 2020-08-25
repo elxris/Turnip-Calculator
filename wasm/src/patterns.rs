@@ -93,8 +93,8 @@ fn rand_float_relative(
   let max1 = max_prediction(base_price.min as f32);
   let max2 = max_prediction(base_price.max as f32);
 
-  let min_value = verification.min.max(min1.min(min2));
-  let max_value = verification.max.min(max1.max(max2));
+  let min_value = min1.min(min2);
+  let max_value = max1.max(max2);
 
   match filter {
     Some(&Some(i)) => {
