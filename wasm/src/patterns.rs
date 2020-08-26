@@ -35,14 +35,23 @@ impl MinMaxPoint {
   }
 }
 
-// Maxmimum rate values need special treatment (issue #134)
+// Rate values need special treatment (issue #134)
 // Function partially extracted from: https://github.com/chengluyu/turnip-price
-fn max_float(a: f32, b: f32) -> f32 {
+fn min_float(a: f32) -> f32 {
+  let val: u32 = 0x3F800000 | (std::u32::MIN >> 9);
+  let pval: *const u32 = &val;
+  unsafe {
+    let fval: f32 = *(pval as *const f32);
+    a + ((fval - 1.0f32) * a)
+  }
+}
+
+fn max_float(a: f32) -> f32 {
   let val: u32 = 0x3F800000 | (std::u32::MAX >> 9);
   let pval: *const u32 = &val;
   unsafe {
     let fval: f32 = *(pval as *const f32);
-    a + ((fval - 1.0f32) * (b - a))
+    (fval - 1.0f32) * a
   }
 }
 
@@ -50,15 +59,38 @@ fn rand_float(
   current: &mut Vec<MinMaxPoint>,
   min: f32,
   max: f32,
+  filter: Option<&Option<i32>>,
   base_price: &MinMax<i32>,
   plus_value: i32,
 ) {
-  let _max = max_float(min, max);
-  current.push(MinMaxPoint {
-    min: min * base_price.min as f32,
-    max: _max * base_price.max as f32,
-    plus_value,
-  });
+  let _min = min_float(min) * base_price.min as f32;
+  let _max = max_float(max) * base_price.max as f32;
+
+  match filter {
+    Some(&Some(i)) => {
+      if _min <= i as f32 && _max >= i as f32 {
+        // Filter is healthy, use the provided filter value.
+        current.push(MinMaxPoint {
+          min: i as f32 - 0.99999,
+          max: i as f32,
+          plus_value,
+        });
+      } else {
+        current.push(MinMaxPoint {
+          min: _min,
+          max: _max,
+          plus_value,
+        });
+      }
+    }
+    _ => {
+      current.push(MinMaxPoint {
+        min: _min,
+        max: _max,
+        plus_value,
+      });
+    }
+  }
 }
 
 fn rand_float_relative(
@@ -71,11 +103,11 @@ fn rand_float_relative(
   plus_value: i32,
 ) {
   if i == 0 {
-    return rand_float(arr, start.min, start.max, &base_price, plus_value);
+    return rand_float(arr, start.min, start.max, filter, &base_price, plus_value);
   }
   let verification: MinMax<f32> = MinMax {
-    min: base_price.min as f32 * (start.min + delta.min * i as f32),
-    max: base_price.max as f32 * (start.max + delta.max * i as f32),
+    min: base_price.min as f32 * (min_float(start.min) + max_float(delta.min) * i as f32),
+    max: base_price.max as f32 * (max_float(start.max) + min_float(delta.max) * i as f32),
   };
   let previous_price = arr.last().unwrap();
 
@@ -83,57 +115,54 @@ fn rand_float_relative(
   // sellPrices[prev] = prevRate * basePrice = prevPrice
   // prevRate = prevPrice / basePrice
   // rate = prevRate + stepRate =>  prevPrice / basePrice + stepRate
-  // sellPrices[curr] = rate * basePrice
+  // sellPrices[curr] = rate * basePrice => prevPrice + stepRate * basePrice
 
-  let min_prediction = |base_price| (previous_price.min / base_price + delta.min) * base_price;
-  let max_prediction = |base_price| (previous_price.max / base_price + delta.max) * base_price;
-
-  let min1 = min_prediction(base_price.min as f32);
-  let min2 = min_prediction(base_price.max as f32);
-  let max1 = max_prediction(base_price.min as f32);
-  let max2 = max_prediction(base_price.max as f32);
+  let min1 = previous_price.min + min_float(delta.min) * base_price.min as f32;
+  let min2 = previous_price.min + min_float(delta.min) * base_price.max as f32;
+  let max1 = previous_price.max + max_float(delta.max) * base_price.min as f32;
+  let max2 = previous_price.max + max_float(delta.max) * base_price.max as f32;
 
   let min_value = min1.min(min2);
   let max_value = max1.max(max2);
 
-  match filter {
-    Some(&Some(i)) => {
-      if i as f32 >= min_value && i as f32 <= max_value {
-        // If the filter is in range, means that our prediction is healthy
-        arr.push(MinMaxPoint {
-          // sellPrice[curr] = intceil(price);
-          // sellPrice[curr] = price + 0.99999;
-          min: i as f32 - 0.99999,
-          max: i as f32,
-          plus_value,
-        })
-      } else {
-        // If is not in range, maybe is not the right pattern.
+  if min_value < verification.min || max_value > verification.max {
+    // Predictions are unhealty. Using verification.
+    arr.push(MinMaxPoint {
+      min: verification.min,
+      max: verification.max,
+      plus_value,
+    })
+  } else {
+    match filter {
+      Some(&Some(i)) => {
+        if i as f32 >= min_value && i as f32 <= max_value {
+          // If the filter is in range, means that our prediction is healthy
+          arr.push(MinMaxPoint {
+            // sellPrice[curr] = intceil(price);
+            // sellPrice[curr] = price + 0.99999;
+            min: i as f32 - 0.99999,
+            max: i as f32,
+            plus_value,
+          })
+        } else {
+          // If is not in range, maybe is not the right pattern.
+          arr.push(MinMaxPoint {
+            min: min_value,
+            max: max_value,
+            plus_value,
+          })
+        }
+      }
+      _ => {
+        // Our prediction is healthy
         arr.push(MinMaxPoint {
           min: min_value,
           max: max_value,
           plus_value,
         })
       }
-    }
-    _ => {
-      if min_value <= max_value {
-        // This means our prediction is healthy
-        arr.push(MinMaxPoint {
-          min: min_value,
-          max: max_value,
-          plus_value,
-        })
-      } else {
-        // If our prediction is not healty, use wide prediction
-        arr.push(MinMaxPoint {
-          min: verification.min,
-          max: verification.max,
-          plus_value,
-        })
-      }
-    }
-  };
+    };
+  }
 }
 
 // PATTERN 0: high, decreasing, high, decreasing, high
@@ -160,7 +189,14 @@ fn pattern_0(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
         //  }
         let mut work = 2;
         for _i in 0..hi_phase_len1 {
-          rand_float(&mut current, 0.9, 1.4, &base_price, 0);
+          rand_float(
+            &mut current,
+            0.9,
+            1.4,
+            filters.get(work - 2),
+            &base_price,
+            0,
+          );
           work += 1;
         }
 
@@ -192,7 +228,7 @@ fn pattern_0(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
         //    sellPrices[work++] = intceil(randfloat(0.9, 1.4) * base_price);
         //  }
         for _ in 0..(hi_phase_len2and3 - hi_phase_len3) {
-          rand_float(&mut current, 0.9, 1.4, base_price, 0);
+          rand_float(&mut current, 0.9, 1.4, filters.get(work - 2), base_price, 0);
           work += 1;
         }
 
@@ -227,7 +263,7 @@ fn pattern_0(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
         //  }
         //  break;
         for _ in 0..hi_phase_len3 {
-          rand_float(&mut current, 0.9, 1.4, base_price, 0);
+          rand_float(&mut current, 0.9, 1.4, filters.get(work - 2), base_price, 0);
           work += 1;
         }
 
@@ -253,9 +289,9 @@ fn pattern_1(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
     //   rate -= 0.03;
     //   rate -= randfloat(0, 0.02);
     // }
-    let mut work = 2;
+    let mut work: usize = 2;
     for _i in work..peak_start {
-      let i = work - 2;
+      let i = work as i32 - 2;
       rand_float_relative(
         &mut current,
         MinMax::new(0.85, 0.9),
@@ -272,11 +308,46 @@ fn pattern_1(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
     // sellPrices[work++] = intceil(randfloat(2.0, 6.0) * basePrice);
     // sellPrices[work++] = intceil(randfloat(1.4, 2.0) * basePrice);
     // sellPrices[work++] = intceil(randfloat(0.9, 1.4) * basePrice);
-    rand_float(&mut current, 0.9, 1.4, &base_price, 0);
-    rand_float(&mut current, 1.4, 2.0, &base_price, 0);
-    rand_float(&mut current, 2.0, 6.0, &base_price, 0);
-    rand_float(&mut current, 1.4, 2.0, &base_price, 0);
-    rand_float(&mut current, 0.9, 1.4, &base_price, 0);
+    rand_float(
+      &mut current,
+      0.9,
+      1.4,
+      filters.get(work - 2),
+      &base_price,
+      0,
+    );
+    rand_float(
+      &mut current,
+      1.4,
+      2.0,
+      filters.get(work - 1),
+      &base_price,
+      0,
+    );
+    rand_float(
+      &mut current,
+      2.0,
+      6.0,
+      filters.get(work + 0),
+      &base_price,
+      0,
+    );
+    rand_float(
+      &mut current,
+      1.4,
+      2.0,
+      filters.get(work + 1),
+      &base_price,
+      0,
+    );
+    rand_float(
+      &mut current,
+      0.9,
+      1.4,
+      filters.get(work + 2),
+      &base_price,
+      0,
+    );
     work += 5;
 
     // for (; work < 14; work++)
@@ -284,7 +355,15 @@ fn pattern_1(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
     //   sellPrices[work] = intceil(randfloat(0.4, 0.9) * basePrice);
     // }
     for _ in work..14 {
-      rand_float(&mut current, 0.4, 0.9, &base_price, 0);
+      rand_float(
+        &mut current,
+        0.4,
+        0.9,
+        filters.get(work - 2),
+        &base_price,
+        0,
+      );
+      work += 1;
     }
 
     probabilties.push((current.iter().map(|x| x.to_min_max()).collect(), 1));
@@ -332,9 +411,9 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
     //   rate -= 0.03;
     //   rate -= randfloat(0, 0.02);
     // }
-    let mut work = 2;
+    let mut work: usize = 2;
     for _ in work..peak_start {
-      let i = work - 2;
+      let i = work as i32 - 2;
       rand_float_relative(
         &mut current,
         MinMax::new(0.4, 0.9),
@@ -353,9 +432,24 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
     // sellPrices[work++] = intceil(randfloat(1.4, rate) * basePrice) - 1;
     // sellPrices[work++] = intceil(rate * basePrice);
     // sellPrices[work++] = intceil(randfloat(1.4, rate) * basePrice) - 1;
-    rand_float(&mut current, 0.9, 1.4, &base_price, 0);
-    rand_float(&mut current, 0.9, 1.4, &base_price, 0);
-    if let Some(&Some(prev_price)) = filters.get(work as usize + 1) {
+    rand_float(
+      &mut current,
+      0.9,
+      1.4,
+      filters.get(work - 2),
+      &base_price,
+      0,
+    );
+    rand_float(
+      &mut current,
+      0.9,
+      1.4,
+      filters.get(work - 1),
+      &base_price,
+      0,
+    );
+    work += 2;
+    if let Some(&Some(prev_price)) = filters.get(work - 1) {
       // rate = ??;
       // sellPrices[prev] = prevRate * basePrice = prevPrice;
       // rate = prevrate = prevPrice / basePrice;
@@ -366,20 +460,83 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
       let rate_min = rate.min.min(rate.max);
       let rate_max = rate.min.max(rate.max);
       if rate_min < 1.4 || rate_max > 2.0 {
-        rand_float(&mut current, 1.4, 2.0, &base_price, -1);
-        rand_float(&mut current, 1.4, 2.0, &base_price, 0);
-        rand_float(&mut current, 1.4, 2.0, &base_price, -1);
+        rand_float(
+          &mut current,
+          1.4,
+          2.0,
+          filters.get(work - 2),
+          &base_price,
+          -1,
+        );
+        rand_float(
+          &mut current,
+          1.4,
+          2.0,
+          filters.get(work - 1),
+          &base_price,
+          0,
+        );
+        rand_float(
+          &mut current,
+          1.4,
+          2.0,
+          filters.get(work + 0),
+          &base_price,
+          -1,
+        );
       } else {
-        rand_float(&mut current, 1.4, rate_max, &base_price, -1);
-        rand_float(&mut current, rate_min, rate_max, &base_price, 0);
-        rand_float(&mut current, 1.4, rate_max.max(1.4), &base_price, -1);
+        rand_float(
+          &mut current,
+          1.4,
+          rate_max,
+          filters.get(work - 2),
+          &base_price,
+          -1,
+        );
+        rand_float(
+          &mut current,
+          rate_min,
+          rate_max,
+          filters.get(work - 1),
+          &base_price,
+          0,
+        );
+        rand_float(
+          &mut current,
+          1.4,
+          rate_max.max(1.4),
+          filters.get(work + 0),
+          &base_price,
+          -1,
+        );
       }
     } else {
-      rand_float(&mut current, 1.4, 2.0, &base_price, -1);
-      rand_float(&mut current, 1.4, 2.0, &base_price, 0);
-      rand_float(&mut current, 1.4, 2.0, &base_price, -1);
+      rand_float(
+        &mut current,
+        1.4,
+        2.0,
+        filters.get(work - 2),
+        &base_price,
+        -1,
+      );
+      rand_float(
+        &mut current,
+        1.4,
+        2.0,
+        filters.get(work - 1),
+        &base_price,
+        0,
+      );
+      rand_float(
+        &mut current,
+        1.4,
+        2.0,
+        filters.get(work + 0),
+        &base_price,
+        -1,
+      );
     }
-    work += 5;
+    work += 3;
 
     // decreasing phase after the peak
     // if (work < 14)
