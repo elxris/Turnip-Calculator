@@ -18,6 +18,14 @@ impl<T> MinMax<T> {
   fn new(min: T, max: T) -> MinMax<T> {
     MinMax { min, max }
   }
+  fn newf(a: f32, b: f32) -> MinMax<f32> {
+    let l = left_float(a, b);
+    let r = right_float(a, b);
+    MinMax {
+      min: l.min(r),
+      max: l.max(r),
+    }
+  }
 }
 
 struct MinMaxPoint {
@@ -35,23 +43,23 @@ impl MinMaxPoint {
   }
 }
 
-// Rate values need special treatment (issue #134)
+// right-handed randfloat-generated values need special treatment (issue #134, #152)
 // Function partially extracted from: https://github.com/chengluyu/turnip-price
-fn min_float(a: f32) -> f32 {
+fn left_float(a: f32, b: f32) -> f32 {
   let val: u32 = 0x3F800000 | (std::u32::MIN >> 9);
   let pval: *const u32 = &val;
   unsafe {
     let fval: f32 = *(pval as *const f32);
-    a + ((fval - 1.0f32) * a)
+    a + ((fval - 1.0f32) * (b - a))
   }
 }
 
-fn max_float(a: f32) -> f32 {
+fn right_float(a: f32, b: f32) -> f32 {
   let val: u32 = 0x3F800000 | (std::u32::MAX >> 9);
   let pval: *const u32 = &val;
   unsafe {
     let fval: f32 = *(pval as *const f32);
-    (fval - 1.0f32) * a
+    a + ((fval - 1.0f32) * (b - a))
   }
 }
 
@@ -63,8 +71,8 @@ fn rand_float(
   base_price: &MinMax<i32>,
   plus_value: i32,
 ) {
-  let _min = min_float(min) * base_price.min as f32;
-  let _max = max_float(max) * base_price.max as f32;
+  let _min = min * base_price.min as f32;
+  let _max = max * base_price.max as f32;
 
   match filter {
     Some(&Some(i)) => {
@@ -93,10 +101,20 @@ fn rand_float(
   }
 }
 
+fn delta_sum(start: f32, delta: &Vec<f32>, i: i32) -> f32 {
+  let mut result = start;
+  for _ in 1..=i {
+    for d in delta {
+      result += d;
+    }
+  }
+  result
+}
+
 fn rand_float_relative(
   arr: &mut Vec<MinMaxPoint>,
   start: MinMax<f32>,
-  delta: MinMax<f32>,
+  delta: MinMax<Vec<f32>>,
   i: i32,
   filter: Option<&Option<i32>>,
   base_price: &MinMax<i32>,
@@ -105,45 +123,56 @@ fn rand_float_relative(
   if i == 0 {
     return rand_float(arr, start.min, start.max, filter, &base_price, plus_value);
   }
+
   let verification: MinMax<f32> = MinMax {
-    min: base_price.min as f32 * (min_float(start.min) + max_float(delta.min) * i as f32),
-    max: base_price.max as f32 * (max_float(start.max) + min_float(delta.max) * i as f32),
+    min: base_price.min as f32 * delta_sum(start.min, &delta.min, i),
+    max: base_price.max as f32 * delta_sum(start.max, &delta.max, i),
   };
+
   let previous_price = arr.last().unwrap();
 
-  // rate = ??;
-  // sellPrices[prev] = prevRate * basePrice = prevPrice
-  // prevRate = prevPrice / basePrice
-  // rate = prevRate + stepRate =>  prevPrice / basePrice + stepRate
-  // sellPrices[curr] = rate * basePrice => prevPrice + stepRate * basePrice
+  let mut min_value = 0.0f32;
+  let mut max_value = 0.0f32;
+  let mut valid = false;
 
-  let min1 = previous_price.min + min_float(delta.min) * base_price.min as f32;
-  let min2 = previous_price.min + min_float(delta.min) * base_price.max as f32;
-  let max1 = previous_price.max + max_float(delta.max) * base_price.min as f32;
-  let max2 = previous_price.max + max_float(delta.max) * base_price.max as f32;
+  for base_price_v in base_price.min..=base_price.max {
+    // rate = ??;
+    // sellPrices[prev] = prevRate * basePrice = prevPrice
+    // prevRate = prevPrice / basePrice
+    // rate = prevRate + stepRate =>  prevPrice / basePrice + stepRate
+    // sellPrices[curr] = rate * basePrice => prevPrice + stepRate * basePrice
+    let min = previous_price.min + delta_sum(0f32, &delta.min, 1) * base_price_v as f32;
+    let max = previous_price.max + delta_sum(0f32, &delta.max, 1) * base_price_v as f32;
 
-  let min_value = min1.min(min2);
-  let max_value = max1.max(max2);
+    if min >= verification.min && max <= verification.max {
+      if valid {
+        min_value = min.min(min_value);
+        max_value = max.max(max_value);
+      } else {
+        min_value = min;
+        max_value = max;
+        valid = true;
+      }
+    } else {
+      if valid {
+        break;
+      }
+    }
+  }
 
-  if min_value < verification.min || max_value > verification.max {
-    // Predictions are unhealty. Using verification.
-    arr.push(MinMaxPoint {
-      min: verification.min,
-      max: verification.max,
-      plus_value,
-    })
-  } else {
+  if valid {
     match filter {
       Some(&Some(i)) => {
-        if i as f32 >= min_value && i as f32 <= max_value {
+        let in_valid_range = i as f32 >= min_value && i as f32 <= max_value;
+        if in_valid_range {
           // If the filter is in range, means that our prediction is healthy
           arr.push(MinMaxPoint {
             // sellPrice[curr] = intceil(price);
             // sellPrice[curr] = price + 0.99999;
-            min: i as f32 - 0.99999,
+            min: min_value.max(i as f32 - 0.99999),
             max: i as f32,
             plus_value,
-          })
+          });
         } else {
           // If is not in range, maybe is not the right pattern.
           arr.push(MinMaxPoint {
@@ -162,6 +191,13 @@ fn rand_float_relative(
         })
       }
     };
+  } else {
+    // Predictions are unhealty. Using verification.
+    arr.push(MinMaxPoint {
+      min: verification.min,
+      max: verification.max,
+      plus_value,
+    })
   }
 }
 
@@ -191,8 +227,8 @@ fn pattern_0(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
         for _i in 0..hi_phase_len1 {
           rand_float(
             &mut current,
-            0.9,
-            1.4,
+            left_float(0.9, 1.4),
+            right_float(0.9, 1.4),
             filters.get(work - 2),
             &base_price,
             0,
@@ -212,8 +248,11 @@ fn pattern_0(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
         for i in 0..dec_phase_len1 {
           rand_float_relative(
             &mut current,
-            MinMax::new(0.6, 0.8),
-            MinMax::new(-0.1, -0.04),
+            MinMax::<f32>::newf(0.8, 0.6),
+            MinMax::new(
+              vec![-0.04, -right_float(0.0, 0.06)],
+              vec![-0.04, -left_float(0.0, 0.06)],
+            ),
             i,
             filters.get(work - 2),
             &base_price,
@@ -228,7 +267,14 @@ fn pattern_0(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
         //    sellPrices[work++] = intceil(randfloat(0.9, 1.4) * base_price);
         //  }
         for _ in 0..(hi_phase_len2and3 - hi_phase_len3) {
-          rand_float(&mut current, 0.9, 1.4, filters.get(work - 2), base_price, 0);
+          rand_float(
+            &mut current,
+            left_float(0.9, 1.4),
+            right_float(0.9, 1.4),
+            filters.get(work - 2),
+            base_price,
+            0,
+          );
           work += 1;
         }
 
@@ -243,11 +289,11 @@ fn pattern_0(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
         for i in 0..dec_phase_len2 {
           rand_float_relative(
             &mut current,
-            MinMax { min: 0.6, max: 0.8 },
-            MinMax {
-              min: -0.1,
-              max: -0.04,
-            },
+            MinMax::<f32>::newf(0.8, 0.6),
+            MinMax::new(
+              vec![-0.04, -right_float(0.0, 0.06)],
+              vec![-0.04, -left_float(0.0, 0.06)],
+            ),
             i,
             filters.get(work - 2),
             base_price,
@@ -263,7 +309,14 @@ fn pattern_0(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
         //  }
         //  break;
         for _ in 0..hi_phase_len3 {
-          rand_float(&mut current, 0.9, 1.4, filters.get(work - 2), base_price, 0);
+          rand_float(
+            &mut current,
+            left_float(0.9, 1.4),
+            right_float(0.9, 1.4),
+            filters.get(work - 2),
+            base_price,
+            0,
+          );
           work += 1;
         }
 
@@ -294,8 +347,11 @@ fn pattern_1(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
       let i = work as i32 - 2;
       rand_float_relative(
         &mut current,
-        MinMax::new(0.85, 0.9),
-        MinMax::new(-0.05, -0.03),
+        MinMax::<f32>::newf(0.9, 0.85),
+        MinMax::new(
+          vec![-0.03, -right_float(0.0, 0.02)],
+          vec![-0.03, -left_float(0.0, 0.02)],
+        ),
         i,
         filters.get(work as usize - 2),
         base_price,
@@ -310,40 +366,40 @@ fn pattern_1(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
     // sellPrices[work++] = intceil(randfloat(0.9, 1.4) * basePrice);
     rand_float(
       &mut current,
-      0.9,
-      1.4,
+      left_float(0.9, 1.4),
+      right_float(0.9, 1.4),
       filters.get(work - 2),
       &base_price,
       0,
     );
     rand_float(
       &mut current,
-      1.4,
-      2.0,
+      left_float(1.4, 2.0),
+      right_float(1.4, 2.0),
       filters.get(work - 1),
       &base_price,
       0,
     );
     rand_float(
       &mut current,
-      2.0,
-      6.0,
+      left_float(2.0, 6.0),
+      right_float(2.0, 6.0),
       filters.get(work + 0),
       &base_price,
       0,
     );
     rand_float(
       &mut current,
-      1.4,
-      2.0,
+      left_float(1.4, 2.0),
+      right_float(1.4, 2.0),
       filters.get(work + 1),
       &base_price,
       0,
     );
     rand_float(
       &mut current,
-      0.9,
-      1.4,
+      left_float(0.9, 1.4),
+      right_float(0.9, 1.4),
       filters.get(work + 2),
       &base_price,
       0,
@@ -357,8 +413,8 @@ fn pattern_1(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
     for _ in work..14 {
       rand_float(
         &mut current,
-        0.4,
-        0.9,
+        left_float(0.4, 0.9),
+        right_float(0.4, 0.9),
         filters.get(work - 2),
         &base_price,
         0,
@@ -377,13 +433,24 @@ fn pattern_2(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
   let mut probabilties: Vec<(Vec<MinMax<i32>>, i32)> = Vec::new();
   let mut current: Vec<MinMaxPoint> = Vec::new();
 
+  // rate = 0.9;
+  // rate -= randfloat(0, 0.05);
+  // for (work = 2; work < 14; work++)
+  // {
+  //   sellPrices[work] = intceil(rate * basePrice);
+  //   rate -= 0.03;
+  //   rate -= randfloat(0, 0.02);
+  // }
   let mut work = 2;
   for _ in work..14 {
     let i = work - 2;
     rand_float_relative(
       &mut current,
-      MinMax::new(0.85, 0.9),
-      MinMax::new(-0.05, -0.03),
+      MinMax::new(0.9 - right_float(0.0, 0.05), 0.9 - left_float(0.0, 0.05)),
+      MinMax::new(
+        vec![-0.03, -right_float(0.0, 0.02)],
+        vec![-0.03, -left_float(0.0, 0.02)],
+      ),
       i,
       filters.get(work as usize - 2),
       &base_price,
@@ -416,8 +483,11 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
       let i = work as i32 - 2;
       rand_float_relative(
         &mut current,
-        MinMax::new(0.4, 0.9),
-        MinMax::new(-0.05, -0.03),
+        MinMax::<f32>::newf(0.9, 0.4),
+        MinMax::new(
+          vec![-0.03, -right_float(0.0, 0.02)],
+          vec![-0.03, -left_float(0.0, 0.02)],
+        ),
         i,
         filters.get(work as usize - 2),
         &base_price,
@@ -434,16 +504,16 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
     // sellPrices[work++] = intceil(randfloat(1.4, rate) * basePrice) - 1;
     rand_float(
       &mut current,
-      0.9,
-      1.4,
+      left_float(0.9, 1.4),
+      right_float(0.9, 1.4),
       filters.get(work - 2),
       &base_price,
       0,
     );
     rand_float(
       &mut current,
-      0.9,
-      1.4,
+      left_float(0.9, 1.4),
+      right_float(0.9, 1.4),
       filters.get(work - 1),
       &base_price,
       0,
@@ -462,24 +532,24 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
       if rate_min < 1.4 || rate_max > 2.0 {
         rand_float(
           &mut current,
-          1.4,
-          2.0,
+          left_float(1.4, 2.0),
+          right_float(1.4, 2.0),
           filters.get(work - 2),
           &base_price,
           -1,
         );
         rand_float(
           &mut current,
-          1.4,
-          2.0,
+          left_float(1.4, 2.0),
+          right_float(1.4, 2.0),
           filters.get(work - 1),
           &base_price,
           0,
         );
         rand_float(
           &mut current,
-          1.4,
-          2.0,
+          left_float(1.4, 2.0),
+          right_float(1.4, 2.0),
           filters.get(work + 0),
           &base_price,
           -1,
@@ -487,8 +557,8 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
       } else {
         rand_float(
           &mut current,
-          1.4,
-          rate_max,
+          left_float(1.4, 2.0),
+          rate_max.max(1.4),
           filters.get(work - 2),
           &base_price,
           -1,
@@ -503,7 +573,7 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
         );
         rand_float(
           &mut current,
-          1.4,
+          left_float(1.4, 2.0),
           rate_max.max(1.4),
           filters.get(work + 0),
           &base_price,
@@ -513,24 +583,24 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
     } else {
       rand_float(
         &mut current,
-        1.4,
-        2.0,
+        left_float(1.4, 2.0),
+        right_float(1.4, 2.0),
         filters.get(work - 2),
         &base_price,
         -1,
       );
       rand_float(
         &mut current,
-        1.4,
-        2.0,
+        left_float(1.4, 2.0),
+        right_float(1.4, 2.0),
         filters.get(work - 1),
         &base_price,
         0,
       );
       rand_float(
         &mut current,
-        1.4,
-        2.0,
+        left_float(1.4, 2.0),
+        right_float(1.4, 2.0),
         filters.get(work + 0),
         &base_price,
         -1,
@@ -553,8 +623,11 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
     for _ in work..14 {
       rand_float_relative(
         &mut current,
-        MinMax::new(0.4, 0.9),
-        MinMax::new(-0.05, -0.03),
+        MinMax::<f32>::newf(0.9, 0.4),
+        MinMax::new(
+          vec![-0.03, -right_float(0.0, 0.02)],
+          vec![-0.03, -left_float(0.0, 0.02)],
+        ),
         i,
         filters.get(work as usize - 2),
         &base_price,
