@@ -3815,6 +3815,157 @@
       },
       {
         "w": 1589673600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590278400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590883200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1591488000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1592092800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1592697600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1593302400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1593907200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1594512000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1595116800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1595721600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1596326400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1596931200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1597536000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1598140800,
+        "a": 1,
+        "d": 1,
+        "c": 1
+      }
+    ],
+    "author": {
+      "login": "KennethKinLum",
+      "id": 17109817,
+      "node_id": "MDQ6VXNlcjE3MTA5ODE3",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/17109817?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/KennethKinLum",
+      "html_url": "https://github.com/KennethKinLum",
+      "followers_url": "https://api.github.com/users/KennethKinLum/followers",
+      "following_url": "https://api.github.com/users/KennethKinLum/following{/other_user}",
+      "gists_url": "https://api.github.com/users/KennethKinLum/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/KennethKinLum/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/KennethKinLum/subscriptions",
+      "organizations_url": "https://api.github.com/users/KennethKinLum/orgs",
+      "repos_url": "https://api.github.com/users/KennethKinLum/repos",
+      "events_url": "https://api.github.com/users/KennethKinLum/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/KennethKinLum/received_events",
+      "type": "User",
+      "site_admin": false
+    }
+  },
+  {
+    "total": 1,
+    "weeks": [
+      {
+        "w": 1586044800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1586649600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587254400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587859200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1588464000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589068800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589673600,
         "a": 5,
         "d": 1,
         "c": 1
@@ -10570,7 +10721,7 @@
     }
   },
   {
-    "total": 81,
+    "total": 82,
     "weeks": [
       {
         "w": 1586044800,
@@ -10694,9 +10845,9 @@
       },
       {
         "w": 1598140800,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 2299,
+        "d": 136,
+        "c": 1
       }
     ],
     "author": {
@@ -10721,7 +10872,7 @@
     }
   },
   {
-    "total": 167,
+    "total": 168,
     "weeks": [
       {
         "w": 1586044800,
@@ -10845,9 +10996,9 @@
       },
       {
         "w": 1598140800,
-        "a": 6,
-        "d": 3,
-        "c": 2
+        "a": 240,
+        "d": 80,
+        "c": 3
       }
     ],
     "author": {
