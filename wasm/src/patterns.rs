@@ -68,11 +68,11 @@ fn rand_float(
   min: f32,
   max: f32,
   filter: Option<&Option<i32>>,
-  base_price: &MinMax<i32>,
+  base_price: i32,
   plus_value: i32,
 ) {
-  let _min = min * base_price.min as f32;
-  let _max = max * base_price.max as f32;
+  let _min = min * base_price as f32;
+  let _max = max * base_price as f32;
 
   match filter {
     Some(&Some(i)) => {
@@ -117,92 +117,67 @@ fn rand_float_relative(
   delta: MinMax<Vec<f32>>,
   i: i32,
   filter: Option<&Option<i32>>,
-  base_price: &MinMax<i32>,
+  base_price: i32,
   plus_value: i32,
 ) {
   if i == 0 {
-    return rand_float(arr, start.min, start.max, filter, &base_price, plus_value);
+    return rand_float(arr, start.min, start.max, filter, base_price, plus_value);
   }
 
   let verification: MinMax<f32> = MinMax {
-    min: base_price.min as f32 * delta_sum(start.min, &delta.min, i),
-    max: base_price.max as f32 * delta_sum(start.max, &delta.max, i),
+    min: base_price as f32 * delta_sum(start.min, &delta.min, i),
+    max: base_price as f32 * delta_sum(start.max, &delta.max, i),
   };
 
   let previous_price = arr.last().unwrap();
 
-  let mut min_value = 0.0f32;
-  let mut max_value = 0.0f32;
-  let mut valid = false;
+  // rate = ??;
+  // sellPrices[prev] = prevRate * basePrice = prevPrice
+  // prevRate = prevPrice / basePrice
+  // rate = prevRate + stepRate =>  prevPrice / basePrice + stepRate
+  // sellPrices[curr] = rate * basePrice => prevPrice + stepRate * basePrice
+  let min = previous_price.min + delta_sum(0f32, &delta.min, 1) * base_price as f32;
+  let max = previous_price.max + delta_sum(0f32, &delta.max, 1) * base_price as f32;
+  let mut min_value = verification.min;
+  let mut max_value = verification.max;
 
-  for base_price_v in base_price.min..=base_price.max {
-    // rate = ??;
-    // sellPrices[prev] = prevRate * basePrice = prevPrice
-    // prevRate = prevPrice / basePrice
-    // rate = prevRate + stepRate =>  prevPrice / basePrice + stepRate
-    // sellPrices[curr] = rate * basePrice => prevPrice + stepRate * basePrice
-    let min = previous_price.min + delta_sum(0f32, &delta.min, 1) * base_price_v as f32;
-    let max = previous_price.max + delta_sum(0f32, &delta.max, 1) * base_price_v as f32;
-
-    if min >= verification.min && max <= verification.max {
-      if valid {
-        min_value = min.min(min_value);
-        max_value = max.max(max_value);
-      } else {
-        min_value = min;
-        max_value = max;
-        valid = true;
-      }
-    } else {
-      if valid {
-        break;
-      }
-    }
+  if min >= verification.min && max <= verification.max {
+    // Our prediction is healthy
+    min_value = min;
+    max_value = max;
   }
 
-  if valid {
-    match filter {
-      Some(&Some(i)) => {
-        let in_valid_range = i as f32 >= min_value && i as f32 <= max_value;
-        if in_valid_range {
-          // If the filter is in range, means that our prediction is healthy
-          arr.push(MinMaxPoint {
-            // sellPrice[curr] = intceil(price);
-            // sellPrice[curr] = price + 0.99999;
-            min: min_value.max(i as f32 - 0.99999),
-            max: i as f32,
-            plus_value,
-          });
-        } else {
-          // If is not in range, maybe is not the right pattern.
-          arr.push(MinMaxPoint {
-            min: min_value,
-            max: max_value,
-            plus_value,
-          })
-        }
-      }
-      _ => {
-        // Our prediction is healthy
+  match filter {
+    Some(&Some(i)) => {
+      let in_valid_range = i as f32 >= min_value && i as f32 <= max_value;
+      if in_valid_range {
+        // If the filter is in range, using filter.
+        arr.push(MinMaxPoint {
+          // sellPrice[curr] = intceil(price);
+          // sellPrice[curr] = price + 0.99999;
+          min: min_value.max(i as f32 - 0.99999),
+          max: i as f32,
+          plus_value,
+        });
+      } else {
+        // If is not in range, using prediction
         arr.push(MinMaxPoint {
           min: min_value,
           max: max_value,
           plus_value,
-        })
+        });
       }
-    };
-  } else {
-    // Predictions are unhealty. Using verification.
-    arr.push(MinMaxPoint {
-      min: verification.min,
-      max: verification.max,
+    }
+    _ => arr.push(MinMaxPoint {
+      min: min_value,
+      max: max_value,
       plus_value,
-    })
-  }
+    }),
+  };
 }
 
 // PATTERN 0: high, decreasing, high, decreasing, high
-fn pattern_0(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<MinMax<i32>>, i32)> {
+fn pattern_0(base_price: i32, filters: &Vec<Option<i32>>) -> Vec<(Vec<MinMax<i32>>, i32)> {
   let mut probabilties: Vec<(Vec<MinMax<i32>>, i32)> = Vec::new();
   let mut current: Vec<MinMaxPoint> = Vec::new();
 
@@ -230,7 +205,7 @@ fn pattern_0(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
             left_float(0.9, 1.4),
             right_float(0.9, 1.4),
             filters.get(work - 2),
-            &base_price,
+            base_price,
             0,
           );
           work += 1;
@@ -255,7 +230,7 @@ fn pattern_0(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
             ),
             i,
             filters.get(work - 2),
-            &base_price,
+            base_price,
             0,
           );
           work += 1;
@@ -330,7 +305,7 @@ fn pattern_0(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
 }
 
 // PATTERN 1: decreasing middle, high spike, random low
-fn pattern_1(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<MinMax<i32>>, i32)> {
+fn pattern_1(base_price: i32, filters: &Vec<Option<i32>>) -> Vec<(Vec<MinMax<i32>>, i32)> {
   let mut probabilties: Vec<(Vec<MinMax<i32>>, i32)> = Vec::new();
   let mut current: Vec<MinMaxPoint> = Vec::new();
   // peakStart = randint(3, 9);
@@ -369,7 +344,7 @@ fn pattern_1(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
       left_float(0.9, 1.4),
       right_float(0.9, 1.4),
       filters.get(work - 2),
-      &base_price,
+      base_price,
       0,
     );
     rand_float(
@@ -377,7 +352,7 @@ fn pattern_1(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
       left_float(1.4, 2.0),
       right_float(1.4, 2.0),
       filters.get(work - 1),
-      &base_price,
+      base_price,
       0,
     );
     rand_float(
@@ -385,7 +360,7 @@ fn pattern_1(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
       left_float(2.0, 6.0),
       right_float(2.0, 6.0),
       filters.get(work + 0),
-      &base_price,
+      base_price,
       0,
     );
     rand_float(
@@ -393,7 +368,7 @@ fn pattern_1(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
       left_float(1.4, 2.0),
       right_float(1.4, 2.0),
       filters.get(work + 1),
-      &base_price,
+      base_price,
       0,
     );
     rand_float(
@@ -401,7 +376,7 @@ fn pattern_1(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
       left_float(0.9, 1.4),
       right_float(0.9, 1.4),
       filters.get(work + 2),
-      &base_price,
+      base_price,
       0,
     );
     work += 5;
@@ -416,7 +391,7 @@ fn pattern_1(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
         left_float(0.4, 0.9),
         right_float(0.4, 0.9),
         filters.get(work - 2),
-        &base_price,
+        base_price,
         0,
       );
       work += 1;
@@ -429,7 +404,7 @@ fn pattern_1(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
 }
 
 // PATTERN 2: consistently decreasing
-fn pattern_2(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<MinMax<i32>>, i32)> {
+fn pattern_2(base_price: i32, filters: &Vec<Option<i32>>) -> Vec<(Vec<MinMax<i32>>, i32)> {
   let mut probabilties: Vec<(Vec<MinMax<i32>>, i32)> = Vec::new();
   let mut current: Vec<MinMaxPoint> = Vec::new();
 
@@ -453,7 +428,7 @@ fn pattern_2(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
       ),
       i,
       filters.get(work as usize - 2),
-      &base_price,
+      base_price,
       0,
     );
     work += 1;
@@ -464,7 +439,7 @@ fn pattern_2(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
 }
 
 // PATTERN 3: decreasing, spike, decreasing
-fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<MinMax<i32>>, i32)> {
+fn pattern_3(base_price: i32, filters: &Vec<Option<i32>>) -> Vec<(Vec<MinMax<i32>>, i32)> {
   let mut probabilties: Vec<(Vec<MinMax<i32>>, i32)> = Vec::new();
   let mut current: Vec<MinMaxPoint> = Vec::new();
 
@@ -490,7 +465,7 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
         ),
         i,
         filters.get(work as usize - 2),
-        &base_price,
+        base_price,
         0,
       );
       work += 1;
@@ -507,7 +482,7 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
       left_float(0.9, 1.4),
       right_float(0.9, 1.4),
       filters.get(work - 2),
-      &base_price,
+      base_price,
       0,
     );
     rand_float(
@@ -515,7 +490,7 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
       left_float(0.9, 1.4),
       right_float(0.9, 1.4),
       filters.get(work - 1),
-      &base_price,
+      base_price,
       0,
     );
     work += 2;
@@ -524,8 +499,8 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
       // sellPrices[prev] = prevRate * basePrice = prevPrice;
       // rate = prevrate = prevPrice / basePrice;
       let rate = MinMax::new(
-        prev_price as f32 / base_price.min as f32,
-        prev_price as f32 / base_price.max as f32,
+        prev_price as f32 / base_price as f32,
+        prev_price as f32 / base_price as f32,
       );
       let rate_min = rate.min.min(rate.max);
       let rate_max = rate.min.max(rate.max);
@@ -535,7 +510,7 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
           left_float(1.4, 2.0),
           right_float(1.4, 2.0),
           filters.get(work - 2),
-          &base_price,
+          base_price,
           -1,
         );
         rand_float(
@@ -543,7 +518,7 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
           left_float(1.4, 2.0),
           right_float(1.4, 2.0),
           filters.get(work - 1),
-          &base_price,
+          base_price,
           0,
         );
         rand_float(
@@ -551,7 +526,7 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
           left_float(1.4, 2.0),
           right_float(1.4, 2.0),
           filters.get(work + 0),
-          &base_price,
+          base_price,
           -1,
         );
       } else {
@@ -560,7 +535,7 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
           left_float(1.4, 2.0),
           rate_max.max(1.4),
           filters.get(work - 2),
-          &base_price,
+          base_price,
           -1,
         );
         rand_float(
@@ -568,7 +543,7 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
           rate_min,
           rate_max,
           filters.get(work - 1),
-          &base_price,
+          base_price,
           0,
         );
         rand_float(
@@ -576,7 +551,7 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
           left_float(1.4, 2.0),
           rate_max.max(1.4),
           filters.get(work + 0),
-          &base_price,
+          base_price,
           -1,
         );
       }
@@ -586,7 +561,7 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
         left_float(1.4, 2.0),
         right_float(1.4, 2.0),
         filters.get(work - 2),
-        &base_price,
+        base_price,
         -1,
       );
       rand_float(
@@ -594,7 +569,7 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
         left_float(1.4, 2.0),
         right_float(1.4, 2.0),
         filters.get(work - 1),
-        &base_price,
+        base_price,
         0,
       );
       rand_float(
@@ -602,7 +577,7 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
         left_float(1.4, 2.0),
         right_float(1.4, 2.0),
         filters.get(work + 0),
-        &base_price,
+        base_price,
         -1,
       );
     }
@@ -630,7 +605,7 @@ fn pattern_3(base_price: &MinMax<i32>, filters: &Vec<Option<i32>>) -> Vec<(Vec<M
         ),
         i,
         filters.get(work as usize - 2),
-        &base_price,
+        base_price,
         0,
       );
       i += 1;
@@ -648,21 +623,18 @@ pub fn calculate(filters: &Vec<Option<i32>>) -> Vec<(Vec<MinMax<i32>>, i32)> {
   let max_price: i32 = filters[0].unwrap_or(110);
   let mut results: Vec<(Vec<MinMax<i32>>, i32)> = Vec::new();
 
-  let base_price = MinMax {
-    min: min_price,
-    max: max_price,
-  };
-
   let patterns = [pattern_0, pattern_1, pattern_2, pattern_3];
 
-  for pattern_fn in patterns.iter() {
-    results.append(&mut pattern_fn(
-      &base_price,
-      &match filters.len() {
-        0 => Vec::new(),
-        _ => filters[1..].to_vec(),
-      },
-    ));
+  for base_price in min_price..=max_price {
+    for pattern_fn in patterns.iter() {
+      results.append(&mut pattern_fn(
+        base_price,
+        &match filters.len() {
+          0 => Vec::new(),
+          _ => filters[1..].to_vec(),
+        },
+      ));
+    }
   }
 
   results
