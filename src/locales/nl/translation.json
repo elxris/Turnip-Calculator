@@ -34,5 +34,7 @@
     "patternNames": "Schommelend_Hoge piek_Dalend_Kleine piek",
     "Pattern": "Patroon",
     "Chance": "Kans",
-    "Most Likely": "Waarschijnlijkst"
+    "Most Likely": "Meest Waarschijnlijk",
+    "Now": "Nu",
+    "mostLikelyInfo": "- Het <1>Hoogst Waarschijnlijke</1> waardebereik is waar <3></3> van de knollenprijzen zullen dalen."
 }
