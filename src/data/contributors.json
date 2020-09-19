@@ -4235,6 +4235,175 @@
       },
       {
         "w": 1586649600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587254400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587859200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1588464000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589068800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589673600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590278400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590883200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1591488000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1592092800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1592697600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1593302400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1593907200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1594512000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1595116800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1595721600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1596326400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1596931200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1597536000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1598140800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1598745600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1599350400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1599955200,
+        "a": 3,
+        "d": 1,
+        "c": 1
+      }
+    ],
+    "author": {
+      "login": "Livelypower",
+      "id": 34190721,
+      "node_id": "MDQ6VXNlcjM0MTkwNzIx",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/34190721?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Livelypower",
+      "html_url": "https://github.com/Livelypower",
+      "followers_url": "https://api.github.com/users/Livelypower/followers",
+      "following_url": "https://api.github.com/users/Livelypower/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Livelypower/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Livelypower/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Livelypower/subscriptions",
+      "organizations_url": "https://api.github.com/users/Livelypower/orgs",
+      "repos_url": "https://api.github.com/users/Livelypower/repos",
+      "events_url": "https://api.github.com/users/Livelypower/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Livelypower/received_events",
+      "type": "User",
+      "site_admin": false
+    }
+  },
+  {
+    "total": 1,
+    "weeks": [
+      {
+        "w": 1586044800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1586649600,
         "a": 5,
         "d": 5,
         "c": 1
@@ -12337,7 +12506,7 @@
     }
   },
   {
-    "total": 88,
+    "total": 89,
     "weeks": [
       {
         "w": 1586044800,
@@ -12479,9 +12648,9 @@
       },
       {
         "w": 1599955200,
-        "a": 1240,
-        "d": 183,
-        "c": 2
+        "a": 1414,
+        "d": 357,
+        "c": 3
       }
     ],
     "author": {
