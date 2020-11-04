@@ -14559,217 +14559,6 @@
     }
   },
   {
-    "total": 4,
-    "weeks": [
-      {
-        "w": 1586044800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1586649600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1587254400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1587859200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1588464000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589068800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589673600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1590278400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1590883200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1591488000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1592092800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1592697600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1593302400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1593907200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1594512000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1595116800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1595721600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1596326400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1596931200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1597536000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1598140800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1598745600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1599350400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1599955200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1600560000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1601164800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1601769600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1602374400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1602979200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1603584000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1604188800,
-        "a": 46,
-        "d": 7,
-        "c": 4
-      }
-    ],
-    "author": {
-      "login": "Suzuya1755",
-      "id": 73918798,
-      "node_id": "MDQ6VXNlcjczOTE4Nzk4",
-      "avatar_url": "https://avatars1.githubusercontent.com/u/73918798?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/Suzuya1755",
-      "html_url": "https://github.com/Suzuya1755",
-      "followers_url": "https://api.github.com/users/Suzuya1755/followers",
-      "following_url": "https://api.github.com/users/Suzuya1755/following{/other_user}",
-      "gists_url": "https://api.github.com/users/Suzuya1755/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/Suzuya1755/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/Suzuya1755/subscriptions",
-      "organizations_url": "https://api.github.com/users/Suzuya1755/orgs",
-      "repos_url": "https://api.github.com/users/Suzuya1755/repos",
-      "events_url": "https://api.github.com/users/Suzuya1755/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/Suzuya1755/received_events",
-      "type": "User",
-      "site_admin": false
-    }
-  },
-  {
     "total": 5,
     "weeks": [
       {
@@ -14976,6 +14765,217 @@
       "repos_url": "https://api.github.com/users/ndoll/repos",
       "events_url": "https://api.github.com/users/ndoll/events{/privacy}",
       "received_events_url": "https://api.github.com/users/ndoll/received_events",
+      "type": "User",
+      "site_admin": false
+    }
+  },
+  {
+    "total": 5,
+    "weeks": [
+      {
+        "w": 1586044800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1586649600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587254400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587859200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1588464000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589068800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589673600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590278400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590883200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1591488000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1592092800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1592697600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1593302400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1593907200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1594512000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1595116800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1595721600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1596326400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1596931200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1597536000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1598140800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1598745600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1599350400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1599955200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1600560000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1601164800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1601769600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1602374400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1602979200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1603584000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1604188800,
+        "a": 47,
+        "d": 8,
+        "c": 5
+      }
+    ],
+    "author": {
+      "login": "Suzuya1755",
+      "id": 73918798,
+      "node_id": "MDQ6VXNlcjczOTE4Nzk4",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/73918798?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Suzuya1755",
+      "html_url": "https://github.com/Suzuya1755",
+      "followers_url": "https://api.github.com/users/Suzuya1755/followers",
+      "following_url": "https://api.github.com/users/Suzuya1755/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Suzuya1755/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Suzuya1755/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Suzuya1755/subscriptions",
+      "organizations_url": "https://api.github.com/users/Suzuya1755/orgs",
+      "repos_url": "https://api.github.com/users/Suzuya1755/repos",
+      "events_url": "https://api.github.com/users/Suzuya1755/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Suzuya1755/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -16036,7 +16036,7 @@
     }
   },
   {
-    "total": 94,
+    "total": 95,
     "weeks": [
       {
         "w": 1586044800,
@@ -16220,9 +16220,9 @@
       },
       {
         "w": 1604188800,
-        "a": 3837,
-        "d": 223,
-        "c": 4
+        "a": 4053,
+        "d": 439,
+        "c": 5
       }
     ],
     "author": {
