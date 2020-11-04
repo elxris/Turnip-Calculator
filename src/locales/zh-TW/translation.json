@@ -34,5 +34,7 @@
     "patternNames": "波動型_三期型_下跌型_四期型",
     "All Patterns": "所有規律",
     "Pattern": "規律",
-    "Chance": "機率"
+    "Chance": "機率",
+    "Now": "現在",
+    "mostLikelyInfo": "-<1>最可能</1>的數值範圍是指<3></3>的大頭菜價格會落在的範圍。"
 }
