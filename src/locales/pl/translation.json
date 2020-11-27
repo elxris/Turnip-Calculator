@@ -29,5 +29,12 @@
     "guaranteedMinInfo": "<1>Gwarantowane Minimum</1> oznacza, że trafisz na co najmniej tę cenę w pewnym momencie w ciągu tygodnia.",
     "about2": "Moją inspiracją była praca <2>mikebryanta</2>.",
     "about3": "Wreszcie, dziękuję mojemu bratu za pomoc z projektem graficznym. Jest twórcą gier! Jego twitter to: <2>@Consalv0</2>.",
-    "shareDialogV2": "Udostępnij ten obrazek!"
+    "shareDialogV2": "Udostępnij ten obrazek!",
+    "Now": "Teraz",
+    "All Patterns": "Tendencje",
+    "patternNames": "Mieszana_Duży wzrost_Spadkowa_Mały wzrost",
+    "Pattern": "Tendencja",
+    "Chance": "Szansa",
+    "mostLikelyInfo": "- <1>Najprawdopodobniej</1> oznacza zakres gdzie znajdzie się <3></3> cen.",
+    "Most Likely": "Najbardziej prawdopodobna cena"
 }
