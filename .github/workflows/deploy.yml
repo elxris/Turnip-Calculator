@@ -16,14 +16,14 @@ jobs:
     steps:
       - name: GitHub API [Contributors]
         ### The first request is for building the cache. It will not return anything.
-        uses: octokit/request-action@v2.0.2
+        uses: octokit/request-action@v2
         with:
           route: GET /repos/:repository/stats/contributors
           repository: ${{ github.repository }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-node@v1.4.2
-      - uses: actions/checkout@master
+      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v2
       - uses: jetli/wasm-pack-action@v0.3.0
       - name: Compile WASM
         run: wasm-pack build
@@ -31,7 +31,7 @@ jobs:
       - name: Install
         run: yarn
       - name: GitHub API [Contributors]
-        uses: octokit/request-action@v2.0.2
+        uses: octokit/request-action@v2
         id: get_contributors
         with:
           route: GET /repos/:repository/stats/contributors
