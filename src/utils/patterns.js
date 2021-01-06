@@ -121,8 +121,16 @@ const calculateQuantiles = (patterns, quantileRange = 75) => {
   });
 };
 
+const clamp = (min, max, number) => Math.min(max, Math.max(min, number));
+
+const clampFilters = (filters) => {
+  return filters.map((x, i) =>
+    i === 0 ? clamp(90, 110, x) : clamp(9, 660, x)
+  );
+};
+
 const calculate = async ({ filters, quantileRange }) => {
-  let patterns = await possiblePatterns(filters);
+  let patterns = await possiblePatterns(clampFilters(filters));
   const minMaxPattern = patternReducer(patterns, minMaxReducer);
   const [minWeekValue] = patternReducer(patterns, minWeekReducer);
   const quantiles = calculateQuantiles(patterns, quantileRange);
