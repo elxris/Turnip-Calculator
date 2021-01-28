@@ -29,5 +29,12 @@
     "copyButton": "コピー！",
     "shareButton": "シェア！",
     "closeButton": "閉じる",
-    "shareDialogV2": "画像を共有する！"
+    "shareDialogV2": "画像を共有する！",
+    "Now": "現在",
+    "Chance": "確率",
+    "Pattern": "型",
+    "All Patterns": "全ての型",
+    "patternNames": "波型_3期型(微騰)_ジリ貧型_4期型(暴騰)",
+    "mostLikelyInfo": "- <1>高確率変動域</1>は、<3></3>の確率で範囲内のカブ価に変動するということです。",
+    "Most Likely": "高確率変動域"
 }
