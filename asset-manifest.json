@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "./static/js/main.fa0f603a.chunk.js",
-    "main.js.map": "./static/js/main.fa0f603a.chunk.js.map",
+    "main.js": "./static/js/main.db29a41d.chunk.js",
+    "main.js.map": "./static/js/main.db29a41d.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.91b4bb59.js",
     "runtime-main.js.map": "./static/js/runtime-main.91b4bb59.js.map",
     "static/js/2.6f296194.chunk.js": "./static/js/2.6f296194.chunk.js",
@@ -10,7 +10,7 @@
     "1db2ffeac2aeebdd6a69.module.wasm": "./1db2ffeac2aeebdd6a69.module.wasm",
     "static/js/3.88f28130.chunk.js.map": "./static/js/3.88f28130.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.ceafcb0c22434139ebc837ff63f9914b.js": "./precache-manifest.ceafcb0c22434139ebc837ff63f9914b.js",
+    "precache-manifest.29b3064aa89929270bae3c47e48b57ff.js": "./precache-manifest.29b3064aa89929270bae3c47e48b57ff.js",
     "service-worker.js": "./service-worker.js",
     "static/js/2.6f296194.chunk.js.LICENSE.txt": "./static/js/2.6f296194.chunk.js.LICENSE.txt",
     "static/media/ArialRoundedBold.woff": "./static/media/ArialRoundedBold.98a0555d.woff",
@@ -21,6 +21,6 @@
   "entrypoints": [
     "static/js/runtime-main.91b4bb59.js",
     "static/js/2.6f296194.chunk.js",
-    "static/js/main.fa0f603a.chunk.js"
+    "static/js/main.db29a41d.chunk.js"
   ]
 }
