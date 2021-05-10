@@ -130,12 +130,12 @@ function addHeapObject(obj) {
     return idx;
 }
 
-export const __wbg_new_59cb74e423758ede = function() {
+export function __wbg_new_59cb74e423758ede() {
     var ret = new Error();
     return addHeapObject(ret);
 };
 
-export const __wbg_stack_558ba5917b466edd = function(arg0, arg1) {
+export function __wbg_stack_558ba5917b466edd(arg0, arg1) {
     var ret = getObject(arg1).stack;
     var ptr0 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
     var len0 = WASM_VECTOR_LEN;
@@ -143,7 +143,7 @@ export const __wbg_stack_558ba5917b466edd = function(arg0, arg1) {
     getInt32Memory0()[arg0 / 4 + 0] = ptr0;
 };
 
-export const __wbg_error_4bb6c2a97407129a = function(arg0, arg1) {
+export function __wbg_error_4bb6c2a97407129a(arg0, arg1) {
     try {
         console.error(getStringFromWasm0(arg0, arg1));
     } finally {
@@ -151,7 +151,7 @@ export const __wbg_error_4bb6c2a97407129a = function(arg0, arg1) {
     }
 };
 
-export const __wbindgen_object_drop_ref = function(arg0) {
+export function __wbindgen_object_drop_ref(arg0) {
     takeObject(arg0);
 };
 
