@@ -10,15 +10,15 @@
       },
       {
         "w": 1586649600,
-        "a": 30,
-        "d": 30,
-        "c": 1
-      },
-      {
-        "w": 1587254400,
         "a": 0,
         "d": 0,
         "c": 0
+      },
+      {
+        "w": 1587254400,
+        "a": 2,
+        "d": 1,
+        "c": 1
       },
       {
         "w": 1587859200,
@@ -478,22 +478,22 @@
       }
     ],
     "author": {
-      "login": "yuryu",
-      "id": 166481,
-      "node_id": "MDQ6VXNlcjE2NjQ4MQ==",
-      "avatar_url": "https://avatars.githubusercontent.com/u/166481?v=4",
+      "login": "RvanBaarle",
+      "id": 6692036,
+      "node_id": "MDQ6VXNlcjY2OTIwMzY=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6692036?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/yuryu",
-      "html_url": "https://github.com/yuryu",
-      "followers_url": "https://api.github.com/users/yuryu/followers",
-      "following_url": "https://api.github.com/users/yuryu/following{/other_user}",
-      "gists_url": "https://api.github.com/users/yuryu/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/yuryu/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/yuryu/subscriptions",
-      "organizations_url": "https://api.github.com/users/yuryu/orgs",
-      "repos_url": "https://api.github.com/users/yuryu/repos",
-      "events_url": "https://api.github.com/users/yuryu/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/yuryu/received_events",
+      "url": "https://api.github.com/users/RvanBaarle",
+      "html_url": "https://github.com/RvanBaarle",
+      "followers_url": "https://api.github.com/users/RvanBaarle/followers",
+      "following_url": "https://api.github.com/users/RvanBaarle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/RvanBaarle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/RvanBaarle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/RvanBaarle/subscriptions",
+      "organizations_url": "https://api.github.com/users/RvanBaarle/orgs",
+      "repos_url": "https://api.github.com/users/RvanBaarle/repos",
+      "events_url": "https://api.github.com/users/RvanBaarle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/RvanBaarle/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -503,8 +503,8 @@
     "weeks": [
       {
         "w": 1586044800,
-        "a": 33,
-        "d": 0,
+        "a": 8,
+        "d": 8,
         "c": 1
       },
       {
@@ -977,521 +977,22 @@
       }
     ],
     "author": {
-      "login": "ruudschouten",
-      "id": 1363911,
-      "node_id": "MDQ6VXNlcjEzNjM5MTE=",
-      "avatar_url": "https://avatars.githubusercontent.com/u/1363911?v=4",
+      "login": "dnaroma",
+      "id": 9821322,
+      "node_id": "MDQ6VXNlcjk4MjEzMjI=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9821322?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/ruudschouten",
-      "html_url": "https://github.com/ruudschouten",
-      "followers_url": "https://api.github.com/users/ruudschouten/followers",
-      "following_url": "https://api.github.com/users/ruudschouten/following{/other_user}",
-      "gists_url": "https://api.github.com/users/ruudschouten/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/ruudschouten/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/ruudschouten/subscriptions",
-      "organizations_url": "https://api.github.com/users/ruudschouten/orgs",
-      "repos_url": "https://api.github.com/users/ruudschouten/repos",
-      "events_url": "https://api.github.com/users/ruudschouten/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/ruudschouten/received_events",
-      "type": "User",
-      "site_admin": false
-    }
-  },
-  {
-    "total": 12,
-    "weeks": [
-      {
-        "w": 1586044800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1586649600,
-        "a": 68,
-        "d": 68,
-        "c": 12
-      },
-      {
-        "w": 1587254400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1587859200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1588464000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589068800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589673600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1590278400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1590883200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1591488000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1592092800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1592697600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1593302400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1593907200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1594512000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1595116800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1595721600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1596326400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1596931200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1597536000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1598140800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1598745600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1599350400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1599955200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1600560000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1601164800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1601769600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1602374400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1602979200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1603584000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1604188800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1604793600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1605398400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1606003200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1606608000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1607212800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1607817600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1608422400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1609027200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1609632000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1610236800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1610841600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1611446400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1612051200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1612656000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1613260800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1613865600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1614470400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1615075200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1615680000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1616284800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1616889600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1617494400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1618099200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1618704000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1619308800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1619913600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1620518400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1621123200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1621728000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1622332800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1622937600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1623542400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1624147200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1624752000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1625356800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1625961600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1626566400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1627171200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1627776000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1628380800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1628985600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1629590400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1630195200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1630800000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1631404800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1632009600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1632614400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1633219200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      }
-    ],
-    "author": {
-      "login": "weblate",
-      "id": 1607653,
-      "node_id": "MDQ6VXNlcjE2MDc2NTM=",
-      "avatar_url": "https://avatars.githubusercontent.com/u/1607653?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/weblate",
-      "html_url": "https://github.com/weblate",
-      "followers_url": "https://api.github.com/users/weblate/followers",
-      "following_url": "https://api.github.com/users/weblate/following{/other_user}",
-      "gists_url": "https://api.github.com/users/weblate/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/weblate/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/weblate/subscriptions",
-      "organizations_url": "https://api.github.com/users/weblate/orgs",
-      "repos_url": "https://api.github.com/users/weblate/repos",
-      "events_url": "https://api.github.com/users/weblate/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/weblate/received_events",
+      "url": "https://api.github.com/users/dnaroma",
+      "html_url": "https://github.com/dnaroma",
+      "followers_url": "https://api.github.com/users/dnaroma/followers",
+      "following_url": "https://api.github.com/users/dnaroma/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dnaroma/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dnaroma/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dnaroma/subscriptions",
+      "organizations_url": "https://api.github.com/users/dnaroma/orgs",
+      "repos_url": "https://api.github.com/users/dnaroma/repos",
+      "events_url": "https://api.github.com/users/dnaroma/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dnaroma/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -1501,15 +1002,15 @@
     "weeks": [
       {
         "w": 1586044800,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 42,
+        "d": 10,
+        "c": 4
       },
       {
         "w": 1586649600,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 20,
+        "d": 20,
+        "c": 2
       },
       {
         "w": 1587254400,
@@ -1681,9 +1182,9 @@
       },
       {
         "w": 1604188800,
-        "a": 49,
-        "d": 10,
-        "c": 6
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1604793600,
@@ -1975,22 +1476,521 @@
       }
     ],
     "author": {
-      "login": "Suzuya1755",
-      "id": 73918798,
-      "node_id": "MDQ6VXNlcjczOTE4Nzk4",
-      "avatar_url": "https://avatars.githubusercontent.com/u/73918798?v=4",
+      "login": "fabiomurru96",
+      "id": 20525680,
+      "node_id": "MDQ6VXNlcjIwNTI1Njgw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20525680?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/Suzuya1755",
-      "html_url": "https://github.com/Suzuya1755",
-      "followers_url": "https://api.github.com/users/Suzuya1755/followers",
-      "following_url": "https://api.github.com/users/Suzuya1755/following{/other_user}",
-      "gists_url": "https://api.github.com/users/Suzuya1755/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/Suzuya1755/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/Suzuya1755/subscriptions",
-      "organizations_url": "https://api.github.com/users/Suzuya1755/orgs",
-      "repos_url": "https://api.github.com/users/Suzuya1755/repos",
-      "events_url": "https://api.github.com/users/Suzuya1755/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/Suzuya1755/received_events",
+      "url": "https://api.github.com/users/fabiomurru96",
+      "html_url": "https://github.com/fabiomurru96",
+      "followers_url": "https://api.github.com/users/fabiomurru96/followers",
+      "following_url": "https://api.github.com/users/fabiomurru96/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fabiomurru96/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fabiomurru96/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fabiomurru96/subscriptions",
+      "organizations_url": "https://api.github.com/users/fabiomurru96/orgs",
+      "repos_url": "https://api.github.com/users/fabiomurru96/repos",
+      "events_url": "https://api.github.com/users/fabiomurru96/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fabiomurru96/received_events",
+      "type": "User",
+      "site_admin": false
+    }
+  },
+  {
+    "total": 1,
+    "weeks": [
+      {
+        "w": 1586044800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1586649600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587254400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587859200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1588464000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589068800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589673600,
+        "a": 2,
+        "d": 2,
+        "c": 1
+      },
+      {
+        "w": 1590278400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590883200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1591488000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1592092800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1592697600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1593302400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1593907200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1594512000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1595116800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1595721600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1596326400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1596931200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1597536000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1598140800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1598745600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1599350400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1599955200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1600560000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1601164800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1601769600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1602374400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1602979200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1603584000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1604188800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1604793600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1605398400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1606003200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1606608000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1607212800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1607817600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1608422400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1609027200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1609632000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1610236800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1610841600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1611446400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1612051200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1612656000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1613260800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1613865600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1614470400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1615075200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1615680000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1616284800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1616889600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1617494400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1618099200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1618704000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1619308800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1619913600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1620518400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1621123200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1621728000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1622332800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1622937600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1623542400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1624147200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1624752000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1625356800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1625961600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1626566400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1627171200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1627776000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1628380800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1628985600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1629590400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1630195200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1630800000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1631404800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1632009600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1632614400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1633219200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      }
+    ],
+    "author": {
+      "login": "frn1",
+      "id": 20214662,
+      "node_id": "MDQ6VXNlcjIwMjE0NjYy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20214662?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/frn1",
+      "html_url": "https://github.com/frn1",
+      "followers_url": "https://api.github.com/users/frn1/followers",
+      "following_url": "https://api.github.com/users/frn1/following{/other_user}",
+      "gists_url": "https://api.github.com/users/frn1/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/frn1/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/frn1/subscriptions",
+      "organizations_url": "https://api.github.com/users/frn1/orgs",
+      "repos_url": "https://api.github.com/users/frn1/repos",
+      "events_url": "https://api.github.com/users/frn1/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/frn1/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -2994,7 +2994,7 @@
     }
   },
   {
-    "total": 1,
+    "total": 2,
     "weeks": [
       {
         "w": 1586044800,
@@ -3034,9 +3034,9 @@
       },
       {
         "w": 1589673600,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 2,
+        "d": 1,
+        "c": 1
       },
       {
         "w": 1590278400,
@@ -3046,9 +3046,9 @@
       },
       {
         "w": 1590883200,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 2,
+        "d": 1,
+        "c": 1
       },
       {
         "w": 1591488000,
@@ -3070,9 +3070,9 @@
       },
       {
         "w": 1593302400,
-        "a": 6,
-        "d": 1,
-        "c": 1
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1593907200,
@@ -3472,22 +3472,22 @@
       }
     ],
     "author": {
-      "login": "luizhandrade",
-      "id": 5850877,
-      "node_id": "MDQ6VXNlcjU4NTA4Nzc=",
-      "avatar_url": "https://avatars.githubusercontent.com/u/5850877?v=4",
+      "login": "borjiso",
+      "id": 505113,
+      "node_id": "MDQ6VXNlcjUwNTExMw==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/505113?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/luizhandrade",
-      "html_url": "https://github.com/luizhandrade",
-      "followers_url": "https://api.github.com/users/luizhandrade/followers",
-      "following_url": "https://api.github.com/users/luizhandrade/following{/other_user}",
-      "gists_url": "https://api.github.com/users/luizhandrade/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/luizhandrade/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/luizhandrade/subscriptions",
-      "organizations_url": "https://api.github.com/users/luizhandrade/orgs",
-      "repos_url": "https://api.github.com/users/luizhandrade/repos",
-      "events_url": "https://api.github.com/users/luizhandrade/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/luizhandrade/received_events",
+      "url": "https://api.github.com/users/borjiso",
+      "html_url": "https://github.com/borjiso",
+      "followers_url": "https://api.github.com/users/borjiso/followers",
+      "following_url": "https://api.github.com/users/borjiso/following{/other_user}",
+      "gists_url": "https://api.github.com/users/borjiso/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/borjiso/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/borjiso/subscriptions",
+      "organizations_url": "https://api.github.com/users/borjiso/orgs",
+      "repos_url": "https://api.github.com/users/borjiso/repos",
+      "events_url": "https://api.github.com/users/borjiso/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/borjiso/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -3992,7 +3992,7 @@
     }
   },
   {
-    "total": 2,
+    "total": 1,
     "weeks": [
       {
         "w": 1586044800,
@@ -4014,9 +4014,9 @@
       },
       {
         "w": 1587859200,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 1,
+        "d": 1,
+        "c": 1
       },
       {
         "w": 1588464000,
@@ -4032,9 +4032,9 @@
       },
       {
         "w": 1589673600,
-        "a": 4,
-        "d": 2,
-        "c": 2
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1590278400,
@@ -4470,40 +4470,40 @@
       }
     ],
     "author": {
-      "login": "SleepyPrince",
-      "id": 670216,
-      "node_id": "MDQ6VXNlcjY3MDIxNg==",
-      "avatar_url": "https://avatars.githubusercontent.com/u/670216?v=4",
+      "login": "cuonghapvn",
+      "id": 5651866,
+      "node_id": "MDQ6VXNlcjU2NTE4NjY=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5651866?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/SleepyPrince",
-      "html_url": "https://github.com/SleepyPrince",
-      "followers_url": "https://api.github.com/users/SleepyPrince/followers",
-      "following_url": "https://api.github.com/users/SleepyPrince/following{/other_user}",
-      "gists_url": "https://api.github.com/users/SleepyPrince/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/SleepyPrince/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/SleepyPrince/subscriptions",
-      "organizations_url": "https://api.github.com/users/SleepyPrince/orgs",
-      "repos_url": "https://api.github.com/users/SleepyPrince/repos",
-      "events_url": "https://api.github.com/users/SleepyPrince/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/SleepyPrince/received_events",
+      "url": "https://api.github.com/users/cuonghapvn",
+      "html_url": "https://github.com/cuonghapvn",
+      "followers_url": "https://api.github.com/users/cuonghapvn/followers",
+      "following_url": "https://api.github.com/users/cuonghapvn/following{/other_user}",
+      "gists_url": "https://api.github.com/users/cuonghapvn/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/cuonghapvn/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/cuonghapvn/subscriptions",
+      "organizations_url": "https://api.github.com/users/cuonghapvn/orgs",
+      "repos_url": "https://api.github.com/users/cuonghapvn/repos",
+      "events_url": "https://api.github.com/users/cuonghapvn/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/cuonghapvn/received_events",
       "type": "User",
       "site_admin": false
     }
   },
   {
-    "total": 2,
+    "total": 1,
     "weeks": [
       {
         "w": 1586044800,
-        "a": 0,
+        "a": 32,
         "d": 0,
-        "c": 0
+        "c": 1
       },
       {
         "w": 1586649600,
-        "a": 14,
-        "d": 14,
-        "c": 2
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1587254400,
@@ -4969,22 +4969,22 @@
       }
     ],
     "author": {
-      "login": "Elsensee",
-      "id": 1637630,
-      "node_id": "MDQ6VXNlcjE2Mzc2MzA=",
-      "avatar_url": "https://avatars.githubusercontent.com/u/1637630?v=4",
+      "login": "seniorburito",
+      "id": 5054813,
+      "node_id": "MDQ6VXNlcjUwNTQ4MTM=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5054813?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/Elsensee",
-      "html_url": "https://github.com/Elsensee",
-      "followers_url": "https://api.github.com/users/Elsensee/followers",
-      "following_url": "https://api.github.com/users/Elsensee/following{/other_user}",
-      "gists_url": "https://api.github.com/users/Elsensee/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/Elsensee/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/Elsensee/subscriptions",
-      "organizations_url": "https://api.github.com/users/Elsensee/orgs",
-      "repos_url": "https://api.github.com/users/Elsensee/repos",
-      "events_url": "https://api.github.com/users/Elsensee/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/Elsensee/received_events",
+      "url": "https://api.github.com/users/seniorburito",
+      "html_url": "https://github.com/seniorburito",
+      "followers_url": "https://api.github.com/users/seniorburito/followers",
+      "following_url": "https://api.github.com/users/seniorburito/following{/other_user}",
+      "gists_url": "https://api.github.com/users/seniorburito/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/seniorburito/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/seniorburito/subscriptions",
+      "organizations_url": "https://api.github.com/users/seniorburito/orgs",
+      "repos_url": "https://api.github.com/users/seniorburito/repos",
+      "events_url": "https://api.github.com/users/seniorburito/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/seniorburito/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -5489,7 +5489,7 @@
     }
   },
   {
-    "total": 1,
+    "total": 3,
     "weeks": [
       {
         "w": 1586044800,
@@ -5499,15 +5499,15 @@
       },
       {
         "w": 1586649600,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 9,
+        "d": 7,
+        "c": 2
       },
       {
         "w": 1587254400,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 1,
+        "d": 1,
+        "c": 1
       },
       {
         "w": 1587859200,
@@ -5529,9 +5529,9 @@
       },
       {
         "w": 1589673600,
-        "a": 2,
-        "d": 2,
-        "c": 1
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1590278400,
@@ -5967,22 +5967,521 @@
       }
     ],
     "author": {
-      "login": "frn1",
-      "id": 20214662,
-      "node_id": "MDQ6VXNlcjIwMjE0NjYy",
-      "avatar_url": "https://avatars.githubusercontent.com/u/20214662?v=4",
+      "login": "JarodyParody",
+      "id": 37635141,
+      "node_id": "MDQ6VXNlcjM3NjM1MTQx",
+      "avatar_url": "https://avatars.githubusercontent.com/u/37635141?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/frn1",
-      "html_url": "https://github.com/frn1",
-      "followers_url": "https://api.github.com/users/frn1/followers",
-      "following_url": "https://api.github.com/users/frn1/following{/other_user}",
-      "gists_url": "https://api.github.com/users/frn1/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/frn1/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/frn1/subscriptions",
-      "organizations_url": "https://api.github.com/users/frn1/orgs",
-      "repos_url": "https://api.github.com/users/frn1/repos",
-      "events_url": "https://api.github.com/users/frn1/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/frn1/received_events",
+      "url": "https://api.github.com/users/JarodyParody",
+      "html_url": "https://github.com/JarodyParody",
+      "followers_url": "https://api.github.com/users/JarodyParody/followers",
+      "following_url": "https://api.github.com/users/JarodyParody/following{/other_user}",
+      "gists_url": "https://api.github.com/users/JarodyParody/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/JarodyParody/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/JarodyParody/subscriptions",
+      "organizations_url": "https://api.github.com/users/JarodyParody/orgs",
+      "repos_url": "https://api.github.com/users/JarodyParody/repos",
+      "events_url": "https://api.github.com/users/JarodyParody/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/JarodyParody/received_events",
+      "type": "User",
+      "site_admin": false
+    }
+  },
+  {
+    "total": 1,
+    "weeks": [
+      {
+        "w": 1586044800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1586649600,
+        "a": 2,
+        "d": 2,
+        "c": 1
+      },
+      {
+        "w": 1587254400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587859200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1588464000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589068800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589673600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590278400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590883200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1591488000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1592092800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1592697600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1593302400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1593907200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1594512000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1595116800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1595721600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1596326400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1596931200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1597536000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1598140800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1598745600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1599350400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1599955200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1600560000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1601164800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1601769600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1602374400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1602979200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1603584000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1604188800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1604793600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1605398400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1606003200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1606608000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1607212800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1607817600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1608422400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1609027200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1609632000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1610236800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1610841600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1611446400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1612051200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1612656000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1613260800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1613865600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1614470400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1615075200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1615680000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1616284800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1616889600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1617494400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1618099200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1618704000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1619308800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1619913600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1620518400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1621123200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1621728000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1622332800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1622937600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1623542400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1624147200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1624752000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1625356800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1625961600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1626566400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1627171200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1627776000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1628380800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1628985600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1629590400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1630195200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1630800000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1631404800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1632009600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1632614400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1633219200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      }
+    ],
+    "author": {
+      "login": "ysc3839",
+      "id": 12028138,
+      "node_id": "MDQ6VXNlcjEyMDI4MTM4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12028138?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ysc3839",
+      "html_url": "https://github.com/ysc3839",
+      "followers_url": "https://api.github.com/users/ysc3839/followers",
+      "following_url": "https://api.github.com/users/ysc3839/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ysc3839/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ysc3839/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ysc3839/subscriptions",
+      "organizations_url": "https://api.github.com/users/ysc3839/orgs",
+      "repos_url": "https://api.github.com/users/ysc3839/repos",
+      "events_url": "https://api.github.com/users/ysc3839/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ysc3839/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -5992,47 +6491,47 @@
     "weeks": [
       {
         "w": 1586044800,
-        "a": 28,
+        "a": 0,
         "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1586649600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587254400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587859200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1588464000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589068800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589673600,
+        "a": 19,
+        "d": 1,
         "c": 2
       },
       {
-        "w": 1586649600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1587254400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1587859200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1588464000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589068800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589673600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
         "w": 1590278400,
         "a": 0,
         "d": 0,
@@ -6466,521 +6965,22 @@
       }
     ],
     "author": {
-      "login": "CalebProvost",
-      "id": 50122974,
-      "node_id": "MDQ6VXNlcjUwMTIyOTc0",
-      "avatar_url": "https://avatars.githubusercontent.com/u/50122974?v=4",
+      "login": "jayehernandez",
+      "id": 13959651,
+      "node_id": "MDQ6VXNlcjEzOTU5NjUx",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13959651?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/CalebProvost",
-      "html_url": "https://github.com/CalebProvost",
-      "followers_url": "https://api.github.com/users/CalebProvost/followers",
-      "following_url": "https://api.github.com/users/CalebProvost/following{/other_user}",
-      "gists_url": "https://api.github.com/users/CalebProvost/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/CalebProvost/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/CalebProvost/subscriptions",
-      "organizations_url": "https://api.github.com/users/CalebProvost/orgs",
-      "repos_url": "https://api.github.com/users/CalebProvost/repos",
-      "events_url": "https://api.github.com/users/CalebProvost/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/CalebProvost/received_events",
-      "type": "User",
-      "site_admin": false
-    }
-  },
-  {
-    "total": 1,
-    "weeks": [
-      {
-        "w": 1586044800,
-        "a": 8,
-        "d": 8,
-        "c": 1
-      },
-      {
-        "w": 1586649600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1587254400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1587859200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1588464000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589068800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589673600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1590278400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1590883200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1591488000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1592092800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1592697600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1593302400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1593907200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1594512000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1595116800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1595721600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1596326400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1596931200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1597536000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1598140800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1598745600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1599350400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1599955200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1600560000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1601164800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1601769600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1602374400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1602979200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1603584000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1604188800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1604793600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1605398400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1606003200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1606608000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1607212800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1607817600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1608422400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1609027200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1609632000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1610236800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1610841600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1611446400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1612051200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1612656000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1613260800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1613865600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1614470400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1615075200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1615680000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1616284800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1616889600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1617494400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1618099200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1618704000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1619308800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1619913600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1620518400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1621123200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1621728000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1622332800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1622937600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1623542400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1624147200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1624752000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1625356800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1625961600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1626566400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1627171200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1627776000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1628380800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1628985600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1629590400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1630195200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1630800000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1631404800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1632009600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1632614400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1633219200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      }
-    ],
-    "author": {
-      "login": "dnaroma",
-      "id": 9821322,
-      "node_id": "MDQ6VXNlcjk4MjEzMjI=",
-      "avatar_url": "https://avatars.githubusercontent.com/u/9821322?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/dnaroma",
-      "html_url": "https://github.com/dnaroma",
-      "followers_url": "https://api.github.com/users/dnaroma/followers",
-      "following_url": "https://api.github.com/users/dnaroma/following{/other_user}",
-      "gists_url": "https://api.github.com/users/dnaroma/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/dnaroma/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/dnaroma/subscriptions",
-      "organizations_url": "https://api.github.com/users/dnaroma/orgs",
-      "repos_url": "https://api.github.com/users/dnaroma/repos",
-      "events_url": "https://api.github.com/users/dnaroma/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/dnaroma/received_events",
+      "url": "https://api.github.com/users/jayehernandez",
+      "html_url": "https://github.com/jayehernandez",
+      "followers_url": "https://api.github.com/users/jayehernandez/followers",
+      "following_url": "https://api.github.com/users/jayehernandez/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jayehernandez/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jayehernandez/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jayehernandez/subscriptions",
+      "organizations_url": "https://api.github.com/users/jayehernandez/orgs",
+      "repos_url": "https://api.github.com/users/jayehernandez/repos",
+      "events_url": "https://api.github.com/users/jayehernandez/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jayehernandez/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -7984,7 +7984,7 @@
     }
   },
   {
-    "total": 1,
+    "total": 2,
     "weeks": [
       {
         "w": 1586044800,
@@ -8018,15 +8018,15 @@
       },
       {
         "w": 1589068800,
-        "a": 8,
-        "d": 8,
-        "c": 1
-      },
-      {
-        "w": 1589673600,
         "a": 0,
         "d": 0,
         "c": 0
+      },
+      {
+        "w": 1589673600,
+        "a": 4,
+        "d": 2,
+        "c": 2
       },
       {
         "w": 1590278400,
@@ -8462,22 +8462,22 @@
       }
     ],
     "author": {
-      "login": "ryo-a",
-      "id": 26864545,
-      "node_id": "MDQ6VXNlcjI2ODY0NTQ1",
-      "avatar_url": "https://avatars.githubusercontent.com/u/26864545?v=4",
+      "login": "SleepyPrince",
+      "id": 670216,
+      "node_id": "MDQ6VXNlcjY3MDIxNg==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/670216?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/ryo-a",
-      "html_url": "https://github.com/ryo-a",
-      "followers_url": "https://api.github.com/users/ryo-a/followers",
-      "following_url": "https://api.github.com/users/ryo-a/following{/other_user}",
-      "gists_url": "https://api.github.com/users/ryo-a/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/ryo-a/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/ryo-a/subscriptions",
-      "organizations_url": "https://api.github.com/users/ryo-a/orgs",
-      "repos_url": "https://api.github.com/users/ryo-a/repos",
-      "events_url": "https://api.github.com/users/ryo-a/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/ryo-a/received_events",
+      "url": "https://api.github.com/users/SleepyPrince",
+      "html_url": "https://github.com/SleepyPrince",
+      "followers_url": "https://api.github.com/users/SleepyPrince/followers",
+      "following_url": "https://api.github.com/users/SleepyPrince/following{/other_user}",
+      "gists_url": "https://api.github.com/users/SleepyPrince/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/SleepyPrince/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/SleepyPrince/subscriptions",
+      "organizations_url": "https://api.github.com/users/SleepyPrince/orgs",
+      "repos_url": "https://api.github.com/users/SleepyPrince/repos",
+      "events_url": "https://api.github.com/users/SleepyPrince/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/SleepyPrince/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -8523,9 +8523,9 @@
       },
       {
         "w": 1589673600,
-        "a": 19,
+        "a": 6,
         "d": 1,
-        "c": 2
+        "c": 1
       },
       {
         "w": 1590278400,
@@ -8565,9 +8565,9 @@
       },
       {
         "w": 1593907200,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 2,
+        "d": 1,
+        "c": 1
       },
       {
         "w": 1594512000,
@@ -8961,28 +8961,28 @@
       }
     ],
     "author": {
-      "login": "jayehernandez",
-      "id": 13959651,
-      "node_id": "MDQ6VXNlcjEzOTU5NjUx",
-      "avatar_url": "https://avatars.githubusercontent.com/u/13959651?v=4",
+      "login": "IceLitty",
+      "id": 6522057,
+      "node_id": "MDQ6VXNlcjY1MjIwNTc=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6522057?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/jayehernandez",
-      "html_url": "https://github.com/jayehernandez",
-      "followers_url": "https://api.github.com/users/jayehernandez/followers",
-      "following_url": "https://api.github.com/users/jayehernandez/following{/other_user}",
-      "gists_url": "https://api.github.com/users/jayehernandez/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/jayehernandez/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/jayehernandez/subscriptions",
-      "organizations_url": "https://api.github.com/users/jayehernandez/orgs",
-      "repos_url": "https://api.github.com/users/jayehernandez/repos",
-      "events_url": "https://api.github.com/users/jayehernandez/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/jayehernandez/received_events",
+      "url": "https://api.github.com/users/IceLitty",
+      "html_url": "https://github.com/IceLitty",
+      "followers_url": "https://api.github.com/users/IceLitty/followers",
+      "following_url": "https://api.github.com/users/IceLitty/following{/other_user}",
+      "gists_url": "https://api.github.com/users/IceLitty/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/IceLitty/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/IceLitty/subscriptions",
+      "organizations_url": "https://api.github.com/users/IceLitty/orgs",
+      "repos_url": "https://api.github.com/users/IceLitty/repos",
+      "events_url": "https://api.github.com/users/IceLitty/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/IceLitty/received_events",
       "type": "User",
       "site_admin": false
     }
   },
   {
-    "total": 3,
+    "total": 111,
     "weeks": [
       {
         "w": 1586044800,
@@ -8992,15 +8992,15 @@
       },
       {
         "w": 1586649600,
-        "a": 9,
-        "d": 7,
-        "c": 2
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1587254400,
-        "a": 1,
-        "d": 1,
-        "c": 1
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1587859200,
@@ -9010,75 +9010,75 @@
       },
       {
         "w": 1588464000,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 24,
+        "d": 24,
+        "c": 23
       },
       {
         "w": 1589068800,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 3,
+        "d": 3,
+        "c": 3
       },
       {
         "w": 1589673600,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 18,
+        "d": 18,
+        "c": 18
       },
       {
         "w": 1590278400,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 11,
+        "d": 11,
+        "c": 11
       },
       {
         "w": 1590883200,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 6487,
+        "d": 6171,
+        "c": 12
       },
       {
         "w": 1591488000,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 512,
+        "d": 25,
+        "c": 4
       },
       {
         "w": 1592092800,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 600,
+        "d": 101,
+        "c": 2
       },
       {
         "w": 1592697600,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 481,
+        "d": 67,
+        "c": 1
       },
       {
         "w": 1593302400,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 521,
+        "d": 4,
+        "c": 1
       },
       {
         "w": 1593907200,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 872,
+        "d": 234,
+        "c": 3
       },
       {
         "w": 1594512000,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 437,
+        "d": 5,
+        "c": 1
       },
       {
         "w": 1595116800,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 444,
+        "d": 12,
+        "c": 2
       },
       {
         "w": 1595721600,
@@ -9106,15 +9106,15 @@
       },
       {
         "w": 1598140800,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 2468,
+        "d": 154,
+        "c": 3
       },
       {
         "w": 1598745600,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 609,
+        "d": 14,
+        "c": 2
       },
       {
         "w": 1599350400,
@@ -9124,9 +9124,9 @@
       },
       {
         "w": 1599955200,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 1588,
+        "d": 362,
+        "c": 4
       },
       {
         "w": 1600560000,
@@ -9166,9 +9166,9 @@
       },
       {
         "w": 1604188800,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 4155,
+        "d": 541,
+        "c": 7
       },
       {
         "w": 1604793600,
@@ -9220,9 +9220,9 @@
       },
       {
         "w": 1609632000,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 4733,
+        "d": 256,
+        "c": 1
       },
       {
         "w": 1610236800,
@@ -9232,15 +9232,15 @@
       },
       {
         "w": 1610841600,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 4013,
+        "d": 2788,
+        "c": 2
       },
       {
         "w": 1611446400,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 3526,
+        "d": 3047,
+        "c": 4
       },
       {
         "w": 1612051200,
@@ -9286,15 +9286,15 @@
       },
       {
         "w": 1616284800,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 4738,
+        "d": 1560,
+        "c": 1
       },
       {
         "w": 1616889600,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 1056,
+        "d": 588,
+        "c": 1
       },
       {
         "w": 1617494400,
@@ -9316,9 +9316,9 @@
       },
       {
         "w": 1619308800,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 2733,
+        "d": 1222,
+        "c": 1
       },
       {
         "w": 1619913600,
@@ -9328,9 +9328,9 @@
       },
       {
         "w": 1620518400,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 3532,
+        "d": 1684,
+        "c": 2
       },
       {
         "w": 1621123200,
@@ -9352,9 +9352,9 @@
       },
       {
         "w": 1622937600,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 2708,
+        "d": 860,
+        "c": 1
       },
       {
         "w": 1623542400,
@@ -9454,28 +9454,28 @@
       },
       {
         "w": 1633219200,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 8427,
+        "d": 572,
+        "c": 1
       }
     ],
     "author": {
-      "login": "JarodyParody",
-      "id": 37635141,
-      "node_id": "MDQ6VXNlcjM3NjM1MTQx",
-      "avatar_url": "https://avatars.githubusercontent.com/u/37635141?v=4",
+      "login": "actions-user",
+      "id": 65916846,
+      "node_id": "MDQ6VXNlcjY1OTE2ODQ2",
+      "avatar_url": "https://avatars.githubusercontent.com/u/65916846?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/JarodyParody",
-      "html_url": "https://github.com/JarodyParody",
-      "followers_url": "https://api.github.com/users/JarodyParody/followers",
-      "following_url": "https://api.github.com/users/JarodyParody/following{/other_user}",
-      "gists_url": "https://api.github.com/users/JarodyParody/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/JarodyParody/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/JarodyParody/subscriptions",
-      "organizations_url": "https://api.github.com/users/JarodyParody/orgs",
-      "repos_url": "https://api.github.com/users/JarodyParody/repos",
-      "events_url": "https://api.github.com/users/JarodyParody/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/JarodyParody/received_events",
+      "url": "https://api.github.com/users/actions-user",
+      "html_url": "https://github.com/actions-user",
+      "followers_url": "https://api.github.com/users/actions-user/followers",
+      "following_url": "https://api.github.com/users/actions-user/following{/other_user}",
+      "gists_url": "https://api.github.com/users/actions-user/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/actions-user/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/actions-user/subscriptions",
+      "organizations_url": "https://api.github.com/users/actions-user/orgs",
+      "repos_url": "https://api.github.com/users/actions-user/repos",
+      "events_url": "https://api.github.com/users/actions-user/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/actions-user/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -9980,7 +9980,7 @@
     }
   },
   {
-    "total": 2,
+    "total": 6,
     "weeks": [
       {
         "w": 1586044800,
@@ -10008,9 +10008,9 @@
       },
       {
         "w": 1588464000,
-        "a": 18,
-        "d": 1,
-        "c": 2
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1589068800,
@@ -10164,9 +10164,9 @@
       },
       {
         "w": 1604188800,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 49,
+        "d": 10,
+        "c": 6
       },
       {
         "w": 1604793600,
@@ -10458,22 +10458,22 @@
       }
     ],
     "author": {
-      "login": "yomisimie",
-      "id": 5380812,
-      "node_id": "MDQ6VXNlcjUzODA4MTI=",
-      "avatar_url": "https://avatars.githubusercontent.com/u/5380812?v=4",
+      "login": "Suzuya1755",
+      "id": 73918798,
+      "node_id": "MDQ6VXNlcjczOTE4Nzk4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/73918798?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/yomisimie",
-      "html_url": "https://github.com/yomisimie",
-      "followers_url": "https://api.github.com/users/yomisimie/followers",
-      "following_url": "https://api.github.com/users/yomisimie/following{/other_user}",
-      "gists_url": "https://api.github.com/users/yomisimie/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/yomisimie/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/yomisimie/subscriptions",
-      "organizations_url": "https://api.github.com/users/yomisimie/orgs",
-      "repos_url": "https://api.github.com/users/yomisimie/repos",
-      "events_url": "https://api.github.com/users/yomisimie/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/yomisimie/received_events",
+      "url": "https://api.github.com/users/Suzuya1755",
+      "html_url": "https://github.com/Suzuya1755",
+      "followers_url": "https://api.github.com/users/Suzuya1755/followers",
+      "following_url": "https://api.github.com/users/Suzuya1755/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Suzuya1755/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Suzuya1755/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Suzuya1755/subscriptions",
+      "organizations_url": "https://api.github.com/users/Suzuya1755/orgs",
+      "repos_url": "https://api.github.com/users/Suzuya1755/repos",
+      "events_url": "https://api.github.com/users/Suzuya1755/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Suzuya1755/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -10988,507 +10988,8 @@
       },
       {
         "w": 1586649600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1587254400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1587859200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1588464000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589068800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1589673600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1590278400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1590883200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1591488000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1592092800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1592697600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1593302400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1593907200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1594512000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1595116800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1595721600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1596326400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1596931200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1597536000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1598140800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1598745600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1599350400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1599955200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1600560000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1601164800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1601769600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1602374400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1602979200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1603584000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1604188800,
-        "a": 3,
-        "d": 1,
-        "c": 1
-      },
-      {
-        "w": 1604793600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1605398400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1606003200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1606608000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1607212800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1607817600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1608422400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1609027200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1609632000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1610236800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1610841600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1611446400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1612051200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1612656000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1613260800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1613865600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1614470400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1615075200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1615680000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1616284800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1616889600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1617494400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1618099200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1618704000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1619308800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1619913600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1620518400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1621123200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1621728000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1622332800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1622937600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1623542400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1624147200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1624752000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1625356800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1625961600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1626566400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1627171200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1627776000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1628380800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1628985600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1629590400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1630195200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1630800000,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1631404800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1632009600,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1632614400,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1633219200,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      }
-    ],
-    "author": {
-      "login": "jason19uw2",
-      "id": 38162722,
-      "node_id": "MDQ6VXNlcjM4MTYyNzIy",
-      "avatar_url": "https://avatars.githubusercontent.com/u/38162722?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/jason19uw2",
-      "html_url": "https://github.com/jason19uw2",
-      "followers_url": "https://api.github.com/users/jason19uw2/followers",
-      "following_url": "https://api.github.com/users/jason19uw2/following{/other_user}",
-      "gists_url": "https://api.github.com/users/jason19uw2/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/jason19uw2/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/jason19uw2/subscriptions",
-      "organizations_url": "https://api.github.com/users/jason19uw2/orgs",
-      "repos_url": "https://api.github.com/users/jason19uw2/repos",
-      "events_url": "https://api.github.com/users/jason19uw2/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/jason19uw2/received_events",
-      "type": "User",
-      "site_admin": false
-    }
-  },
-  {
-    "total": 1,
-    "weeks": [
-      {
-        "w": 1586044800,
-        "a": 0,
-        "d": 0,
-        "c": 0
-      },
-      {
-        "w": 1586649600,
-        "a": 2,
-        "d": 2,
+        "a": 30,
+        "d": 30,
         "c": 1
       },
       {
@@ -11955,22 +11456,22 @@
       }
     ],
     "author": {
-      "login": "ysc3839",
-      "id": 12028138,
-      "node_id": "MDQ6VXNlcjEyMDI4MTM4",
-      "avatar_url": "https://avatars.githubusercontent.com/u/12028138?v=4",
+      "login": "yuryu",
+      "id": 166481,
+      "node_id": "MDQ6VXNlcjE2NjQ4MQ==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/166481?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/ysc3839",
-      "html_url": "https://github.com/ysc3839",
-      "followers_url": "https://api.github.com/users/ysc3839/followers",
-      "following_url": "https://api.github.com/users/ysc3839/following{/other_user}",
-      "gists_url": "https://api.github.com/users/ysc3839/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/ysc3839/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/ysc3839/subscriptions",
-      "organizations_url": "https://api.github.com/users/ysc3839/orgs",
-      "repos_url": "https://api.github.com/users/ysc3839/repos",
-      "events_url": "https://api.github.com/users/ysc3839/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/ysc3839/received_events",
+      "url": "https://api.github.com/users/yuryu",
+      "html_url": "https://github.com/yuryu",
+      "followers_url": "https://api.github.com/users/yuryu/followers",
+      "following_url": "https://api.github.com/users/yuryu/following{/other_user}",
+      "gists_url": "https://api.github.com/users/yuryu/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/yuryu/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/yuryu/subscriptions",
+      "organizations_url": "https://api.github.com/users/yuryu/orgs",
+      "repos_url": "https://api.github.com/users/yuryu/repos",
+      "events_url": "https://api.github.com/users/yuryu/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/yuryu/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -12479,9 +11980,9 @@
     "weeks": [
       {
         "w": 1586044800,
-        "a": 0,
+        "a": 28,
         "d": 0,
-        "c": 0
+        "c": 2
       },
       {
         "w": 1586649600,
@@ -12515,9 +12016,9 @@
       },
       {
         "w": 1589673600,
-        "a": 2,
-        "d": 1,
-        "c": 1
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1590278400,
@@ -12527,9 +12028,9 @@
       },
       {
         "w": 1590883200,
-        "a": 2,
-        "d": 1,
-        "c": 1
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1591488000,
@@ -12953,22 +12454,521 @@
       }
     ],
     "author": {
-      "login": "borjiso",
-      "id": 505113,
-      "node_id": "MDQ6VXNlcjUwNTExMw==",
-      "avatar_url": "https://avatars.githubusercontent.com/u/505113?v=4",
+      "login": "CalebProvost",
+      "id": 50122974,
+      "node_id": "MDQ6VXNlcjUwMTIyOTc0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/50122974?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/borjiso",
-      "html_url": "https://github.com/borjiso",
-      "followers_url": "https://api.github.com/users/borjiso/followers",
-      "following_url": "https://api.github.com/users/borjiso/following{/other_user}",
-      "gists_url": "https://api.github.com/users/borjiso/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/borjiso/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/borjiso/subscriptions",
-      "organizations_url": "https://api.github.com/users/borjiso/orgs",
-      "repos_url": "https://api.github.com/users/borjiso/repos",
-      "events_url": "https://api.github.com/users/borjiso/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/borjiso/received_events",
+      "url": "https://api.github.com/users/CalebProvost",
+      "html_url": "https://github.com/CalebProvost",
+      "followers_url": "https://api.github.com/users/CalebProvost/followers",
+      "following_url": "https://api.github.com/users/CalebProvost/following{/other_user}",
+      "gists_url": "https://api.github.com/users/CalebProvost/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/CalebProvost/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/CalebProvost/subscriptions",
+      "organizations_url": "https://api.github.com/users/CalebProvost/orgs",
+      "repos_url": "https://api.github.com/users/CalebProvost/repos",
+      "events_url": "https://api.github.com/users/CalebProvost/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/CalebProvost/received_events",
+      "type": "User",
+      "site_admin": false
+    }
+  },
+  {
+    "total": 1,
+    "weeks": [
+      {
+        "w": 1586044800,
+        "a": 33,
+        "d": 0,
+        "c": 1
+      },
+      {
+        "w": 1586649600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587254400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1587859200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1588464000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589068800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1589673600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590278400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1590883200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1591488000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1592092800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1592697600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1593302400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1593907200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1594512000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1595116800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1595721600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1596326400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1596931200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1597536000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1598140800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1598745600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1599350400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1599955200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1600560000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1601164800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1601769600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1602374400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1602979200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1603584000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1604188800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1604793600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1605398400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1606003200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1606608000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1607212800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1607817600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1608422400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1609027200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1609632000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1610236800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1610841600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1611446400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1612051200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1612656000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1613260800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1613865600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1614470400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1615075200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1615680000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1616284800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1616889600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1617494400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1618099200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1618704000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1619308800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1619913600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1620518400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1621123200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1621728000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1622332800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1622937600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1623542400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1624147200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1624752000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1625356800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1625961600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1626566400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1627171200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1627776000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1628380800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1628985600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1629590400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1630195200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1630800000,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1631404800,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1632009600,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1632614400,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      },
+      {
+        "w": 1633219200,
+        "a": 0,
+        "d": 0,
+        "c": 0
+      }
+    ],
+    "author": {
+      "login": "ruudschouten",
+      "id": 1363911,
+      "node_id": "MDQ6VXNlcjEzNjM5MTE=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1363911?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ruudschouten",
+      "html_url": "https://github.com/ruudschouten",
+      "followers_url": "https://api.github.com/users/ruudschouten/followers",
+      "following_url": "https://api.github.com/users/ruudschouten/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ruudschouten/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ruudschouten/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ruudschouten/subscriptions",
+      "organizations_url": "https://api.github.com/users/ruudschouten/orgs",
+      "repos_url": "https://api.github.com/users/ruudschouten/repos",
+      "events_url": "https://api.github.com/users/ruudschouten/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ruudschouten/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -13972,7 +13972,7 @@
     }
   },
   {
-    "total": 1,
+    "total": 3,
     "weeks": [
       {
         "w": 1586044800,
@@ -13988,9 +13988,9 @@
       },
       {
         "w": 1587254400,
-        "a": 2,
-        "d": 1,
-        "c": 1
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1587859200,
@@ -14000,9 +14000,9 @@
       },
       {
         "w": 1588464000,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 7,
+        "d": 3,
+        "c": 1
       },
       {
         "w": 1589068800,
@@ -14018,15 +14018,15 @@
       },
       {
         "w": 1590278400,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 7,
+        "d": 2,
+        "c": 1
       },
       {
         "w": 1590883200,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 2,
+        "d": 1,
+        "c": 1
       },
       {
         "w": 1591488000,
@@ -14450,22 +14450,22 @@
       }
     ],
     "author": {
-      "login": "RvanBaarle",
-      "id": 6692036,
-      "node_id": "MDQ6VXNlcjY2OTIwMzY=",
-      "avatar_url": "https://avatars.githubusercontent.com/u/6692036?v=4",
+      "login": "osro",
+      "id": 556353,
+      "node_id": "MDQ6VXNlcjU1NjM1Mw==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/556353?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/RvanBaarle",
-      "html_url": "https://github.com/RvanBaarle",
-      "followers_url": "https://api.github.com/users/RvanBaarle/followers",
-      "following_url": "https://api.github.com/users/RvanBaarle/following{/other_user}",
-      "gists_url": "https://api.github.com/users/RvanBaarle/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/RvanBaarle/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/RvanBaarle/subscriptions",
-      "organizations_url": "https://api.github.com/users/RvanBaarle/orgs",
-      "repos_url": "https://api.github.com/users/RvanBaarle/repos",
-      "events_url": "https://api.github.com/users/RvanBaarle/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/RvanBaarle/received_events",
+      "url": "https://api.github.com/users/osro",
+      "html_url": "https://github.com/osro",
+      "followers_url": "https://api.github.com/users/osro/followers",
+      "following_url": "https://api.github.com/users/osro/following{/other_user}",
+      "gists_url": "https://api.github.com/users/osro/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/osro/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/osro/subscriptions",
+      "organizations_url": "https://api.github.com/users/osro/orgs",
+      "repos_url": "https://api.github.com/users/osro/repos",
+      "events_url": "https://api.github.com/users/osro/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/osro/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -23956,9 +23956,9 @@
     "weeks": [
       {
         "w": 1586044800,
-        "a": 32,
+        "a": 0,
         "d": 0,
-        "c": 1
+        "c": 0
       },
       {
         "w": 1586649600,
@@ -24136,9 +24136,9 @@
       },
       {
         "w": 1604188800,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 3,
+        "d": 1,
+        "c": 1
       },
       {
         "w": 1604793600,
@@ -24430,22 +24430,22 @@
       }
     ],
     "author": {
-      "login": "seniorburito",
-      "id": 5054813,
-      "node_id": "MDQ6VXNlcjUwNTQ4MTM=",
-      "avatar_url": "https://avatars.githubusercontent.com/u/5054813?v=4",
+      "login": "jason19uw2",
+      "id": 38162722,
+      "node_id": "MDQ6VXNlcjM4MTYyNzIy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/38162722?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/seniorburito",
-      "html_url": "https://github.com/seniorburito",
-      "followers_url": "https://api.github.com/users/seniorburito/followers",
-      "following_url": "https://api.github.com/users/seniorburito/following{/other_user}",
-      "gists_url": "https://api.github.com/users/seniorburito/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/seniorburito/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/seniorburito/subscriptions",
-      "organizations_url": "https://api.github.com/users/seniorburito/orgs",
-      "repos_url": "https://api.github.com/users/seniorburito/repos",
-      "events_url": "https://api.github.com/users/seniorburito/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/seniorburito/received_events",
+      "url": "https://api.github.com/users/jason19uw2",
+      "html_url": "https://github.com/jason19uw2",
+      "followers_url": "https://api.github.com/users/jason19uw2/followers",
+      "following_url": "https://api.github.com/users/jason19uw2/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jason19uw2/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jason19uw2/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jason19uw2/subscriptions",
+      "organizations_url": "https://api.github.com/users/jason19uw2/orgs",
+      "repos_url": "https://api.github.com/users/jason19uw2/repos",
+      "events_url": "https://api.github.com/users/jason19uw2/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jason19uw2/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -24950,7 +24950,7 @@
     }
   },
   {
-    "total": 1,
+    "total": 2,
     "weeks": [
       {
         "w": 1586044800,
@@ -24972,15 +24972,15 @@
       },
       {
         "w": 1587859200,
-        "a": 1,
-        "d": 1,
-        "c": 1
-      },
-      {
-        "w": 1588464000,
         "a": 0,
         "d": 0,
         "c": 0
+      },
+      {
+        "w": 1588464000,
+        "a": 18,
+        "d": 1,
+        "c": 2
       },
       {
         "w": 1589068800,
@@ -25428,22 +25428,22 @@
       }
     ],
     "author": {
-      "login": "cuonghapvn",
-      "id": 5651866,
-      "node_id": "MDQ6VXNlcjU2NTE4NjY=",
-      "avatar_url": "https://avatars.githubusercontent.com/u/5651866?v=4",
+      "login": "yomisimie",
+      "id": 5380812,
+      "node_id": "MDQ6VXNlcjUzODA4MTI=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5380812?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/cuonghapvn",
-      "html_url": "https://github.com/cuonghapvn",
-      "followers_url": "https://api.github.com/users/cuonghapvn/followers",
-      "following_url": "https://api.github.com/users/cuonghapvn/following{/other_user}",
-      "gists_url": "https://api.github.com/users/cuonghapvn/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/cuonghapvn/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/cuonghapvn/subscriptions",
-      "organizations_url": "https://api.github.com/users/cuonghapvn/orgs",
-      "repos_url": "https://api.github.com/users/cuonghapvn/repos",
-      "events_url": "https://api.github.com/users/cuonghapvn/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/cuonghapvn/received_events",
+      "url": "https://api.github.com/users/yomisimie",
+      "html_url": "https://github.com/yomisimie",
+      "followers_url": "https://api.github.com/users/yomisimie/followers",
+      "following_url": "https://api.github.com/users/yomisimie/following{/other_user}",
+      "gists_url": "https://api.github.com/users/yomisimie/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/yomisimie/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/yomisimie/subscriptions",
+      "organizations_url": "https://api.github.com/users/yomisimie/orgs",
+      "repos_url": "https://api.github.com/users/yomisimie/repos",
+      "events_url": "https://api.github.com/users/yomisimie/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/yomisimie/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -27445,19 +27445,19 @@
     }
   },
   {
-    "total": 6,
+    "total": 12,
     "weeks": [
       {
         "w": 1586044800,
-        "a": 42,
-        "d": 10,
-        "c": 4
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1586649600,
-        "a": 20,
-        "d": 20,
-        "c": 2
+        "a": 68,
+        "d": 68,
+        "c": 12
       },
       {
         "w": 1587254400,
@@ -27923,28 +27923,28 @@
       }
     ],
     "author": {
-      "login": "fabiomurru96",
-      "id": 20525680,
-      "node_id": "MDQ6VXNlcjIwNTI1Njgw",
-      "avatar_url": "https://avatars.githubusercontent.com/u/20525680?v=4",
+      "login": "weblate",
+      "id": 1607653,
+      "node_id": "MDQ6VXNlcjE2MDc2NTM=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1607653?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/fabiomurru96",
-      "html_url": "https://github.com/fabiomurru96",
-      "followers_url": "https://api.github.com/users/fabiomurru96/followers",
-      "following_url": "https://api.github.com/users/fabiomurru96/following{/other_user}",
-      "gists_url": "https://api.github.com/users/fabiomurru96/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/fabiomurru96/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/fabiomurru96/subscriptions",
-      "organizations_url": "https://api.github.com/users/fabiomurru96/orgs",
-      "repos_url": "https://api.github.com/users/fabiomurru96/repos",
-      "events_url": "https://api.github.com/users/fabiomurru96/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/fabiomurru96/received_events",
+      "url": "https://api.github.com/users/weblate",
+      "html_url": "https://github.com/weblate",
+      "followers_url": "https://api.github.com/users/weblate/followers",
+      "following_url": "https://api.github.com/users/weblate/following{/other_user}",
+      "gists_url": "https://api.github.com/users/weblate/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/weblate/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/weblate/subscriptions",
+      "organizations_url": "https://api.github.com/users/weblate/orgs",
+      "repos_url": "https://api.github.com/users/weblate/repos",
+      "events_url": "https://api.github.com/users/weblate/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/weblate/received_events",
       "type": "User",
       "site_admin": false
     }
   },
   {
-    "total": 2,
+    "total": 1,
     "weeks": [
       {
         "w": 1586044800,
@@ -27978,15 +27978,15 @@
       },
       {
         "w": 1589068800,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 8,
+        "d": 8,
+        "c": 1
       },
       {
         "w": 1589673600,
-        "a": 6,
-        "d": 1,
-        "c": 1
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1590278400,
@@ -28026,9 +28026,9 @@
       },
       {
         "w": 1593907200,
-        "a": 2,
-        "d": 1,
-        "c": 1
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1594512000,
@@ -28422,22 +28422,22 @@
       }
     ],
     "author": {
-      "login": "IceLitty",
-      "id": 6522057,
-      "node_id": "MDQ6VXNlcjY1MjIwNTc=",
-      "avatar_url": "https://avatars.githubusercontent.com/u/6522057?v=4",
+      "login": "ryo-a",
+      "id": 26864545,
+      "node_id": "MDQ6VXNlcjI2ODY0NTQ1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26864545?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/IceLitty",
-      "html_url": "https://github.com/IceLitty",
-      "followers_url": "https://api.github.com/users/IceLitty/followers",
-      "following_url": "https://api.github.com/users/IceLitty/following{/other_user}",
-      "gists_url": "https://api.github.com/users/IceLitty/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/IceLitty/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/IceLitty/subscriptions",
-      "organizations_url": "https://api.github.com/users/IceLitty/orgs",
-      "repos_url": "https://api.github.com/users/IceLitty/repos",
-      "events_url": "https://api.github.com/users/IceLitty/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/IceLitty/received_events",
+      "url": "https://api.github.com/users/ryo-a",
+      "html_url": "https://github.com/ryo-a",
+      "followers_url": "https://api.github.com/users/ryo-a/followers",
+      "following_url": "https://api.github.com/users/ryo-a/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ryo-a/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ryo-a/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ryo-a/subscriptions",
+      "organizations_url": "https://api.github.com/users/ryo-a/orgs",
+      "repos_url": "https://api.github.com/users/ryo-a/repos",
+      "events_url": "https://api.github.com/users/ryo-a/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ryo-a/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -29441,7 +29441,7 @@
     }
   },
   {
-    "total": 3,
+    "total": 2,
     "weeks": [
       {
         "w": 1586044800,
@@ -29451,9 +29451,9 @@
       },
       {
         "w": 1586649600,
-        "a": 0,
-        "d": 0,
-        "c": 0
+        "a": 14,
+        "d": 14,
+        "c": 2
       },
       {
         "w": 1587254400,
@@ -29469,9 +29469,9 @@
       },
       {
         "w": 1588464000,
-        "a": 7,
-        "d": 3,
-        "c": 1
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1589068800,
@@ -29487,15 +29487,15 @@
       },
       {
         "w": 1590278400,
-        "a": 7,
-        "d": 2,
-        "c": 1
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1590883200,
-        "a": 2,
-        "d": 1,
-        "c": 1
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1591488000,
@@ -29919,22 +29919,22 @@
       }
     ],
     "author": {
-      "login": "osro",
-      "id": 556353,
-      "node_id": "MDQ6VXNlcjU1NjM1Mw==",
-      "avatar_url": "https://avatars.githubusercontent.com/u/556353?v=4",
+      "login": "Elsensee",
+      "id": 1637630,
+      "node_id": "MDQ6VXNlcjE2Mzc2MzA=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1637630?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/osro",
-      "html_url": "https://github.com/osro",
-      "followers_url": "https://api.github.com/users/osro/followers",
-      "following_url": "https://api.github.com/users/osro/following{/other_user}",
-      "gists_url": "https://api.github.com/users/osro/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/osro/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/osro/subscriptions",
-      "organizations_url": "https://api.github.com/users/osro/orgs",
-      "repos_url": "https://api.github.com/users/osro/repos",
-      "events_url": "https://api.github.com/users/osro/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/osro/received_events",
+      "url": "https://api.github.com/users/Elsensee",
+      "html_url": "https://github.com/Elsensee",
+      "followers_url": "https://api.github.com/users/Elsensee/followers",
+      "following_url": "https://api.github.com/users/Elsensee/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Elsensee/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Elsensee/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Elsensee/subscriptions",
+      "organizations_url": "https://api.github.com/users/Elsensee/orgs",
+      "repos_url": "https://api.github.com/users/Elsensee/repos",
+      "events_url": "https://api.github.com/users/Elsensee/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Elsensee/received_events",
       "type": "User",
       "site_admin": false
     }
@@ -32435,7 +32435,7 @@
     }
   },
   {
-    "total": 110,
+    "total": 1,
     "weeks": [
       {
         "w": 1586044800,
@@ -32463,75 +32463,75 @@
       },
       {
         "w": 1588464000,
-        "a": 24,
-        "d": 24,
-        "c": 23
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1589068800,
-        "a": 3,
-        "d": 3,
-        "c": 3
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1589673600,
-        "a": 18,
-        "d": 18,
-        "c": 18
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1590278400,
-        "a": 11,
-        "d": 11,
-        "c": 11
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1590883200,
-        "a": 6487,
-        "d": 6171,
-        "c": 12
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1591488000,
-        "a": 512,
-        "d": 25,
-        "c": 4
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1592092800,
-        "a": 600,
-        "d": 101,
-        "c": 2
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1592697600,
-        "a": 481,
-        "d": 67,
-        "c": 1
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1593302400,
-        "a": 521,
-        "d": 4,
+        "a": 6,
+        "d": 1,
         "c": 1
       },
       {
         "w": 1593907200,
-        "a": 872,
-        "d": 234,
-        "c": 3
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1594512000,
-        "a": 437,
-        "d": 5,
-        "c": 1
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1595116800,
-        "a": 444,
-        "d": 12,
-        "c": 2
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1595721600,
@@ -32559,15 +32559,15 @@
       },
       {
         "w": 1598140800,
-        "a": 2468,
-        "d": 154,
-        "c": 3
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1598745600,
-        "a": 609,
-        "d": 14,
-        "c": 2
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1599350400,
@@ -32577,9 +32577,9 @@
       },
       {
         "w": 1599955200,
-        "a": 1588,
-        "d": 362,
-        "c": 4
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1600560000,
@@ -32619,9 +32619,9 @@
       },
       {
         "w": 1604188800,
-        "a": 4155,
-        "d": 541,
-        "c": 7
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1604793600,
@@ -32673,9 +32673,9 @@
       },
       {
         "w": 1609632000,
-        "a": 4733,
-        "d": 256,
-        "c": 1
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1610236800,
@@ -32685,15 +32685,15 @@
       },
       {
         "w": 1610841600,
-        "a": 4013,
-        "d": 2788,
-        "c": 2
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1611446400,
-        "a": 3526,
-        "d": 3047,
-        "c": 4
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1612051200,
@@ -32739,15 +32739,15 @@
       },
       {
         "w": 1616284800,
-        "a": 4738,
-        "d": 1560,
-        "c": 1
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1616889600,
-        "a": 1056,
-        "d": 588,
-        "c": 1
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1617494400,
@@ -32769,9 +32769,9 @@
       },
       {
         "w": 1619308800,
-        "a": 2733,
-        "d": 1222,
-        "c": 1
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1619913600,
@@ -32781,9 +32781,9 @@
       },
       {
         "w": 1620518400,
-        "a": 3532,
-        "d": 1684,
-        "c": 2
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1621123200,
@@ -32805,9 +32805,9 @@
       },
       {
         "w": 1622937600,
-        "a": 2708,
-        "d": 860,
-        "c": 1
+        "a": 0,
+        "d": 0,
+        "c": 0
       },
       {
         "w": 1623542400,
@@ -32913,22 +32913,22 @@
       }
     ],
     "author": {
-      "login": "actions-user",
-      "id": 65916846,
-      "node_id": "MDQ6VXNlcjY1OTE2ODQ2",
-      "avatar_url": "https://avatars.githubusercontent.com/u/65916846?v=4",
+      "login": "luizhandrade",
+      "id": 5850877,
+      "node_id": "MDQ6VXNlcjU4NTA4Nzc=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5850877?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/actions-user",
-      "html_url": "https://github.com/actions-user",
-      "followers_url": "https://api.github.com/users/actions-user/followers",
-      "following_url": "https://api.github.com/users/actions-user/following{/other_user}",
-      "gists_url": "https://api.github.com/users/actions-user/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/actions-user/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/actions-user/subscriptions",
-      "organizations_url": "https://api.github.com/users/actions-user/orgs",
-      "repos_url": "https://api.github.com/users/actions-user/repos",
-      "events_url": "https://api.github.com/users/actions-user/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/actions-user/received_events",
+      "url": "https://api.github.com/users/luizhandrade",
+      "html_url": "https://github.com/luizhandrade",
+      "followers_url": "https://api.github.com/users/luizhandrade/followers",
+      "following_url": "https://api.github.com/users/luizhandrade/following{/other_user}",
+      "gists_url": "https://api.github.com/users/luizhandrade/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/luizhandrade/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/luizhandrade/subscriptions",
+      "organizations_url": "https://api.github.com/users/luizhandrade/orgs",
+      "repos_url": "https://api.github.com/users/luizhandrade/repos",
+      "events_url": "https://api.github.com/users/luizhandrade/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/luizhandrade/received_events",
       "type": "User",
       "site_admin": false
     }
