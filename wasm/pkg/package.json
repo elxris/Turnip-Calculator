@@ -7,6 +7,7 @@
   "files": [
     "patterns_bg.wasm",
     "patterns.js",
+    "patterns_bg.js",
     "patterns.d.ts"
   ],
   "module": "patterns.js",
