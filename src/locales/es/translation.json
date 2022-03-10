@@ -35,5 +35,6 @@
     "patternNames": "Oscilante_Pico Alto_Decreciente_Pico Pequeño",
     "Pattern": "Patrón",
     "Chance": "Posibilidad",
-    "mostLikelyInfo": "El rango de valores <1>más probable </1> de que contenga el <3></3> de los precios de nabos."
+    "mostLikelyInfo": "El rango de valores <1>más probable </1> de que contenga el <3></3> de los precios de nabos.",
+    "Now": "Ahora"
 }
