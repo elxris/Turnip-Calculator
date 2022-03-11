@@ -23,7 +23,7 @@ npm start
 
 ### For translators
 
-Please go to [i18n.ac-turnip.com](https://i18n.ac-turnip.com/projects/turnip-calculator/application/) to start translating.
+Please go to [i18n.ac-turnip.com](https://i18n.ac-turnip.com/projects/ac-turnip-com/turnip-calculator/) to start translating.
 
 ### For developers
 
