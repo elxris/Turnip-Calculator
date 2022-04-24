@@ -46,10 +46,10 @@ jobs:
       - name: Build
         run: yarn build
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4.3.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          branch: gh-pages
+          folder: build
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
