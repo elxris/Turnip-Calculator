@@ -35,5 +35,6 @@
     "patternNames": "Flutuação_Alta Pico_Decrescente_Menor Pico",
     "Pattern": "Padrão",
     "Chance": "Probabilidades",
-    "mostLikelyInfo": "- O intervalo de preço <1>Mais Provável</1> é aquele onde <3></3> do preço dos nabos serão encontrados."
+    "mostLikelyInfo": "- O intervalo de preço <1>Mais Provável</1> é aquele onde <3></3> do preço dos nabos serão encontrados.",
+    "Now": "Agora"
 }
