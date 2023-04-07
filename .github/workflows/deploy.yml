@@ -22,8 +22,8 @@ jobs:
           repository: ${{ github.repository }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-node@v2
-      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v3
       - uses: jetli/wasm-pack-action@v0.4.0
         with:
           version: v0.9
@@ -33,7 +33,7 @@ jobs:
       - name: Install
         run: yarn
       - name: GitHub API [Contributors]
-        uses: octokit/request-action@v2.x
+        uses: octokit/request-action@v2
         id: get_contributors
         with:
           route: GET /repos/:repository/stats/contributors
